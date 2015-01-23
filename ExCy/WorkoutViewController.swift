@@ -8,19 +8,42 @@
 
 import UIKit
 
-class WorkoutViewController: UIViewController {
+class WorkoutViewController: UIViewController, UIPickerViewDelegate, UIPickerViewDataSource {
 
+	@IBOutlet weak var workoutPickerView: UIPickerView!
+	@IBOutlet weak var calorieTextField: UITextField!
+	@IBOutlet weak var calorieSliderOutlet: UISlider!
+	
+	var workoutSelection:NSArray = []
+	
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+		
+		workoutSelection = ["Arm Cycle", "Chair Cycle", "Floor Cycle"]
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
+	
+	func numberOfComponentsInPickerView(pickerView: UIPickerView) -> Int {
+		return 1
+	}
+	
+	func pickerView(pickerView: UIPickerView, numberOfRowsInComponent component: Int) -> Int {
+		return workoutSelection.count
+	}
+	
+	func pickerView(pickerView: UIPickerView, titleForRow row: Int, forComponent component: Int) -> String! {
+		return "\(workoutSelection[row])"
+	}
     
+	@IBAction func calorieSlider(sender: UISlider) {
+		self.calorieTextField.text = "\(Int(self.calorieSliderOutlet.value))"
+	}
 
     /*
     // MARK: - Navigation

@@ -7,12 +7,72 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		D3260B021A1ED5FF00DBEC75 /* StartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3260B011A1ED5FF00DBEC75 /* StartViewController.swift */; };
+		D3260B041A1EEDD700DBEC75 /* workoutsPlaceHolder.png in Resources */ = {isa = PBXBuildFile; fileRef = D3260B031A1EEDD700DBEC75 /* workoutsPlaceHolder.png */; };
+		D32B84621A1A5A39004AFC7F /* lightningIcon.png in Resources */ = {isa = PBXBuildFile; fileRef = D32B84611A1A5A39004AFC7F /* lightningIcon.png */; };
+		D32B84641A1A5A3D004AFC7F /* iconmonstr-map-2-icon-64.png in Resources */ = {isa = PBXBuildFile; fileRef = D32B84631A1A5A3D004AFC7F /* iconmonstr-map-2-icon-64.png */; };
 		D36F78EC19DF556E00839EEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F78EB19DF556E00839EEF /* AppDelegate.swift */; };
 		D36F78EE19DF556E00839EEF /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F78ED19DF556E00839EEF /* ViewController.swift */; };
-		D36F78F119DF556E00839EEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D36F78EF19DF556E00839EEF /* Main.storyboard */; };
 		D36F78F319DF556E00839EEF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D36F78F219DF556E00839EEF /* Images.xcassets */; };
 		D36F78F619DF556E00839EEF /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = D36F78F419DF556E00839EEF /* LaunchScreen.xib */; };
 		D36F790219DF556F00839EEF /* ExCyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F790119DF556F00839EEF /* ExCyTests.swift */; };
+		D36F792519DF572700839EEF /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36F792419DF572700839EEF /* AudioToolbox.framework */; };
+		D36F792719DF573200839EEF /* CFNetwork.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36F792619DF573200839EEF /* CFNetwork.framework */; };
+		D36F792A19DF573900839EEF /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36F792819DF573900839EEF /* CoreGraphics.framework */; };
+		D36F792B19DF573900839EEF /* CoreLocation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36F792919DF573900839EEF /* CoreLocation.framework */; };
+		D36F792D19DF574300839EEF /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D36F792C19DF574300839EEF /* libz.dylib */; };
+		D36F792F19DF574900839EEF /* MobileCoreServices.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36F792E19DF574900839EEF /* MobileCoreServices.framework */; };
+		D36F793119DF575000839EEF /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36F793019DF575000839EEF /* QuartzCore.framework */; };
+		D36F793319DF575700839EEF /* Security.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36F793219DF575700839EEF /* Security.framework */; };
+		D36F793519DF575D00839EEF /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36F793419DF575D00839EEF /* StoreKit.framework */; };
+		D36F793719DF576700839EEF /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36F793619DF576700839EEF /* SystemConfiguration.framework */; };
+		D36F793A19DF577200839EEF /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36F793819DF577200839EEF /* Bolts.framework */; };
+		D36F793B19DF577200839EEF /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D36F793919DF577200839EEF /* Parse.framework */; };
+		D36F794719DF72E900839EEF /* Dosis-Bold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D36F794019DF72E900839EEF /* Dosis-Bold.otf */; };
+		D36F794819DF72E900839EEF /* Dosis-ExtraBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D36F794119DF72E900839EEF /* Dosis-ExtraBold.otf */; };
+		D36F794919DF72E900839EEF /* Dosis-ExtraLight.otf in Resources */ = {isa = PBXBuildFile; fileRef = D36F794219DF72E900839EEF /* Dosis-ExtraLight.otf */; };
+		D36F794A19DF72E900839EEF /* Dosis-Light.otf in Resources */ = {isa = PBXBuildFile; fileRef = D36F794319DF72E900839EEF /* Dosis-Light.otf */; };
+		D36F794B19DF72E900839EEF /* Dosis-Medium.otf in Resources */ = {isa = PBXBuildFile; fileRef = D36F794419DF72E900839EEF /* Dosis-Medium.otf */; };
+		D36F794C19DF72E900839EEF /* Dosis-Regular.otf in Resources */ = {isa = PBXBuildFile; fileRef = D36F794519DF72E900839EEF /* Dosis-Regular.otf */; };
+		D36F794D19DF72E900839EEF /* Dosis-SemiBold.otf in Resources */ = {isa = PBXBuildFile; fileRef = D36F794619DF72E900839EEF /* Dosis-SemiBold.otf */; };
+		D36F795519DF735200839EEF /* arrow.png in Resources */ = {isa = PBXBuildFile; fileRef = D36F794E19DF735200839EEF /* arrow.png */; };
+		D36F795619DF735200839EEF /* clock.png in Resources */ = {isa = PBXBuildFile; fileRef = D36F794F19DF735200839EEF /* clock.png */; };
+		D36F795719DF735200839EEF /* flame.png in Resources */ = {isa = PBXBuildFile; fileRef = D36F795019DF735200839EEF /* flame.png */; };
+		D36F795819DF735200839EEF /* lightbulb.png in Resources */ = {isa = PBXBuildFile; fileRef = D36F795119DF735200839EEF /* lightbulb.png */; };
+		D36F795919DF735200839EEF /* pause.png in Resources */ = {isa = PBXBuildFile; fileRef = D36F795219DF735200839EEF /* pause.png */; };
+		D36F795A19DF735200839EEF /* spring.png in Resources */ = {isa = PBXBuildFile; fileRef = D36F795319DF735200839EEF /* spring.png */; };
+		D36F795B19DF735200839EEF /* stop.png in Resources */ = {isa = PBXBuildFile; fileRef = D36F795419DF735200839EEF /* stop.png */; };
+		D36F795D19DF736100839EEF /* background-image.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D36F795C19DF736100839EEF /* background-image.jpg */; };
+		D36F797319DFA88800839EEF /* WorkoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F797219DFA88800839EEF /* WorkoutViewController.swift */; };
+		D36F797519E0822D00839EEF /* register-with-facebook.gif in Resources */ = {isa = PBXBuildFile; fileRef = D36F797419E0822D00839EEF /* register-with-facebook.gif */; };
+		D36F797719E0826300839EEF /* fb-login.png in Resources */ = {isa = PBXBuildFile; fileRef = D36F797619E0826300839EEF /* fb-login.png */; };
+		D36F797B19E089D800839EEF /* beachImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D36F797819E089D800839EEF /* beachImage.jpg */; };
+		D36F797C19E089D800839EEF /* planImage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D36F797919E089D800839EEF /* planImage.jpg */; };
+		D36F797D19E089D800839EEF /* TVimage.jpg in Resources */ = {isa = PBXBuildFile; fileRef = D36F797A19E089D800839EEF /* TVimage.jpg */; };
+		D36F798119E0D99900839EEF /* WorkoutLogViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F798019E0D99900839EEF /* WorkoutLogViewController.swift */; };
+		D36F798319E0DF0D00839EEF /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D36F798219E0DF0D00839EEF /* Main.storyboard */; };
+		D36F798B19E0ED3F00839EEF /* tips-wht.png in Resources */ = {isa = PBXBuildFile; fileRef = D36F798719E0ED3F00839EEF /* tips-wht.png */; };
+		D36F798D19E1E21A00839EEF /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = D36F798C19E1E21A00839EEF /* splash.png */; };
+		D36F799619E32F7F00839EEF /* MicheleHeadshot.png in Resources */ = {isa = PBXBuildFile; fileRef = D36F799519E32F7F00839EEF /* MicheleHeadshot.png */; };
+		D3AACC111A4B478200906DF7 /* main more landing page.png in Resources */ = {isa = PBXBuildFile; fileRef = D3AACC101A4B478200906DF7 /* main more landing page.png */; };
+		D3D53DFF1A1FC09700EA16F3 /* background-image.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D53DFD1A1FC09700EA16F3 /* background-image.png */; };
+		D3D53E001A1FC09700EA16F3 /* background-image2.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D53DFE1A1FC09700EA16F3 /* background-image2.png */; };
+		D3D6C4631A4B3A1300C932CE /* Michele_BottomBarIcons_start.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D6C45F1A4B3A1300C932CE /* Michele_BottomBarIcons_start.png */; };
+		D3D6C4641A4B3A1300C932CE /* Michele_BottomBarIcons_more.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D6C4601A4B3A1300C932CE /* Michele_BottomBarIcons_more.png */; };
+		D3D6C4651A4B3A1300C932CE /* Michele_BottomBarIcons_me.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D6C4611A4B3A1300C932CE /* Michele_BottomBarIcons_me.png */; };
+		D3D6C4661A4B3A1300C932CE /* Michele_BottomBarIcons_workouts.png in Resources */ = {isa = PBXBuildFile; fileRef = D3D6C4621A4B3A1300C932CE /* Michele_BottomBarIcons_workouts.png */; };
+		D3EF3BE61A360B3200B1CC02 /* WorkoutsPagePlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EF3BE51A360B3200B1CC02 /* WorkoutsPagePlaceholder.png */; };
+		D3EF3BE81A360DCF00B1CC02 /* Arm Candy Workout_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EF3BE71A360DCF00B1CC02 /* Arm Candy Workout_1.png */; };
+		D3EF3BEA1A360E2500B1CC02 /* Super Cardio description zone buttons.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EF3BE91A360E2500B1CC02 /* Super Cardio description zone buttons.png */; };
+		D3EF3BED1A360EA500B1CC02 /* Super Cardio description graph.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EF3BEB1A360EA500B1CC02 /* Super Cardio description graph.png */; };
+		D3EF3BEE1A360EA500B1CC02 /* Super Cardio Description workout.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EF3BEC1A360EA500B1CC02 /* Super Cardio Description workout.png */; };
+		D3EF3BF21A3615C500B1CC02 /* Arm Candy live chart.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EF3BEF1A3615C500B1CC02 /* Arm Candy live chart.png */; };
+		D3EF3BF31A3615C500B1CC02 /* Arm candy workout description buttons.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EF3BF01A3615C500B1CC02 /* Arm candy workout description buttons.png */; };
+		D3EF3BF41A3615C500B1CC02 /* Arm candy workout description summary.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EF3BF11A3615C500B1CC02 /* Arm candy workout description summary.png */; };
+		D3EF3BF61A3616B100B1CC02 /* Super cycle workout-1.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EF3BF51A3616B100B1CC02 /* Super cycle workout-1.png */; };
+		D3EF3BF81A36183000B1CC02 /* Super Cardio description graph-1.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EF3BF71A36183000B1CC02 /* Super Cardio description graph-1.png */; };
+		D3EF3BFB1A361A0000B1CC02 /* Arm candy live summary.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EF3BF91A361A0000B1CC02 /* Arm candy live summary.png */; };
+		D3EF3BFC1A361A0000B1CC02 /* Super cycle summary live workout-2.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EF3BFA1A361A0000B1CC02 /* Super cycle summary live workout-2.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -26,16 +86,77 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		D3260B011A1ED5FF00DBEC75 /* StartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StartViewController.swift; sourceTree = "<group>"; };
+		D3260B031A1EEDD700DBEC75 /* workoutsPlaceHolder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = workoutsPlaceHolder.png; sourceTree = "<group>"; };
+		D32B84611A1A5A39004AFC7F /* lightningIcon.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightningIcon.png; sourceTree = "<group>"; };
+		D32B84631A1A5A3D004AFC7F /* iconmonstr-map-2-icon-64.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "iconmonstr-map-2-icon-64.png"; sourceTree = "<group>"; };
 		D36F78E619DF556E00839EEF /* ExCy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExCy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D36F78EA19DF556E00839EEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D36F78EB19DF556E00839EEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D36F78ED19DF556E00839EEF /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		D36F78F019DF556E00839EEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		D36F78F219DF556E00839EEF /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		D36F78F519DF556E00839EEF /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		D36F78FB19DF556F00839EEF /* ExCyTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ExCyTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		D36F790019DF556F00839EEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D36F790119DF556F00839EEF /* ExCyTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ExCyTests.swift; sourceTree = "<group>"; };
+		D36F792419DF572700839EEF /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
+		D36F792619DF573200839EEF /* CFNetwork.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CFNetwork.framework; path = System/Library/Frameworks/CFNetwork.framework; sourceTree = SDKROOT; };
+		D36F792819DF573900839EEF /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
+		D36F792919DF573900839EEF /* CoreLocation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreLocation.framework; path = System/Library/Frameworks/CoreLocation.framework; sourceTree = SDKROOT; };
+		D36F792C19DF574300839EEF /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
+		D36F792E19DF574900839EEF /* MobileCoreServices.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = MobileCoreServices.framework; path = System/Library/Frameworks/MobileCoreServices.framework; sourceTree = SDKROOT; };
+		D36F793019DF575000839EEF /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
+		D36F793219DF575700839EEF /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
+		D36F793419DF575D00839EEF /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
+		D36F793619DF576700839EEF /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
+		D36F793819DF577200839EEF /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		D36F793919DF577200839EEF /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		D36F793C19DF57F500839EEF /* ExCy-Bridging-Header.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = "ExCy-Bridging-Header.h"; sourceTree = SOURCE_ROOT; };
+		D36F794019DF72E900839EEF /* Dosis-Bold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Bold.otf"; sourceTree = "<group>"; };
+		D36F794119DF72E900839EEF /* Dosis-ExtraBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-ExtraBold.otf"; sourceTree = "<group>"; };
+		D36F794219DF72E900839EEF /* Dosis-ExtraLight.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-ExtraLight.otf"; sourceTree = "<group>"; };
+		D36F794319DF72E900839EEF /* Dosis-Light.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Light.otf"; sourceTree = "<group>"; };
+		D36F794419DF72E900839EEF /* Dosis-Medium.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Medium.otf"; sourceTree = "<group>"; };
+		D36F794519DF72E900839EEF /* Dosis-Regular.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-Regular.otf"; sourceTree = "<group>"; };
+		D36F794619DF72E900839EEF /* Dosis-SemiBold.otf */ = {isa = PBXFileReference; lastKnownFileType = file; path = "Dosis-SemiBold.otf"; sourceTree = "<group>"; };
+		D36F794E19DF735200839EEF /* arrow.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = arrow.png; sourceTree = "<group>"; };
+		D36F794F19DF735200839EEF /* clock.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = clock.png; sourceTree = "<group>"; };
+		D36F795019DF735200839EEF /* flame.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = flame.png; sourceTree = "<group>"; };
+		D36F795119DF735200839EEF /* lightbulb.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = lightbulb.png; sourceTree = "<group>"; };
+		D36F795219DF735200839EEF /* pause.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = pause.png; sourceTree = "<group>"; };
+		D36F795319DF735200839EEF /* spring.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = spring.png; sourceTree = "<group>"; };
+		D36F795419DF735200839EEF /* stop.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = stop.png; sourceTree = "<group>"; };
+		D36F795C19DF736100839EEF /* background-image.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = "background-image.jpg"; sourceTree = "<group>"; };
+		D36F797219DFA88800839EEF /* WorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutViewController.swift; sourceTree = "<group>"; };
+		D36F797419E0822D00839EEF /* register-with-facebook.gif */ = {isa = PBXFileReference; lastKnownFileType = image.gif; path = "register-with-facebook.gif"; sourceTree = "<group>"; };
+		D36F797619E0826300839EEF /* fb-login.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "fb-login.png"; sourceTree = "<group>"; };
+		D36F797819E089D800839EEF /* beachImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = beachImage.jpg; sourceTree = "<group>"; };
+		D36F797919E089D800839EEF /* planImage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = planImage.jpg; sourceTree = "<group>"; };
+		D36F797A19E089D800839EEF /* TVimage.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = TVimage.jpg; sourceTree = "<group>"; };
+		D36F798019E0D99900839EEF /* WorkoutLogViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutLogViewController.swift; sourceTree = "<group>"; };
+		D36F798219E0DF0D00839EEF /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
+		D36F798719E0ED3F00839EEF /* tips-wht.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "tips-wht.png"; sourceTree = "<group>"; };
+		D36F798C19E1E21A00839EEF /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
+		D36F799519E32F7F00839EEF /* MicheleHeadshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MicheleHeadshot.png; sourceTree = "<group>"; };
+		D3AACC101A4B478200906DF7 /* main more landing page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main more landing page.png"; sourceTree = "<group>"; };
+		D3D53DFD1A1FC09700EA16F3 /* background-image.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-image.png"; sourceTree = "<group>"; };
+		D3D53DFE1A1FC09700EA16F3 /* background-image2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "background-image2.png"; sourceTree = "<group>"; };
+		D3D6C45F1A4B3A1300C932CE /* Michele_BottomBarIcons_start.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Michele_BottomBarIcons_start.png; sourceTree = "<group>"; };
+		D3D6C4601A4B3A1300C932CE /* Michele_BottomBarIcons_more.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Michele_BottomBarIcons_more.png; sourceTree = "<group>"; };
+		D3D6C4611A4B3A1300C932CE /* Michele_BottomBarIcons_me.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Michele_BottomBarIcons_me.png; sourceTree = "<group>"; };
+		D3D6C4621A4B3A1300C932CE /* Michele_BottomBarIcons_workouts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Michele_BottomBarIcons_workouts.png; sourceTree = "<group>"; };
+		D3EF3BE51A360B3200B1CC02 /* WorkoutsPagePlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WorkoutsPagePlaceholder.png; sourceTree = "<group>"; };
+		D3EF3BE71A360DCF00B1CC02 /* Arm Candy Workout_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arm Candy Workout_1.png"; sourceTree = "<group>"; };
+		D3EF3BE91A360E2500B1CC02 /* Super Cardio description zone buttons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super Cardio description zone buttons.png"; sourceTree = "<group>"; };
+		D3EF3BEB1A360EA500B1CC02 /* Super Cardio description graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super Cardio description graph.png"; sourceTree = "<group>"; };
+		D3EF3BEC1A360EA500B1CC02 /* Super Cardio Description workout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super Cardio Description workout.png"; sourceTree = "<group>"; };
+		D3EF3BEF1A3615C500B1CC02 /* Arm Candy live chart.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arm Candy live chart.png"; sourceTree = "<group>"; };
+		D3EF3BF01A3615C500B1CC02 /* Arm candy workout description buttons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arm candy workout description buttons.png"; sourceTree = "<group>"; };
+		D3EF3BF11A3615C500B1CC02 /* Arm candy workout description summary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arm candy workout description summary.png"; sourceTree = "<group>"; };
+		D3EF3BF51A3616B100B1CC02 /* Super cycle workout-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super cycle workout-1.png"; sourceTree = "<group>"; };
+		D3EF3BF71A36183000B1CC02 /* Super Cardio description graph-1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super Cardio description graph-1.png"; sourceTree = "<group>"; };
+		D3EF3BF91A361A0000B1CC02 /* Arm candy live summary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arm candy live summary.png"; sourceTree = "<group>"; };
+		D3EF3BFA1A361A0000B1CC02 /* Super cycle summary live workout-2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super cycle summary live workout-2.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -43,6 +164,18 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D36F793719DF576700839EEF /* SystemConfiguration.framework in Frameworks */,
+				D36F793519DF575D00839EEF /* StoreKit.framework in Frameworks */,
+				D36F793319DF575700839EEF /* Security.framework in Frameworks */,
+				D36F793119DF575000839EEF /* QuartzCore.framework in Frameworks */,
+				D36F792F19DF574900839EEF /* MobileCoreServices.framework in Frameworks */,
+				D36F792D19DF574300839EEF /* libz.dylib in Frameworks */,
+				D36F792A19DF573900839EEF /* CoreGraphics.framework in Frameworks */,
+				D36F792B19DF573900839EEF /* CoreLocation.framework in Frameworks */,
+				D36F793A19DF577200839EEF /* Bolts.framework in Frameworks */,
+				D36F792719DF573200839EEF /* CFNetwork.framework in Frameworks */,
+				D36F793B19DF577200839EEF /* Parse.framework in Frameworks */,
+				D36F792519DF572700839EEF /* AudioToolbox.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -59,6 +192,18 @@
 		D36F78DD19DF556E00839EEF = {
 			isa = PBXGroup;
 			children = (
+				D36F793819DF577200839EEF /* Bolts.framework */,
+				D36F793919DF577200839EEF /* Parse.framework */,
+				D36F793619DF576700839EEF /* SystemConfiguration.framework */,
+				D36F793419DF575D00839EEF /* StoreKit.framework */,
+				D36F793219DF575700839EEF /* Security.framework */,
+				D36F793019DF575000839EEF /* QuartzCore.framework */,
+				D36F792E19DF574900839EEF /* MobileCoreServices.framework */,
+				D36F792C19DF574300839EEF /* libz.dylib */,
+				D36F792819DF573900839EEF /* CoreGraphics.framework */,
+				D36F792919DF573900839EEF /* CoreLocation.framework */,
+				D36F792619DF573200839EEF /* CFNetwork.framework */,
+				D36F792419DF572700839EEF /* AudioToolbox.framework */,
 				D36F78E819DF556E00839EEF /* ExCy */,
 				D36F78FE19DF556F00839EEF /* ExCyTests */,
 				D36F78E719DF556E00839EEF /* Products */,
@@ -79,7 +224,10 @@
 			children = (
 				D36F78EB19DF556E00839EEF /* AppDelegate.swift */,
 				D36F78ED19DF556E00839EEF /* ViewController.swift */,
-				D36F78EF19DF556E00839EEF /* Main.storyboard */,
+				D36F797219DFA88800839EEF /* WorkoutViewController.swift */,
+				D36F798219E0DF0D00839EEF /* Main.storyboard */,
+				D3260B011A1ED5FF00DBEC75 /* StartViewController.swift */,
+				D36F798019E0D99900839EEF /* WorkoutLogViewController.swift */,
 				D36F78F219DF556E00839EEF /* Images.xcassets */,
 				D36F78F419DF556E00839EEF /* LaunchScreen.xib */,
 				D36F78E919DF556E00839EEF /* Supporting Files */,
@@ -90,6 +238,11 @@
 		D36F78E919DF556E00839EEF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				D36F795F19DF9B1F00839EEF /* Icons */,
+				D36F795E19DF9B0F00839EEF /* Excy Images */,
+				D36F793F19DF72DD00839EEF /* Fonts */,
+				D36F793C19DF57F500839EEF /* ExCy-Bridging-Header.h */,
+				D36F792319DF567300839EEF /* FrameWorks */,
 				D36F78EA19DF556E00839EEF /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -110,6 +263,80 @@
 				D36F790019DF556F00839EEF /* Info.plist */,
 			);
 			name = "Supporting Files";
+			sourceTree = "<group>";
+		};
+		D36F792319DF567300839EEF /* FrameWorks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = FrameWorks;
+			path = ExCyTests;
+			sourceTree = SOURCE_ROOT;
+		};
+		D36F793F19DF72DD00839EEF /* Fonts */ = {
+			isa = PBXGroup;
+			children = (
+				D36F794019DF72E900839EEF /* Dosis-Bold.otf */,
+				D36F794119DF72E900839EEF /* Dosis-ExtraBold.otf */,
+				D36F794219DF72E900839EEF /* Dosis-ExtraLight.otf */,
+				D36F794319DF72E900839EEF /* Dosis-Light.otf */,
+				D36F794419DF72E900839EEF /* Dosis-Medium.otf */,
+				D36F794519DF72E900839EEF /* Dosis-Regular.otf */,
+				D36F794619DF72E900839EEF /* Dosis-SemiBold.otf */,
+			);
+			name = Fonts;
+			sourceTree = "<group>";
+		};
+		D36F795E19DF9B0F00839EEF /* Excy Images */ = {
+			isa = PBXGroup;
+			children = (
+				D3AACC101A4B478200906DF7 /* main more landing page.png */,
+				D3EF3BF91A361A0000B1CC02 /* Arm candy live summary.png */,
+				D3EF3BFA1A361A0000B1CC02 /* Super cycle summary live workout-2.png */,
+				D3EF3BF71A36183000B1CC02 /* Super Cardio description graph-1.png */,
+				D3EF3BF51A3616B100B1CC02 /* Super cycle workout-1.png */,
+				D3EF3BEF1A3615C500B1CC02 /* Arm Candy live chart.png */,
+				D3EF3BF01A3615C500B1CC02 /* Arm candy workout description buttons.png */,
+				D3EF3BF11A3615C500B1CC02 /* Arm candy workout description summary.png */,
+				D3EF3BEB1A360EA500B1CC02 /* Super Cardio description graph.png */,
+				D3EF3BEC1A360EA500B1CC02 /* Super Cardio Description workout.png */,
+				D3EF3BE91A360E2500B1CC02 /* Super Cardio description zone buttons.png */,
+				D3EF3BE51A360B3200B1CC02 /* WorkoutsPagePlaceholder.png */,
+				D3D53DFD1A1FC09700EA16F3 /* background-image.png */,
+				D3D53DFE1A1FC09700EA16F3 /* background-image2.png */,
+				D36F798C19E1E21A00839EEF /* splash.png */,
+				D36F799519E32F7F00839EEF /* MicheleHeadshot.png */,
+				D36F797819E089D800839EEF /* beachImage.jpg */,
+				D36F797919E089D800839EEF /* planImage.jpg */,
+				D36F797A19E089D800839EEF /* TVimage.jpg */,
+				D36F797619E0826300839EEF /* fb-login.png */,
+				D36F797419E0822D00839EEF /* register-with-facebook.gif */,
+				D36F795C19DF736100839EEF /* background-image.jpg */,
+			);
+			name = "Excy Images";
+			sourceTree = "<group>";
+		};
+		D36F795F19DF9B1F00839EEF /* Icons */ = {
+			isa = PBXGroup;
+			children = (
+				D3D6C45F1A4B3A1300C932CE /* Michele_BottomBarIcons_start.png */,
+				D3D6C4601A4B3A1300C932CE /* Michele_BottomBarIcons_more.png */,
+				D3D6C4611A4B3A1300C932CE /* Michele_BottomBarIcons_me.png */,
+				D3D6C4621A4B3A1300C932CE /* Michele_BottomBarIcons_workouts.png */,
+				D3EF3BE71A360DCF00B1CC02 /* Arm Candy Workout_1.png */,
+				D3260B031A1EEDD700DBEC75 /* workoutsPlaceHolder.png */,
+				D32B84631A1A5A3D004AFC7F /* iconmonstr-map-2-icon-64.png */,
+				D32B84611A1A5A39004AFC7F /* lightningIcon.png */,
+				D36F798719E0ED3F00839EEF /* tips-wht.png */,
+				D36F794E19DF735200839EEF /* arrow.png */,
+				D36F794F19DF735200839EEF /* clock.png */,
+				D36F795019DF735200839EEF /* flame.png */,
+				D36F795119DF735200839EEF /* lightbulb.png */,
+				D36F795219DF735200839EEF /* pause.png */,
+				D36F795319DF735200839EEF /* spring.png */,
+				D36F795419DF735200839EEF /* stop.png */,
+			);
+			name = Icons;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -161,6 +388,7 @@
 				TargetAttributes = {
 					D36F78E519DF556E00839EEF = {
 						CreatedOnToolsVersion = 6.0.1;
+						DevelopmentTeam = D97F424E5V;
 					};
 					D36F78FA19DF556F00839EEF = {
 						CreatedOnToolsVersion = 6.0.1;
@@ -192,9 +420,54 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				D36F78F119DF556E00839EEF /* Main.storyboard in Resources */,
+				D3D6C4631A4B3A1300C932CE /* Michele_BottomBarIcons_start.png in Resources */,
+				D3EF3BFB1A361A0000B1CC02 /* Arm candy live summary.png in Resources */,
+				D3D53E001A1FC09700EA16F3 /* background-image2.png in Resources */,
+				D3D6C4651A4B3A1300C932CE /* Michele_BottomBarIcons_me.png in Resources */,
+				D32B84641A1A5A3D004AFC7F /* iconmonstr-map-2-icon-64.png in Resources */,
+				D36F795A19DF735200839EEF /* spring.png in Resources */,
+				D36F795619DF735200839EEF /* clock.png in Resources */,
+				D3EF3BF61A3616B100B1CC02 /* Super cycle workout-1.png in Resources */,
+				D3EF3BE61A360B3200B1CC02 /* WorkoutsPagePlaceholder.png in Resources */,
+				D3EF3BFC1A361A0000B1CC02 /* Super cycle summary live workout-2.png in Resources */,
+				D36F797D19E089D800839EEF /* TVimage.jpg in Resources */,
+				D36F795919DF735200839EEF /* pause.png in Resources */,
+				D32B84621A1A5A39004AFC7F /* lightningIcon.png in Resources */,
+				D36F797C19E089D800839EEF /* planImage.jpg in Resources */,
+				D36F795719DF735200839EEF /* flame.png in Resources */,
+				D36F798319E0DF0D00839EEF /* Main.storyboard in Resources */,
+				D36F794C19DF72E900839EEF /* Dosis-Regular.otf in Resources */,
+				D36F795519DF735200839EEF /* arrow.png in Resources */,
+				D36F795B19DF735200839EEF /* stop.png in Resources */,
+				D3260B041A1EEDD700DBEC75 /* workoutsPlaceHolder.png in Resources */,
+				D36F799619E32F7F00839EEF /* MicheleHeadshot.png in Resources */,
+				D36F794719DF72E900839EEF /* Dosis-Bold.otf in Resources */,
+				D36F794D19DF72E900839EEF /* Dosis-SemiBold.otf in Resources */,
+				D3EF3BED1A360EA500B1CC02 /* Super Cardio description graph.png in Resources */,
+				D36F797719E0826300839EEF /* fb-login.png in Resources */,
+				D3EF3BEA1A360E2500B1CC02 /* Super Cardio description zone buttons.png in Resources */,
+				D36F797519E0822D00839EEF /* register-with-facebook.gif in Resources */,
+				D36F798D19E1E21A00839EEF /* splash.png in Resources */,
+				D3EF3BF21A3615C500B1CC02 /* Arm Candy live chart.png in Resources */,
+				D3EF3BE81A360DCF00B1CC02 /* Arm Candy Workout_1.png in Resources */,
 				D36F78F619DF556E00839EEF /* LaunchScreen.xib in Resources */,
+				D36F795D19DF736100839EEF /* background-image.jpg in Resources */,
+				D3EF3BEE1A360EA500B1CC02 /* Super Cardio Description workout.png in Resources */,
+				D3EF3BF41A3615C500B1CC02 /* Arm candy workout description summary.png in Resources */,
+				D36F794819DF72E900839EEF /* Dosis-ExtraBold.otf in Resources */,
+				D36F794919DF72E900839EEF /* Dosis-ExtraLight.otf in Resources */,
+				D36F794A19DF72E900839EEF /* Dosis-Light.otf in Resources */,
+				D36F797B19E089D800839EEF /* beachImage.jpg in Resources */,
+				D3D6C4641A4B3A1300C932CE /* Michele_BottomBarIcons_more.png in Resources */,
+				D3EF3BF81A36183000B1CC02 /* Super Cardio description graph-1.png in Resources */,
+				D3EF3BF31A3615C500B1CC02 /* Arm candy workout description buttons.png in Resources */,
+				D36F795819DF735200839EEF /* lightbulb.png in Resources */,
 				D36F78F319DF556E00839EEF /* Images.xcassets in Resources */,
+				D3D53DFF1A1FC09700EA16F3 /* background-image.png in Resources */,
+				D3D6C4661A4B3A1300C932CE /* Michele_BottomBarIcons_workouts.png in Resources */,
+				D36F794B19DF72E900839EEF /* Dosis-Medium.otf in Resources */,
+				D36F798B19E0ED3F00839EEF /* tips-wht.png in Resources */,
+				D3AACC111A4B478200906DF7 /* main more landing page.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -212,6 +485,9 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3260B021A1ED5FF00DBEC75 /* StartViewController.swift in Sources */,
+				D36F797319DFA88800839EEF /* WorkoutViewController.swift in Sources */,
+				D36F798119E0D99900839EEF /* WorkoutLogViewController.swift in Sources */,
 				D36F78EE19DF556E00839EEF /* ViewController.swift in Sources */,
 				D36F78EC19DF556E00839EEF /* AppDelegate.swift in Sources */,
 			);
@@ -236,14 +512,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D36F78EF19DF556E00839EEF /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D36F78F019DF556E00839EEF /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		D36F78F419DF556E00839EEF /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -336,9 +604,20 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ExCy",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ExCy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9f873931-6bee-4da3-bbc7-69323f853197";
+				SWIFT_OBJC_BRIDGING_HEADER = "ExCy-Bridging-Header.h";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 			};
 			name = Debug;
 		};
@@ -346,9 +625,19 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Distribution";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
+				FRAMEWORK_SEARCH_PATHS = (
+					"$(inherited)",
+					"$(PROJECT_DIR)/ExCy",
+					"$(PROJECT_DIR)",
+				);
 				INFOPLIST_FILE = ExCy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "9f873931-6bee-4da3-bbc7-69323f853197";
+				SWIFT_OBJC_BRIDGING_HEADER = "ExCy-Bridging-Header.h";
 			};
 			name = Release;
 		};
@@ -405,6 +694,7 @@
 				D36F790719DF556F00839EEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		D36F790819DF556F00839EEF /* Build configuration list for PBXNativeTarget "ExCyTests" */ = {
 			isa = XCConfigurationList;
@@ -413,6 +703,7 @@
 				D36F790A19DF556F00839EEF /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
