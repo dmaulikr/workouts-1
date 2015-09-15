@@ -23,6 +23,7 @@ class WarmupWorkoutsViewController: UIViewController {
 		super.viewDidAppear(animated)
 		self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateUI"), userInfo: nil, repeats: true)
 	}
+	
 	override func viewDidDisappear(animated: Bool) {
 		super.viewDidDisappear(animated)
 		self.timer?.invalidate()
@@ -51,19 +52,11 @@ class WarmupWorkoutsViewController: UIViewController {
 		
 	}
 	func PerformSelectedSegue () {
-		switch warmupCompletionSegue {
-		case 1: self.performSegueWithIdentifier("WarmUpArmCandy", sender: self)
-		case 2: self.performSegueWithIdentifier("WarmUpSuperCycle", sender: self)
-		case 3: self.performSegueWithIdentifier("WarmUpCycleLeg", sender: self)
-		case 4: self.performSegueWithIdentifier("WarmUpCoreFloor", sender: self)
-		case 5: self.performSegueWithIdentifier("WarmUpArmBlast", sender: self)
-		case 6: self.performSegueWithIdentifier("WarmUpUltimate", sender: self)
-		default: performSegueWithIdentifier("WarmUpSuperCycle", sender: self)
-		}
+		performSegueWithIdentifier("FromWarmUpToWorkout", sender: self)
 	}
 	
 	@IBAction func pauseButtonPressed(sender: UIButton) {
-		
+		self.timer?.invalidate()
 	}
 	
 	

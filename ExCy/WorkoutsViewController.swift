@@ -8,13 +8,14 @@
 
 import UIKit
 
-var workoutTime: Int?
-
 class WorkoutsViewController: UIViewController {
+	
+	var workoutNumber: Int?
+	var workoutTime: Int?
+	@IBOutlet weak var workoutButton: UIButton!
 
-
+	@IBOutlet var zoneImageView: UIImageView!
 	@IBOutlet weak var progressView: WorkoutProgressView!
-	@IBOutlet weak var progressBar: UIProgressView!
 	@IBOutlet var stopwatchLabel: UILabel!
 	
 	var timer: NSTimer?
@@ -23,6 +24,7 @@ class WorkoutsViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
 		self.initialTime = Float(workoutTime!)
 		self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateUI"), userInfo: nil, repeats: true)
 		
@@ -30,14 +32,38 @@ class WorkoutsViewController: UIViewController {
 		if let savedWorkouts = defaults.objectForKey("workouts") as? NSData {
 			workouts = NSKeyedUnarchiver.unarchiveObjectWithData(savedWorkouts) as! [Workouts]
 		}
-		
 	}
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
 		
+	}
+	
+	override func viewWillLayoutSubviews() {
+		if let newNumber = workoutNumber {
+			switch newNumber {
+			case 1: zoneImageView.image = UIImage(named: "Arm candy live graph.png")
+			workoutButton.imageView?.image = UIImage(named: "WBArmCandy.png")
+			case 2: zoneImageView.image = UIImage(named: "SuperCycleGraphNew.png")
+			workoutButton.imageView?.image = UIImage(named: "WBSuperCycleCardio.png")!
+			case 3: zoneImageView.image = UIImage(named: "Cycle leg blast live graph.png")
+			workoutButton.imageView?.image = UIImage(named: "WBCycleLegBlast.png")
+			case 4: zoneImageView.image = UIImage(named: "Core floor summary graph.png")
+			workoutButton.imageView?.image = UIImage(named: "WBCoreFloorExplosion.png")
+			case 5: zoneImageView.image = UIImage(named: "Arm blast graph.png")
+			workoutButton.imageView?.image = UIImage(named: "WBArmBlast.png")
+			case 6: zoneImageView.image = UIImage(named: "Arm and leg graph summary.png")
+			workoutButton.imageView?.image = UIImage(named: "WBUltimateArmLegTone.png")
+			default: zoneImageView.image = UIImage(named: "Arm candy live graph.png")
+			workoutButton.imageView?.image = UIImage(named: "WBArmCandy.png")
+			}
+		}
+	}
+	
+	func setUpView() {
 		
 	}
+	
 	override func viewDidDisappear(animated: Bool) {
 		super.viewDidDisappear(animated)
 	}
@@ -61,7 +87,6 @@ class WorkoutsViewController: UIViewController {
 			workoutTime!--
 			self.stopwatchLabel.text = stringConversion(workoutTime!)
 			self.progressCounter++
-			self.progressBar.setProgress (Float(progressCounter) / self.initialTime, animated: true)
 			
 			self.progressView.progress = CGFloat(progressCounter) / CGFloat(initialTime)
 			self.progressView.setNeedsDisplay()
@@ -77,6 +102,8 @@ class WorkoutsViewController: UIViewController {
 			stopAlert()
 		}
 	}
+	
+	
 	func setTimer(){
 		if (self.timer != nil) {
 			self.timer?.invalidate()
@@ -104,22 +131,25 @@ class WorkoutsViewController: UIViewController {
 	
 //Workout Alerts
 	
-	func getTitleOfWorkout(segue:Int) -> String {
-		switch warmupCompletionSegue {
-		case 1: return "Arm Candy"
-		case 2: return "Super Cycle Cardio"
-		case 3: return "Cycle Leg Blast"
-		case 4: return "Core Floor Explosion"
-		case 5: return "Arm Blast"
-		case 6: return "Ultimate Arm and Leg Toning"
-		default: return "Super Cycle Cardio"
+	func getTitleOfWorkout() -> String {
+		if let newNumber = workoutNumber {
+			switch newNumber {
+				case 1: return "Arm Candy"
+				case 2: return "Super Cycle Cardio"
+				case 3: return "Cycle Leg Blast"
+				case 4: return "Core Floor Explosion"
+				case 5: return "Arm Blast"
+				case 6: return "Ultimate Arm and Leg Toning"
+				default: return "Super Cycle Cardio"
+			}
 		}
+		return "default"
 	}
 	
 	func saveWorkout() {
 		let seconds = Int(self.initialTime) - workoutTime!
 		let totalTimeWorkedOut = stringConversion(seconds)
-		let title = self.getTitleOfWorkout(warmupCompletionSegue)
+		let title = self.getTitleOfWorkout()
 		let workout = Workouts(workoutTitle: title, time: totalTimeWorkedOut)
 		workouts.insert(workout, atIndex: 0)
 		let savedData = NSKeyedArchiver.archivedDataWithRootObject(workouts)

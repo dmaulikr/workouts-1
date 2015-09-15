@@ -26,7 +26,6 @@
 		D35665E41A91B4F40041EC4A /* WBCoreFloorExplosion.png in Resources */ = {isa = PBXBuildFile; fileRef = D35665DE1A91B4F40041EC4A /* WBCoreFloorExplosion.png */; };
 		D35665E51A91B4F40041EC4A /* WBCycleLegBlast.png in Resources */ = {isa = PBXBuildFile; fileRef = D35665DF1A91B4F40041EC4A /* WBCycleLegBlast.png */; };
 		D35665E71A91B4F40041EC4A /* WBUltimateArmLegTone.png in Resources */ = {isa = PBXBuildFile; fileRef = D35665E11A91B4F40041EC4A /* WBUltimateArmLegTone.png */; };
-		D35665E91A91B5AC0041EC4A /* WBSuperCycleCardio.png in Resources */ = {isa = PBXBuildFile; fileRef = D35665E81A91B5AC0041EC4A /* WBSuperCycleCardio.png */; };
 		D35666081A91C3BD0041EC4A /* Arm and leg description workout.png in Resources */ = {isa = PBXBuildFile; fileRef = D35665EC1A91C3BD0041EC4A /* Arm and leg description workout.png */; };
 		D35666091A91C3BD0041EC4A /* Arm and leg description.png in Resources */ = {isa = PBXBuildFile; fileRef = D35665ED1A91C3BD0041EC4A /* Arm and leg description.png */; };
 		D356660A1A91C3BD0041EC4A /* Arm and leg graph summary.png in Resources */ = {isa = PBXBuildFile; fileRef = D35665EE1A91C3BD0041EC4A /* Arm and leg graph summary.png */; };
@@ -43,8 +42,9 @@
 		D35666191A91C3BD0041EC4A /* Cycle leg blast live graph.png in Resources */ = {isa = PBXBuildFile; fileRef = D35666011A91C3BD0041EC4A /* Cycle leg blast live graph.png */; };
 		D356661A1A91C3BD0041EC4A /* Cycleblast zone.png in Resources */ = {isa = PBXBuildFile; fileRef = D35666021A91C3BD0041EC4A /* Cycleblast zone.png */; };
 		D356661D1A91C3BD0041EC4A /* Super Cardio Description workout.png in Resources */ = {isa = PBXBuildFile; fileRef = D35666061A91C3BD0041EC4A /* Super Cardio Description workout.png */; };
-		D356661E1A91C3BD0041EC4A /* Super cycle graph new.png in Resources */ = {isa = PBXBuildFile; fileRef = D35666071A91C3BD0041EC4A /* Super cycle graph new.png */; };
+		D356661E1A91C3BD0041EC4A /* SuperCycleGraphNew.png in Resources */ = {isa = PBXBuildFile; fileRef = D35666071A91C3BD0041EC4A /* SuperCycleGraphNew.png */; };
 		D35666201A91CD5A0041EC4A /* WorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D356661F1A91CD5A0041EC4A /* WorkoutsViewController.swift */; };
+		D360CF101BA7BA1F0005BBFC /* WBSuperCycleCardio.png in Resources */ = {isa = PBXBuildFile; fileRef = D360CF0F1BA7BA1F0005BBFC /* WBSuperCycleCardio.png */; };
 		D36F78EC19DF556E00839EEF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F78EB19DF556E00839EEF /* AppDelegate.swift */; };
 		D36F78F319DF556E00839EEF /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D36F78F219DF556E00839EEF /* Images.xcassets */; };
 		D36F790219DF556F00839EEF /* ExCyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D36F790119DF556F00839EEF /* ExCyTests.swift */; };
@@ -168,7 +168,6 @@
 		D35665DE1A91B4F40041EC4A /* WBCoreFloorExplosion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WBCoreFloorExplosion.png; sourceTree = "<group>"; };
 		D35665DF1A91B4F40041EC4A /* WBCycleLegBlast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WBCycleLegBlast.png; sourceTree = "<group>"; };
 		D35665E11A91B4F40041EC4A /* WBUltimateArmLegTone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WBUltimateArmLegTone.png; sourceTree = "<group>"; };
-		D35665E81A91B5AC0041EC4A /* WBSuperCycleCardio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WBSuperCycleCardio.png; sourceTree = "<group>"; };
 		D35665EC1A91C3BD0041EC4A /* Arm and leg description workout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arm and leg description workout.png"; sourceTree = "<group>"; };
 		D35665ED1A91C3BD0041EC4A /* Arm and leg description.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arm and leg description.png"; sourceTree = "<group>"; };
 		D35665EE1A91C3BD0041EC4A /* Arm and leg graph summary.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arm and leg graph summary.png"; sourceTree = "<group>"; };
@@ -185,8 +184,9 @@
 		D35666011A91C3BD0041EC4A /* Cycle leg blast live graph.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cycle leg blast live graph.png"; sourceTree = "<group>"; };
 		D35666021A91C3BD0041EC4A /* Cycleblast zone.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Cycleblast zone.png"; sourceTree = "<group>"; };
 		D35666061A91C3BD0041EC4A /* Super Cardio Description workout.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super Cardio Description workout.png"; sourceTree = "<group>"; };
-		D35666071A91C3BD0041EC4A /* Super cycle graph new.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super cycle graph new.png"; sourceTree = "<group>"; };
+		D35666071A91C3BD0041EC4A /* SuperCycleGraphNew.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SuperCycleGraphNew.png; sourceTree = "<group>"; };
 		D356661F1A91CD5A0041EC4A /* WorkoutsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WorkoutsViewController.swift; sourceTree = "<group>"; };
+		D360CF0F1BA7BA1F0005BBFC /* WBSuperCycleCardio.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WBSuperCycleCardio.png; sourceTree = "<group>"; };
 		D36F78E619DF556E00839EEF /* ExCy.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ExCy.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		D36F78EA19DF556E00839EEF /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D36F78EB19DF556E00839EEF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -334,7 +334,7 @@
 				D3F3EF9F1AF67C4300263896 /* StepperButtonsPlus.png */,
 				D35665DC1A91B4F40041EC4A /* WBArmBlast.png */,
 				D35665DD1A91B4F40041EC4A /* WBArmCandy.png */,
-				D35665E81A91B5AC0041EC4A /* WBSuperCycleCardio.png */,
+				D360CF0F1BA7BA1F0005BBFC /* WBSuperCycleCardio.png */,
 				D35665DE1A91B4F40041EC4A /* WBCoreFloorExplosion.png */,
 				D35665DF1A91B4F40041EC4A /* WBCycleLegBlast.png */,
 				D35665E11A91B4F40041EC4A /* WBUltimateArmLegTone.png */,
@@ -409,7 +409,7 @@
 			isa = PBXGroup;
 			children = (
 				D35666061A91C3BD0041EC4A /* Super Cardio Description workout.png */,
-				D35666071A91C3BD0041EC4A /* Super cycle graph new.png */,
+				D35666071A91C3BD0041EC4A /* SuperCycleGraphNew.png */,
 			);
 			path = "Super Cycle Cardio Description Page";
 			sourceTree = "<group>";
@@ -757,7 +757,6 @@
 				D3FED9BF1B838D780054ABCE /* Account_Work.png in Resources */,
 				D36F794D19DF72E900839EEF /* Dosis-SemiBold.otf in Resources */,
 				D35666081A91C3BD0041EC4A /* Arm and leg description workout.png in Resources */,
-				D35665E91A91B5AC0041EC4A /* WBSuperCycleCardio.png in Resources */,
 				D36F797719E0826300839EEF /* fb-login.png in Resources */,
 				D3DB1B2D1AAA1C6D0038719B /* More landing page tips.png in Resources */,
 				D356661D1A91C3BD0041EC4A /* Super Cardio Description workout.png in Resources */,
@@ -791,7 +790,7 @@
 				D36F795819DF735200839EEF /* lightbulb.png in Resources */,
 				D36F78F319DF556E00839EEF /* Images.xcassets in Resources */,
 				D3F3EFA01AF67C4300263896 /* StepperButtonsMinus.png in Resources */,
-				D356661E1A91C3BD0041EC4A /* Super cycle graph new.png in Resources */,
+				D356661E1A91C3BD0041EC4A /* SuperCycleGraphNew.png in Resources */,
 				D3D53DFF1A1FC09700EA16F3 /* background-image.png in Resources */,
 				D3C0420C1A845373009C7FB7 /* TabBarIconMe.png in Resources */,
 				D3DB1B2C1AAA1C6D0038719B /* More landing page know zones.png in Resources */,
@@ -800,6 +799,7 @@
 				D3AACC111A4B478200906DF7 /* main more landing page.png in Resources */,
 				D3FED9BD1B838D780054ABCE /* Account_Onthego.png in Resources */,
 				D356660E1A91C3BD0041EC4A /* Arm blast graph.png in Resources */,
+				D360CF101BA7BA1F0005BBFC /* WBSuperCycleCardio.png in Resources */,
 				D340D2681AF70F5F00043A81 /* BurstPlayRed.png in Resources */,
 				D3C042131A845373009C7FB7 /* TabBarIconStart@2x.png in Resources */,
 			);

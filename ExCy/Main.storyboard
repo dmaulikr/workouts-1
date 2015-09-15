@@ -2,8 +2,6 @@
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="r9u-uC-Djn">
     <dependencies>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
-        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
-        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -104,38 +102,8 @@
             <string>Dosis-Regular</string>
             <string>Dosis-Regular</string>
             <string>Dosis-Regular</string>
-            <string>Dosis-Regular</string>
-            <string>Dosis-Regular</string>
-            <string>Dosis-Regular</string>
-            <string>Dosis-Regular</string>
-            <string>Dosis-Regular</string>
-            <string>Dosis-Regular</string>
-            <string>Dosis-Regular</string>
-            <string>Dosis-Regular</string>
-            <string>Dosis-Regular</string>
-            <string>Dosis-Regular</string>
         </mutableArray>
         <mutableArray key="Dosis-SemiBold.otf">
-            <string>Dosis-SemiBold</string>
-            <string>Dosis-SemiBold</string>
-            <string>Dosis-SemiBold</string>
-            <string>Dosis-SemiBold</string>
-            <string>Dosis-SemiBold</string>
-            <string>Dosis-SemiBold</string>
-            <string>Dosis-SemiBold</string>
-            <string>Dosis-SemiBold</string>
-            <string>Dosis-SemiBold</string>
-            <string>Dosis-SemiBold</string>
-            <string>Dosis-SemiBold</string>
-            <string>Dosis-SemiBold</string>
-            <string>Dosis-SemiBold</string>
-            <string>Dosis-SemiBold</string>
-            <string>Dosis-SemiBold</string>
-            <string>Dosis-SemiBold</string>
-            <string>Dosis-SemiBold</string>
-            <string>Dosis-SemiBold</string>
-            <string>Dosis-SemiBold</string>
-            <string>Dosis-SemiBold</string>
             <string>Dosis-SemiBold</string>
             <string>Dosis-SemiBold</string>
             <string>Dosis-SemiBold</string>
@@ -210,7 +178,7 @@
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b7L-GW-qGb">
                                                 <rect key="frame" x="121" y="66" width="238" height="90"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="member since Aug 5, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcW-wT-okN">
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="friend since Aug 5, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcW-wT-okN">
                                                         <rect key="frame" x="15" y="53" width="215" height="25"/>
                                                         <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="19"/>
                                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
@@ -1088,7 +1056,7 @@ write it down to stay inspired!               </string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5F-lt-gc8">
+                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5F-lt-gc8">
                                 <rect key="frame" x="40" y="124" width="295" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="QvA-ns-quz"/>
@@ -1100,7 +1068,7 @@ write it down to stay inspired!               </string>
                                     <action selector="armCandyButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="VjC-hR-JOF"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0XC-Ah-Yfm">
+                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0XC-Ah-Yfm">
                                 <rect key="frame" x="40" y="187" width="295" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="7pz-Fg-giU"/>
@@ -1109,10 +1077,10 @@ write it down to stay inspired!               </string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="superCycleCardioButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="5vl-1a-V9v"/>
+                                    <action selector="armCandyButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="64u-cW-xKb"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pr1-YC-HeC">
+                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pr1-YC-HeC">
                                 <rect key="frame" x="40" y="250" width="295" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="nIW-OP-Eq0"/>
@@ -1121,10 +1089,10 @@ write it down to stay inspired!               </string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="cycleLetBlastButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="Wye-ZJ-vfc"/>
+                                    <action selector="armCandyButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="nIS-UO-Jf1"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYT-r3-MDx">
+                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYT-r3-MDx">
                                 <rect key="frame" x="40" y="376" width="295" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="4ZR-Gm-FOf"/>
@@ -1133,7 +1101,7 @@ write it down to stay inspired!               </string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="armBlastButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="WGZ-ZW-esI"/>
+                                    <action selector="armCandyButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="8Ai-zw-ps5"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Workouts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEV-Rt-5XC">
@@ -1146,7 +1114,7 @@ write it down to stay inspired!               </string>
                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52A-Mm-yxB">
+                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52A-Mm-yxB">
                                 <rect key="frame" x="40" y="313" width="295" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="eO9-Mn-VmQ"/>
@@ -1155,10 +1123,10 @@ write it down to stay inspired!               </string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="coreFloorExplosionButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="Ibg-YP-hJJ"/>
+                                    <action selector="armCandyButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="yaU-ZD-NRY"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAV-6O-ONq">
+                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAV-6O-ONq">
                                 <rect key="frame" x="40" y="439" width="295" height="55"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="55" id="Stn-tj-rp8"/>
@@ -1167,7 +1135,7 @@ write it down to stay inspired!               </string>
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
                                 <connections>
-                                    <action selector="ultimateArmLegToningButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="SDf-g4-ape"/>
+                                    <action selector="armCandyButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="Y4B-eX-X6Q"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -1204,12 +1172,7 @@ write it down to stay inspired!               </string>
                     <navigationItem key="navigationItem" id="k7T-Mj-N0m"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <segue destination="NEG-jg-zpm" kind="show" identifier="armCandy" id="A6v-lq-MET"/>
-                        <segue destination="OQk-Tg-12z" kind="show" identifier="superCycleCardio" id="Wpq-nQ-XUm"/>
-                        <segue destination="sWy-5Y-Tqk" kind="show" identifier="cycleLegBlast" id="Kt0-1k-AcK"/>
-                        <segue destination="13I-Tr-bVf" kind="show" identifier="ultimateArmLeg" id="wfp-LQ-fPJ"/>
-                        <segue destination="JCl-F6-ZeF" kind="show" identifier="armBlast" id="4or-a1-1jx"/>
-                        <segue destination="bTi-Nb-ymU" kind="show" identifier="coreFloorExplosion" id="Cab-pN-Yr4"/>
+                        <segue destination="NEG-jg-zpm" kind="show" identifier="selectedWorkoutSegue" id="A6v-lq-MET"/>
                         <segue destination="FYY-ri-pE6" kind="show" identifier="warmUpWorkout" id="inQ-Bl-4bp"/>
                     </connections>
                 </viewController>
@@ -1226,11 +1189,11 @@ write it down to stay inspired!               </string>
                         <viewControllerLayoutGuide type="bottom" id="2fs-aA-rg7"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Ajh-zu-0RN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fNa-lI-1hk">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="93i-aP-6rE">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
@@ -1284,7 +1247,7 @@ write it down to stay inspired!               </string>
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="lXc-dv-Llv">
-                                <rect key="frame" x="38" y="549" width="299" height="49"/>
+                                <rect key="frame" x="38" y="598" width="299" height="49"/>
                                 <color key="backgroundColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="ieV-1z-4Na"/>
@@ -1293,9 +1256,6 @@ write it down to stay inspired!               </string>
                                 <state key="normal" title="start">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="NEG-jg-zpm" kind="show" id="7Mp-n6-tyV"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.62745098040000002" green="0.82745098039999998" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -1309,10 +1269,11 @@ write it down to stay inspired!               </string>
                             <constraint firstItem="2fs-aA-rg7" firstAttribute="top" secondItem="lXc-dv-Llv" secondAttribute="bottom" constant="20" id="z0X-ze-5Ms"/>
                         </constraints>
                     </view>
+                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgG-du-Z4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3667.5" y="-780.5"/>
+            <point key="canvasLocation" x="2217.5" y="919.5"/>
         </scene>
         <!--workout-->
         <scene sceneID="BTL-75-6Hm">
@@ -2325,17 +2286,12 @@ write it down to stay inspired!               </string>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
                         <outlet property="stopWatchLabel" destination="mb6-gd-J9F" id="ERm-GM-zuy"/>
-                        <segue destination="NEG-jg-zpm" kind="show" identifier="WarmUpArmCandy" id="WPM-9b-gdZ"/>
-                        <segue destination="OQk-Tg-12z" kind="show" identifier="WarmUpSuperCycle" id="eUM-mx-mzc"/>
-                        <segue destination="sWy-5Y-Tqk" kind="show" identifier="WarmUpCycleLeg" id="Zzb-IK-HyF"/>
-                        <segue destination="13I-Tr-bVf" kind="show" identifier="WarmUpUltimate" id="wjM-vT-dHY"/>
-                        <segue destination="JCl-F6-ZeF" kind="show" identifier="WarmUpArmBlast" id="rrI-73-kiR"/>
-                        <segue destination="bTi-Nb-ymU" kind="show" identifier="WarmUpCoreFloor" id="w0Q-j5-GPb"/>
+                        <segue destination="NEG-jg-zpm" kind="show" identifier="FromWarmUpToWorkout" id="WPM-9b-gdZ"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XOS-WX-Td7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2324.5" y="-806.5"/>
+            <point key="canvasLocation" x="2756.5" y="-176.5"/>
         </scene>
         <!--WarmUP Interval-->
         <scene sceneID="7DW-7u-mDJ">
@@ -2985,12 +2941,8 @@ write it down to stay inspired!               </string>
                                     <action selector="pauseButtonPressed:" destination="NEG-jg-zpm" eventType="touchUpInside" id="jjs-US-HdS"/>
                                 </connections>
                             </button>
-                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8Ej-Gt-z80">
-                                <rect key="frame" x="54" y="220" width="266" height="2"/>
-                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                            </progressView>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Prz-nE-DHK" customClass="ProgressView" customModule="ExCy" customModuleProvider="target">
-                                <rect key="frame" x="54" y="223" width="266" height="70"/>
+                                <rect key="frame" x="54" y="223" width="266" height="74"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -3018,14 +2970,15 @@ write it down to stay inspired!               </string>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
-                        <outlet property="progressBar" destination="8Ej-Gt-z80" id="3sm-I3-Xc0"/>
                         <outlet property="progressView" destination="Prz-nE-DHK" id="VSZ-mv-Q8z"/>
                         <outlet property="stopwatchLabel" destination="zag-YV-Oqc" id="EH6-WS-nGN"/>
+                        <outlet property="workoutButton" destination="v2o-ml-Xqr" id="yXH-Ib-E8g"/>
+                        <outlet property="zoneImageView" destination="sBh-SI-JD1" id="pyh-dJ-SG6"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcg-VM-2dj" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3205.5" y="-780.5"/>
+            <point key="canvasLocation" x="2756.5" y="659.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="Osq-m6-zsQ">
@@ -3091,936 +3044,6 @@ write it down to stay inspired!               </string>
             </objects>
             <point key="canvasLocation" x="898.5" y="2065.5"/>
         </scene>
-        <!--workout-->
-        <scene sceneID="9b4-bz-OzF">
-            <objects>
-                <viewController storyboardIdentifier="CycleLegView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="sWy-5Y-Tqk" customClass="WorkoutsViewController" customModule="ExCy" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="gir-Eb-C00"/>
-                        <viewControllerLayoutGuide type="bottom" id="20J-Dt-NHV"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="BSf-Jr-jPk">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" canCancelContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="NqQ-SM-EEP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AP1-EZ-bEw">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
-                                        <subviews>
-                                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="RzN-cL-uXj">
-                                                <rect key="frame" x="192" y="402" width="143" height="49"/>
-                                                <color key="backgroundColor" red="0.93333333330000001" green="0.20784313730000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="28"/>
-                                                <state key="normal" title="stop">
-                                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted">
-                                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="stopButtomPressed:" destination="sWy-5Y-Tqk" eventType="touchUpInside" id="K3S-AW-M7L"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExcyIntensityChart.png" translatesAutoresizingMaskIntoConstraints="NO" id="BwX-JN-rHq">
-                                                <rect key="frame" x="40" y="459" width="295" height="203"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="BwX-JN-rHq" secondAttribute="height" multiplier="295:203" id="X8q-Ez-Fdt"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mE9-SG-L85">
-                                                <rect key="frame" x="40" y="49" width="295" height="55"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="55" id="ICe-gU-zrt"/>
-                                                    <constraint firstAttribute="width" constant="295" id="gVK-Ac-WSh"/>
-                                                </constraints>
-                                                <state key="normal" image="WBCycleLegBlast.png">
-                                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <state key="highlighted">
-                                                    <color key="titleColor" red="0.16940957740000001" green="0.68223505429999998" blue="0.16800005160000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="startButtonPressed:" destination="sWy-5Y-Tqk" eventType="touchUpInside" id="AzN-KQ-1Jw"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Cycle leg blast live graph.png" translatesAutoresizingMaskIntoConstraints="NO" id="eln-6d-4bm">
-                                                <rect key="frame" x="40" y="208" width="295" height="90"/>
-                                            </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mvU-e9-O0d">
-                                                <rect key="frame" x="40" y="112" width="295" height="88"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eQp-g2-BtG">
-                                                        <rect key="frame" x="16" y="60" width="45" height="20"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="25l-Ue-qpq">
-                                                        <rect key="frame" x="16" y="11" width="45" height="45"/>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="PgZ-Kr-cT0">
-                                                        <rect key="frame" x="99" y="9" width="188" height="69"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="80"/>
-                                                        <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="o9L-Su-4GT">
-                                                <rect key="frame" x="40" y="306" width="295" height="88"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lightningIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="7gz-aU-zhJ">
-                                                        <rect key="frame" x="20" y="8" width="45" height="45"/>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000˚" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="FXO-UB-jKQ">
-                                                        <rect key="frame" x="125" y="10" width="162" height="68"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="80"/>
-                                                        <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="power" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nGJ-iD-d1P">
-                                                        <rect key="frame" x="20" y="60" width="45" height="20"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="17"/>
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="88" id="2xM-Lr-SD5"/>
-                                                </constraints>
-                                            </view>
-                                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="iCM-wK-e2K">
-                                                <rect key="frame" x="40" y="402" width="144" height="49"/>
-                                                <color key="backgroundColor" red="0.97254901959999995" green="0.92941176469999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="49" id="L5Z-Kr-7A7"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="28"/>
-                                                <state key="normal" title="pause">
-                                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted">
-                                                    <color key="titleColor" red="1" green="0.83143529920000003" blue="0.1861019347" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="pauseButtonPressed:" destination="sWy-5Y-Tqk" eventType="touchUpInside" id="bnZ-id-0AW"/>
-                                                </connections>
-                                            </button>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="cFd-re-499">
-                                                <rect key="frame" x="54" y="219" width="266" height="2"/>
-                                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </progressView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.54026693110000001" green="0.7563344836" blue="0.71580058339999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="RzN-cL-uXj" firstAttribute="leading" secondItem="iCM-wK-e2K" secondAttribute="trailing" constant="8" symbolic="YES" id="131-XX-LZK"/>
-                                            <constraint firstItem="o9L-Su-4GT" firstAttribute="top" secondItem="eln-6d-4bm" secondAttribute="bottom" constant="8" id="2pM-20-Vqo"/>
-                                            <constraint firstItem="mE9-SG-L85" firstAttribute="top" secondItem="AP1-EZ-bEw" secondAttribute="top" constant="49" id="4oA-HA-Bg5"/>
-                                            <constraint firstItem="mvU-e9-O0d" firstAttribute="top" secondItem="mE9-SG-L85" secondAttribute="bottom" constant="8" id="77r-op-jeE"/>
-                                            <constraint firstAttribute="trailing" secondItem="o9L-Su-4GT" secondAttribute="trailing" constant="40" id="8bu-bf-Ec3"/>
-                                            <constraint firstAttribute="trailing" secondItem="RzN-cL-uXj" secondAttribute="trailing" constant="40" id="9DW-u6-odj"/>
-                                            <constraint firstAttribute="trailing" secondItem="mE9-SG-L85" secondAttribute="trailing" constant="40" id="FGB-Aj-ptX"/>
-                                            <constraint firstItem="eln-6d-4bm" firstAttribute="top" secondItem="mvU-e9-O0d" secondAttribute="bottom" constant="8" id="GxL-Vb-tcD"/>
-                                            <constraint firstItem="mvU-e9-O0d" firstAttribute="leading" secondItem="AP1-EZ-bEw" secondAttribute="leading" constant="40" id="JsH-Jh-v7U"/>
-                                            <constraint firstAttribute="trailing" secondItem="mvU-e9-O0d" secondAttribute="trailing" constant="40" id="KKa-1l-G2D"/>
-                                            <constraint firstItem="RzN-cL-uXj" firstAttribute="width" secondItem="iCM-wK-e2K" secondAttribute="width" id="LDz-Jd-xB8"/>
-                                            <constraint firstItem="o9L-Su-4GT" firstAttribute="leading" secondItem="AP1-EZ-bEw" secondAttribute="leading" constant="40" id="NhM-eX-LPZ"/>
-                                            <constraint firstItem="eln-6d-4bm" firstAttribute="top" secondItem="mvU-e9-O0d" secondAttribute="bottom" constant="8" id="Pkl-PI-obL"/>
-                                            <constraint firstAttribute="bottom" secondItem="BwX-JN-rHq" secondAttribute="bottom" constant="38" id="UQP-Ka-C8n"/>
-                                            <constraint firstItem="eln-6d-4bm" firstAttribute="top" secondItem="mvU-e9-O0d" secondAttribute="bottom" constant="8" symbolic="YES" id="XDa-hS-BUU"/>
-                                            <constraint firstItem="iCM-wK-e2K" firstAttribute="baseline" secondItem="RzN-cL-uXj" secondAttribute="firstBaseline" id="afY-ZD-5OY"/>
-                                            <constraint firstItem="BwX-JN-rHq" firstAttribute="leading" secondItem="AP1-EZ-bEw" secondAttribute="leading" constant="40" id="cnP-w6-QhA"/>
-                                            <constraint firstAttribute="trailing" secondItem="BwX-JN-rHq" secondAttribute="trailing" constant="40" id="dOv-tc-VHv"/>
-                                            <constraint firstAttribute="bottom" secondItem="mvU-e9-O0d" secondAttribute="bottom" constant="500" id="g8g-8v-Wee"/>
-                                            <constraint firstAttribute="trailing" secondItem="eln-6d-4bm" secondAttribute="trailing" constant="40" id="ki3-0W-ojo"/>
-                                            <constraint firstItem="iCM-wK-e2K" firstAttribute="top" secondItem="RzN-cL-uXj" secondAttribute="top" id="lgp-a2-QrF"/>
-                                            <constraint firstItem="iCM-wK-e2K" firstAttribute="firstBaseline" secondItem="RzN-cL-uXj" secondAttribute="baseline" id="n8Z-jO-nJI"/>
-                                            <constraint firstItem="iCM-wK-e2K" firstAttribute="top" secondItem="AP1-EZ-bEw" secondAttribute="top" constant="402" id="ntF-uB-dcw"/>
-                                            <constraint firstItem="eln-6d-4bm" firstAttribute="leading" secondItem="AP1-EZ-bEw" secondAttribute="leading" constant="40" id="rK9-cd-i9r"/>
-                                            <constraint firstItem="RzN-cL-uXj" firstAttribute="top" secondItem="o9L-Su-4GT" secondAttribute="bottom" constant="8" id="u7Q-ak-eWx"/>
-                                            <constraint firstItem="mE9-SG-L85" firstAttribute="leading" secondItem="AP1-EZ-bEw" secondAttribute="leading" constant="40" id="vZf-GI-gr9"/>
-                                            <constraint firstItem="iCM-wK-e2K" firstAttribute="leading" secondItem="AP1-EZ-bEw" secondAttribute="leading" constant="40" id="wyu-cV-paw"/>
-                                            <constraint firstItem="BwX-JN-rHq" firstAttribute="top" secondItem="iCM-wK-e2K" secondAttribute="bottom" constant="8" id="xRp-08-6QD"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="AP1-EZ-bEw" firstAttribute="top" secondItem="NqQ-SM-EEP" secondAttribute="top" id="BbX-Sy-wVg"/>
-                                    <constraint firstItem="AP1-EZ-bEw" firstAttribute="leading" secondItem="NqQ-SM-EEP" secondAttribute="leading" id="mND-3g-zKO"/>
-                                    <constraint firstAttribute="trailing" secondItem="AP1-EZ-bEw" secondAttribute="trailing" id="t7j-Gc-pWm"/>
-                                    <constraint firstAttribute="bottom" secondItem="AP1-EZ-bEw" secondAttribute="bottom" id="ymv-NN-qlB"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.54026693110000001" green="0.7563344836" blue="0.71580058339999997" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="NqQ-SM-EEP" secondAttribute="bottom" constant="-9" id="EkS-S7-9mp"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="NqQ-SM-EEP" secondAttribute="trailing" constant="-16" id="bh0-I7-mZY"/>
-                            <constraint firstItem="NqQ-SM-EEP" firstAttribute="top" secondItem="BSf-Jr-jPk" secondAttribute="topMargin" id="csv-5z-eNz"/>
-                            <constraint firstItem="NqQ-SM-EEP" firstAttribute="leading" secondItem="BSf-Jr-jPk" secondAttribute="leadingMargin" constant="-16" id="ppV-eO-7ot"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="start" image="TabBarIconStart" id="h21-AL-Rka"/>
-                    <navigationItem key="navigationItem" title="workout" id="OQv-RJ-fYj"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="progressBar" destination="cFd-re-499" id="9yX-UT-EBC"/>
-                        <outlet property="stopwatchLabel" destination="PgZ-Kr-cT0" id="A4r-0c-KKi"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="wQz-GC-gUF" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3205.5" y="935.5"/>
-        </scene>
-        <!--workout-->
-        <scene sceneID="eNt-ZF-BbS">
-            <objects>
-                <viewController storyboardIdentifier="ArmBlastView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="JCl-F6-ZeF" customClass="WorkoutsViewController" customModule="ExCy" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="aLa-r3-Pod"/>
-                        <viewControllerLayoutGuide type="bottom" id="tRp-ag-Mnn"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="3E3-EQ-VaN">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" canCancelContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="4JN-dd-xdX">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="AiP-md-8Rb">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
-                                        <subviews>
-                                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fmh-Hy-0Lu">
-                                                <rect key="frame" x="192" y="402" width="143" height="49"/>
-                                                <color key="backgroundColor" red="0.93333333330000001" green="0.20784313730000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="28"/>
-                                                <state key="normal" title="stop">
-                                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted">
-                                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="stopButtomPressed:" destination="JCl-F6-ZeF" eventType="touchUpInside" id="ddd-An-YOW"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExcyIntensityChart.png" translatesAutoresizingMaskIntoConstraints="NO" id="HIR-vA-Jxc">
-                                                <rect key="frame" x="40" y="459" width="295" height="203"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="HIR-vA-Jxc" secondAttribute="height" multiplier="295:203" id="MSg-pj-UNI"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aff-7n-Ge5">
-                                                <rect key="frame" x="40" y="49" width="295" height="55"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="55" id="UkX-2L-4dc"/>
-                                                    <constraint firstAttribute="width" constant="295" id="l2U-YT-xy1"/>
-                                                </constraints>
-                                                <state key="normal" image="WBArmBlast.png">
-                                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <state key="highlighted">
-                                                    <color key="titleColor" red="0.16940957740000001" green="0.68223505429999998" blue="0.16800005160000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="startButtonPressed:" destination="JCl-F6-ZeF" eventType="touchUpInside" id="ktI-jw-iF1"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Arm blast graph.png" translatesAutoresizingMaskIntoConstraints="NO" id="tbN-WT-WvS">
-                                                <rect key="frame" x="40" y="208" width="295" height="90"/>
-                                            </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="EVB-4s-02e">
-                                                <rect key="frame" x="40" y="112" width="295" height="88"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="A1Y-dO-3A2">
-                                                        <rect key="frame" x="16" y="60" width="45" height="20"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="J7c-rg-k89">
-                                                        <rect key="frame" x="16" y="11" width="45" height="45"/>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="gC5-cV-jNt">
-                                                        <rect key="frame" x="99" y="9" width="188" height="69"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="80"/>
-                                                        <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="yT8-YU-nGO">
-                                                <rect key="frame" x="40" y="306" width="295" height="88"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lightningIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="jLm-gF-9nd">
-                                                        <rect key="frame" x="20" y="8" width="45" height="45"/>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000˚" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="jow-4j-T4l">
-                                                        <rect key="frame" x="125" y="10" width="162" height="68"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="80"/>
-                                                        <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="power" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="124-qj-noy">
-                                                        <rect key="frame" x="20" y="60" width="45" height="20"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="17"/>
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="88" id="JYC-Zy-Q6u"/>
-                                                </constraints>
-                                            </view>
-                                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oxS-Kx-BGW">
-                                                <rect key="frame" x="40" y="402" width="144" height="49"/>
-                                                <color key="backgroundColor" red="0.97254901959999995" green="0.92941176469999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="49" id="vy2-6Q-RQY"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="28"/>
-                                                <state key="normal" title="pause">
-                                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted">
-                                                    <color key="titleColor" red="1" green="0.83143529920000003" blue="0.1861019347" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="pauseButtonPressed:" destination="JCl-F6-ZeF" eventType="touchUpInside" id="Eyg-DZ-se2"/>
-                                                </connections>
-                                            </button>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="DAi-5f-j7W">
-                                                <rect key="frame" x="54" y="217" width="266" height="2"/>
-                                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </progressView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.54026693110000001" green="0.7563344836" blue="0.71580058339999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="bottom" secondItem="HIR-vA-Jxc" secondAttribute="bottom" constant="38" id="7Vc-wh-TOq"/>
-                                            <constraint firstItem="aff-7n-Ge5" firstAttribute="top" secondItem="AiP-md-8Rb" secondAttribute="top" constant="49" id="BMp-A5-Gzx"/>
-                                            <constraint firstAttribute="trailing" secondItem="fmh-Hy-0Lu" secondAttribute="trailing" constant="40" id="E0M-gu-9pt"/>
-                                            <constraint firstItem="yT8-YU-nGO" firstAttribute="top" secondItem="tbN-WT-WvS" secondAttribute="bottom" constant="8" id="Gos-xh-PbN"/>
-                                            <constraint firstItem="oxS-Kx-BGW" firstAttribute="leading" secondItem="AiP-md-8Rb" secondAttribute="leading" constant="40" id="HUb-xR-VTh"/>
-                                            <constraint firstItem="fmh-Hy-0Lu" firstAttribute="width" secondItem="oxS-Kx-BGW" secondAttribute="width" id="KOk-we-p9D"/>
-                                            <constraint firstAttribute="bottom" secondItem="EVB-4s-02e" secondAttribute="bottom" constant="500" id="LjY-Fi-fPT"/>
-                                            <constraint firstItem="oxS-Kx-BGW" firstAttribute="firstBaseline" secondItem="fmh-Hy-0Lu" secondAttribute="baseline" id="RWI-B9-xVK"/>
-                                            <constraint firstItem="HIR-vA-Jxc" firstAttribute="leading" secondItem="AiP-md-8Rb" secondAttribute="leading" constant="40" id="SE3-JI-ofb"/>
-                                            <constraint firstItem="fmh-Hy-0Lu" firstAttribute="top" secondItem="yT8-YU-nGO" secondAttribute="bottom" constant="8" id="Vpq-aD-nwz"/>
-                                            <constraint firstItem="EVB-4s-02e" firstAttribute="leading" secondItem="AiP-md-8Rb" secondAttribute="leading" constant="40" id="ahl-Lf-6Xm"/>
-                                            <constraint firstItem="tbN-WT-WvS" firstAttribute="leading" secondItem="AiP-md-8Rb" secondAttribute="leading" constant="40" id="bMK-eu-kez"/>
-                                            <constraint firstAttribute="trailing" secondItem="yT8-YU-nGO" secondAttribute="trailing" constant="40" id="bpV-K4-M90"/>
-                                            <constraint firstItem="aff-7n-Ge5" firstAttribute="leading" secondItem="AiP-md-8Rb" secondAttribute="leading" constant="40" id="fa9-by-878"/>
-                                            <constraint firstAttribute="trailing" secondItem="aff-7n-Ge5" secondAttribute="trailing" constant="40" id="gbD-5A-xlg"/>
-                                            <constraint firstAttribute="trailing" secondItem="EVB-4s-02e" secondAttribute="trailing" constant="40" id="kif-Ka-Cvi"/>
-                                            <constraint firstItem="EVB-4s-02e" firstAttribute="top" secondItem="aff-7n-Ge5" secondAttribute="bottom" constant="8" id="lLl-JZ-VTa"/>
-                                            <constraint firstAttribute="trailing" secondItem="HIR-vA-Jxc" secondAttribute="trailing" constant="40" id="lRq-DE-yxP"/>
-                                            <constraint firstItem="yT8-YU-nGO" firstAttribute="leading" secondItem="AiP-md-8Rb" secondAttribute="leading" constant="40" id="lXF-T6-z6I"/>
-                                            <constraint firstItem="HIR-vA-Jxc" firstAttribute="top" secondItem="oxS-Kx-BGW" secondAttribute="bottom" constant="8" id="nNH-zm-rDR"/>
-                                            <constraint firstItem="tbN-WT-WvS" firstAttribute="top" secondItem="EVB-4s-02e" secondAttribute="bottom" constant="8" id="pHv-3U-YBm"/>
-                                            <constraint firstItem="oxS-Kx-BGW" firstAttribute="top" secondItem="AiP-md-8Rb" secondAttribute="top" constant="402" id="r2t-3k-PXp"/>
-                                            <constraint firstItem="oxS-Kx-BGW" firstAttribute="baseline" secondItem="fmh-Hy-0Lu" secondAttribute="firstBaseline" id="rCz-Cl-dq1"/>
-                                            <constraint firstItem="fmh-Hy-0Lu" firstAttribute="leading" secondItem="oxS-Kx-BGW" secondAttribute="trailing" constant="8" symbolic="YES" id="ra7-b5-HbY"/>
-                                            <constraint firstItem="tbN-WT-WvS" firstAttribute="top" secondItem="EVB-4s-02e" secondAttribute="bottom" constant="8" id="sCu-v4-seh"/>
-                                            <constraint firstItem="oxS-Kx-BGW" firstAttribute="top" secondItem="fmh-Hy-0Lu" secondAttribute="top" id="spU-6d-MJ7"/>
-                                            <constraint firstItem="tbN-WT-WvS" firstAttribute="top" secondItem="EVB-4s-02e" secondAttribute="bottom" constant="8" symbolic="YES" id="t0k-8S-wsK"/>
-                                            <constraint firstAttribute="trailing" secondItem="tbN-WT-WvS" secondAttribute="trailing" constant="40" id="zZx-K6-uVq"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="AiP-md-8Rb" secondAttribute="bottom" id="8LG-7W-Qex"/>
-                                    <constraint firstAttribute="trailing" secondItem="AiP-md-8Rb" secondAttribute="trailing" id="IbZ-3w-5gM"/>
-                                    <constraint firstItem="AiP-md-8Rb" firstAttribute="leading" secondItem="4JN-dd-xdX" secondAttribute="leading" id="YOB-Hf-YRJ"/>
-                                    <constraint firstItem="AiP-md-8Rb" firstAttribute="top" secondItem="4JN-dd-xdX" secondAttribute="top" id="f20-og-jQO"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.54026693110000001" green="0.7563344836" blue="0.71580058339999997" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="4JN-dd-xdX" secondAttribute="bottom" constant="-9" id="ECZ-KN-pcr"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="4JN-dd-xdX" secondAttribute="trailing" constant="-16" id="OEi-cf-HDr"/>
-                            <constraint firstItem="4JN-dd-xdX" firstAttribute="leading" secondItem="3E3-EQ-VaN" secondAttribute="leadingMargin" constant="-16" id="Omb-CL-E7f"/>
-                            <constraint firstItem="4JN-dd-xdX" firstAttribute="top" secondItem="3E3-EQ-VaN" secondAttribute="topMargin" id="aA5-bf-I1U"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="start" image="TabBarIconStart" id="zPS-am-FE1"/>
-                    <navigationItem key="navigationItem" title="workout" id="NMB-vW-itM"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="progressBar" destination="DAi-5f-j7W" id="LEl-Ji-Poe"/>
-                        <outlet property="stopwatchLabel" destination="gC5-cV-jNt" id="tSk-4f-C9Q"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="bbO-No-QXv" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4139.5" y="347.5"/>
-        </scene>
-        <!--workout-->
-        <scene sceneID="qOM-nY-c8j">
-            <objects>
-                <viewController storyboardIdentifier="SuperCycleCardioView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="OQk-Tg-12z" customClass="WorkoutsViewController" customModule="ExCy" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Mdv-TM-pOO"/>
-                        <viewControllerLayoutGuide type="bottom" id="y7B-Mz-OoM"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="8BR-Hx-zIX">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" canCancelContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="H2k-ev-D4j">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="4fZ-cQ-OKV">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
-                                        <subviews>
-                                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="hl8-XZ-P0j">
-                                                <rect key="frame" x="192" y="402" width="143" height="49"/>
-                                                <color key="backgroundColor" red="0.93333333330000001" green="0.20784313730000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="28"/>
-                                                <state key="normal" title="stop">
-                                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted">
-                                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="stopButtomPressed:" destination="OQk-Tg-12z" eventType="touchUpInside" id="hMp-0E-BAx"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExcyIntensityChart.png" translatesAutoresizingMaskIntoConstraints="NO" id="jPX-oG-5ai">
-                                                <rect key="frame" x="40" y="459" width="295" height="203"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="jPX-oG-5ai" secondAttribute="height" multiplier="295:203" id="24n-3d-uFW"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="nOR-Fi-03n">
-                                                <rect key="frame" x="40" y="49" width="295" height="55"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="55" id="72j-FR-ueP"/>
-                                                    <constraint firstAttribute="width" constant="295" id="BYB-08-Qga"/>
-                                                </constraints>
-                                                <state key="normal" image="WBSuperCycleCardio.png">
-                                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <state key="highlighted">
-                                                    <color key="titleColor" red="0.16940957740000001" green="0.68223505429999998" blue="0.16800005160000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="startButtonPressed:" destination="OQk-Tg-12z" eventType="touchUpInside" id="kvc-rv-HVE"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Super cycle graph new.png" translatesAutoresizingMaskIntoConstraints="NO" id="sgb-sC-mvY">
-                                                <rect key="frame" x="40" y="208" width="295" height="90"/>
-                                            </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dAQ-hu-Naj">
-                                                <rect key="frame" x="40" y="112" width="295" height="88"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="neo-eA-4Tf">
-                                                        <rect key="frame" x="16" y="60" width="45" height="20"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="bkw-MN-YdV">
-                                                        <rect key="frame" x="16" y="11" width="45" height="45"/>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="I3b-uC-KSG">
-                                                        <rect key="frame" x="99" y="9" width="188" height="69"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="80"/>
-                                                        <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VZY-Gr-VrQ">
-                                                <rect key="frame" x="40" y="306" width="295" height="88"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lightningIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="AMZ-n1-9NY">
-                                                        <rect key="frame" x="20" y="8" width="45" height="45"/>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000˚" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cH1-ng-tzA">
-                                                        <rect key="frame" x="125" y="10" width="162" height="68"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="80"/>
-                                                        <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="power" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rWZ-96-5X8">
-                                                        <rect key="frame" x="20" y="60" width="45" height="20"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="17"/>
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="88" id="OOA-rK-uMD"/>
-                                                </constraints>
-                                            </view>
-                                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AbE-Ui-RMZ">
-                                                <rect key="frame" x="40" y="402" width="144" height="49"/>
-                                                <color key="backgroundColor" red="0.97254901959999995" green="0.92941176469999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="49" id="s8x-L2-lD9"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="28"/>
-                                                <state key="normal" title="pause">
-                                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted">
-                                                    <color key="titleColor" red="1" green="0.83143529920000003" blue="0.1861019347" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="pauseButtonPressed:" destination="OQk-Tg-12z" eventType="touchUpInside" id="IEb-cJ-6ao"/>
-                                                </connections>
-                                            </button>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l5T-kS-tmq">
-                                                <rect key="frame" x="54" y="218" width="266" height="2"/>
-                                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </progressView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.54026693110000001" green="0.7563344836" blue="0.71580058339999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="AbE-Ui-RMZ" firstAttribute="firstBaseline" secondItem="hl8-XZ-P0j" secondAttribute="baseline" id="1JS-Jd-hxo"/>
-                                            <constraint firstAttribute="trailing" secondItem="dAQ-hu-Naj" secondAttribute="trailing" constant="40" id="38K-77-jlY"/>
-                                            <constraint firstAttribute="bottom" secondItem="jPX-oG-5ai" secondAttribute="bottom" constant="38" id="39q-Wm-VFj"/>
-                                            <constraint firstItem="AbE-Ui-RMZ" firstAttribute="leading" secondItem="4fZ-cQ-OKV" secondAttribute="leading" constant="40" id="3lU-cD-URZ"/>
-                                            <constraint firstItem="jPX-oG-5ai" firstAttribute="top" secondItem="AbE-Ui-RMZ" secondAttribute="bottom" constant="8" id="4tG-sw-AUg"/>
-                                            <constraint firstItem="sgb-sC-mvY" firstAttribute="top" secondItem="dAQ-hu-Naj" secondAttribute="bottom" constant="8" symbolic="YES" id="55R-19-Hb2"/>
-                                            <constraint firstItem="jPX-oG-5ai" firstAttribute="leading" secondItem="4fZ-cQ-OKV" secondAttribute="leading" constant="40" id="6v4-nJ-UDk"/>
-                                            <constraint firstAttribute="trailing" secondItem="jPX-oG-5ai" secondAttribute="trailing" constant="40" id="9PN-Tn-Vra"/>
-                                            <constraint firstAttribute="trailing" secondItem="nOR-Fi-03n" secondAttribute="trailing" constant="40" id="AX0-R4-os1"/>
-                                            <constraint firstItem="dAQ-hu-Naj" firstAttribute="top" secondItem="nOR-Fi-03n" secondAttribute="bottom" constant="8" id="DqZ-1p-PNG"/>
-                                            <constraint firstItem="hl8-XZ-P0j" firstAttribute="width" secondItem="AbE-Ui-RMZ" secondAttribute="width" id="G6n-al-iEv"/>
-                                            <constraint firstAttribute="bottom" secondItem="dAQ-hu-Naj" secondAttribute="bottom" constant="500" id="IQt-m6-ULX"/>
-                                            <constraint firstItem="hl8-XZ-P0j" firstAttribute="leading" secondItem="AbE-Ui-RMZ" secondAttribute="trailing" constant="8" symbolic="YES" id="Obr-qF-Zjj"/>
-                                            <constraint firstAttribute="trailing" secondItem="hl8-XZ-P0j" secondAttribute="trailing" constant="40" id="QFb-1V-mPz"/>
-                                            <constraint firstItem="hl8-XZ-P0j" firstAttribute="top" secondItem="VZY-Gr-VrQ" secondAttribute="bottom" constant="8" id="TM4-CS-tqw"/>
-                                            <constraint firstItem="VZY-Gr-VrQ" firstAttribute="top" secondItem="sgb-sC-mvY" secondAttribute="bottom" constant="8" id="Vap-1B-jue"/>
-                                            <constraint firstItem="AbE-Ui-RMZ" firstAttribute="baseline" secondItem="hl8-XZ-P0j" secondAttribute="firstBaseline" id="VhW-Lj-HbO"/>
-                                            <constraint firstItem="nOR-Fi-03n" firstAttribute="leading" secondItem="4fZ-cQ-OKV" secondAttribute="leading" constant="40" id="Yil-1E-AcS"/>
-                                            <constraint firstAttribute="trailing" secondItem="VZY-Gr-VrQ" secondAttribute="trailing" constant="40" id="ZYy-vc-7Xt"/>
-                                            <constraint firstItem="VZY-Gr-VrQ" firstAttribute="leading" secondItem="4fZ-cQ-OKV" secondAttribute="leading" constant="40" id="ZZG-Uu-kgX"/>
-                                            <constraint firstItem="nOR-Fi-03n" firstAttribute="top" secondItem="4fZ-cQ-OKV" secondAttribute="top" constant="49" id="gFM-DD-xuD"/>
-                                            <constraint firstItem="sgb-sC-mvY" firstAttribute="top" secondItem="dAQ-hu-Naj" secondAttribute="bottom" constant="8" id="h6K-Jc-YnP"/>
-                                            <constraint firstItem="dAQ-hu-Naj" firstAttribute="leading" secondItem="4fZ-cQ-OKV" secondAttribute="leading" constant="40" id="hti-TW-BYq"/>
-                                            <constraint firstItem="sgb-sC-mvY" firstAttribute="leading" secondItem="4fZ-cQ-OKV" secondAttribute="leading" constant="40" id="iKD-yP-3jl"/>
-                                            <constraint firstItem="sgb-sC-mvY" firstAttribute="top" secondItem="dAQ-hu-Naj" secondAttribute="bottom" constant="8" id="lvV-fa-zdb"/>
-                                            <constraint firstItem="AbE-Ui-RMZ" firstAttribute="top" secondItem="4fZ-cQ-OKV" secondAttribute="top" constant="402" id="oiN-QQ-OGl"/>
-                                            <constraint firstAttribute="trailing" secondItem="sgb-sC-mvY" secondAttribute="trailing" constant="40" id="vMP-zk-hu6"/>
-                                            <constraint firstItem="AbE-Ui-RMZ" firstAttribute="top" secondItem="hl8-XZ-P0j" secondAttribute="top" id="yj3-Ef-uIF"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstItem="4fZ-cQ-OKV" firstAttribute="leading" secondItem="H2k-ev-D4j" secondAttribute="leading" id="0BZ-MI-gF9"/>
-                                    <constraint firstItem="4fZ-cQ-OKV" firstAttribute="top" secondItem="H2k-ev-D4j" secondAttribute="top" id="8kt-Me-Gpi"/>
-                                    <constraint firstAttribute="bottom" secondItem="4fZ-cQ-OKV" secondAttribute="bottom" id="qv2-HC-qst"/>
-                                    <constraint firstAttribute="trailing" secondItem="4fZ-cQ-OKV" secondAttribute="trailing" id="yq1-pc-Nio"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.54026693110000001" green="0.7563344836" blue="0.71580058339999997" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstItem="H2k-ev-D4j" firstAttribute="leading" secondItem="8BR-Hx-zIX" secondAttribute="leadingMargin" constant="-16" id="6Yp-b2-GhU"/>
-                            <constraint firstAttribute="bottomMargin" secondItem="H2k-ev-D4j" secondAttribute="bottom" constant="-9" id="V8B-xI-RmY"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="H2k-ev-D4j" secondAttribute="trailing" constant="-16" id="f1D-ZN-9Wd"/>
-                            <constraint firstItem="H2k-ev-D4j" firstAttribute="top" secondItem="8BR-Hx-zIX" secondAttribute="topMargin" id="jUj-Lh-bAp"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="start" image="TabBarIconStart" id="8Ch-G1-eej"/>
-                    <navigationItem key="navigationItem" title="workout" id="Hdl-8T-F68"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="progressBar" destination="l5T-kS-tmq" id="2gh-1x-9gm"/>
-                        <outlet property="stopwatchLabel" destination="I3b-uC-KSG" id="VMr-xA-J0U"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="rEl-sr-zw5" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="3205.5" y="87.5"/>
-        </scene>
-        <!--workout-->
-        <scene sceneID="8UH-5o-6Wh">
-            <objects>
-                <viewController storyboardIdentifier="CoreFloorExplosionView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="bTi-Nb-ymU" customClass="WorkoutsViewController" customModule="ExCy" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="60W-Vj-0ba"/>
-                        <viewControllerLayoutGuide type="bottom" id="Wdv-0p-ofw"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="5UC-Vx-4kr">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" canCancelContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="1Ms-He-ZJr">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="WtQ-nw-gC5">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
-                                        <subviews>
-                                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oB6-ch-mcb">
-                                                <rect key="frame" x="192" y="402" width="143" height="49"/>
-                                                <color key="backgroundColor" red="0.93333333330000001" green="0.20784313730000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="28"/>
-                                                <state key="normal" title="stop">
-                                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted">
-                                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="stopButtomPressed:" destination="bTi-Nb-ymU" eventType="touchUpInside" id="zqd-Wl-f3W"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExcyIntensityChart.png" translatesAutoresizingMaskIntoConstraints="NO" id="rcm-UL-gfT">
-                                                <rect key="frame" x="40" y="459" width="295" height="203"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="rcm-UL-gfT" secondAttribute="height" multiplier="295:203" id="wmN-xT-LaP"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FLT-nq-d5E">
-                                                <rect key="frame" x="40" y="49" width="295" height="55"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="55" id="UYq-0Z-ow7"/>
-                                                    <constraint firstAttribute="width" constant="295" id="gmH-hu-Py2"/>
-                                                </constraints>
-                                                <state key="normal" image="WBCoreFloorExplosion.png">
-                                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <state key="highlighted">
-                                                    <color key="titleColor" red="0.16940957740000001" green="0.68223505429999998" blue="0.16800005160000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="startButtonPressed:" destination="bTi-Nb-ymU" eventType="touchUpInside" id="PJd-MA-fm9"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Core floor summary graph.png" translatesAutoresizingMaskIntoConstraints="NO" id="RRP-sM-RBe">
-                                                <rect key="frame" x="40" y="208" width="295" height="90"/>
-                                            </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Rem-Xb-Z80">
-                                                <rect key="frame" x="40" y="112" width="295" height="88"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="3sy-Td-pEz">
-                                                        <rect key="frame" x="16" y="60" width="45" height="20"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="4Rl-cM-ucU">
-                                                        <rect key="frame" x="16" y="11" width="45" height="45"/>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="MTg-fR-AIf">
-                                                        <rect key="frame" x="99" y="9" width="188" height="69"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="80"/>
-                                                        <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PzE-X5-xV1">
-                                                <rect key="frame" x="40" y="306" width="295" height="88"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lightningIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="eVJ-aD-7wJ">
-                                                        <rect key="frame" x="20" y="8" width="45" height="45"/>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000˚" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pYi-gF-OSS">
-                                                        <rect key="frame" x="125" y="10" width="162" height="68"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="80"/>
-                                                        <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="power" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fc0-kp-yL9">
-                                                        <rect key="frame" x="20" y="60" width="45" height="20"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="17"/>
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="88" id="Oq8-gP-kVC"/>
-                                                </constraints>
-                                            </view>
-                                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ezk-JL-dko">
-                                                <rect key="frame" x="40" y="402" width="144" height="49"/>
-                                                <color key="backgroundColor" red="0.97254901959999995" green="0.92941176469999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="49" id="b6v-SR-BzE"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="28"/>
-                                                <state key="normal" title="pause">
-                                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted">
-                                                    <color key="titleColor" red="1" green="0.83143529920000003" blue="0.1861019347" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="pauseButtonPressed:" destination="bTi-Nb-ymU" eventType="touchUpInside" id="2NG-ld-tbe"/>
-                                                </connections>
-                                            </button>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="8fg-T0-xFE">
-                                                <rect key="frame" x="54" y="219" width="266" height="2"/>
-                                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </progressView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.54026693110000001" green="0.7563344836" blue="0.71580058339999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstItem="ezk-JL-dko" firstAttribute="firstBaseline" secondItem="oB6-ch-mcb" secondAttribute="baseline" id="2yP-hF-rCB"/>
-                                            <constraint firstItem="FLT-nq-d5E" firstAttribute="top" secondItem="WtQ-nw-gC5" secondAttribute="top" constant="49" id="3Ao-Y1-Ogj"/>
-                                            <constraint firstItem="Rem-Xb-Z80" firstAttribute="leading" secondItem="WtQ-nw-gC5" secondAttribute="leading" constant="40" id="52A-Gl-5fu"/>
-                                            <constraint firstItem="RRP-sM-RBe" firstAttribute="top" secondItem="Rem-Xb-Z80" secondAttribute="bottom" constant="8" id="5rJ-Xn-pjb"/>
-                                            <constraint firstItem="PzE-X5-xV1" firstAttribute="top" secondItem="RRP-sM-RBe" secondAttribute="bottom" constant="8" id="7gL-7V-X8h"/>
-                                            <constraint firstAttribute="trailing" secondItem="Rem-Xb-Z80" secondAttribute="trailing" constant="40" id="7pi-yY-uz5"/>
-                                            <constraint firstItem="ezk-JL-dko" firstAttribute="top" secondItem="oB6-ch-mcb" secondAttribute="top" id="7yD-kq-Ffu"/>
-                                            <constraint firstAttribute="trailing" secondItem="oB6-ch-mcb" secondAttribute="trailing" constant="40" id="8np-pa-QWy"/>
-                                            <constraint firstAttribute="trailing" secondItem="RRP-sM-RBe" secondAttribute="trailing" constant="40" id="AIu-d5-Fqm"/>
-                                            <constraint firstAttribute="bottom" secondItem="rcm-UL-gfT" secondAttribute="bottom" constant="38" id="AxA-od-2oh"/>
-                                            <constraint firstItem="oB6-ch-mcb" firstAttribute="leading" secondItem="ezk-JL-dko" secondAttribute="trailing" constant="8" symbolic="YES" id="Bea-OF-NNy"/>
-                                            <constraint firstItem="Rem-Xb-Z80" firstAttribute="top" secondItem="FLT-nq-d5E" secondAttribute="bottom" constant="8" id="HFR-cz-oLO"/>
-                                            <constraint firstItem="RRP-sM-RBe" firstAttribute="top" secondItem="Rem-Xb-Z80" secondAttribute="bottom" constant="8" symbolic="YES" id="I3H-Ei-sLa"/>
-                                            <constraint firstAttribute="bottom" secondItem="Rem-Xb-Z80" secondAttribute="bottom" constant="500" id="INK-ew-SGC"/>
-                                            <constraint firstItem="ezk-JL-dko" firstAttribute="leading" secondItem="WtQ-nw-gC5" secondAttribute="leading" constant="40" id="JBj-1z-DQT"/>
-                                            <constraint firstItem="RRP-sM-RBe" firstAttribute="top" secondItem="Rem-Xb-Z80" secondAttribute="bottom" constant="8" id="JTA-gy-Bcg"/>
-                                            <constraint firstItem="ezk-JL-dko" firstAttribute="top" secondItem="WtQ-nw-gC5" secondAttribute="top" constant="402" id="SsR-Yj-HTS"/>
-                                            <constraint firstItem="PzE-X5-xV1" firstAttribute="leading" secondItem="WtQ-nw-gC5" secondAttribute="leading" constant="40" id="UiP-EN-FOY"/>
-                                            <constraint firstItem="rcm-UL-gfT" firstAttribute="top" secondItem="ezk-JL-dko" secondAttribute="bottom" constant="8" id="XMh-o4-3GH"/>
-                                            <constraint firstItem="oB6-ch-mcb" firstAttribute="width" secondItem="ezk-JL-dko" secondAttribute="width" id="Xmc-od-nJf"/>
-                                            <constraint firstItem="rcm-UL-gfT" firstAttribute="leading" secondItem="WtQ-nw-gC5" secondAttribute="leading" constant="40" id="YpB-Nr-t6F"/>
-                                            <constraint firstItem="FLT-nq-d5E" firstAttribute="leading" secondItem="WtQ-nw-gC5" secondAttribute="leading" constant="40" id="ZZq-Yr-PPt"/>
-                                            <constraint firstAttribute="trailing" secondItem="rcm-UL-gfT" secondAttribute="trailing" constant="40" id="aZa-PH-avM"/>
-                                            <constraint firstAttribute="trailing" secondItem="FLT-nq-d5E" secondAttribute="trailing" constant="40" id="bqa-RU-k6a"/>
-                                            <constraint firstItem="RRP-sM-RBe" firstAttribute="leading" secondItem="WtQ-nw-gC5" secondAttribute="leading" constant="40" id="ezR-4L-L3H"/>
-                                            <constraint firstAttribute="trailing" secondItem="PzE-X5-xV1" secondAttribute="trailing" constant="40" id="iva-FN-reU"/>
-                                            <constraint firstItem="oB6-ch-mcb" firstAttribute="top" secondItem="PzE-X5-xV1" secondAttribute="bottom" constant="8" id="kav-MO-SjP"/>
-                                            <constraint firstItem="ezk-JL-dko" firstAttribute="baseline" secondItem="oB6-ch-mcb" secondAttribute="firstBaseline" id="nuG-jj-d99"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="WtQ-nw-gC5" secondAttribute="trailing" id="07b-4X-6au"/>
-                                    <constraint firstItem="WtQ-nw-gC5" firstAttribute="top" secondItem="1Ms-He-ZJr" secondAttribute="top" id="8CX-hZ-nWb"/>
-                                    <constraint firstItem="WtQ-nw-gC5" firstAttribute="leading" secondItem="1Ms-He-ZJr" secondAttribute="leading" id="dPx-kg-WVG"/>
-                                    <constraint firstAttribute="bottom" secondItem="WtQ-nw-gC5" secondAttribute="bottom" id="hW9-bq-U0g"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.54026693110000001" green="0.7563344836" blue="0.71580058339999997" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="1Ms-He-ZJr" secondAttribute="bottom" constant="-9" id="3dw-bk-1Y9"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="1Ms-He-ZJr" secondAttribute="trailing" constant="-16" id="GcQ-FB-TQP"/>
-                            <constraint firstItem="1Ms-He-ZJr" firstAttribute="top" secondItem="5UC-Vx-4kr" secondAttribute="topMargin" id="L0B-FW-5wr"/>
-                            <constraint firstItem="1Ms-He-ZJr" firstAttribute="leading" secondItem="5UC-Vx-4kr" secondAttribute="leadingMargin" constant="-16" id="knn-v2-AAP"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="start" image="TabBarIconStart" id="n2M-j2-cGi"/>
-                    <navigationItem key="navigationItem" title="workout" id="KbK-eJ-eW3"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="progressBar" destination="8fg-T0-xFE" id="Dwb-t9-WXn"/>
-                        <outlet property="stopwatchLabel" destination="MTg-fR-AIf" id="hFo-aJ-Cuk"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="UPO-nb-TLd" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4139.5" y="-428.5"/>
-        </scene>
-        <!--workout-->
-        <scene sceneID="IX0-jO-1fv">
-            <objects>
-                <viewController storyboardIdentifier="UltimateArmLegView" useStoryboardIdentifierAsRestorationIdentifier="YES" id="13I-Tr-bVf" customClass="WorkoutsViewController" customModule="ExCy" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="J0N-4h-Lxl"/>
-                        <viewControllerLayoutGuide type="bottom" id="QId-p1-HAi"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="hcJ-Wz-6bf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" canCancelContentTouches="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fpu-fJ-Z97">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="627"/>
-                                <subviews>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="PC4-v8-yQh">
-                                        <rect key="frame" x="0.0" y="0.0" width="375" height="700"/>
-                                        <subviews>
-                                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="rCd-xG-BHE">
-                                                <rect key="frame" x="192" y="402" width="143" height="49"/>
-                                                <color key="backgroundColor" red="0.93333333330000001" green="0.20784313730000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="28"/>
-                                                <state key="normal" title="stop">
-                                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted">
-                                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                    <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="stopButtomPressed:" destination="13I-Tr-bVf" eventType="touchUpInside" id="zhs-pi-0jX"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExcyIntensityChart.png" translatesAutoresizingMaskIntoConstraints="NO" id="yJh-y3-h63">
-                                                <rect key="frame" x="40" y="459" width="295" height="203"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="width" secondItem="yJh-y3-h63" secondAttribute="height" multiplier="295:203" id="pia-MH-RSC"/>
-                                                </constraints>
-                                            </imageView>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3Yr-oI-PYz">
-                                                <rect key="frame" x="40" y="49" width="295" height="55"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="55" id="Ile-g0-uHE"/>
-                                                    <constraint firstAttribute="width" constant="295" id="fFg-pW-sw5"/>
-                                                </constraints>
-                                                <state key="normal" image="WBUltimateArmLegTone.png">
-                                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <state key="highlighted">
-                                                    <color key="titleColor" red="0.16940957740000001" green="0.68223505429999998" blue="0.16800005160000001" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="startButtonPressed:" destination="13I-Tr-bVf" eventType="touchUpInside" id="K6L-Ns-GIM"/>
-                                                </connections>
-                                            </button>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" verticalCompressionResistancePriority="749" image="Arm candy live graph.png" translatesAutoresizingMaskIntoConstraints="NO" id="W4M-Ka-gNq">
-                                                <rect key="frame" x="40" y="208" width="295" height="90"/>
-                                            </imageView>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="n5H-gY-7py">
-                                                <rect key="frame" x="40" y="112" width="295" height="88"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="SWE-0h-DvN">
-                                                        <rect key="frame" x="16" y="60" width="45" height="20"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="7JW-7T-boQ">
-                                                        <rect key="frame" x="16" y="11" width="45" height="45"/>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="ZhY-Vg-M3T">
-                                                        <rect key="frame" x="99" y="9" width="188" height="69"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="80"/>
-                                                        <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                            </view>
-                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="wEj-yw-XoA">
-                                                <rect key="frame" x="40" y="306" width="295" height="88"/>
-                                                <subviews>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="lightningIcon.png" translatesAutoresizingMaskIntoConstraints="NO" id="xm7-hq-Zes">
-                                                        <rect key="frame" x="20" y="8" width="45" height="45"/>
-                                                    </imageView>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000˚" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="JTa-qd-yPo">
-                                                        <rect key="frame" x="125" y="10" width="162" height="68"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="80"/>
-                                                        <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="power" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="cE5-tB-t7Z">
-                                                        <rect key="frame" x="20" y="60" width="45" height="20"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="17"/>
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="88" id="61D-9I-lyU"/>
-                                                </constraints>
-                                            </view>
-                                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="mfD-8Q-0nX">
-                                                <rect key="frame" x="40" y="402" width="144" height="49"/>
-                                                <color key="backgroundColor" red="0.97254901959999995" green="0.92941176469999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
-                                                <constraints>
-                                                    <constraint firstAttribute="height" constant="49" id="rfD-XU-lMy"/>
-                                                </constraints>
-                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="28"/>
-                                                <state key="normal" title="pause">
-                                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                                </state>
-                                                <state key="highlighted">
-                                                    <color key="titleColor" red="1" green="0.83143529920000003" blue="0.1861019347" alpha="1" colorSpace="calibratedRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <action selector="pauseButtonPressed:" destination="13I-Tr-bVf" eventType="touchUpInside" id="axq-Rt-Nzp"/>
-                                                </connections>
-                                            </button>
-                                            <progressView opaque="NO" contentMode="scaleToFill" verticalHuggingPriority="750" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="gad-to-k5H">
-                                                <rect key="frame" x="54" y="218" width="266" height="2"/>
-                                                <color key="tintColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                            </progressView>
-                                        </subviews>
-                                        <color key="backgroundColor" red="0.54026693110000001" green="0.7563344836" blue="0.71580058339999997" alpha="1" colorSpace="calibratedRGB"/>
-                                        <constraints>
-                                            <constraint firstAttribute="trailing" secondItem="W4M-Ka-gNq" secondAttribute="trailing" constant="40" id="0UR-aN-C9n"/>
-                                            <constraint firstAttribute="trailing" secondItem="yJh-y3-h63" secondAttribute="trailing" constant="40" id="4zY-p1-fdw"/>
-                                            <constraint firstItem="rCd-xG-BHE" firstAttribute="width" secondItem="mfD-8Q-0nX" secondAttribute="width" id="6dp-Hj-DRy"/>
-                                            <constraint firstAttribute="bottom" secondItem="n5H-gY-7py" secondAttribute="bottom" constant="500" id="9i1-A3-UZX"/>
-                                            <constraint firstItem="W4M-Ka-gNq" firstAttribute="top" secondItem="n5H-gY-7py" secondAttribute="bottom" constant="8" symbolic="YES" id="DvU-Gn-QD5"/>
-                                            <constraint firstItem="mfD-8Q-0nX" firstAttribute="leading" secondItem="PC4-v8-yQh" secondAttribute="leading" constant="40" id="JAX-Ah-bmV"/>
-                                            <constraint firstItem="3Yr-oI-PYz" firstAttribute="top" secondItem="PC4-v8-yQh" secondAttribute="top" constant="49" id="Mny-S0-kFH"/>
-                                            <constraint firstItem="n5H-gY-7py" firstAttribute="leading" secondItem="PC4-v8-yQh" secondAttribute="leading" constant="40" id="NND-vD-ZoW"/>
-                                            <constraint firstItem="n5H-gY-7py" firstAttribute="top" secondItem="3Yr-oI-PYz" secondAttribute="bottom" constant="8" id="QS8-RH-Bm5"/>
-                                            <constraint firstItem="W4M-Ka-gNq" firstAttribute="top" secondItem="n5H-gY-7py" secondAttribute="bottom" constant="8" id="R1j-mK-xSq"/>
-                                            <constraint firstItem="3Yr-oI-PYz" firstAttribute="leading" secondItem="PC4-v8-yQh" secondAttribute="leading" constant="40" id="Rnh-hG-gB7"/>
-                                            <constraint firstItem="wEj-yw-XoA" firstAttribute="leading" secondItem="PC4-v8-yQh" secondAttribute="leading" constant="40" id="S5p-Zs-ylt"/>
-                                            <constraint firstItem="W4M-Ka-gNq" firstAttribute="leading" secondItem="PC4-v8-yQh" secondAttribute="leading" constant="40" id="WED-kr-c1R"/>
-                                            <constraint firstItem="yJh-y3-h63" firstAttribute="top" secondItem="mfD-8Q-0nX" secondAttribute="bottom" constant="8" id="Xfl-Wo-fJ7"/>
-                                            <constraint firstAttribute="trailing" secondItem="3Yr-oI-PYz" secondAttribute="trailing" constant="40" id="Xhe-tb-aPz"/>
-                                            <constraint firstItem="wEj-yw-XoA" firstAttribute="top" secondItem="W4M-Ka-gNq" secondAttribute="bottom" constant="8" id="YZx-2S-k1l"/>
-                                            <constraint firstAttribute="trailing" secondItem="wEj-yw-XoA" secondAttribute="trailing" constant="40" id="a1w-sz-5l6"/>
-                                            <constraint firstItem="W4M-Ka-gNq" firstAttribute="top" secondItem="n5H-gY-7py" secondAttribute="bottom" constant="8" id="b4O-Lw-1O3"/>
-                                            <constraint firstItem="rCd-xG-BHE" firstAttribute="leading" secondItem="mfD-8Q-0nX" secondAttribute="trailing" constant="8" symbolic="YES" id="crq-Go-RHZ"/>
-                                            <constraint firstItem="mfD-8Q-0nX" firstAttribute="firstBaseline" secondItem="rCd-xG-BHE" secondAttribute="baseline" id="dsq-R5-Okr"/>
-                                            <constraint firstAttribute="trailing" secondItem="n5H-gY-7py" secondAttribute="trailing" constant="40" id="fDb-Kf-aXu"/>
-                                            <constraint firstItem="mfD-8Q-0nX" firstAttribute="baseline" secondItem="rCd-xG-BHE" secondAttribute="firstBaseline" id="gnr-ze-Yap"/>
-                                            <constraint firstItem="rCd-xG-BHE" firstAttribute="top" secondItem="wEj-yw-XoA" secondAttribute="bottom" constant="8" id="goN-Ss-CVS"/>
-                                            <constraint firstItem="mfD-8Q-0nX" firstAttribute="top" secondItem="PC4-v8-yQh" secondAttribute="top" constant="402" id="lGr-LE-e3O"/>
-                                            <constraint firstAttribute="trailing" secondItem="rCd-xG-BHE" secondAttribute="trailing" constant="40" id="p2N-wE-Ze2"/>
-                                            <constraint firstItem="yJh-y3-h63" firstAttribute="leading" secondItem="PC4-v8-yQh" secondAttribute="leading" constant="40" id="sGP-sh-GXC"/>
-                                            <constraint firstAttribute="bottom" secondItem="yJh-y3-h63" secondAttribute="bottom" constant="38" id="sqF-DC-c7w"/>
-                                            <constraint firstItem="mfD-8Q-0nX" firstAttribute="top" secondItem="rCd-xG-BHE" secondAttribute="top" id="uYG-5Z-GWT"/>
-                                        </constraints>
-                                    </view>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="PC4-v8-yQh" secondAttribute="trailing" id="HuB-aR-GfA"/>
-                                    <constraint firstItem="PC4-v8-yQh" firstAttribute="leading" secondItem="fpu-fJ-Z97" secondAttribute="leading" id="T3U-7J-aW1"/>
-                                    <constraint firstAttribute="bottom" secondItem="PC4-v8-yQh" secondAttribute="bottom" id="bVN-W4-rtC"/>
-                                    <constraint firstItem="PC4-v8-yQh" firstAttribute="top" secondItem="fpu-fJ-Z97" secondAttribute="top" id="uhB-8I-IH8"/>
-                                </constraints>
-                            </scrollView>
-                        </subviews>
-                        <color key="backgroundColor" red="0.54026693110000001" green="0.7563344836" blue="0.71580058339999997" alpha="1" colorSpace="calibratedRGB"/>
-                        <constraints>
-                            <constraint firstAttribute="bottomMargin" secondItem="fpu-fJ-Z97" secondAttribute="bottom" constant="-9" id="Eww-Yo-Xuw"/>
-                            <constraint firstItem="fpu-fJ-Z97" firstAttribute="top" secondItem="hcJ-Wz-6bf" secondAttribute="topMargin" id="HQ8-Vj-MRB"/>
-                            <constraint firstItem="fpu-fJ-Z97" firstAttribute="leading" secondItem="hcJ-Wz-6bf" secondAttribute="leadingMargin" constant="-16" id="Nx1-Zw-T9r"/>
-                            <constraint firstAttribute="trailingMargin" secondItem="fpu-fJ-Z97" secondAttribute="trailing" constant="-16" id="Xbm-6O-PJH"/>
-                        </constraints>
-                    </view>
-                    <tabBarItem key="tabBarItem" title="start" image="TabBarIconStart" id="ZBA-Fe-hus"/>
-                    <navigationItem key="navigationItem" title="workout" id="8sK-Ro-KKe"/>
-                    <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
-                    <connections>
-                        <outlet property="progressBar" destination="gad-to-k5H" id="A23-2B-lhy"/>
-                        <outlet property="stopwatchLabel" destination="ZhY-Vg-M3T" id="6tI-tS-jqb"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="ecI-2U-szP" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="4139.5" y="1135.5"/>
-        </scene>
         <!--Workouts-->
         <scene sceneID="RSh-cn-qFm">
             <objects>
@@ -4041,9 +3064,6 @@ write it down to stay inspired!               </string>
                                 <state key="normal" image="WBArmCandy.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="nFw-aM-RoW" kind="show" id="NpR-9l-IQl"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZv-ez-dQb">
                                 <rect key="frame" x="40" y="187" width="295" height="55"/>
@@ -4053,9 +3073,6 @@ write it down to stay inspired!               </string>
                                 <state key="normal" image="WBSuperCycleCardio.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="LKz-Xy-p9O" kind="show" id="7f1-I1-oJK"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PA7-34-K1o">
                                 <rect key="frame" x="40" y="250" width="295" height="55"/>
@@ -4065,9 +3082,6 @@ write it down to stay inspired!               </string>
                                 <state key="normal" image="WBCycleLegBlast.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="v2B-9r-Krt" kind="show" id="Dai-tY-2Wy"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jo-u1-73e">
                                 <rect key="frame" x="40" y="313" width="295" height="55"/>
@@ -4077,9 +3091,6 @@ write it down to stay inspired!               </string>
                                 <state key="normal" image="WBCoreFloorExplosion.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="y7R-qG-Fjs" kind="show" id="fIX-hg-97C"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOK-Yp-nbU">
                                 <rect key="frame" x="40" y="376" width="295" height="55"/>
@@ -4089,9 +3100,6 @@ write it down to stay inspired!               </string>
                                 <state key="normal" image="WBArmBlast.png">
                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                 </state>
-                                <connections>
-                                    <segue destination="QdD-d2-gfP" kind="show" id="NP9-p1-Ngy"/>
-                                </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icg-et-w71">
                                 <rect key="frame" x="40" y="439" width="295" height="55"/>
@@ -4107,9 +3115,6 @@ write it down to stay inspired!               </string>
                                         <exclude reference="GBV-CQ-Bdf"/>
                                     </mask>
                                 </variation>
-                                <connections>
-                                    <segue destination="5y1-At-hNn" kind="show" id="P7C-Yq-ueJ"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.54026693110000001" green="0.7563344836" blue="0.71580058339999997" alpha="1" colorSpace="calibratedRGB"/>
@@ -4155,11 +3160,11 @@ write it down to stay inspired!               </string>
                         <viewControllerLayoutGuide type="bottom" id="2X7-aB-6cz"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="Tam-GX-yzF">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Aoa-87-yTl">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="f6T-ap-xj7">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
@@ -4213,7 +3218,7 @@ write it down to stay inspired!               </string>
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="FYH-Dq-DE8">
-                                <rect key="frame" x="38" y="549" width="299" height="49"/>
+                                <rect key="frame" x="38" y="598" width="299" height="49"/>
                                 <color key="backgroundColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="aUZ-AS-zXC"/>
@@ -4222,9 +3227,6 @@ write it down to stay inspired!               </string>
                                 <state key="normal" title="start">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="sWy-5Y-Tqk" kind="show" id="tRs-KM-n43"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.62745098040000002" green="0.82745098039999998" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -4242,7 +3244,7 @@ write it down to stay inspired!               </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="nGI-7D-i0s" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3667.5" y="935.5"/>
+            <point key="canvasLocation" x="3887.5" y="899.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="IaE-B6-clC">
@@ -4253,11 +3255,11 @@ write it down to stay inspired!               </string>
                         <viewControllerLayoutGuide type="bottom" id="U4M-vZ-1hq"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="IPj-Vz-72o">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="i35-gW-PTs">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="7Jp-Fi-BCK">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
@@ -4311,7 +3313,7 @@ write it down to stay inspired!               </string>
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZIi-a7-QdO">
-                                <rect key="frame" x="38" y="549" width="299" height="49"/>
+                                <rect key="frame" x="38" y="598" width="299" height="49"/>
                                 <color key="backgroundColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="sRq-nN-FCB"/>
@@ -4320,9 +3322,6 @@ write it down to stay inspired!               </string>
                                 <state key="normal" title="start">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="OQk-Tg-12z" kind="show" id="8uL-Vw-piX"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.62745098040000002" green="0.82745098039999998" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -4340,7 +3339,7 @@ write it down to stay inspired!               </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="pSf-iy-vP9" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3667.5" y="87.5"/>
+            <point key="canvasLocation" x="3887.5" y="51.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="nSx-UA-w6i">
@@ -4351,11 +3350,11 @@ write it down to stay inspired!               </string>
                         <viewControllerLayoutGuide type="bottom" id="Hdq-2X-HIM"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="kGH-bn-U0H">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Obj-dy-pzC">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="VfC-DB-W9w">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
@@ -4409,7 +3408,7 @@ write it down to stay inspired!               </string>
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="aOv-Py-eiv">
-                                <rect key="frame" x="38" y="549" width="299" height="49"/>
+                                <rect key="frame" x="38" y="598" width="299" height="49"/>
                                 <color key="backgroundColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="bUb-f1-pcl"/>
@@ -4418,9 +3417,6 @@ write it down to stay inspired!               </string>
                                 <state key="normal" title="start">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="bTi-Nb-ymU" kind="show" id="ver-q1-5gL"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.62745098040000002" green="0.82745098039999998" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -4438,7 +3434,7 @@ write it down to stay inspired!               </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Ezb-Lb-B0e" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4636.5" y="-456.5"/>
+            <point key="canvasLocation" x="4856.5" y="-492.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="NNT-40-AJP">
@@ -4449,11 +3445,11 @@ write it down to stay inspired!               </string>
                         <viewControllerLayoutGuide type="bottom" id="c3L-kI-bXc"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="9hY-tm-Wvf">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="rgc-Wj-S07">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="dCZ-yU-BR0">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
@@ -4507,7 +3503,7 @@ write it down to stay inspired!               </string>
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="D81-Ph-mem">
-                                <rect key="frame" x="38" y="549" width="299" height="49"/>
+                                <rect key="frame" x="38" y="598" width="299" height="49"/>
                                 <color key="backgroundColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="C01-vS-9eF"/>
@@ -4516,9 +3512,6 @@ write it down to stay inspired!               </string>
                                 <state key="normal" title="start">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="JCl-F6-ZeF" kind="show" id="UBT-ve-2S7"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.62745098040000002" green="0.82745098039999998" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -4536,7 +3529,7 @@ write it down to stay inspired!               </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="EaQ-fP-T9o" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4636.5" y="347.5"/>
+            <point key="canvasLocation" x="4856.5" y="311.5"/>
         </scene>
         <!--View Controller-->
         <scene sceneID="u8N-S7-l2v">
@@ -4547,11 +3540,11 @@ write it down to stay inspired!               </string>
                         <viewControllerLayoutGuide type="bottom" id="UOj-Hp-62N"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="7X9-Vx-Izq">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Llq-Rp-hRP">
-                                <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                                 <subviews>
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="L3Z-A5-USs">
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="1000"/>
@@ -4605,7 +3598,7 @@ write it down to stay inspired!               </string>
                                 </constraints>
                             </scrollView>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="vr7-VP-DyG">
-                                <rect key="frame" x="38" y="598" width="299" height="49"/>
+                                <rect key="frame" x="38" y="647" width="299" height="49"/>
                                 <color key="backgroundColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="49" id="PfI-qy-1z5"/>
@@ -4614,9 +3607,6 @@ write it down to stay inspired!               </string>
                                 <state key="normal" title="start">
                                     <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
                                 </state>
-                                <connections>
-                                    <segue destination="13I-Tr-bVf" kind="show" id="DV7-kj-IUK"/>
-                                </connections>
                             </button>
                         </subviews>
                         <color key="backgroundColor" red="0.62745098040000002" green="0.82745098039999998" blue="0.79607843140000001" alpha="1" colorSpace="calibratedRGB"/>
@@ -4634,7 +3624,7 @@ write it down to stay inspired!               </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="ptf-k5-Gvb" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4636.5" y="1135.5"/>
+            <point key="canvasLocation" x="4856.5" y="1099.5"/>
         </scene>
         <!--start-->
         <scene sceneID="l0n-QJ-zj8">
@@ -4676,7 +3666,6 @@ write it down to stay inspired!               </string>
         <image name="Cycle leg blast live graph.png" width="618" height="188"/>
         <image name="Cycleblast zone.png" width="619" height="196"/>
         <image name="Excy WarmUpLive_P3.png" width="190" height="58"/>
-        <image name="ExcyIntensityChart.png" width="619" height="366"/>
         <image name="More landing page know zones.png" width="617" height="102"/>
         <image name="More landing page tips.png" width="618" height="102"/>
         <image name="More landing page watch workouts.png" width="618" height="102"/>
@@ -4700,7 +3689,7 @@ write it down to stay inspired!               </string>
         <image name="WBArmCandy.png" width="618" height="115"/>
         <image name="WBCoreFloorExplosion.png" width="618" height="115"/>
         <image name="WBCycleLegBlast.png" width="618" height="115"/>
-        <image name="WBSuperCycleCardio.png" width="613" height="115"/>
+        <image name="WBSuperCycleCardio.png" width="618" height="115"/>
         <image name="WBUltimateArmLegTone.png" width="618" height="115"/>
         <image name="beachImage.jpg" width="300" height="140"/>
         <image name="clock.png" width="290" height="290"/>
@@ -4716,11 +3705,6 @@ write it down to stay inspired!               </string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="KGm-0h-6mN"/>
-        <segue reference="wjM-vT-dHY"/>
-        <segue reference="eUM-mx-mzc"/>
-        <segue reference="Zzb-IK-HyF"/>
-        <segue reference="rrI-73-kiR"/>
-        <segue reference="WPM-9b-gdZ"/>
-        <segue reference="w0Q-j5-GPb"/>
+        <segue reference="A6v-lq-MET"/>
     </inferredMetricsTieBreakers>
 </document>

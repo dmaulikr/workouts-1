@@ -53,7 +53,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 		let dateFormatter = NSDateFormatter()
 		dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
 		let strDate = dateFormatter.stringFromDate(PFUser.currentUser()!.createdAt!)
-		memberSinceLabel.text = "member since: \(strDate)"
+		memberSinceLabel.text = "friend since: \(strDate)"
 		
     }
 	

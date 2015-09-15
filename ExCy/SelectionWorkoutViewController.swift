@@ -8,75 +8,71 @@
 
 import UIKit
 
-var warmupCompletionSegue = 1
 
 class SelectionWorkoutViewController: UIViewController {
+	
+	var workoutNumber = 1
+	var workoutTime: Int?
 
 	@IBAction func armCandyButtonPressed(sender: UIButton) {
-		workoutTime = 420
-		warmupCompletionSegue = 1
-		WarmUpAlert()
-	}
-	
-	@IBAction func superCycleCardioButtonPressed(sender: UIButton) {
-		workoutTime = 1380
-		warmupCompletionSegue = 2
-		WarmUpAlert()
-	}
-	
-	@IBAction func cycleLetBlastButtonPressed(sender: UIButton) {
-		workoutTime = 900
-		warmupCompletionSegue = 3
-		WarmUpAlert()
-	}
-	
-	@IBAction func coreFloorExplosionButtonPressed(sender: UIButton) {
-		workoutTime = 600
-		warmupCompletionSegue = 4
-		WarmUpAlert()
-	}
-	
-	@IBAction func armBlastButtonPressed(sender: UIButton) {
-		workoutTime = 600
-		warmupCompletionSegue = 5
-		WarmUpAlert()
-	}
-	
-	@IBAction func ultimateArmLegToningButtonPressed(sender: UIButton) {
-		workoutTime = 420
-		warmupCompletionSegue = 6
-		WarmUpAlert()
-	}
-	
-	func PerformSelectedSegue () {
-		switch warmupCompletionSegue {
-		case 1: self.performSegueWithIdentifier("armCandy", sender: self)
-		case 2: self.performSegueWithIdentifier("superCycleCardio", sender: self)
-		case 3: self.performSegueWithIdentifier("cycleLegBlast", sender: self)
-		case 4: self.performSegueWithIdentifier("coreFloorExplosion", sender: self)
-		case 5: self.performSegueWithIdentifier("armBlast", sender: self)
-		case 6: self.performSegueWithIdentifier("ultimateArmLeg", sender: self)
-		default: performSegueWithIdentifier("superCycleCardio", sender: self)
+		if sender.tag == 1 {
+			workoutNumber = 1
+			workoutTime = 420
+			WarmUpAlert()
+		} else if sender.tag == 2 {
+			workoutNumber = 2
+			workoutTime = 1380
+			WarmUpAlert()
+		} else if sender.tag == 3 {
+			workoutNumber = 3
+			workoutTime = 900
+			WarmUpAlert()
+		} else if sender.tag == 4 {
+			workoutNumber = 4
+			workoutTime = 600
+			WarmUpAlert()
+		} else if sender.tag == 5 {
+			workoutNumber = 5
+			workoutTime = 600
+			WarmUpAlert()
+		} else if sender.tag == 6 {
+			workoutNumber = 6
+			workoutTime = 420
+			WarmUpAlert()
 		}
 	}
+
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if let identifier = segue.identifier {
+			if identifier == "selectedWorkoutSegue" {
+				if let detailVC: WorkoutsViewController = segue.destinationViewController as? WorkoutsViewController {
+					detailVC.workoutTime = workoutTime
+					detailVC.workoutNumber = workoutNumber
+				}
+			}else if segue.identifier == "warmUpWorkout" {
+				
+			}
+		}
+	}
+	
 	
 	
 	func WarmUpAlert () {
+		
 		let alertController = UIAlertController(title: "Would you like to warm up?", message: "A quick 2 minute warm up can really enhance your workout experience and is highly recommended for optimal health", preferredStyle: .Alert)
 		let OKAction = UIAlertAction(title: "Skip", style: .Default) { action in
-			self.PerformSelectedSegue()
-			
+			self.performSegueWithIdentifier("selectedWorkoutSegue", sender: self)
 		}
+		
 		alertController.addAction(OKAction)
 		let cancelAction = UIAlertAction(title: "Warm Up", style: .Cancel) { action in
-			
 			self.performSegueWithIdentifier("warmUpWorkout", sender: self)
-			
-			
 		}
+		
 		alertController.addAction(cancelAction)
+		
 		self.presentViewController(alertController, animated: true, completion: nil)
 	}
-
 	
 }
