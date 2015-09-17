@@ -22,9 +22,30 @@ class WorkoutsViewController: UIViewController {
 	var progressCounter = 1
 	var initialTime: Float = 1
 	
+	
+	
+	
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
+	}
+	
+	override func viewWillAppear(animated: Bool) {
+		if let newNumber = workoutNumber {
+			switch newNumber {
+			case 1: workoutTime = 420
+			case 2: workoutTime = 1380
+			case 3: workoutTime = 900
+			case 4: workoutTime = 600
+			case 5: workoutTime = 600
+			case 6: workoutTime = 420
+			default: workoutTime = 420
+			}
+		}
+	}
+	
+	override func viewDidAppear(animated: Bool) {
+		super.viewDidAppear(animated)
 		self.initialTime = Float(workoutTime!)
 		self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateUI"), userInfo: nil, repeats: true)
 		
@@ -34,28 +55,23 @@ class WorkoutsViewController: UIViewController {
 		}
 	}
 	
-	override func viewDidAppear(animated: Bool) {
-		super.viewDidAppear(animated)
-		
-	}
-	
 	override func viewWillLayoutSubviews() {
 		if let newNumber = workoutNumber {
 			switch newNumber {
 			case 1: zoneImageView.image = UIImage(named: "Arm candy live graph.png")
-			workoutButton.imageView?.image = UIImage(named: "WBArmCandy.png")
+				workoutButton.imageView?.image = UIImage(named: "WBArmCandy.png")
 			case 2: zoneImageView.image = UIImage(named: "SuperCycleGraphNew.png")
-			workoutButton.imageView?.image = UIImage(named: "WBSuperCycleCardio.png")!
+				workoutButton.imageView?.image = UIImage(named: "WBSuperCycleCardio.png")
 			case 3: zoneImageView.image = UIImage(named: "Cycle leg blast live graph.png")
-			workoutButton.imageView?.image = UIImage(named: "WBCycleLegBlast.png")
+				workoutButton.imageView?.image = UIImage(named: "WBCycleLegBlast.png")
 			case 4: zoneImageView.image = UIImage(named: "Core floor summary graph.png")
-			workoutButton.imageView?.image = UIImage(named: "WBCoreFloorExplosion.png")
+				workoutButton.imageView?.image = UIImage(named: "WBCoreFloorExplosion.png")
 			case 5: zoneImageView.image = UIImage(named: "Arm blast graph.png")
-			workoutButton.imageView?.image = UIImage(named: "WBArmBlast.png")
+				workoutButton.imageView?.image = UIImage(named: "WBArmBlast.png")
 			case 6: zoneImageView.image = UIImage(named: "Arm and leg graph summary.png")
-			workoutButton.imageView?.image = UIImage(named: "WBUltimateArmLegTone.png")
+				workoutButton.imageView?.image = UIImage(named: "WBUltimateArmLegTone.png")
 			default: zoneImageView.image = UIImage(named: "Arm candy live graph.png")
-			workoutButton.imageView?.image = UIImage(named: "WBArmCandy.png")
+				workoutButton.imageView?.image = UIImage(named: "WBArmCandy.png")
 			}
 		}
 	}
@@ -90,7 +106,6 @@ class WorkoutsViewController: UIViewController {
 			
 			self.progressView.progress = CGFloat(progressCounter) / CGFloat(initialTime)
 			self.progressView.setNeedsDisplay()
-			
 			
 		} else if (workoutTime != nil) && workoutTime == 0 {
 			self.timer?.invalidate()

@@ -1,7 +1,8 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="7706" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="r9u-uC-Djn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="r9u-uC-Djn">
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="7703"/>
+        <deployment identifier="iOS"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -153,7 +154,7 @@
                         <viewControllerLayoutGuide type="bottom" id="blw-cd-5Wa"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="iXv-uY-IyH">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="1936"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="1936"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <scrollView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="S2K-jF-pgm">
@@ -676,7 +677,7 @@ write it down to stay inspired!</string>
                         <viewControllerLayoutGuide type="bottom" id="HBy-f7-zHO"/>
                     </layoutGuides>
                     <view key="view" contentMode="scaleToFill" id="pka-qz-JGI">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="603"/>
+                        <rect key="frame" x="0.0" y="64" width="375" height="603"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" fixedFrame="YES" textAlignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="x0h-lc-VVa">
@@ -1273,7 +1274,7 @@ write it down to stay inspired!               </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zgG-du-Z4h" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="2217.5" y="919.5"/>
+            <point key="canvasLocation" x="3269.5" y="311.5"/>
         </scene>
         <!--workout-->
         <scene sceneID="BTL-75-6Hm">
@@ -2942,7 +2943,7 @@ write it down to stay inspired!               </string>
                                 </connections>
                             </button>
                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Prz-nE-DHK" customClass="ProgressView" customModule="ExCy" customModuleProvider="target">
-                                <rect key="frame" x="54" y="223" width="266" height="74"/>
+                                <rect key="frame" x="54" y="223" width="266" height="72"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                             </view>
                         </subviews>
@@ -3705,6 +3706,6 @@ write it down to stay inspired!               </string>
     </resources>
     <inferredMetricsTieBreakers>
         <segue reference="KGm-0h-6mN"/>
-        <segue reference="A6v-lq-MET"/>
+        <segue reference="WPM-9b-gdZ"/>
     </inferredMetricsTieBreakers>
 </document>

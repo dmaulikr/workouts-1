@@ -47,11 +47,13 @@ class SelectionWorkoutViewController: UIViewController {
 		if let identifier = segue.identifier {
 			if identifier == "selectedWorkoutSegue" {
 				if let detailVC: WorkoutsViewController = segue.destinationViewController as? WorkoutsViewController {
-					detailVC.workoutTime = workoutTime
 					detailVC.workoutNumber = workoutNumber
 				}
 			}else if segue.identifier == "warmUpWorkout" {
-				
+				if let detailVC: WarmupWorkoutsViewController = segue.destinationViewController as? WarmupWorkoutsViewController {
+					detailVC.workoutNumber = workoutNumber
+				}
+
 			}
 		}
 	}

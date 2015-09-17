@@ -12,6 +12,7 @@ class WarmupWorkoutsViewController: UIViewController {
 
 	@IBOutlet weak var stopWatchLabel: UILabel!
 	
+	var workoutNumber: Int?
 	var timer: NSTimer?
 	var warmupTime: Int = 119
 	
@@ -29,6 +30,18 @@ class WarmupWorkoutsViewController: UIViewController {
 		self.timer?.invalidate()
 	}
 	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if let identifier = segue.identifier {
+			if identifier == "FromWarmUpToWorkout" {
+				if let detailVC: WorkoutsViewController = segue.destinationViewController as? WorkoutsViewController {
+					detailVC.workoutNumber = workoutNumber
+				}
+				
+			}
+		}
+	}
+	
+	
 	func stringConversion (seconds:Int) -> String {
 		var minutesCount = seconds / 60
 		var secondsCount = seconds - (minutesCount * 60)
@@ -42,17 +55,15 @@ class WarmupWorkoutsViewController: UIViewController {
 	}
 	
 	
+	
 	func updateUI() {
 		if warmupTime > 0 {
 			self.stopWatchLabel.text = stringConversion(warmupTime)
 			warmupTime--
 		} else {
-			PerformSelectedSegue()
+			performSegueWithIdentifier("FromWarmUpToWorkout", sender: self)
 		}
 		
-	}
-	func PerformSelectedSegue () {
-		performSegueWithIdentifier("FromWarmUpToWorkout", sender: self)
 	}
 	
 	@IBAction func pauseButtonPressed(sender: UIButton) {
@@ -61,7 +72,7 @@ class WarmupWorkoutsViewController: UIViewController {
 	
 	
 	@IBAction func stopButtonPressed(sender: UIButton) {
-		PerformSelectedSegue()
+		performSegueWithIdentifier("FromWarmUpToWorkout", sender: self)
 	}
 
     /*
