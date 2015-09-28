@@ -27,14 +27,14 @@ class LogInViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+		let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
 		view.addGestureRecognizer(tap)
 		
     }
 	
 	override func viewDidAppear(animated: Bool) {
 		navigationController?.removeFromParentViewController()
-		var currentUser = PFUser.currentUser()
+		let currentUser = PFUser.currentUser()
 		if  currentUser != nil {
 			performSegueWithIdentifier("login", sender: self)
 		}
@@ -57,7 +57,7 @@ class LogInViewController: UIViewController {
 			var errorMessage = "Please try again later"
 			
 			if isSignUpMode == true {
-				var user = PFUser()
+				let user = PFUser()
 				user.username = emailTextField.text
 				user.password = passwordTextField.text
 				user.email = emailAddressTextField.text
@@ -69,7 +69,7 @@ class LogInViewController: UIViewController {
 					if error == nil {
 						self.performSegueWithIdentifier("login", sender: self)
 					} else {
-						if let errorString = error!.userInfo?["error"] as? String {
+						if let errorString = error!.userInfo["error"] as? String {
 							errorMessage = errorString
 							
 						}
@@ -78,7 +78,7 @@ class LogInViewController: UIViewController {
 				})
 			} else {
 				
-				PFUser.logInWithUsernameInBackground(emailTextField.text, password: passwordTextField.text, block: { (user, error) -> Void in
+				PFUser.logInWithUsernameInBackground(emailTextField.text!, password: passwordTextField.text!, block: { (user, error) -> Void in
 					
 					self.activityIndicator.stopAnimating()
 					UIApplication.sharedApplication().endIgnoringInteractionEvents()
@@ -86,7 +86,7 @@ class LogInViewController: UIViewController {
 					if user != nil {
 						self.performSegueWithIdentifier("login", sender: self)
 					} else {
-						if let errorString = error!.userInfo?["error"] as? String {
+						if let errorString = error!.userInfo["error"] as? String {
 							errorMessage = errorString
 						}
 						self.displayAlert("Failed SignUp", message: errorMessage)
@@ -115,7 +115,7 @@ class LogInViewController: UIViewController {
 	
 	
 	func displayAlert(title: String, message: String) {
-		var alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
+		let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
 		alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
 			self.dismissViewControllerAnimated(true, completion: nil)
 		}))

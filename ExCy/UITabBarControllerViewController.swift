@@ -29,16 +29,16 @@ class UITabBarControllerViewController: UITabBarController {
 	
 	
 	func tabBarUISetUP() {
-		for item in self.tabBar.items as! [UITabBarItem] {
+		for item in self.tabBar.items! {
 			if let image = item.image {
 				item.image = image.imageWithColor(UIColor.whiteColor()).imageWithRenderingMode(.AlwaysOriginal)
 			}
 		}
-		var navigationBarAppearance = UITabBar.appearance()
-		var navItemAppearance = UITabBarItem.appearance()
+		let navigationBarAppearance = UITabBar.appearance()
+		let navItemAppearance = UITabBarItem.appearance()
 		
-		var selectedTintColor = UIColor(red: 19/255, green: 183/255, blue: 230/255, alpha: 1)
-		var whiteColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
+		let selectedTintColor = UIColor(red: 19/255, green: 183/255, blue: 230/255, alpha: 1)
+		let whiteColor = UIColor(red: 1, green: 1, blue: 1, alpha: 1)
 		
 		navigationBarAppearance.barTintColor = UIColor(red: 111/255, green: 110/255, blue: 109/255, alpha: 1)
 		navigationBarAppearance.tintColor = selectedTintColor
@@ -54,10 +54,10 @@ extension UIImage {
 	func imageWithColor(tintColor: UIColor) -> UIImage {
 		UIGraphicsBeginImageContextWithOptions(self.size, false, self.scale)
 		
-		let context = UIGraphicsGetCurrentContext() as CGContextRef
+		let context = UIGraphicsGetCurrentContext() //as CGContextRef
 		CGContextTranslateCTM(context, 0, self.size.height)
 		CGContextScaleCTM(context, 1.0, -1.0);
-		CGContextSetBlendMode(context, kCGBlendModeNormal)
+		CGContextSetBlendMode(context, .Normal)
 		
 		let rect = CGRectMake(0, 0, self.size.width, self.size.height) as CGRect
 		CGContextClipToMask(context, rect, self.CGImage)

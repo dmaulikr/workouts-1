@@ -19,6 +19,12 @@
 		D340D2671AF70F5F00043A81 /* BurstPlayGrey.png in Resources */ = {isa = PBXBuildFile; fileRef = D340D2641AF70F5F00043A81 /* BurstPlayGrey.png */; };
 		D340D2681AF70F5F00043A81 /* BurstPlayRed.png in Resources */ = {isa = PBXBuildFile; fileRef = D340D2651AF70F5F00043A81 /* BurstPlayRed.png */; };
 		D340D26A1AF7C87300043A81 /* Target Zone Page.png in Resources */ = {isa = PBXBuildFile; fileRef = D340D2691AF7C87300043A81 /* Target Zone Page.png */; };
+		D34C78E11BB99D3100F64437 /* ZoneIntensity1.png in Resources */ = {isa = PBXBuildFile; fileRef = D34C78DC1BB99D3100F64437 /* ZoneIntensity1.png */; settings = {ASSET_TAGS = (); }; };
+		D34C78E21BB99D3100F64437 /* ZoneIntensity2.png in Resources */ = {isa = PBXBuildFile; fileRef = D34C78DD1BB99D3100F64437 /* ZoneIntensity2.png */; settings = {ASSET_TAGS = (); }; };
+		D34C78E31BB99D3100F64437 /* ZoneIntensity3.png in Resources */ = {isa = PBXBuildFile; fileRef = D34C78DE1BB99D3100F64437 /* ZoneIntensity3.png */; settings = {ASSET_TAGS = (); }; };
+		D34C78E41BB99D3100F64437 /* ZoneIntensity4.png in Resources */ = {isa = PBXBuildFile; fileRef = D34C78DF1BB99D3100F64437 /* ZoneIntensity4.png */; settings = {ASSET_TAGS = (); }; };
+		D34C78E51BB99D3100F64437 /* ZoneIntensity5.png in Resources */ = {isa = PBXBuildFile; fileRef = D34C78E01BB99D3100F64437 /* ZoneIntensity5.png */; settings = {ASSET_TAGS = (); }; };
+		D34C78E71BB99DED00F64437 /* ZoneBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C78E61BB99DED00F64437 /* ZoneBrain.swift */; settings = {ASSET_TAGS = (); }; };
 		D34DC5F31BA22DCE005D68F3 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34DC5F21BA22DCE005D68F3 /* ProgressView.swift */; };
 		D34DC5F51BA22EF3005D68F3 /* StyleKitName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34DC5F41BA22EF3005D68F3 /* StyleKitName.swift */; };
 		D35665E21A91B4F40041EC4A /* WBArmBlast.png in Resources */ = {isa = PBXBuildFile; fileRef = D35665DC1A91B4F40041EC4A /* WBArmBlast.png */; };
@@ -78,7 +84,6 @@
 		D39DCBF61B5DE4E300997BB7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DCBF51B5DE4E200997BB7 /* ProfileViewController.swift */; };
 		D39DCBF81B5DE92500997BB7 /* placeholder-user.png in Resources */ = {isa = PBXBuildFile; fileRef = D39DCBF71B5DE92500997BB7 /* placeholder-user.png */; };
 		D39DCBFA1B5EAC5E00997BB7 /* Workouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DCBF91B5EAC5E00997BB7 /* Workouts.swift */; };
-		D39DCC2C1B5EB4F400997BB7 /* Toucan.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DCC2B1B5EB4F400997BB7 /* Toucan.swift */; };
 		D39DCC2E1B5ED51F00997BB7 /* AccountSettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DCC2D1B5ED51F00997BB7 /* AccountSettingsViewController.swift */; };
 		D3AACC111A4B478200906DF7 /* main more landing page.png in Resources */ = {isa = PBXBuildFile; fileRef = D3AACC101A4B478200906DF7 /* main more landing page.png */; };
 		D3B8778B1B597A5E004C2BC7 /* AudioToolbox.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B8778A1B597A5E004C2BC7 /* AudioToolbox.framework */; };
@@ -161,6 +166,12 @@
 		D340D2641AF70F5F00043A81 /* BurstPlayGrey.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BurstPlayGrey.png; sourceTree = "<group>"; };
 		D340D2651AF70F5F00043A81 /* BurstPlayRed.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = BurstPlayRed.png; sourceTree = "<group>"; };
 		D340D2691AF7C87300043A81 /* Target Zone Page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Target Zone Page.png"; sourceTree = "<group>"; };
+		D34C78DC1BB99D3100F64437 /* ZoneIntensity1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZoneIntensity1.png; sourceTree = "<group>"; };
+		D34C78DD1BB99D3100F64437 /* ZoneIntensity2.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZoneIntensity2.png; sourceTree = "<group>"; };
+		D34C78DE1BB99D3100F64437 /* ZoneIntensity3.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZoneIntensity3.png; sourceTree = "<group>"; };
+		D34C78DF1BB99D3100F64437 /* ZoneIntensity4.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZoneIntensity4.png; sourceTree = "<group>"; };
+		D34C78E01BB99D3100F64437 /* ZoneIntensity5.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = ZoneIntensity5.png; sourceTree = "<group>"; };
+		D34C78E61BB99DED00F64437 /* ZoneBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoneBrain.swift; sourceTree = "<group>"; };
 		D34DC5F21BA22DCE005D68F3 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		D34DC5F41BA22EF3005D68F3 /* StyleKitName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleKitName.swift; sourceTree = "<group>"; };
 		D35665DC1A91B4F40041EC4A /* WBArmBlast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WBArmBlast.png; sourceTree = "<group>"; };
@@ -224,7 +235,6 @@
 		D39DCBF51B5DE4E200997BB7 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D39DCBF71B5DE92500997BB7 /* placeholder-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder-user.png"; sourceTree = "<group>"; };
 		D39DCBF91B5EAC5E00997BB7 /* Workouts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workouts.swift; sourceTree = "<group>"; };
-		D39DCC2B1B5EB4F400997BB7 /* Toucan.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Toucan.swift; sourceTree = "<group>"; };
 		D39DCC2D1B5ED51F00997BB7 /* AccountSettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AccountSettingsViewController.swift; sourceTree = "<group>"; };
 		D3AACC101A4B478200906DF7 /* main more landing page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "main more landing page.png"; sourceTree = "<group>"; };
 		D3B8778A1B597A5E004C2BC7 /* AudioToolbox.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = AudioToolbox.framework; path = System/Library/Frameworks/AudioToolbox.framework; sourceTree = SDKROOT; };
@@ -326,6 +336,18 @@
 			name = "Burst Play Charts";
 			sourceTree = "<group>";
 		};
+		D34C78DB1BB99D3100F64437 /* PowerZones */ = {
+			isa = PBXGroup;
+			children = (
+				D34C78DC1BB99D3100F64437 /* ZoneIntensity1.png */,
+				D34C78DD1BB99D3100F64437 /* ZoneIntensity2.png */,
+				D34C78DE1BB99D3100F64437 /* ZoneIntensity3.png */,
+				D34C78DF1BB99D3100F64437 /* ZoneIntensity4.png */,
+				D34C78E01BB99D3100F64437 /* ZoneIntensity5.png */,
+			);
+			path = PowerZones;
+			sourceTree = "<group>";
+		};
 		D35665CF1A91B3900041EC4A /* WorkoutButtons */ = {
 			isa = PBXGroup;
 			children = (
@@ -345,6 +367,7 @@
 		D35665EA1A91C3BC0041EC4A /* ExerciseSpecifics */ = {
 			isa = PBXGroup;
 			children = (
+				D34C78DB1BB99D3100F64437 /* PowerZones */,
 				D35665EB1A91C3BC0041EC4A /* Arm & Long Toning Workout Description */,
 				D35665F01A91C3BD0041EC4A /* Arm Blast Description */,
 				D35665F51A91C3BD0041EC4A /* Arm Candy Workout Description Summary Page */,
@@ -451,6 +474,7 @@
 				D39DCBF51B5DE4E200997BB7 /* ProfileViewController.swift */,
 				D39DCC2D1B5ED51F00997BB7 /* AccountSettingsViewController.swift */,
 				D39DCBF91B5EAC5E00997BB7 /* Workouts.swift */,
+				D34C78E61BB99DED00F64437 /* ZoneBrain.swift */,
 				D36F798219E0DF0D00839EEF /* Main.storyboard */,
 				D36F78F219DF556E00839EEF /* Images.xcassets */,
 				D34DC5F41BA22EF3005D68F3 /* StyleKitName.swift */,
@@ -463,7 +487,6 @@
 		D36F78E919DF556E00839EEF /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				D39DCC2B1B5EB4F400997BB7 /* Toucan.swift */,
 				D35665EA1A91C3BC0041EC4A /* ExerciseSpecifics */,
 				D35665CF1A91B3900041EC4A /* WorkoutButtons */,
 				D36F795F19DF9B1F00839EEF /* Icons */,
@@ -662,7 +685,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0700;
-				LastUpgradeCheck = 0640;
+				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = LukeRegan;
 				TargetAttributes = {
 					D36F78E519DF556E00839EEF = {
@@ -742,6 +765,7 @@
 				D36F795719DF735200839EEF /* flame.png in Resources */,
 				D35665E21A91B4F40041EC4A /* WBArmBlast.png in Resources */,
 				D36F798319E0DF0D00839EEF /* Main.storyboard in Resources */,
+				D34C78E21BB99D3100F64437 /* ZoneIntensity2.png in Resources */,
 				D36F794C19DF72E900839EEF /* Dosis-Regular.otf in Resources */,
 				D35665E31A91B4F40041EC4A /* WBArmCandy.png in Resources */,
 				D36F795519DF735200839EEF /* arrow.png in Resources */,
@@ -770,6 +794,7 @@
 				D3DB1B231A92E62B0038719B /* SplashBackExcy.png in Resources */,
 				D36F797519E0822D00839EEF /* register-with-facebook.gif in Resources */,
 				D36F798D19E1E21A00839EEF /* splash.png in Resources */,
+				D34C78E31BB99D3100F64437 /* ZoneIntensity3.png in Resources */,
 				D3EF3BF21A3615C500B1CC02 /* Arm Candy live chart.png in Resources */,
 				D3EF3BE81A360DCF00B1CC02 /* Arm Candy Workout_1.png in Resources */,
 				D3C0420F1A845373009C7FB7 /* TabBarIconMore.png in Resources */,
@@ -787,12 +812,15 @@
 				D340D26A1AF7C87300043A81 /* Target Zone Page.png in Resources */,
 				D36F797B19E089D800839EEF /* beachImage.jpg in Resources */,
 				D3EF3BF81A36183000B1CC02 /* Super Cardio description graph-1.png in Resources */,
+				D34C78E51BB99D3100F64437 /* ZoneIntensity5.png in Resources */,
 				D3C3D7BF1AE1F91A00A39567 /* Excy WarmUpLive_P3.png in Resources */,
 				D36F795819DF735200839EEF /* lightbulb.png in Resources */,
 				D36F78F319DF556E00839EEF /* Images.xcassets in Resources */,
 				D3F3EFA01AF67C4300263896 /* StepperButtonsMinus.png in Resources */,
 				D356661E1A91C3BD0041EC4A /* SuperCycleGraphNew.png in Resources */,
 				D3D53DFF1A1FC09700EA16F3 /* background-image.png in Resources */,
+				D34C78E11BB99D3100F64437 /* ZoneIntensity1.png in Resources */,
+				D34C78E41BB99D3100F64437 /* ZoneIntensity4.png in Resources */,
 				D3C0420C1A845373009C7FB7 /* TabBarIconMe.png in Resources */,
 				D3DB1B2C1AAA1C6D0038719B /* More landing page know zones.png in Resources */,
 				D36F794B19DF72E900839EEF /* Dosis-Medium.otf in Resources */,
@@ -826,8 +854,8 @@
 				D3B877A31B597F37004C2BC7 /* LogInViewController.swift in Sources */,
 				D30279881B1542B600F07FE1 /* SetupStartViewController.swift in Sources */,
 				D39DCC2E1B5ED51F00997BB7 /* AccountSettingsViewController.swift in Sources */,
-				D39DCC2C1B5EB4F400997BB7 /* Toucan.swift in Sources */,
 				D34DC5F51BA22EF3005D68F3 /* StyleKitName.swift in Sources */,
+				D34C78E71BB99DED00F64437 /* ZoneBrain.swift in Sources */,
 				D3C041F21A8063CA009C7FB7 /* UITabBarControllerViewController.swift in Sources */,
 				D3C3D7BD1AE1F87500A39567 /* WarmUpViewController.swift in Sources */,
 				D39DCBF61B5DE4E300997BB7 /* ProfileViewController.swift in Sources */,
@@ -879,6 +907,7 @@
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				COPY_PHASE_STRIP = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
 				GCC_C_LANGUAGE_STANDARD = gnu99;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_OPTIMIZATION_LEVEL = 0;
@@ -948,6 +977,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ExCy",
@@ -957,6 +987,7 @@
 				);
 				INFOPLIST_FILE = ExCy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.excyapp.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5f66c11e-5986-4b8c-be23-dcd266f4cf1d";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
@@ -975,6 +1006,7 @@
 				CODE_SIGN_IDENTITY = "iPhone Developer";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				DEFINES_MODULE = YES;
+				ENABLE_BITCODE = NO;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)/ExCy",
@@ -984,6 +1016,7 @@
 				);
 				INFOPLIST_FILE = ExCy/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.excyapp.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "5f66c11e-5986-4b8c-be23-dcd266f4cf1d";
 				USER_HEADER_SEARCH_PATHS = "ExCy/**";
@@ -1005,6 +1038,7 @@
 				);
 				INFOPLIST_FILE = ExCyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lregancg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExCy.app/ExCy";
 			};
@@ -1021,6 +1055,7 @@
 				);
 				INFOPLIST_FILE = ExCyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.lregancg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExCy.app/ExCy";
 			};

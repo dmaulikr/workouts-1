@@ -30,8 +30,8 @@ class WarmUpViewController: UIViewController {
 	}
 	
 	func stringConversion (seconds:Int) -> String {
-		var minutesCount = seconds / 60
-		var secondsCount = seconds - (minutesCount * 60)
+		let minutesCount = seconds / 60
+		let secondsCount = seconds - (minutesCount * 60)
 		var minuteString = String(minutesCount)
 		var secondString = String(secondsCount)
 		if secondsCount < 10 { secondString = "0\(secondsCount)"}

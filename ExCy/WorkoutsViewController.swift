@@ -17,13 +17,15 @@ class WorkoutsViewController: UIViewController {
 	@IBOutlet var zoneImageView: UIImageView!
 	@IBOutlet weak var progressView: WorkoutProgressView!
 	@IBOutlet var stopwatchLabel: UILabel!
+	@IBOutlet weak var currentZoneImageView: UIImageView!
+	@IBOutlet weak var targetZoneImageView: UIImageView!
 	
 	var timer: NSTimer?
 	var progressCounter = 1
 	var initialTime: Float = 1
 	
-	
-	
+	var secondsTilZoneChange: Int?
+	var zoneBrain: ZoneBrain?
 	
 	
 	override func viewDidLoad() {
@@ -34,12 +36,19 @@ class WorkoutsViewController: UIViewController {
 		if let newNumber = workoutNumber {
 			switch newNumber {
 			case 1: workoutTime = 420
+				zoneBrain = ZoneBrain.init(time: 420, zones: 7)
 			case 2: workoutTime = 1380
+				zoneBrain = ZoneBrain.init(time: 1380, zones: 23)
 			case 3: workoutTime = 900
+				zoneBrain = ZoneBrain.init(time: 900, zones: 7)
 			case 4: workoutTime = 600
+				zoneBrain = ZoneBrain.init(time: 600, zones: 10)
 			case 5: workoutTime = 600
+				zoneBrain = ZoneBrain.init(time: 600, zones: 7)
 			case 6: workoutTime = 420
+				zoneBrain = ZoneBrain.init(time: 420, zones: 7)
 			default: workoutTime = 420
+				zoneBrain = ZoneBrain.init(time: 420, zones: 7)
 			}
 		}
 	}
@@ -86,8 +95,8 @@ class WorkoutsViewController: UIViewController {
 	
 	
 	func stringConversion (seconds:Int) -> String {
-		var minutesCount = seconds / 60
-		var secondsCount = seconds - (minutesCount * 60)
+		let minutesCount = seconds / 60
+		let secondsCount = seconds - (minutesCount * 60)
 		var minuteString = String(minutesCount)
 		var secondString = String(secondsCount)
 		if secondsCount < 10 { secondString = "0\(secondsCount)"}
@@ -203,8 +212,8 @@ class WorkoutsViewController: UIViewController {
 	func surveyAlert () {
 		let alertController = UIAlertController(title: "Complete Survey?", message: "Please take a moment to complete a quick four question survey", preferredStyle: .Alert)
 		let OKAction = UIAlertAction(title: "yes", style: .Default) { action in
-			let surveyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PostWorkoutSurvey") as? UIViewController
-			self.presentViewController(surveyVC!, animated: true, completion: nil)
+			let surveyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PostWorkoutSurvey")
+			self.presentViewController(surveyVC, animated: true, completion: nil)
 		}
 		alertController.addAction(OKAction)
 		let cancelAction = UIAlertAction(title: "no thanks", style: .Default) { action in

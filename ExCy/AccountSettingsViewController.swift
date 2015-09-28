@@ -39,7 +39,7 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 			signMeUpLabel.hidden = true
 		}
 		
-		var tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+		let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
 		view.addGestureRecognizer(tap)
 		
 		
@@ -47,11 +47,11 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
     }
 	
 	override func viewDidAppear(animated: Bool) {
-		var currentUser = PFUser.currentUser()
+		let currentUser = PFUser.currentUser()
 		if  currentUser == nil {
 			
-			let LogInVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn") as? UIViewController
-			self.presentViewController(LogInVC!, animated: true, completion: nil)
+			let LogInVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn") 
+			self.presentViewController(LogInVC, animated: true, completion: nil)
 			
 		}
 	}
@@ -63,7 +63,7 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
     }
 	
 	func changeImage () {
-		var image = UIImagePickerController()
+		let image = UIImagePickerController()
 		image.delegate = self
 		image.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
 		image.allowsEditing = false
@@ -99,7 +99,7 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 	func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
 		if willSelectInspirationalImage {
 			self.dismissViewControllerAnimated(true, completion: nil)
-			var imageData = UIImageJPEGRepresentation(image, 0.6)
+			let imageData = UIImageJPEGRepresentation(image, 0.6)
 			if (changeSpecificImageNumber == 1) {
 				NSUserDefaults.standardUserDefaults().setObject(imageData, forKey: "InspirationImage1")
 			} else if (changeSpecificImageNumber == 2) {
@@ -109,10 +109,10 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 			}
 		} else {
 			self.dismissViewControllerAnimated(true, completion: nil)
-			let blueColor = UIColor(red: 50/255, green: 145/255, blue: 210/255, alpha: 1.0)
-			let croppedImage = Toucan(image: image).maskWithRoundedRect(cornerRadius: 50.0, borderWidth: 15.0, borderColor: blueColor).image
-			ProfileImageView.image = croppedImage
-			var imageData = UIImageJPEGRepresentation(croppedImage, 0.6)
+			//let blueColor = UIColor(red: 50/255, green: 145/255, blue: 210/255, alpha: 1.0)
+			//let croppedImage = Toucan(image: image).maskWithRoundedRect(cornerRadius: 50.0, borderWidth: 15.0, borderColor: blueColor).image
+			ProfileImageView.image = image
+			let imageData = UIImageJPEGRepresentation(image, 0.6)
 			NSUserDefaults.standardUserDefaults().setObject(imageData, forKey: "profileImage")
 		}
 	}
@@ -120,11 +120,11 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 
 	@IBAction func saveAccountChangesButtonPressed(sender: UIButton) {
 		
-		if emailAddressTextField.text.isEmpty {  } else {
+		if emailAddressTextField.text!.isEmpty {  } else {
 			PFUser.currentUser()?.email = "\(emailAddressTextField.text)" }
-		if caloriesPerWeekLabel.text.isEmpty {  } else {
+		if caloriesPerWeekLabel.text!.isEmpty {  } else {
 			defaults.setObject("\(caloriesPerWeekLabel.text)", forKey: "CaloriesPerWeek") }
-		if workoutsPerWeekLabel.text.isEmpty {  } else {
+		if workoutsPerWeekLabel.text!.isEmpty {  } else {
 			defaults.setObject("\(workoutsPerWeekLabel.text)", forKey: "WorkoutsPerWeek") }
 		if myFitnessManifestoTextView.text.isEmpty { } else {
 			defaults.setObject("\(myFitnessManifestoTextView.text)", forKey: "FitnessManifesto") }
@@ -137,10 +137,10 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 	@IBAction func logOutButtonPRessed(sender: AnyObject) {
 		PFUser.logOutInBackgroundWithBlock { (error) -> Void in
 			if error == nil {
-				let LogInVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn") as? UIViewController
-				self.presentViewController(LogInVC!, animated: true, completion: nil)
+				let LogInVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn") as UIViewController
+				self.presentViewController(LogInVC, animated: true, completion: nil)
 			} else {
-				println("Error: \(error)")
+				print("Error: \(error)")
 			}
 		}
 		

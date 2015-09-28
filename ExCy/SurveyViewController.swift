@@ -84,8 +84,8 @@ class SurveyViewController: UIViewController {
 	
 	@IBAction func submitButtonPressed(sender: UIButton) {
 		if questionNumber >= 3 {
-			let completedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainTabBarCtrl") as? UIViewController
-			self.presentViewController(completedVC!, animated: true, completion: nil)
+			let completedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainTabBarCtrl")
+			self.presentViewController(completedVC, animated: true, completion: nil)
 		} else {
 			questionNumber++
 			switch questionNumber {

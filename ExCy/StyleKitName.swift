@@ -16,7 +16,7 @@ public class StyleKitName : NSObject {
 
     //// Drawing Methods
 
-    public class func drawCanvas1(#progressAmmount: CGFloat) {
+    public class func drawCanvas1(progressAmmount: CGFloat) {
         //// Color Declarations
         let color = UIColor(red: 0.500, green: 0.500, blue: 0.500, alpha: 0.332)
 
@@ -35,7 +35,7 @@ public class workoutsProgressOverlay : NSObject {
 	
 	//// Drawing Methods
 	
-	public class func drawCanvas1(#progressAmmount: CGFloat) {
+	public class func drawCanvas1(progressAmmount: CGFloat) {
 		//// Color Declarations
 		let color = UIColor(red: 0.500, green: 0.500, blue: 0.500, alpha: 0.332)
 		

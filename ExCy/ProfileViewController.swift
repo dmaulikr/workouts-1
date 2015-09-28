@@ -162,7 +162,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 	
 	
 	@IBAction func changeImageButtonPressed(sender: AnyObject) {
-		var image = UIImagePickerController()
+		let image = UIImagePickerController()
 		image.delegate = self
 		image.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
 		image.allowsEditing = false
@@ -171,10 +171,10 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 	
 	func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
 		self.dismissViewControllerAnimated(true, completion: nil)
-		let blueColor = UIColor(red: 50/255, green: 145/255, blue: 210/255, alpha: 1.0)
-		let croppedImage = Toucan(image: image).maskWithRoundedRect(cornerRadius: 50.0, borderWidth: 15.0, borderColor: blueColor).image
-		profileImage.image = croppedImage
-		var imageData = UIImageJPEGRepresentation(croppedImage, 0.6)
+		//let blueColor = UIColor(red: 50/255, green: 145/255, blue: 210/255, alpha: 1.0)
+		//let croppedImage = Toucan(image: image).maskWithRoundedRect(cornerRadius: 50.0, borderWidth: 15.0, borderColor: blueColor).image
+		profileImage.image = image
+		let imageData = UIImageJPEGRepresentation(image, 0.6)
 		NSUserDefaults.standardUserDefaults().setObject(imageData, forKey: "profileImage")
 		
 	}

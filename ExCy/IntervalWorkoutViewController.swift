@@ -11,7 +11,6 @@ import UIKit
 class IntervalWorkoutViewController: UIViewController {
 
 	@IBOutlet weak var progressView: ProgressView!
-	@IBOutlet weak var progressBar: UIProgressView!
 	@IBOutlet var stopwatchLabel: UILabel!
 	@IBOutlet weak var slowIntervalLabel: UILabel!
 	@IBOutlet weak var fastIntervalLabel: UILabel!
@@ -29,9 +28,6 @@ class IntervalWorkoutViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
-		self.progressBar.hidden = true
-		
 		let defaults = NSUserDefaults.standardUserDefaults()
 		if let savedWorkouts = defaults.objectForKey("workouts") as? NSData {
 			workouts = NSKeyedUnarchiver.unarchiveObjectWithData(savedWorkouts) as! [Workouts]
@@ -69,7 +65,6 @@ class IntervalWorkoutViewController: UIViewController {
 			counterInSeconds--
 			self.stopwatchLabel.text = stringConversion(counterInSeconds)
 			progressCounter++
-			self.progressBar.setProgress (Float(progressCounter) / initialTime, animated: true)
 			shouldChangeIntervalSpeed()
 			
 			self.progressView.progress = CGFloat(progressCounter) / CGFloat(initialTime)
@@ -128,10 +123,9 @@ class IntervalWorkoutViewController: UIViewController {
 	}
 	
 	func intervalChange () {
-		
 		if imageBool == true {
 			if slowBurstStepper < slowIntervalCount {
-				println("I'm evaluating blue")
+				print("I'm evaluating blue")
 				slowBurstStepper++
 			} else if slowBurstStepper == slowIntervalCount {
 				imageBool = false
@@ -140,7 +134,7 @@ class IntervalWorkoutViewController: UIViewController {
 			}
 		} else if imageBool == false {
 			if fastBurstStepper < fastIntervalCount {
-				println("I'm evaluating red")
+				print(" I'm evaluating red")
 				fastBurstStepper++
 			} else if fastBurstStepper == fastIntervalCount {
 				imageBool = true
@@ -251,7 +245,6 @@ class IntervalWorkoutViewController: UIViewController {
 		minutesCount = 0
 		self.progressCounter = 0
 		self.updateTimerSettingUI()
-		self.progressBar.progress = 0.0
 		self.chartImage.image = UIImage(named: "BurstPlayGrey.png")
 		fastIntervalCount = 0
 		self.fastIntervalLabel.text = "000"
@@ -308,8 +301,8 @@ class IntervalWorkoutViewController: UIViewController {
 	func surveyAlert () {
 		let alertController = UIAlertController(title: "Complete Survey?", message: "Please take a moment to complete a quick four question survey", preferredStyle: .Alert)
 		let OKAction = UIAlertAction(title: "yes", style: .Default) { action in
-			let surveyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PostWorkoutSurvey") as? UIViewController
-			self.presentViewController(surveyVC!, animated: true, completion: nil)
+			let surveyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PostWorkoutSurvey")
+			self.presentViewController(surveyVC, animated: true, completion: nil)
 		}
 		alertController.addAction(OKAction)
 		let cancelAction = UIAlertAction(title: "no thanks", style: .Default) { action in
