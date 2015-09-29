@@ -18,6 +18,7 @@ class SurveyViewController: UIViewController {
 	@IBOutlet weak var submitButton: UIButton!
 	
 	var questionNumber = 0
+	var surveryQuestions: [Int]?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -40,43 +41,75 @@ class SurveyViewController: UIViewController {
 			
 		case 0: switch selctedZoneNumber.selectedSegmentIndex {
 				case 0: questionsView.image = UIImage(named: "Survey1-1")
+					surveryQuestions?.append(1)
 				case 1: questionsView.image = UIImage(named: "Survey1-2")
+					surveryQuestions?.append(2)
 				case 2: questionsView.image = UIImage(named: "Survey1-3")
+					surveryQuestions?.append(3)
 				case 3: questionsView.image = UIImage(named: "Survey1-4")
+					surveryQuestions?.append(4)
 				case 4: questionsView.image = UIImage(named: "Survey1-5")
-				default: questionsView.image = UIImage(named: "Survey1-6") }
-			
+					surveryQuestions?.append(5)
+				default: questionsView.image = UIImage(named: "Survey1-1")
+					surveryQuestions?.append(3)
+			}
 		case 1: switch selctedZoneNumber.selectedSegmentIndex {
 				case 0: questionsView.image = UIImage(named: "Survey2-1")
+					surveryQuestions?.append(1)
 				case 1: questionsView.image = UIImage(named: "Survey2-2")
+					surveryQuestions?.append(2)
 				case 2: questionsView.image = UIImage(named: "Survey2-3")
+					surveryQuestions?.append(3)
 				case 3: questionsView.image = UIImage(named: "Survey2-4")
+					surveryQuestions?.append(4)
 				case 4: questionsView.image = UIImage(named: "Survey2-5")
-				default: questionsView.image = UIImage(named: "Survey2-6") }
-
+					surveryQuestions?.append(5)
+				default: questionsView.image = UIImage(named: "Survey2-1")
+					surveryQuestions?.append(3)
+			}
 		case 2: switch selctedZoneNumber.selectedSegmentIndex {
 				case 0: questionsView.image = UIImage(named: "Survey3-1")
+					surveryQuestions?.append(1)
 				case 1: questionsView.image = UIImage(named: "Survey3-2")
+					surveryQuestions?.append(2)
 				case 2: questionsView.image = UIImage(named: "Survey3-3")
+					surveryQuestions?.append(3)
 				case 3: questionsView.image = UIImage(named: "Survey3-4")
+					surveryQuestions?.append(4)
 				case 4: questionsView.image = UIImage(named: "Survey3-5")
-				default: questionsView.image = UIImage(named: "Survey3-6") }
+					surveryQuestions?.append(5)
+				default: questionsView.image = UIImage(named: "Survey3-1")
+					surveryQuestions?.append(3)
+			}
 			
 		case 3: switch selctedZoneNumber.selectedSegmentIndex {
 				case 0: questionsView.image = UIImage(named: "Survey4-1")
+					surveryQuestions?.append(1)
 				case 1: questionsView.image = UIImage(named: "Survey4-2")
+					surveryQuestions?.append(2)
 				case 2: questionsView.image = UIImage(named: "Survey4-3")
+					surveryQuestions?.append(3)
 				case 3: questionsView.image = UIImage(named: "Survey4-4")
+					surveryQuestions?.append(4)
 				case 4: questionsView.image = UIImage(named: "Survey4-5")
-				default: questionsView.image = UIImage(named: "Survey4-6") }
+					surveryQuestions?.append(5)
+				default: questionsView.image = UIImage(named: "Survey4-1")
+					surveryQuestions?.append(3)
+			}
 
 		default: switch selctedZoneNumber.selectedSegmentIndex {
 				case 0: questionsView.image = UIImage(named: "Survey1-1")
+					surveryQuestions?.append(1)
 				case 1: questionsView.image = UIImage(named: "Survey1-2")
+					surveryQuestions?.append(2)
 				case 2: questionsView.image = UIImage(named: "Survey1-3")
+					surveryQuestions?.append(3)
 				case 3: questionsView.image = UIImage(named: "Survey1-4")
+					surveryQuestions?.append(4)
 				case 4: questionsView.image = UIImage(named: "Survey1-5")
-				default: questionsView.image = UIImage(named: "Survey1-6") }
+					surveryQuestions?.append(5)
+				default: questionsView.image = UIImage(named: "Survey1-1")
+					surveryQuestions?.append(3) }
 		}
 		
 		

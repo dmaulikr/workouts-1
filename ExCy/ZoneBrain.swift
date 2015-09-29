@@ -10,18 +10,17 @@ import Foundation
 
 class ZoneBrain {
 	
-	var totalWorkoutTime: Int
-	var numberOfZones: Int
-	var zoneIntensity: Int
-	
-	
+	let totalWorkoutTime: Int
+	let numberOfZones: Int
+	let zoneChangeInSeconds: Int
 	
 	init(time: Int, zones: Int){
 		self.totalWorkoutTime = time
 		self.numberOfZones = zones
+		self.zoneChangeInSeconds = time / zones
 	}
 	
-	func zoneArray() -> [Int] {
+	func getZoneArray() -> [Int] {
 		switch self.numberOfZones {
 			case 7: return [3,5,3,5,3,5,3]
 			case 10: return [3,5,3,5,3,5,3,5,3,5]
@@ -30,7 +29,5 @@ class ZoneBrain {
 			default: return [3,5,3,5,3,5,3]
 		}
 	}
-	func getSecondsForZoneChange() -> Int {
-		return self.totalWorkoutTime / self.numberOfZones
-	}
+	
 }

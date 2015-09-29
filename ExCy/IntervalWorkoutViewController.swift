@@ -125,7 +125,6 @@ class IntervalWorkoutViewController: UIViewController {
 	func intervalChange () {
 		if imageBool == true {
 			if slowBurstStepper < slowIntervalCount {
-				print("I'm evaluating blue")
 				slowBurstStepper++
 			} else if slowBurstStepper == slowIntervalCount {
 				imageBool = false
@@ -134,7 +133,6 @@ class IntervalWorkoutViewController: UIViewController {
 			}
 		} else if imageBool == false {
 			if fastBurstStepper < fastIntervalCount {
-				print(" I'm evaluating red")
 				fastBurstStepper++
 			} else if fastBurstStepper == fastIntervalCount {
 				imageBool = true
@@ -142,7 +140,6 @@ class IntervalWorkoutViewController: UIViewController {
 				fastBurstStepper = 0
 			}
 		}
-		
 	}
 	
 	

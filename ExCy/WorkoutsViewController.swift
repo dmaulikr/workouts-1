@@ -21,40 +21,52 @@ class WorkoutsViewController: UIViewController {
 	@IBOutlet weak var targetZoneImageView: UIImageView!
 	
 	var timer: NSTimer?
-	var progressCounter = 1
+	var progressCounter = 0
 	var initialTime: Float = 1
 	
-	var secondsTilZoneChange: Int?
+	
 	var zoneBrain: ZoneBrain?
+	var zoneIncrementTime = 0
+	var zoneArray: [Int]?
 	
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
 	
+	
+	
 	override func viewWillAppear(animated: Bool) {
 		if let newNumber = workoutNumber {
 			switch newNumber {
 			case 1: workoutTime = 420
 				zoneBrain = ZoneBrain.init(time: 420, zones: 7)
+				zoneArray = zoneBrain!.getZoneArray()
 			case 2: workoutTime = 1380
 				zoneBrain = ZoneBrain.init(time: 1380, zones: 23)
+				zoneArray = zoneBrain!.getZoneArray()
 			case 3: workoutTime = 900
 				zoneBrain = ZoneBrain.init(time: 900, zones: 7)
+				zoneArray = zoneBrain!.getZoneArray()
 			case 4: workoutTime = 600
 				zoneBrain = ZoneBrain.init(time: 600, zones: 10)
+				zoneArray = zoneBrain!.getZoneArray()
 			case 5: workoutTime = 600
 				zoneBrain = ZoneBrain.init(time: 600, zones: 7)
+				zoneArray = zoneBrain!.getZoneArray()
 			case 6: workoutTime = 420
 				zoneBrain = ZoneBrain.init(time: 420, zones: 7)
+				zoneArray = zoneBrain!.getZoneArray()
 			default: workoutTime = 420
 				zoneBrain = ZoneBrain.init(time: 420, zones: 7)
+				zoneArray = zoneBrain!.getZoneArray()
 			}
 		}
 	}
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
+		self.targetZoneImageView.image = UIImage(named: "ZoneIntensity\(zoneArray!.first!).png")
 		self.initialTime = Float(workoutTime!)
 		self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateUI"), userInfo: nil, repeats: true)
 		
@@ -85,9 +97,21 @@ class WorkoutsViewController: UIViewController {
 		}
 	}
 	
-	func setUpView() {
-		
+	
+	func setUpZoneView() {
+		if zoneBrain == nil { return }
+		zoneIncrementTime++
+		if zoneIncrementTime >= zoneBrain!.zoneChangeInSeconds {
+			zoneIncrementTime = 0
+			zoneArray?.removeFirst()
+			if zoneArray?.count > 0 {
+				self.targetZoneImageView.image = UIImage(named: "ZoneIntensity\(zoneArray!.first!).png")
+			}
+			
+		}
 	}
+	
+	
 	
 	override func viewDidDisappear(animated: Bool) {
 		super.viewDidDisappear(animated)
@@ -115,6 +139,7 @@ class WorkoutsViewController: UIViewController {
 			
 			self.progressView.progress = CGFloat(progressCounter) / CGFloat(initialTime)
 			self.progressView.setNeedsDisplay()
+			self.setUpZoneView()
 			
 		} else if (workoutTime != nil) && workoutTime == 0 {
 			self.timer?.invalidate()

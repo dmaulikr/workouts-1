@@ -3,6 +3,8 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
+        <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
+        <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
         <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
@@ -1293,361 +1295,227 @@ write it down to stay inspired!               </string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDE-Yr-bI4">
-                                <rect key="frame" x="21" y="124" width="332" height="120"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yxM-Bt-hFf">
+                                <rect key="frame" x="21" y="135" width="332" height="349"/>
                                 <subviews>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kau-w7-7j1">
-                                        <rect key="frame" x="299" y="18" width="25" height="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="burst play" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXo-DD-s4i">
+                                        <rect key="frame" x="121" y="0.0" width="90" height="31"/>
                                         <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="7Ij-vS-Bmf"/>
-                                            <constraint firstAttribute="width" constant="25" id="uWm-im-0eG"/>
+                                            <constraint firstAttribute="width" constant="90" id="3eE-NN-Aa4"/>
+                                            <constraint firstAttribute="height" constant="31" id="ObL-DK-QHj"/>
                                         </constraints>
-                                        <state key="normal" image="StepperButtonsPlus.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="secondTimeUp:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="SFe-fX-lft"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHZ-7g-cab">
-                                        <rect key="frame" x="299" y="76" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="8FS-hx-a8C"/>
-                                            <constraint firstAttribute="height" constant="25" id="kQ3-Gv-tX2"/>
-                                        </constraints>
-                                        <state key="normal" image="StepperButtonsMinus.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="secondTimeDown:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="hql-t4-edU"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jnf-Sc-TMi">
-                                        <rect key="frame" x="85" y="18" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="lIJ-eh-pTS"/>
-                                            <constraint firstAttribute="height" constant="25" id="sqJ-H1-P5Y"/>
-                                        </constraints>
-                                        <state key="normal" image="StepperButtonsPlus.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="minuteTimeUp:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="se3-FA-zFX"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPJ-6V-FQY">
-                                        <rect key="frame" x="85" y="76" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="d5T-1d-NcI"/>
-                                            <constraint firstAttribute="width" constant="25" id="gDa-ng-pL5"/>
-                                        </constraints>
-                                        <state key="normal" image="StepperButtonsMinus.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="minuteTimeDown:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="nll-fH-kea"/>
-                                        </connections>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="joM-4T-BUu">
-                                        <rect key="frame" x="73" y="22" width="1" height="75"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="1" id="XZS-Jy-rsK"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8M-Gy-jEc">
-                                        <rect key="frame" x="82" y="49" width="30" height="23"/>
-                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                        <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="24"/>
+                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                         <nil key="highlightedColor"/>
                                     </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" text="sec" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eij-oZ-6st">
-                                        <rect key="frame" x="300" y="49" width="24" height="23"/>
-                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="8hA-Yt-PeH">
-                                        <rect key="frame" x="15" y="8" width="45" height="45"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="ZTO-Mw-g78"/>
-                                            <constraint firstAttribute="width" constant="45" id="fYP-n6-6dP"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="set your time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zJ-YM-23Y">
-                                        <rect key="frame" x="0.0" y="63" width="74" height="49"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="49" id="frd-lN-78T"/>
-                                            <constraint firstAttribute="width" constant="74" id="tWq-c0-ZFK"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtl-So-Ggo">
-                                        <rect key="frame" x="131" y="21" width="151" height="78"/>
-                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="61"/>
-                                        <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1nP-BZ-876">
+                                        <rect key="frame" x="0.0" y="41" width="332" height="245"/>
+                                        <subviews>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDE-Yr-bI4">
+                                                <rect key="frame" x="0.0" y="0.0" width="332" height="120"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kau-w7-7j1">
+                                                        <rect key="frame" x="299" y="18" width="25" height="25"/>
+                                                        <state key="normal" image="StepperButtonsPlus.png">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="secondTimeUp:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="SFe-fX-lft"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHZ-7g-cab">
+                                                        <rect key="frame" x="299" y="76" width="25" height="25"/>
+                                                        <state key="normal" image="StepperButtonsMinus.png">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="secondTimeDown:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="hql-t4-edU"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jnf-Sc-TMi">
+                                                        <rect key="frame" x="85" y="18" width="25" height="25"/>
+                                                        <state key="normal" image="StepperButtonsPlus.png">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="minuteTimeUp:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="se3-FA-zFX"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPJ-6V-FQY">
+                                                        <rect key="frame" x="85" y="76" width="25" height="25"/>
+                                                        <state key="normal" image="StepperButtonsMinus.png">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="minuteTimeDown:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="nll-fH-kea"/>
+                                                        </connections>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="joM-4T-BUu">
+                                                        <rect key="frame" x="73" y="22" width="1" height="75"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="min" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8M-Gy-jEc">
+                                                        <rect key="frame" x="82" y="49" width="30" height="23"/>
+                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="sec" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eij-oZ-6st">
+                                                        <rect key="frame" x="300" y="49" width="24" height="23"/>
+                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="8hA-Yt-PeH">
+                                                        <rect key="frame" x="15" y="8" width="45" height="45"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="set your time" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0zJ-YM-23Y">
+                                                        <rect key="frame" x="0.0" y="63" width="74" height="49"/>
+                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtl-So-Ggo">
+                                                        <rect key="frame" x="131" y="21" width="151" height="78"/>
+                                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="61"/>
+                                                        <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="jDE-Yr-bI4" secondAttribute="height" multiplier="83:30" id="5hu-HA-7zS"/>
+                                                    <constraint firstAttribute="height" constant="120" id="6gE-3e-Ckf"/>
+                                                    <constraint firstAttribute="width" constant="332" id="KH0-2E-k1x"/>
+                                                    <constraint firstAttribute="height" constant="120" id="toE-XO-PNt"/>
+                                                </constraints>
+                                                <variation key="default">
+                                                    <mask key="constraints">
+                                                        <exclude reference="5hu-HA-7zS"/>
+                                                        <exclude reference="6gE-3e-Ckf"/>
+                                                    </mask>
+                                                </variation>
+                                            </view>
+                                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uyZ-EG-ZsC">
+                                                <rect key="frame" x="0.0" y="130" width="332" height="115"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPU-T8-eD8">
+                                                        <rect key="frame" x="82" y="11" width="99" height="58"/>
+                                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="60"/>
+                                                        <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXl-cU-ANf">
+                                                        <rect key="frame" x="82" y="77" width="25" height="25"/>
+                                                        <state key="normal" image="StepperButtonsPlus.png">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="slowIntervalUp:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="OeM-mb-Isj"/>
+                                                        </connections>
+                                                    </button>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="nHm-2c-KCY">
+                                                        <rect key="frame" x="73" y="20" width="1" height="80"/>
+                                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="550-dU-3bt">
+                                                        <rect key="frame" x="225" y="11" width="99" height="58"/>
+                                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="60"/>
+                                                        <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4C-cf-7Kk">
+                                                        <rect key="frame" x="225" y="77" width="25" height="25"/>
+                                                        <state key="normal" image="StepperButtonsPlus.png">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="fastIntervalUp:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="ZsT-hU-mrF"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLT-1n-9E1">
+                                                        <rect key="frame" x="299" y="77" width="25" height="25"/>
+                                                        <state key="normal" image="StepperButtonsMinus.png">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="fastIntervalDown:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="oLA-rK-pMa"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="fast" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqw-tK-Fke">
+                                                        <rect key="frame" x="260" y="77" width="28" height="23"/>
+                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="set your intervals" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDz-RD-I0R">
+                                                        <rect key="frame" x="0.0" y="61" width="74" height="46"/>
+                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0S-YU-CsY">
+                                                        <rect key="frame" x="156" y="77" width="25" height="25"/>
+                                                        <state key="normal" image="StepperButtonsMinus.png">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="slowIntervalDown:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="mfo-FQ-kbV"/>
+                                                        </connections>
+                                                    </button>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graph.png" translatesAutoresizingMaskIntoConstraints="NO" id="WX1-fW-Tnp">
+                                                        <rect key="frame" x="15" y="8" width="45" height="45"/>
+                                                    </imageView>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="slow" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtx-Jx-tO6">
+                                                        <rect key="frame" x="115" y="77" width="33" height="23"/>
+                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                </subviews>
+                                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="115" id="Sf0-CT-kSl"/>
+                                                    <constraint firstAttribute="width" constant="332" id="nKZ-PM-jPC"/>
+                                                </constraints>
+                                            </view>
+                                        </subviews>
+                                        <variation key="heightClass=compact" spacing="3"/>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fnc-Xw-Guk">
+                                        <rect key="frame" x="0.0" y="296" width="332" height="53"/>
+                                        <subviews>
+                                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4o-fg-xQf">
+                                                <rect key="frame" x="0.0" y="0.0" width="332" height="53"/>
+                                                <color key="backgroundColor" red="0.54901960780000003" green="0.77647058820000003" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="332" id="Rig-di-T8q"/>
+                                                    <constraint firstAttribute="height" constant="53" id="dIw-19-5Ra"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="32"/>
+                                                <state key="normal" title="start">
+                                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <state key="highlighted">
+                                                    <color key="titleColor" red="0.16940957740000001" green="0.68223505429999998" blue="0.16800005160000001" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="startButtonPressed:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="dyB-FN-z15"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="eij-oZ-6st" secondAttribute="trailing" constant="8" id="1yP-zk-hEE"/>
-                                    <constraint firstItem="m8M-Gy-jEc" firstAttribute="leading" secondItem="joM-4T-BUu" secondAttribute="trailing" constant="8" id="2cN-2d-cw7"/>
-                                    <constraint firstAttribute="trailing" secondItem="QHZ-7g-cab" secondAttribute="trailing" constant="8" id="3CF-JW-U1r"/>
-                                    <constraint firstAttribute="width" constant="332" id="4Av-AV-hOn"/>
-                                    <constraint firstAttribute="centerX" secondItem="eij-oZ-6st" secondAttribute="centerX" constant="-146" id="4bZ-qQ-KRm"/>
-                                    <constraint firstAttribute="width" secondItem="jDE-Yr-bI4" secondAttribute="height" multiplier="83:30" id="5hu-HA-7zS"/>
-                                    <constraint firstAttribute="height" constant="120" id="6gE-3e-Ckf"/>
-                                    <constraint firstAttribute="bottom" secondItem="joM-4T-BUu" secondAttribute="bottom" constant="23" id="7er-6f-tig"/>
-                                    <constraint firstItem="Jnf-Sc-TMi" firstAttribute="top" secondItem="jDE-Yr-bI4" secondAttribute="top" constant="18" id="7xC-P6-XeR"/>
-                                    <constraint firstItem="joM-4T-BUu" firstAttribute="leading" secondItem="8hA-Yt-PeH" secondAttribute="trailing" constant="13" id="8d3-yE-aOv"/>
-                                    <constraint firstItem="Jnf-Sc-TMi" firstAttribute="leading" secondItem="joM-4T-BUu" secondAttribute="trailing" constant="11" id="Fc9-57-qdL"/>
-                                    <constraint firstAttribute="trailing" secondItem="kau-w7-7j1" secondAttribute="trailing" constant="8" id="Gfo-ku-ScC"/>
-                                    <constraint firstAttribute="centerX" secondItem="m8M-Gy-jEc" secondAttribute="centerX" constant="69" id="J6m-n0-P8u"/>
-                                    <constraint firstItem="dPJ-6V-FQY" firstAttribute="leading" secondItem="joM-4T-BUu" secondAttribute="trailing" constant="11" id="Jpb-u4-vo8"/>
-                                    <constraint firstAttribute="centerY" secondItem="eij-oZ-6st" secondAttribute="centerY" id="KFf-yC-SMb"/>
-                                    <constraint firstItem="eij-oZ-6st" firstAttribute="leading" secondItem="dtl-So-Ggo" secondAttribute="trailing" constant="18" id="LsY-pU-XLo"/>
-                                    <constraint firstItem="kau-w7-7j1" firstAttribute="top" secondItem="jDE-Yr-bI4" secondAttribute="top" constant="18" id="N0X-K9-N4B"/>
-                                    <constraint firstAttribute="bottom" secondItem="0zJ-YM-23Y" secondAttribute="bottom" constant="8" id="Prq-ai-DCt"/>
-                                    <constraint firstAttribute="bottom" secondItem="dtl-So-Ggo" secondAttribute="bottom" constant="21" id="X6t-Nd-kYI"/>
-                                    <constraint firstAttribute="width" secondItem="jDE-Yr-bI4" secondAttribute="height" multiplier="83:30" id="ZN1-eB-jI9"/>
-                                    <constraint firstItem="dtl-So-Ggo" firstAttribute="leading" secondItem="m8M-Gy-jEc" secondAttribute="trailing" constant="19" id="dR5-S5-NB7"/>
-                                    <constraint firstAttribute="bottom" secondItem="QHZ-7g-cab" secondAttribute="bottom" constant="19" id="dp6-aT-ko1"/>
-                                    <constraint firstAttribute="bottom" secondItem="dPJ-6V-FQY" secondAttribute="bottom" constant="19" id="gu4-kb-EfD"/>
-                                    <constraint firstItem="dtl-So-Ggo" firstAttribute="top" secondItem="jDE-Yr-bI4" secondAttribute="top" constant="21" id="hJw-oe-YC9"/>
-                                    <constraint firstItem="8hA-Yt-PeH" firstAttribute="leading" secondItem="jDE-Yr-bI4" secondAttribute="leading" constant="15" id="iHm-PG-UMB"/>
-                                    <constraint firstItem="joM-4T-BUu" firstAttribute="top" secondItem="jDE-Yr-bI4" secondAttribute="top" constant="22" id="iwD-H3-XUx"/>
-                                    <constraint firstItem="0zJ-YM-23Y" firstAttribute="leading" secondItem="jDE-Yr-bI4" secondAttribute="leading" id="jsd-1F-ho5"/>
-                                    <constraint firstAttribute="centerY" secondItem="m8M-Gy-jEc" secondAttribute="centerY" id="uEi-Kq-tsX"/>
-                                    <constraint firstItem="8hA-Yt-PeH" firstAttribute="top" secondItem="jDE-Yr-bI4" secondAttribute="top" constant="8" id="wBG-Ar-1Kl"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="5hu-HA-7zS"/>
-                                        <exclude reference="6gE-3e-Ckf"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uyZ-EG-ZsC">
-                                <rect key="frame" x="21" y="252" width="332" height="115"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPU-T8-eD8">
-                                        <rect key="frame" x="82" y="11" width="99" height="58"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="99" id="sTR-Tj-GUr"/>
-                                            <constraint firstAttribute="height" constant="58" id="yN3-4A-TpZ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="60"/>
-                                        <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXl-cU-ANf">
-                                        <rect key="frame" x="82" y="77" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="191-V6-cAf"/>
-                                            <constraint firstAttribute="width" constant="25" id="o0n-oO-hhW"/>
-                                        </constraints>
-                                        <state key="normal" image="StepperButtonsPlus.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="slowIntervalUp:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="OeM-mb-Isj"/>
-                                        </connections>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nHm-2c-KCY">
-                                        <rect key="frame" x="73" y="20" width="1" height="80"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="1" id="Xsc-1k-rZo"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="550-dU-3bt">
-                                        <rect key="frame" x="225" y="11" width="99" height="58"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="99" id="FZQ-Kc-y0Y"/>
-                                            <constraint firstAttribute="height" constant="58" id="tXM-wy-Xzj"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="60"/>
-                                        <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4C-cf-7Kk">
-                                        <rect key="frame" x="225" y="77" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="SGM-jh-5y0"/>
-                                            <constraint firstAttribute="width" constant="25" id="dYl-41-KGe"/>
-                                        </constraints>
-                                        <state key="normal" image="StepperButtonsPlus.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="fastIntervalUp:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="ZsT-hU-mrF"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLT-1n-9E1">
-                                        <rect key="frame" x="299" y="77" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="48c-S9-c52"/>
-                                            <constraint firstAttribute="width" constant="25" id="rER-6z-eTp"/>
-                                        </constraints>
-                                        <state key="normal" image="StepperButtonsMinus.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="fastIntervalDown:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="oLA-rK-pMa"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fast" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="bqw-tK-Fke">
-                                        <rect key="frame" x="260" y="77" width="28" height="23"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="28" id="RCg-4t-WaH"/>
-                                            <constraint firstAttribute="height" constant="23" id="SSK-Ca-faG"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="set your intervals" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="xDz-RD-I0R">
-                                        <rect key="frame" x="0.0" y="61" width="74" height="46"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="74" id="28s-LI-arh"/>
-                                            <constraint firstAttribute="height" constant="46" id="L9D-71-Y0b"/>
-                                            <constraint firstAttribute="width" relation="greaterThanOrEqual" constant="74" id="Mlj-0b-EbY"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0S-YU-CsY">
-                                        <rect key="frame" x="156" y="77" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="D71-ob-SQB"/>
-                                            <constraint firstAttribute="height" constant="25" id="JAi-Jn-64k"/>
-                                        </constraints>
-                                        <state key="normal" image="StepperButtonsMinus.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="slowIntervalDown:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="mfo-FQ-kbV"/>
-                                        </connections>
-                                    </button>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="graph.png" translatesAutoresizingMaskIntoConstraints="NO" id="WX1-fW-Tnp">
-                                        <rect key="frame" x="15" y="8" width="45" height="45"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="45" id="7eA-Bs-HWD"/>
-                                            <constraint firstAttribute="width" constant="45" id="kCm-EZ-gSh"/>
-                                        </constraints>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="slow" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Rtx-Jx-tO6">
-                                        <rect key="frame" x="115" y="77" width="33" height="23"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="33" id="9CZ-G0-mXm"/>
-                                            <constraint firstAttribute="height" constant="23" id="due-rC-b3H"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="nPU-T8-eD8" firstAttribute="top" secondItem="uyZ-EG-ZsC" secondAttribute="top" constant="11" id="00b-zQ-Mbe"/>
-                                    <constraint firstAttribute="trailing" secondItem="550-dU-3bt" secondAttribute="trailing" constant="8" id="3KH-fY-oBW"/>
-                                    <constraint firstItem="Rtx-Jx-tO6" firstAttribute="leading" secondItem="fXl-cU-ANf" secondAttribute="trailing" constant="8" id="4Vg-ih-aSz"/>
-                                    <constraint firstItem="bqw-tK-Fke" firstAttribute="leading" secondItem="F4C-cf-7Kk" secondAttribute="trailing" constant="10" id="6s4-pn-Yap"/>
-                                    <constraint firstItem="fXl-cU-ANf" firstAttribute="leading" secondItem="nHm-2c-KCY" secondAttribute="trailing" constant="8" id="Dvi-d4-EEe"/>
-                                    <constraint firstAttribute="bottom" secondItem="F4C-cf-7Kk" secondAttribute="bottom" constant="13" id="Gwg-p7-jjf"/>
-                                    <constraint firstAttribute="bottom" secondItem="bqw-tK-Fke" secondAttribute="bottom" constant="15" id="HW6-Mo-ntF"/>
-                                    <constraint firstItem="WX1-fW-Tnp" firstAttribute="top" secondItem="uyZ-EG-ZsC" secondAttribute="top" constant="8" id="NbT-U7-0BY"/>
-                                    <constraint firstAttribute="trailing" secondItem="wLT-1n-9E1" secondAttribute="trailing" constant="8" id="O1t-5O-E5O"/>
-                                    <constraint firstAttribute="bottom" secondItem="wLT-1n-9E1" secondAttribute="bottom" constant="13" id="QVa-RC-I5R"/>
-                                    <constraint firstItem="WX1-fW-Tnp" firstAttribute="leading" secondItem="uyZ-EG-ZsC" secondAttribute="leading" constant="15" id="RUV-QU-3Jg"/>
-                                    <constraint firstItem="nHm-2c-KCY" firstAttribute="top" secondItem="uyZ-EG-ZsC" secondAttribute="top" constant="20" id="T0N-x8-8eQ"/>
-                                    <constraint firstAttribute="width" secondItem="uyZ-EG-ZsC" secondAttribute="height" multiplier="332:115" id="YGy-cr-lnG"/>
-                                    <constraint firstAttribute="bottom" secondItem="fXl-cU-ANf" secondAttribute="bottom" constant="13" id="b5x-24-egJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="nHm-2c-KCY" secondAttribute="bottom" constant="15" id="gTq-yg-lgl"/>
-                                    <constraint firstItem="wLT-1n-9E1" firstAttribute="leading" secondItem="bqw-tK-Fke" secondAttribute="trailing" constant="11" id="giE-3E-Hx4"/>
-                                    <constraint firstItem="d0S-YU-CsY" firstAttribute="leading" secondItem="Rtx-Jx-tO6" secondAttribute="trailing" constant="8" id="h5F-Aq-3rr"/>
-                                    <constraint firstItem="xDz-RD-I0R" firstAttribute="height" secondItem="uyZ-EG-ZsC" secondAttribute="height" id="iSt-wX-c7I"/>
-                                    <constraint firstAttribute="bottom" secondItem="Rtx-Jx-tO6" secondAttribute="bottom" constant="15" id="ohn-ry-vUH"/>
-                                    <constraint firstItem="nPU-T8-eD8" firstAttribute="leading" secondItem="nHm-2c-KCY" secondAttribute="trailing" constant="8" id="q9X-WD-055"/>
-                                    <constraint firstAttribute="bottom" secondItem="xDz-RD-I0R" secondAttribute="bottom" constant="8" id="slX-mu-deV"/>
-                                    <constraint firstItem="nHm-2c-KCY" firstAttribute="leading" secondItem="WX1-fW-Tnp" secondAttribute="trailing" constant="13" id="t4f-0N-Rck"/>
-                                    <constraint firstItem="550-dU-3bt" firstAttribute="top" secondItem="uyZ-EG-ZsC" secondAttribute="top" constant="11" id="tuM-Il-NE8"/>
-                                    <constraint firstAttribute="bottom" secondItem="d0S-YU-CsY" secondAttribute="bottom" constant="13" id="xFf-hy-3Mf"/>
-                                    <constraint firstItem="xDz-RD-I0R" firstAttribute="leading" secondItem="uyZ-EG-ZsC" secondAttribute="leading" id="xbc-uW-4jQ"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="YGy-cr-lnG"/>
-                                        <exclude reference="iSt-wX-c7I"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4o-fg-xQf">
-                                <rect key="frame" x="21" y="375" width="332" height="53"/>
-                                <color key="backgroundColor" red="0.54901960780000003" green="0.77647058820000003" blue="0.24313725489999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="T4o-fg-xQf" secondAttribute="height" multiplier="332:53" id="BZH-ia-mco"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="32"/>
-                                <state key="normal" title="start">
-                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="0.16940957740000001" green="0.68223505429999998" blue="0.16800005160000001" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="startButtonPressed:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="dyB-FN-z15"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="burst play" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXo-DD-s4i">
-                                <rect key="frame" x="142" y="85" width="90" height="31"/>
-                                <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="24"/>
-                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                                <variation key="heightClass=compact" spacing="3"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.54026693110000001" green="0.7563344836" blue="0.71580058339999997" alpha="1" colorSpace="calibratedRGB"/>
                         <rect key="contentStretch" x="0.0" y="0.0" width="0.94999999999999996" height="1"/>
                         <constraints>
-                            <constraint firstItem="uyZ-EG-ZsC" firstAttribute="top" secondItem="jDE-Yr-bI4" secondAttribute="bottom" constant="8" id="067-oI-de7"/>
-                            <constraint firstAttribute="centerY" secondItem="uyZ-EG-ZsC" secondAttribute="centerY" id="147-9N-emw"/>
-                            <constraint firstAttribute="centerX" secondItem="uyZ-EG-ZsC" secondAttribute="centerX" id="CgM-6I-Ite"/>
-                            <constraint firstItem="jDE-Yr-bI4" firstAttribute="top" relation="greaterThanOrEqual" secondItem="4lj-wm-H6Y" secondAttribute="bottom" id="Cls-Ob-gFk"/>
-                            <constraint firstItem="T4o-fg-xQf" firstAttribute="top" secondItem="uyZ-EG-ZsC" secondAttribute="bottom" constant="8" symbolic="YES" id="EoH-7p-4pn"/>
-                            <constraint firstItem="uyZ-EG-ZsC" firstAttribute="width" secondItem="jDE-Yr-bI4" secondAttribute="width" id="FCN-jv-zeW"/>
-                            <constraint firstAttribute="centerX" secondItem="T4o-fg-xQf" secondAttribute="centerX" id="Mmw-eC-j8q"/>
-                            <constraint firstItem="uyZ-EG-ZsC" firstAttribute="top" secondItem="jDE-Yr-bI4" secondAttribute="bottom" constant="8" id="Pwx-qx-HMn"/>
-                            <constraint firstAttribute="centerY" secondItem="uyZ-EG-ZsC" secondAttribute="centerY" constant="-18.5" id="QPG-Wb-nJf"/>
-                            <constraint firstAttribute="centerX" secondItem="CXo-DD-s4i" secondAttribute="centerX" id="TaY-gH-rdY"/>
-                            <constraint firstItem="uyZ-EG-ZsC" firstAttribute="width" secondItem="jDE-Yr-bI4" secondAttribute="width" id="Z6T-8y-CBP"/>
-                            <constraint firstItem="T4o-fg-xQf" firstAttribute="top" secondItem="uyZ-EG-ZsC" secondAttribute="bottom" constant="8" id="Z7w-Gf-P6e"/>
-                            <constraint firstItem="uyZ-EG-ZsC" firstAttribute="height" secondItem="jDE-Yr-bI4" secondAttribute="height" constant="-5" id="dvj-bt-MV2"/>
-                            <constraint firstItem="T4o-fg-xQf" firstAttribute="top" secondItem="uyZ-EG-ZsC" secondAttribute="bottom" constant="8" id="gml-cp-5Mc"/>
-                            <constraint firstItem="jDE-Yr-bI4" firstAttribute="width" secondItem="uyZ-EG-ZsC" secondAttribute="width" id="j85-0R-UC9"/>
-                            <constraint firstAttribute="centerX" secondItem="jDE-Yr-bI4" secondAttribute="centerX" id="nRa-br-1gZ"/>
-                            <constraint firstItem="uyZ-EG-ZsC" firstAttribute="leading" secondItem="T4o-fg-xQf" secondAttribute="trailing" constant="-332" id="pBt-Kg-INC"/>
-                            <constraint firstItem="jDE-Yr-bI4" firstAttribute="top" secondItem="CXo-DD-s4i" secondAttribute="bottom" constant="8" id="rfy-MY-Lac"/>
-                            <constraint firstItem="T4o-fg-xQf" firstAttribute="width" secondItem="uyZ-EG-ZsC" secondAttribute="width" id="xRJ-9F-M96"/>
+                            <constraint firstItem="yxM-Bt-hFf" firstAttribute="centerY" secondItem="wMF-Kg-dr6" secondAttribute="centerY" id="96t-GP-ok4"/>
+                            <constraint firstItem="yxM-Bt-hFf" firstAttribute="centerX" secondItem="wMF-Kg-dr6" secondAttribute="centerX" id="idC-Ph-pAr"/>
                         </constraints>
-                        <variation key="default">
-                            <mask key="constraints">
-                                <exclude reference="j85-0R-UC9"/>
-                                <exclude reference="FCN-jv-zeW"/>
-                                <exclude reference="QPG-Wb-nJf"/>
-                                <exclude reference="pBt-Kg-INC"/>
-                                <exclude reference="Z7w-Gf-P6e"/>
-                            </mask>
-                        </variation>
-                        <variation key="heightClass=compact-widthClass=regular">
-                            <mask key="constraints">
-                                <exclude reference="Cls-Ob-gFk"/>
-                            </mask>
-                        </variation>
                     </view>
                     <navigationItem key="navigationItem" title="workout" id="vsj-Mq-Kql"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -1675,386 +1543,275 @@ write it down to stay inspired!               </string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BurstPlayGrey.png" translatesAutoresizingMaskIntoConstraints="NO" id="ics-dH-eMd">
-                                <rect key="frame" x="21" y="94" width="332" height="118"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="332" id="L4q-pn-u47"/>
-                                    <constraint firstAttribute="height" constant="118" id="qj0-6J-o0q"/>
-                                </constraints>
-                            </imageView>
-                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEu-W8-8RD">
-                                <rect key="frame" x="21" y="476" width="162" height="48"/>
-                                <color key="backgroundColor" red="0.97254901959999995" green="0.92941176469999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="162" id="ao8-qK-tEt"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="28"/>
-                                <state key="normal" title="pause">
-                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="1" green="0.83143529920000003" blue="0.1861019347" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="pauseButtonPressed:" destination="iCL-pB-wpq" eventType="touchUpInside" id="TGw-eo-x4o"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4q-kz-EId">
-                                <rect key="frame" x="192" y="476" width="161" height="48"/>
-                                <color key="backgroundColor" red="0.93333333330000001" green="0.20784313730000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="28"/>
-                                <state key="normal" title="stop">
-                                    <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="stopButtomPressed:" destination="iCL-pB-wpq" eventType="touchUpInside" id="sdk-Dr-kJD"/>
-                                </connections>
-                            </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="usL-UO-fZ4">
-                                <rect key="frame" x="21" y="220" width="332" height="120"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="e8p-a4-HQw">
+                                <rect key="frame" x="21" y="56" width="332" height="506"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time remaining" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ep-JF-RDU">
-                                        <rect key="frame" x="8" y="61" width="74" height="50"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="74" id="Kya-UY-LmL"/>
-                                            <constraint firstAttribute="height" constant="50" id="hnh-JO-9ww"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNg-i9-MLc">
-                                        <rect key="frame" x="132" y="22" width="159" height="75"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="75" id="OtI-VE-foJ"/>
-                                            <constraint firstAttribute="width" constant="159" id="hUI-ZF-b62"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="65"/>
-                                        <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                        <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
-                                            <rect key="frame" x="-16" y="-9" width="155" height="83"/>
-                                        </variation>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gp-fP-oFq">
-                                        <rect key="frame" x="299" y="18" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="LMo-M0-UfZ"/>
-                                            <constraint firstAttribute="width" constant="25" id="O05-og-nVD"/>
-                                        </constraints>
-                                        <state key="normal" image="StepperButtonsPlus.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="secondTimeUp:" destination="iCL-pB-wpq" eventType="touchUpInside" id="SoY-DV-bfN"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VaA-2i-gLw">
-                                        <rect key="frame" x="299" y="76" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="CJ5-6h-KxN"/>
-                                            <constraint firstAttribute="height" constant="25" id="E71-QN-i98"/>
-                                        </constraints>
-                                        <state key="normal" image="StepperButtonsMinus.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="secondTimeDown:" destination="iCL-pB-wpq" eventType="touchUpInside" id="FlP-9p-hN9"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhw-uQ-HhC">
-                                        <rect key="frame" x="99" y="18" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="AIz-IR-3Jt"/>
-                                            <constraint firstAttribute="height" constant="25" id="vDh-ur-gaT"/>
-                                        </constraints>
-                                        <state key="normal" image="StepperButtonsPlus.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="minuteTimeUp:" destination="iCL-pB-wpq" eventType="touchUpInside" id="uYW-Px-O4U"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPm-0t-NHH">
-                                        <rect key="frame" x="99" y="76" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="71w-eU-u74"/>
-                                            <constraint firstAttribute="width" constant="25" id="Psk-ts-q2Q"/>
-                                        </constraints>
-                                        <state key="normal" image="StepperButtonsMinus.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="minuteTimeDown:" destination="iCL-pB-wpq" eventType="touchUpInside" id="gDw-zD-FzL"/>
-                                        </connections>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="XxA-Ee-bzb">
-                                        <rect key="frame" x="90" y="22" width="1" height="75"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="1" id="wFr-cT-nek"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="min" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCL-Rd-To7">
-                                        <rect key="frame" x="96" y="51" width="30" height="17"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="17" id="Phv-iZ-d3J"/>
-                                            <constraint firstAttribute="width" constant="30" id="dfc-Wc-kfy"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="sec" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87N-cl-ful">
-                                        <rect key="frame" x="300" y="48" width="24" height="23"/>
-                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="rRX-xt-I8V">
-                                        <rect key="frame" x="23" y="8" width="45" height="45"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="45" id="GHo-nu-Mcv"/>
-                                            <constraint firstAttribute="height" constant="45" id="htU-kk-jLg"/>
-                                        </constraints>
-                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="N6u-sh-SUP">
+                                        <rect key="frame" x="0.0" y="0.0" width="332" height="248"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="tQ2-ry-1Py">
+                                                <rect key="frame" x="0.0" y="0.0" width="332" height="118"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="9oT-SN-oJ1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="332" height="118"/>
+                                                        <subviews>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="BurstPlayGrey.png" translatesAutoresizingMaskIntoConstraints="NO" id="ics-dH-eMd">
+                                                                <rect key="frame" x="0.0" y="0.0" width="332" height="118"/>
+                                                            </imageView>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bC-hN-ikb">
+                                                                <rect key="frame" x="77" y="44" width="178" height="31"/>
+                                                                <fontDescription key="fontDescription" name="Dosis-Bold" family="Dosis" pointSize="21"/>
+                                                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                                    <rect key="frame" x="-62" y="69" width="0.0" height="0.0"/>
+                                                                </variation>
+                                                            </label>
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cbv-vy-ZQ8" customClass="ProgressView" customModule="ExCy" customModuleProvider="target">
+                                                                <rect key="frame" x="17" y="14" width="297" height="95"/>
+                                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                                            </view>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="332" id="B2w-nl-YzR"/>
+                                                    <constraint firstAttribute="height" constant="118" id="vXF-Iz-e69"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="v1G-oI-92c">
+                                                <rect key="frame" x="0.0" y="128" width="332" height="120"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="usL-UO-fZ4">
+                                                        <rect key="frame" x="0.0" y="0.0" width="332" height="120"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="time remaining" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9ep-JF-RDU">
+                                                                <rect key="frame" x="8" y="61" width="74" height="50"/>
+                                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="15"/>
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="pNg-i9-MLc">
+                                                                <rect key="frame" x="132" y="22" width="159" height="75"/>
+                                                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="61"/>
+                                                                <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
+                                                                    <rect key="frame" x="-16" y="-9" width="155" height="83"/>
+                                                                </variation>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gp-fP-oFq">
+                                                                <rect key="frame" x="299" y="18" width="25" height="25"/>
+                                                                <state key="normal" image="StepperButtonsPlus.png">
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="secondTimeUp:" destination="iCL-pB-wpq" eventType="touchUpInside" id="SoY-DV-bfN"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VaA-2i-gLw">
+                                                                <rect key="frame" x="299" y="76" width="25" height="25"/>
+                                                                <state key="normal" image="StepperButtonsMinus.png">
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="secondTimeDown:" destination="iCL-pB-wpq" eventType="touchUpInside" id="FlP-9p-hN9"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhw-uQ-HhC">
+                                                                <rect key="frame" x="99" y="18" width="25" height="25"/>
+                                                                <state key="normal" image="StepperButtonsPlus.png">
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="minuteTimeUp:" destination="iCL-pB-wpq" eventType="touchUpInside" id="uYW-Px-O4U"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPm-0t-NHH">
+                                                                <rect key="frame" x="99" y="76" width="25" height="25"/>
+                                                                <state key="normal" image="StepperButtonsMinus.png">
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="minuteTimeDown:" destination="iCL-pB-wpq" eventType="touchUpInside" id="gDw-zD-FzL"/>
+                                                                </connections>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XxA-Ee-bzb">
+                                                                <rect key="frame" x="90" y="22" width="1" height="75"/>
+                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="min" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCL-Rd-To7">
+                                                                <rect key="frame" x="96" y="51" width="30" height="17"/>
+                                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="15"/>
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sec" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87N-cl-ful">
+                                                                <rect key="frame" x="300" y="48" width="24" height="23"/>
+                                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="15"/>
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="rRX-xt-I8V">
+                                                                <rect key="frame" x="23" y="8" width="45" height="45"/>
+                                                            </imageView>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="120" id="6b9-HU-Qc0"/>
+                                                    <constraint firstAttribute="width" constant="332" id="NP0-fL-GPh"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="2Db-C6-TqK">
+                                        <rect key="frame" x="0.0" y="258" width="332" height="248"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uOj-He-6Cc">
+                                                <rect key="frame" x="0.0" y="0.0" width="332" height="120"/>
+                                                <subviews>
+                                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgF-VI-dd1">
+                                                        <rect key="frame" x="0.0" y="0.0" width="332" height="120"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJJ-WW-8PL">
+                                                                <rect key="frame" x="99" y="18" width="99" height="58"/>
+                                                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="57"/>
+                                                                <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqz-ou-W6v">
+                                                                <rect key="frame" x="99" y="77" width="25" height="25"/>
+                                                                <state key="normal" image="StepperButtonsPlus.png">
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="slowIntervalUp:" destination="iCL-pB-wpq" eventType="touchUpInside" id="aXN-M7-58q"/>
+                                                                </connections>
+                                                            </button>
+                                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l55-Mv-B6j">
+                                                                <rect key="frame" x="90" y="22" width="1" height="75"/>
+                                                                <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                            </view>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="slow" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJk-NZ-VOj">
+                                                                <rect key="frame" x="132" y="77" width="33" height="23"/>
+                                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="15"/>
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdu-zz-ihS">
+                                                                <rect key="frame" x="225" y="18" width="99" height="58"/>
+                                                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="57"/>
+                                                                <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFy-Ht-c0S">
+                                                                <rect key="frame" x="225" y="76" width="25" height="25"/>
+                                                                <state key="normal" image="StepperButtonsPlus.png">
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="fastIntervalUp:" destination="iCL-pB-wpq" eventType="touchUpInside" id="ARb-Sp-W0Y"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8u-C7-ASu">
+                                                                <rect key="frame" x="299" y="76" width="25" height="25"/>
+                                                                <state key="normal" image="StepperButtonsMinus.png">
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="fastIntervalDown:" destination="iCL-pB-wpq" eventType="touchUpInside" id="EJE-d5-dCF"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="fast" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpv-Jr-AIT">
+                                                                <rect key="frame" x="258" y="77" width="33" height="23"/>
+                                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="15"/>
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="intervals" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dh-Tm-dLl">
+                                                                <rect key="frame" x="8" y="74" width="74" height="24"/>
+                                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="15"/>
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="graph.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pnm-6l-BaI">
+                                                                <rect key="frame" x="23" y="21" width="45" height="45"/>
+                                                            </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8s-iG-fvl">
+                                                                <rect key="frame" x="173" y="77" width="25" height="25"/>
+                                                                <state key="normal" image="StepperButtonsMinus.png">
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="slowIntervalDown:" destination="iCL-pB-wpq" eventType="touchUpInside" id="Suk-B3-PTO"/>
+                                                                </connections>
+                                                            </button>
+                                                        </subviews>
+                                                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    </view>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" constant="332" id="7Pb-Rx-A37"/>
+                                                    <constraint firstAttribute="height" constant="120" id="vS2-Ex-bsS"/>
+                                                </constraints>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" alignment="top" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="SXE-vu-IOS">
+                                                <rect key="frame" x="0.0" y="130" width="332" height="118"/>
+                                                <subviews>
+                                                    <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="GEu-W8-8RD">
+                                                        <rect key="frame" x="0.0" y="0.0" width="161" height="50"/>
+                                                        <color key="backgroundColor" red="0.97254901959999995" green="0.92941176469999998" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="28"/>
+                                                        <state key="normal" title="pause">
+                                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <state key="highlighted">
+                                                            <color key="titleColor" red="1" green="0.83143529920000003" blue="0.1861019347" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="pauseButtonPressed:" destination="iCL-pB-wpq" eventType="touchUpInside" id="TGw-eo-x4o"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Q4q-kz-EId">
+                                                        <rect key="frame" x="171" y="0.0" width="161" height="50"/>
+                                                        <color key="backgroundColor" red="0.93333333330000001" green="0.20784313730000001" blue="0.2666666667" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="height" constant="50" id="rbf-cS-MrW"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="28"/>
+                                                        <state key="normal" title="stop">
+                                                            <color key="titleShadowColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <state key="highlighted">
+                                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="stopButtomPressed:" destination="iCL-pB-wpq" eventType="touchUpInside" id="sdk-Dr-kJD"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                                <constraints>
+                                                    <constraint firstItem="GEu-W8-8RD" firstAttribute="firstBaseline" secondItem="Q4q-kz-EId" secondAttribute="baseline" id="9qQ-kt-Nt6"/>
+                                                    <constraint firstAttribute="height" constant="118" id="FKi-0w-p1q"/>
+                                                    <constraint firstItem="GEu-W8-8RD" firstAttribute="baseline" secondItem="Q4q-kz-EId" secondAttribute="firstBaseline" id="K3c-4b-UEq"/>
+                                                    <constraint firstAttribute="width" constant="332" id="kcD-mk-AG9"/>
+                                                </constraints>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
                                 </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstItem="UPm-0t-NHH" firstAttribute="leading" secondItem="XxA-Ee-bzb" secondAttribute="trailing" constant="8" id="2Jl-YI-Z3W"/>
-                                    <constraint firstAttribute="centerY" secondItem="QCL-Rd-To7" secondAttribute="centerY" id="2bz-kh-JLi"/>
-                                    <constraint firstItem="VaA-2i-gLw" firstAttribute="top" secondItem="87N-cl-ful" secondAttribute="bottom" constant="5" id="4kt-PN-9B9"/>
-                                    <constraint firstAttribute="trailing" secondItem="87N-cl-ful" secondAttribute="trailing" constant="8" id="6UN-fM-DH8"/>
-                                    <constraint firstItem="QCL-Rd-To7" firstAttribute="centerY" secondItem="pNg-i9-MLc" secondAttribute="centerY" id="7ZB-oV-Jw3"/>
-                                    <constraint firstItem="87N-cl-ful" firstAttribute="top" secondItem="8gp-fP-oFq" secondAttribute="bottom" constant="5" id="ABz-Cn-cyL"/>
-                                    <constraint firstItem="QCL-Rd-To7" firstAttribute="leading" secondItem="XxA-Ee-bzb" secondAttribute="trailing" constant="5" id="ET9-2E-hhE"/>
-                                    <constraint firstItem="uhw-uQ-HhC" firstAttribute="leading" secondItem="XxA-Ee-bzb" secondAttribute="trailing" constant="8" id="FmP-jB-qTX"/>
-                                    <constraint firstItem="QCL-Rd-To7" firstAttribute="top" secondItem="uhw-uQ-HhC" secondAttribute="bottom" constant="8" id="HHH-Bh-x1D"/>
-                                    <constraint firstAttribute="bottom" secondItem="XxA-Ee-bzb" secondAttribute="bottom" constant="23" id="IHS-bI-BSq"/>
-                                    <constraint firstItem="rRX-xt-I8V" firstAttribute="top" secondItem="usL-UO-fZ4" secondAttribute="top" constant="8" id="LqJ-Hn-eR7"/>
-                                    <constraint firstAttribute="centerX" secondItem="pNg-i9-MLc" secondAttribute="centerX" constant="-45.5" id="Nnx-kY-H1N"/>
-                                    <constraint firstItem="rRX-xt-I8V" firstAttribute="centerX" secondItem="9ep-JF-RDU" secondAttribute="centerX" constant="0.5" id="ONe-Yq-aqw"/>
-                                    <constraint firstItem="XxA-Ee-bzb" firstAttribute="top" secondItem="usL-UO-fZ4" secondAttribute="top" constant="22" id="UdU-0Z-Mcn"/>
-                                    <constraint firstAttribute="centerY" secondItem="87N-cl-ful" secondAttribute="centerY" id="V7b-ax-GMw"/>
-                                    <constraint firstItem="UPm-0t-NHH" firstAttribute="top" secondItem="QCL-Rd-To7" secondAttribute="bottom" constant="8" id="a5r-8w-epy"/>
-                                    <constraint firstAttribute="trailing" secondItem="8gp-fP-oFq" secondAttribute="trailing" constant="8" id="arD-XP-TYo"/>
-                                    <constraint firstItem="9ep-JF-RDU" firstAttribute="leading" secondItem="usL-UO-fZ4" secondAttribute="leading" constant="8" id="hHi-CU-hqh"/>
-                                    <constraint firstAttribute="trailing" secondItem="VaA-2i-gLw" secondAttribute="trailing" constant="8" id="nGT-ca-XYi"/>
-                                    <constraint firstAttribute="bottom" secondItem="9ep-JF-RDU" secondAttribute="bottom" constant="9" id="orS-f5-ShN"/>
-                                    <constraint firstItem="XxA-Ee-bzb" firstAttribute="leading" secondItem="9ep-JF-RDU" secondAttribute="trailing" constant="8" id="rmf-6h-nZq"/>
-                                    <constraint firstAttribute="bottom" secondItem="XxA-Ee-bzb" secondAttribute="bottom" constant="-97" id="uGz-wS-nqy"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="uGz-wS-nqy"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact-widthClass=regular">
-                                    <mask key="constraints">
-                                        <exclude reference="IHS-bI-BSq"/>
-                                        <include reference="uGz-wS-nqy"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="mgF-VI-dd1">
-                                <rect key="frame" x="21" y="348" width="332" height="120"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="EJJ-WW-8PL">
-                                        <rect key="frame" x="99" y="18" width="99" height="58"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="58" id="P8q-Cm-KWn"/>
-                                            <constraint firstAttribute="width" constant="99" id="wcv-jv-taT"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="60"/>
-                                        <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqz-ou-W6v">
-                                        <rect key="frame" x="99" y="77" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="bWJ-a3-eQw"/>
-                                            <constraint firstAttribute="height" constant="25" id="rGa-47-Usq"/>
-                                        </constraints>
-                                        <state key="normal" image="StepperButtonsPlus.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="slowIntervalUp:" destination="iCL-pB-wpq" eventType="touchUpInside" id="aXN-M7-58q"/>
-                                        </connections>
-                                    </button>
-                                    <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="l55-Mv-B6j">
-                                        <rect key="frame" x="90" y="22" width="1" height="75"/>
-                                        <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="1" id="lwA-Sk-nvC"/>
-                                        </constraints>
-                                    </view>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="slow" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJk-NZ-VOj">
-                                        <rect key="frame" x="132" y="77" width="33" height="23"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="33" id="kuh-zr-s2r"/>
-                                            <constraint firstAttribute="height" constant="23" id="rwv-xB-yMy"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="vdu-zz-ihS">
-                                        <rect key="frame" x="225" y="18" width="99" height="58"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="58" id="MdZ-ak-8eL"/>
-                                            <constraint firstAttribute="width" constant="99" id="QTt-9n-Wif"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="60"/>
-                                        <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFy-Ht-c0S">
-                                        <rect key="frame" x="225" y="76" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="1hK-aZ-GuI"/>
-                                            <constraint firstAttribute="height" constant="25" id="Mwk-nQ-bKX"/>
-                                        </constraints>
-                                        <state key="normal" image="StepperButtonsPlus.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="fastIntervalUp:" destination="iCL-pB-wpq" eventType="touchUpInside" id="ARb-Sp-W0Y"/>
-                                        </connections>
-                                    </button>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8u-C7-ASu">
-                                        <rect key="frame" x="299" y="76" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="25" id="WH9-6Y-WvT"/>
-                                            <constraint firstAttribute="height" constant="25" id="umz-Uz-f4P"/>
-                                        </constraints>
-                                        <state key="normal" image="StepperButtonsMinus.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="fastIntervalDown:" destination="iCL-pB-wpq" eventType="touchUpInside" id="EJE-d5-dCF"/>
-                                        </connections>
-                                    </button>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="fast" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpv-Jr-AIT">
-                                        <rect key="frame" x="258" y="77" width="33" height="23"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="23" id="A1M-xS-q18"/>
-                                            <constraint firstAttribute="width" constant="33" id="KHa-RQ-0NJ"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="intervals" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dh-Tm-dLl">
-                                        <rect key="frame" x="8" y="74" width="74" height="24"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="74" id="ZYf-Y6-TQ2"/>
-                                            <constraint firstAttribute="height" constant="24" id="d2F-ga-bfq"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
-                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="graph.png" translatesAutoresizingMaskIntoConstraints="NO" id="Pnm-6l-BaI">
-                                        <rect key="frame" x="23" y="21" width="45" height="45"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="45" id="2wu-BZ-5ff"/>
-                                            <constraint firstAttribute="height" constant="45" id="fcV-zZ-wNI"/>
-                                        </constraints>
-                                    </imageView>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8s-iG-fvl">
-                                        <rect key="frame" x="173" y="77" width="25" height="25"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="25" id="4Ov-xV-5AK"/>
-                                            <constraint firstAttribute="width" constant="25" id="GCh-5N-cwz"/>
-                                        </constraints>
-                                        <state key="normal" image="StepperButtonsMinus.png">
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="slowIntervalDown:" destination="iCL-pB-wpq" eventType="touchUpInside" id="Suk-B3-PTO"/>
-                                        </connections>
-                                    </button>
-                                </subviews>
-                                <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="y8s-iG-fvl" secondAttribute="bottom" constant="18" id="1pG-y7-OJr"/>
-                                    <constraint firstAttribute="bottom" secondItem="MFy-Ht-c0S" secondAttribute="bottom" constant="19" id="4og-N6-MLv"/>
-                                    <constraint firstAttribute="bottom" secondItem="m8u-C7-ASu" secondAttribute="bottom" constant="19" id="5ec-hp-9eV"/>
-                                    <constraint firstAttribute="trailing" secondItem="vdu-zz-ihS" secondAttribute="trailing" constant="8" id="6Xt-xm-rtb"/>
-                                    <constraint firstAttribute="bottom" secondItem="fqz-ou-W6v" secondAttribute="bottom" constant="18" id="6kg-PO-Bae"/>
-                                    <constraint firstItem="rpv-Jr-AIT" firstAttribute="leading" secondItem="MFy-Ht-c0S" secondAttribute="trailing" constant="8" id="88d-fo-3De"/>
-                                    <constraint firstItem="EJJ-WW-8PL" firstAttribute="top" secondItem="mgF-VI-dd1" secondAttribute="top" constant="18" id="Erl-VZ-n1v"/>
-                                    <constraint firstItem="9dh-Tm-dLl" firstAttribute="leading" secondItem="mgF-VI-dd1" secondAttribute="leading" constant="8" id="L2T-vV-rXN"/>
-                                    <constraint firstItem="fqz-ou-W6v" firstAttribute="leading" secondItem="l55-Mv-B6j" secondAttribute="trailing" constant="8" id="L5P-C3-ZJ8"/>
-                                    <constraint firstAttribute="bottom" secondItem="l55-Mv-B6j" secondAttribute="bottom" constant="23" id="RMq-S1-ZYd"/>
-                                    <constraint firstItem="y8s-iG-fvl" firstAttribute="leading" secondItem="wJk-NZ-VOj" secondAttribute="trailing" constant="8" id="XeS-6U-wOp"/>
-                                    <constraint firstItem="vdu-zz-ihS" firstAttribute="top" secondItem="mgF-VI-dd1" secondAttribute="top" constant="18" id="Y0N-g0-FPf"/>
-                                    <constraint firstAttribute="bottom" secondItem="9dh-Tm-dLl" secondAttribute="bottom" constant="22" id="ZZN-tv-v7V"/>
-                                    <constraint firstItem="Pnm-6l-BaI" firstAttribute="centerX" secondItem="9dh-Tm-dLl" secondAttribute="centerX" constant="0.5" id="aPi-vq-iiS"/>
-                                    <constraint firstAttribute="trailing" secondItem="m8u-C7-ASu" secondAttribute="trailing" constant="8" id="dDW-mp-PYQ"/>
-                                    <constraint firstItem="wJk-NZ-VOj" firstAttribute="leading" secondItem="fqz-ou-W6v" secondAttribute="trailing" constant="8" id="els-i3-c6e"/>
-                                    <constraint firstItem="l55-Mv-B6j" firstAttribute="top" secondItem="mgF-VI-dd1" secondAttribute="top" constant="22" id="fA3-0U-9J4"/>
-                                    <constraint firstAttribute="bottom" secondItem="wJk-NZ-VOj" secondAttribute="bottom" constant="20" id="fyD-ga-4H4"/>
-                                    <constraint firstItem="EJJ-WW-8PL" firstAttribute="leading" secondItem="l55-Mv-B6j" secondAttribute="trailing" constant="8" id="guH-UI-j7h"/>
-                                    <constraint firstItem="m8u-C7-ASu" firstAttribute="leading" secondItem="rpv-Jr-AIT" secondAttribute="trailing" constant="8" id="hwA-pj-7eo"/>
-                                    <constraint firstAttribute="height" constant="120" id="iQb-32-gha"/>
-                                    <constraint firstAttribute="width" constant="332" id="nsu-Ga-GPc"/>
-                                    <constraint firstAttribute="bottom" secondItem="l55-Mv-B6j" secondAttribute="bottom" constant="-97" id="qhS-dy-2gO"/>
-                                    <constraint firstAttribute="bottom" secondItem="rpv-Jr-AIT" secondAttribute="bottom" constant="20" id="tMa-h9-uWC"/>
-                                    <constraint firstItem="l55-Mv-B6j" firstAttribute="leading" secondItem="9dh-Tm-dLl" secondAttribute="trailing" constant="8" id="w97-BC-3JI"/>
-                                    <constraint firstItem="9dh-Tm-dLl" firstAttribute="top" secondItem="Pnm-6l-BaI" secondAttribute="bottom" constant="8" id="x5I-kP-d6G"/>
-                                </constraints>
-                                <variation key="default">
-                                    <mask key="constraints">
-                                        <exclude reference="qhS-dy-2gO"/>
-                                    </mask>
-                                </variation>
-                                <variation key="heightClass=compact-widthClass=regular">
-                                    <mask key="constraints">
-                                        <exclude reference="RMq-S1-ZYd"/>
-                                        <include reference="qhS-dy-2gO"/>
-                                    </mask>
-                                </variation>
-                            </view>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="6bC-hN-ikb">
-                                <rect key="frame" x="44" y="147" width="178" height="31"/>
-                                <fontDescription key="fontDescription" name="Dosis-Bold" family="Dosis" pointSize="24"/>
-                                <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <variation key="heightClass=compact-widthClass=regular" fixedFrame="YES">
-                                    <rect key="frame" x="-62" y="69" width="0.0" height="0.0"/>
-                                </variation>
-                            </label>
-                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Cbv-vy-ZQ8" customClass="ProgressView" customModule="ExCy" customModuleProvider="target">
-                                <rect key="frame" x="39" y="108" width="297" height="95"/>
-                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
-                            </view>
+                                <variation key="heightClass=compact" axis="horizontal" spacing="5"/>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.54026693110000001" green="0.7563344836" blue="0.71580058339999997" alpha="1" colorSpace="calibratedRGB"/>
                         <rect key="contentStretch" x="0.0" y="0.0" width="0.94999999999999996" height="1"/>
                         <constraints>
-                            <constraint firstAttribute="centerY" secondItem="mgF-VI-dd1" secondAttribute="centerY" constant="-99" id="0Zi-Yi-ji4"/>
-                            <constraint firstItem="mgF-VI-dd1" firstAttribute="top" secondItem="usL-UO-fZ4" secondAttribute="bottom" constant="8" id="4gY-0v-K17"/>
-                            <constraint firstItem="GEu-W8-8RD" firstAttribute="leading" secondItem="mgF-VI-dd1" secondAttribute="leading" id="5yR-bP-FGA"/>
-                            <constraint firstAttribute="centerX" secondItem="mgF-VI-dd1" secondAttribute="centerX" id="68G-JP-ZrV">
-                                <variation key="heightClass=compact-widthClass=regular" constant="151.5"/>
-                            </constraint>
-                            <constraint firstAttribute="centerX" secondItem="usL-UO-fZ4" secondAttribute="centerX" id="7Oi-gd-63D">
-                                <variation key="heightClass=compact-widthClass=regular" constant="151.5"/>
-                            </constraint>
-                            <constraint firstItem="Q4q-kz-EId" firstAttribute="trailing" secondItem="mgF-VI-dd1" secondAttribute="trailing" id="BCB-ru-0av"/>
-                            <constraint firstItem="Q4q-kz-EId" firstAttribute="baseline" secondItem="GEu-W8-8RD" secondAttribute="baseline" id="JtE-ML-Lx9"/>
-                            <constraint firstItem="usL-UO-fZ4" firstAttribute="width" secondItem="mgF-VI-dd1" secondAttribute="width" id="ceb-du-gbg"/>
-                            <constraint firstItem="usL-UO-fZ4" firstAttribute="height" secondItem="mgF-VI-dd1" secondAttribute="height" id="dx3-uM-2rA"/>
-                            <constraint firstItem="Q4q-kz-EId" firstAttribute="leading" secondItem="GEu-W8-8RD" secondAttribute="trailing" constant="9" id="t5I-Gg-Vxn"/>
-                            <constraint firstItem="Q4q-kz-EId" firstAttribute="top" secondItem="mgF-VI-dd1" secondAttribute="bottom" constant="8" symbolic="YES" id="t5u-be-pFX"/>
-                            <constraint firstAttribute="centerX" secondItem="ics-dH-eMd" secondAttribute="centerX" id="uA6-vM-GNg"/>
-                            <constraint firstItem="usL-UO-fZ4" firstAttribute="top" secondItem="ics-dH-eMd" secondAttribute="bottom" constant="8" id="ua6-41-2gG"/>
+                            <constraint firstItem="e8p-a4-HQw" firstAttribute="centerY" secondItem="Eh8-g5-EfP" secondAttribute="centerY" id="iXg-Do-T2e"/>
+                            <constraint firstItem="e8p-a4-HQw" firstAttribute="centerX" secondItem="Eh8-g5-EfP" secondAttribute="centerX" id="qlz-Y8-L4h"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="start" image="TabBarIconStart" id="W1Z-hZ-97T"/>
@@ -2845,8 +2602,8 @@ write it down to stay inspired!               </string>
                                     <action selector="pauseButtonPressed:" destination="NEG-jg-zpm" eventType="touchUpInside" id="jjs-US-HdS"/>
                                 </connections>
                             </button>
-                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Prz-nE-DHK" customClass="ProgressView" customModule="ExCy" customModuleProvider="target">
-                                <rect key="frame" x="54" y="222" width="266" height="72"/>
+                            <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Prz-nE-DHK" customClass="WorkoutProgressView" customModule="ExCy" customModuleProvider="target">
+                                <rect key="frame" x="52" y="222" width="266" height="72"/>
                                 <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
                                 <constraints>
                                     <constraint firstAttribute="width" constant="266" id="6ga-g7-QME"/>
@@ -2864,7 +2621,7 @@ write it down to stay inspired!               </string>
                             <constraint firstItem="84L-gW-Mec" firstAttribute="top" secondItem="ihn-Sw-eMp" secondAttribute="bottom" constant="8" id="bOK-wM-fex"/>
                             <constraint firstAttribute="centerX" secondItem="sBh-SI-JD1" secondAttribute="centerX" id="d1V-cn-b3W"/>
                             <constraint firstAttribute="centerX" secondItem="v2o-ml-Xqr" secondAttribute="centerX" id="dNP-5X-ZCL"/>
-                            <constraint firstItem="Prz-nE-DHK" firstAttribute="centerX" secondItem="sBh-SI-JD1" secondAttribute="centerX" id="dPb-i9-GOB"/>
+                            <constraint firstItem="Prz-nE-DHK" firstAttribute="centerX" secondItem="sBh-SI-JD1" secondAttribute="centerX" constant="-2" id="dPb-i9-GOB"/>
                             <constraint firstItem="sBh-SI-JD1" firstAttribute="top" secondItem="mgO-5j-hcY" secondAttribute="bottom" constant="8" id="eiu-Gj-Df6"/>
                             <constraint firstItem="fJl-8Z-MLW" firstAttribute="leading" secondItem="84L-gW-Mec" secondAttribute="trailing" constant="8" id="f2a-ee-KgU"/>
                             <constraint firstItem="ihn-Sw-eMp" firstAttribute="top" secondItem="sBh-SI-JD1" secondAttribute="bottom" constant="8" id="iuH-9q-tK0"/>
@@ -3669,8 +3426,8 @@ write it down to stay inspired!               </string>
         <image name="splash.png" width="1080" height="1920"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="KGm-0h-6mN"/>
         <segue reference="7AV-qR-Lmh"/>
         <segue reference="WPM-9b-gdZ"/>
-        <segue reference="LdL-wb-UYF"/>
     </inferredMetricsTieBreakers>
 </document>
