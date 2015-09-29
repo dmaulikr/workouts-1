@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
 <document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="8191" systemVersion="14F27" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="r9u-uC-Djn">
     <dependencies>
-        <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="8154"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
@@ -163,7 +162,7 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6VL-bj-MS5">
                                         <rect key="frame" x="0.0" y="-38" width="375" height="1591"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder-user.png" translatesAutoresizingMaskIntoConstraints="NO" id="U88-HI-ZXg">
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder-user.png" translatesAutoresizingMaskIntoConstraints="NO" id="U88-HI-ZXg">
                                                 <rect key="frame" x="16" y="66" width="90" height="90"/>
                                             </imageView>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8zC-Ia-51e">
@@ -258,13 +257,6 @@ write it down to stay inspired!</string>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                             </button>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Recent History" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="S5H-jB-CyX">
-                                                <rect key="frame" x="16" y="615" width="343" height="41"/>
-                                                <color key="backgroundColor" red="0.4823529411764706" green="0.75294117647058822" blue="0.19215686274509805" alpha="1" colorSpace="calibratedRGB"/>
-                                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                                <nil key="highlightedColor"/>
-                                            </label>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4OM-mx-hzM">
                                                 <rect key="frame" x="16" y="463" width="343" height="137"/>
                                                 <subviews>
@@ -274,13 +266,13 @@ write it down to stay inspired!</string>
                                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlaceHolder_Inspire.png" translatesAutoresizingMaskIntoConstraints="NO" id="Aig-jX-hWP">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlaceHolder_Inspire.png" translatesAutoresizingMaskIntoConstraints="NO" id="Aig-jX-hWP">
                                                         <rect key="frame" x="13" y="44" width="100" height="80"/>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlaceHolder_Inspire.png" translatesAutoresizingMaskIntoConstraints="NO" id="f3w-Lu-h9X">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlaceHolder_Inspire.png" translatesAutoresizingMaskIntoConstraints="NO" id="f3w-Lu-h9X">
                                                         <rect key="frame" x="121" y="44" width="100" height="80"/>
                                                     </imageView>
-                                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlaceHolder_Inspire.png" translatesAutoresizingMaskIntoConstraints="NO" id="9xU-HF-cNY">
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="PlaceHolder_Inspire.png" translatesAutoresizingMaskIntoConstraints="NO" id="9xU-HF-cNY">
                                                         <rect key="frame" x="229" y="44" width="100" height="80"/>
                                                     </imageView>
                                                 </subviews>
@@ -601,6 +593,17 @@ write it down to stay inspired!</string>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                             </view>
+                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hG-AU-nH0">
+                                                <rect key="frame" x="16" y="622" width="343" height="41"/>
+                                                <color key="backgroundColor" red="0.4823529412" green="0.75294117650000003" blue="0.19215686269999999" alpha="1" colorSpace="calibratedRGB"/>
+                                                <state key="normal" title="Recent History">
+                                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="recentHistoryUpdate:" destination="9A2-Er-P7R" eventType="touchUpInside" id="bpB-bF-vyW"/>
+                                                </connections>
+                                            </button>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1591" id="clE-R1-oBw"/>
@@ -638,11 +641,36 @@ write it down to stay inspired!</string>
                     <size key="freeformSize" width="375" height="2000"/>
                     <connections>
                         <outlet property="InspirationImage1" destination="Aig-jX-hWP" id="RXN-gm-XoA"/>
+                        <outlet property="caloriesBurnedLabel1" destination="Uzy-g7-fjz" id="oTS-tT-LHn"/>
+                        <outlet property="caloriesBurnedLabel2" destination="nw2-ho-SkV" id="Qdm-Y4-PHH"/>
+                        <outlet property="caloriesBurnedLabel3" destination="cT5-VU-51q" id="UQ7-4U-jqh"/>
+                        <outlet property="caloriesBurnedLabel4" destination="Ovp-hN-tgy" id="tO2-zH-8pl"/>
+                        <outlet property="caloriesBurnedLabel5" destination="8cu-M4-cOg" id="fGs-ft-ICs"/>
                         <outlet property="caloriesGoalLabel" destination="sfO-4P-1af" id="szN-hq-Kwq"/>
                         <outlet property="changeImageButton" destination="8zC-Ia-51e" id="yIk-p2-Hh9"/>
+                        <outlet property="enjoymentImageView1" destination="YZU-BR-mOV" id="185-eR-Mcb"/>
+                        <outlet property="enjoymentImageView2" destination="yfj-Q0-Lgu" id="pu9-fa-071"/>
+                        <outlet property="enjoymentImageView3" destination="DzN-Uh-Hrg" id="Ngx-P2-4V7"/>
+                        <outlet property="enjoymentImageView4" destination="5Wc-Co-mzy" id="TMf-wh-fWf"/>
+                        <outlet property="enjoymentImageView5" destination="Hk3-tv-9Fx" id="PVp-25-HO5"/>
+                        <outlet property="enjoymentLabel1" destination="05p-F3-qu2" id="og8-VQ-Psp"/>
+                        <outlet property="enjoymentLabel2" destination="i9J-uF-Q5T" id="IGt-XH-GBs"/>
+                        <outlet property="enjoymentLabel3" destination="408-ap-uCX" id="0uh-pT-kPm"/>
+                        <outlet property="enjoymentLabel4" destination="PPI-oy-MlV" id="ffg-bL-QoB"/>
+                        <outlet property="enjoymentLabel5" destination="1g8-Je-sUN" id="NfJ-XM-Vaa"/>
                         <outlet property="fitnessManifestoLabel" destination="jo8-uh-ySd" id="IAp-dd-5IH"/>
                         <outlet property="inspirationImage2" destination="f3w-Lu-h9X" id="BD6-q6-H8l"/>
                         <outlet property="inspirationImage3" destination="9xU-HF-cNY" id="5G5-Cc-CGf"/>
+                        <outlet property="locationImageView1" destination="2Xt-gE-f4F" id="gfE-cg-4kT"/>
+                        <outlet property="locationImageView2" destination="38i-Lj-p3q" id="kfW-MJ-iWM"/>
+                        <outlet property="locationImageView3" destination="trZ-4F-e4T" id="GcM-mb-6pK"/>
+                        <outlet property="locationImageView4" destination="IcZ-FK-tf4" id="dWt-zQ-Qp1"/>
+                        <outlet property="locationImageView5" destination="B4m-uY-dqH" id="aEh-LJ-Ehb"/>
+                        <outlet property="locationLabel1" destination="e2v-aR-2Sf" id="w3m-Po-wAs"/>
+                        <outlet property="locationLabel2" destination="S8J-r2-cK1" id="2KZ-Gq-ktN"/>
+                        <outlet property="locationLabel3" destination="hc9-sv-SQP" id="2kj-ay-99o"/>
+                        <outlet property="locationLabel4" destination="NMS-BB-dtb" id="7mR-r4-7V0"/>
+                        <outlet property="locationLabel5" destination="ZhD-JL-Ffl" id="2Tx-5K-XWS"/>
                         <outlet property="memberSinceLabel" destination="IcW-wT-okN" id="yOC-tU-xU2"/>
                         <outlet property="profileImage" destination="U88-HI-ZXg" id="07U-gL-jH0"/>
                         <outlet property="usernameLabel" destination="fNB-ia-inO" id="4RM-HQ-l0J"/>
@@ -1823,6 +1851,7 @@ write it down to stay inspired!               </string>
                         <outlet property="progressView" destination="Cbv-vy-ZQ8" id="dWb-OW-tQc"/>
                         <outlet property="slowIntervalLabel" destination="EJJ-WW-8PL" id="DFW-xA-XyV"/>
                         <outlet property="stopwatchLabel" destination="pNg-i9-MLc" id="iYC-ur-TmF"/>
+                        <segue destination="2pV-Gd-8hW" kind="presentation" identifier="surveyFromInterval" id="NZb-KM-HME"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="3ZO-Kv-6g6" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -2472,7 +2501,7 @@ write it down to stay inspired!               </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WyJ-Ko-L9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-108.5" y="-1029.5"/>
+            <point key="canvasLocation" x="3831.5" y="-577.5"/>
         </scene>
         <!--workout-->
         <scene sceneID="0TO-5F-dQY">
@@ -2643,6 +2672,7 @@ write it down to stay inspired!               </string>
                         <outlet property="targetZoneImageView" destination="UxV-7K-I4w" id="PCu-zV-HdY"/>
                         <outlet property="workoutButton" destination="v2o-ml-Xqr" id="yXH-Ib-E8g"/>
                         <outlet property="zoneImageView" destination="sBh-SI-JD1" id="pyh-dJ-SG6"/>
+                        <segue destination="2pV-Gd-8hW" kind="presentation" identifier="surveyFromWorkout" id="bxg-jf-lAw"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="zcg-VM-2dj" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -3426,8 +3456,9 @@ write it down to stay inspired!               </string>
         <image name="splash.png" width="1080" height="1920"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="KGm-0h-6mN"/>
         <segue reference="7AV-qR-Lmh"/>
         <segue reference="WPM-9b-gdZ"/>
+        <segue reference="KGm-0h-6mN"/>
+        <segue reference="NZb-KM-HME"/>
     </inferredMetricsTieBreakers>
 </document>

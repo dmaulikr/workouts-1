@@ -25,13 +25,9 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		
-		
-		
 		if let fitnessManifesto: AnyObject = defaults.valueForKey("FitnessManifesto"){
 			myFitnessManifestoTextView.text = (fitnessManifesto as! String)
 		}
-		
 		self.automaticallyAdjustsScrollViewInsets = false
 		
 		if ((PFUser.currentUser()?.email?.isEmpty) == false){
@@ -41,9 +37,6 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 		
 		let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
 		view.addGestureRecognizer(tap)
-		
-		
-        // Do any additional setup after loading the view.
     }
 	
 	override func viewDidAppear(animated: Bool) {
@@ -62,6 +55,8 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
         // Dispose of any resources that can be recreated.
     }
 	
+	
+	// Image changing code
 	func changeImage () {
 		let image = UIImagePickerController()
 		image.delegate = self
@@ -109,8 +104,6 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 			}
 		} else {
 			self.dismissViewControllerAnimated(true, completion: nil)
-			//let blueColor = UIColor(red: 50/255, green: 145/255, blue: 210/255, alpha: 1.0)
-			//let croppedImage = Toucan(image: image).maskWithRoundedRect(cornerRadius: 50.0, borderWidth: 15.0, borderColor: blueColor).image
 			ProfileImageView.image = image
 			let imageData = UIImageJPEGRepresentation(image, 0.6)
 			NSUserDefaults.standardUserDefaults().setObject(imageData, forKey: "profileImage")
@@ -140,7 +133,7 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 				let LogInVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn") as UIViewController
 				self.presentViewController(LogInVC, animated: true, completion: nil)
 			} else {
-				print("Error: \(error)")
+				print("Error: \(error)\n Please try again")
 			}
 		}
 		

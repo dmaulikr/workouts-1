@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class WorkoutsViewController: UIViewController {
 	
@@ -24,6 +25,10 @@ class WorkoutsViewController: UIViewController {
 	var progressCounter = 0
 	var initialTime: Float = 1
 	
+	//Local Save
+	var object: PFObject!
+	var willCompleteSurvey = false
+	var workoutName = "Arm Candy"
 	
 	var zoneBrain: ZoneBrain?
 	var zoneIncrementTime = 0
@@ -40,24 +45,31 @@ class WorkoutsViewController: UIViewController {
 		if let newNumber = workoutNumber {
 			switch newNumber {
 			case 1: workoutTime = 420
+				workoutName = "Arm Candy"
 				zoneBrain = ZoneBrain.init(time: 420, zones: 7)
 				zoneArray = zoneBrain!.getZoneArray()
 			case 2: workoutTime = 1380
+				workoutName = "Super Cycle Cardio"
 				zoneBrain = ZoneBrain.init(time: 1380, zones: 23)
 				zoneArray = zoneBrain!.getZoneArray()
 			case 3: workoutTime = 900
+				workoutName = "Cycle Leg Blast"
 				zoneBrain = ZoneBrain.init(time: 900, zones: 7)
 				zoneArray = zoneBrain!.getZoneArray()
 			case 4: workoutTime = 600
+				workoutName = "Core Floor Explosion"
 				zoneBrain = ZoneBrain.init(time: 600, zones: 10)
 				zoneArray = zoneBrain!.getZoneArray()
 			case 5: workoutTime = 600
+				workoutName = "Arm Blast"
 				zoneBrain = ZoneBrain.init(time: 600, zones: 7)
 				zoneArray = zoneBrain!.getZoneArray()
 			case 6: workoutTime = 420
+				workoutName = "Ultimate Arm & Leg Toning"
 				zoneBrain = ZoneBrain.init(time: 420, zones: 7)
 				zoneArray = zoneBrain!.getZoneArray()
 			default: workoutTime = 420
+				workoutName = "Arm Candy"
 				zoneBrain = ZoneBrain.init(time: 420, zones: 7)
 				zoneArray = zoneBrain!.getZoneArray()
 			}
@@ -70,10 +82,6 @@ class WorkoutsViewController: UIViewController {
 		self.initialTime = Float(workoutTime!)
 		self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateUI"), userInfo: nil, repeats: true)
 		
-		let defaults = NSUserDefaults.standardUserDefaults()
-		if let savedWorkouts = defaults.objectForKey("workouts") as? NSData {
-			workouts = NSKeyedUnarchiver.unarchiveObjectWithData(savedWorkouts) as! [Workouts]
-		}
 	}
 	
 	override func viewWillLayoutSubviews() {
@@ -110,6 +118,45 @@ class WorkoutsViewController: UIViewController {
 			
 		}
 	}
+	
+	// Parse Query
+	func saveWorkout() {
+		self.object = PFObject(className: "Workout")
+		let seconds = Int(self.initialTime) - workoutTime!
+		self.object["username"] = PFUser.currentUser()!.username
+		self.object["title"] = workoutName
+		self.object["timeWorkedOut"] = stringConversion(seconds)
+		self.object["caloriesBurned"] = (Double(seconds) / 60) * 17
+		let date = NSDate()
+		let dateFormatter = NSDateFormatter()
+		dateFormatter.dateFormat = "EEEE hh:mm a"
+		self.object["date"] = dateFormatter.stringFromDate(date)
+		
+		
+		if willCompleteSurvey == true {
+			self.performSegueWithIdentifier("surveyFromWorkout", sender: self)
+		} else {
+			self.object["enjoyment"] = "default"
+			self.object["location"] = "default"
+			self.object.saveEventually { (success, error) -> Void in
+				if (error == nil){
+					
+				} else {
+					print(error!.userInfo)
+				}
+			}
+		}
+		
+	}
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "surveyFromWorkout" {
+			let surveyVC: SurveyViewController = segue.destinationViewController as! SurveyViewController
+			let object: PFObject = self.object as PFObject
+			surveyVC.object = object
+		}
+	}
+
 	
 	
 	
@@ -195,25 +242,16 @@ class WorkoutsViewController: UIViewController {
 		return "default"
 	}
 	
-	func saveWorkout() {
-		let seconds = Int(self.initialTime) - workoutTime!
-		let totalTimeWorkedOut = stringConversion(seconds)
-		let title = self.getTitleOfWorkout()
-		let workout = Workouts(workoutTitle: title, time: totalTimeWorkedOut)
-		workouts.insert(workout, atIndex: 0)
-		let savedData = NSKeyedArchiver.archivedDataWithRootObject(workouts)
-		let defaults = NSUserDefaults.standardUserDefaults()
-		defaults.setObject(savedData, forKey: "workouts")
-	}
 	
 	
 	func pauseAlert () {
 		let alertController = UIAlertController(title: "Continue?", message: "healthy is... finishing strong!", preferredStyle: .Alert)
-		let OKAction = UIAlertAction(title: "exit workout", style: .Default) { action in
+		let OKAction = UIAlertAction(title: "exit", style: .Destructive) { action in
+			self.setTimer()
 			self.navigationController?.popToRootViewControllerAnimated(true)
 		}
 		alertController.addAction(OKAction)
-		let cancelAction = UIAlertAction(title: "resume", style: .Default) { action in
+		let cancelAction = UIAlertAction(title: "resume", style: .Cancel) { action in
 			self.setTimer()
 		}
 		alertController.addAction(cancelAction)
@@ -222,26 +260,33 @@ class WorkoutsViewController: UIViewController {
 	
 	func stopAlert () {
 		let alertController = UIAlertController(title: "Workout Complete", message: "", preferredStyle: .Alert)
-		let OKAction = UIAlertAction(title: "Save", style: .Default) { action in
+		let OKAction = UIAlertAction(title: "save", style: .Default) { action in
 			self.surveyAlert()
-			self.saveWorkout()
 		}
 		alertController.addAction(OKAction)
-		let cancelAction = UIAlertAction(title: "trash", style: .Default) { action in
+		let cancelAction = UIAlertAction(title: "trash and exit", style: .Destructive) { action in
+			self.setTimer()
 			self.navigationController?.popToRootViewControllerAnimated(true)
 		}
 		alertController.addAction(cancelAction)
+		let continueAction = UIAlertAction(title: "Resume Workout", style: .Cancel) { action in
+			self.setTimer()
+		}
+		alertController.addAction(continueAction)
 		self.presentViewController(alertController, animated: true, completion: nil)
 	}
 	
 	func surveyAlert () {
 		let alertController = UIAlertController(title: "Complete Survey?", message: "Please take a moment to complete a quick four question survey", preferredStyle: .Alert)
 		let OKAction = UIAlertAction(title: "yes", style: .Default) { action in
-			let surveyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PostWorkoutSurvey")
-			self.presentViewController(surveyVC, animated: true, completion: nil)
+			self.willCompleteSurvey = true
+			self.saveWorkout()
 		}
 		alertController.addAction(OKAction)
-		let cancelAction = UIAlertAction(title: "no thanks", style: .Default) { action in
+		let cancelAction = UIAlertAction(title: "no thanks", style: .Cancel) { action in
+			self.willCompleteSurvey = false
+			self.saveWorkout()
+			self.setTimer()
 			self.navigationController?.popToRootViewControllerAnimated(true)
 		}
 		alertController.addAction(cancelAction)

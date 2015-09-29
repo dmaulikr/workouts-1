@@ -9,8 +9,6 @@
 import UIKit
 import Parse
 
-var workouts:[Workouts] = []
-
 class LogInViewController: UIViewController {
 
 	@IBOutlet var emailAddressTextField: UITextField!

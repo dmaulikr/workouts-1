@@ -7,6 +7,7 @@
 //
 
 import UIKit
+import Parse
 
 class IntervalWorkoutViewController: UIViewController {
 
@@ -17,6 +18,9 @@ class IntervalWorkoutViewController: UIViewController {
 	@IBOutlet weak var chartImage: UIImageView!
 	@IBOutlet weak var pacingHelperLabel: UILabel!
 	
+	//Local Save
+	var object: PFObject!
+	var willCompleteSurvey = false
 //Timer Variables
 	var countdownTimer:NSTimer?
 	var progressCounter:Int = 1
@@ -26,12 +30,10 @@ class IntervalWorkoutViewController: UIViewController {
 	var intervalMultiplier:Double = 0
 	var imageBool = true
 	
+	
+	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		let defaults = NSUserDefaults.standardUserDefaults()
-		if let savedWorkouts = defaults.objectForKey("workouts") as? NSData {
-			workouts = NSKeyedUnarchiver.unarchiveObjectWithData(savedWorkouts) as! [Workouts]
-		}
 	}
 	
 	override func viewDidAppear(animated: Bool) {
@@ -58,6 +60,45 @@ class IntervalWorkoutViewController: UIViewController {
 	override func viewDidDisappear(animated: Bool) {
 		super.viewDidDisappear(animated)
 	}
+	
+// Parse Query
+	func saveWorkout() {
+		self.object = PFObject(className: "Workout")
+		let seconds = Int(self.initialTime) - counterInSeconds
+		self.object["username"] = PFUser.currentUser()!.username
+		self.object["title"] = "Interval Workout"
+		self.object["timeWorkedOut"] = stringConversion(seconds)
+		self.object["caloriesBurned"] = (Double(seconds) / 60) * 18
+		let date = NSDate()
+		let dateFormatter = NSDateFormatter()
+		dateFormatter.dateFormat = "EEEE hh:mm a"
+		self.object["date"] = dateFormatter.stringFromDate(date)
+		
+		
+		if willCompleteSurvey == true {
+			self.performSegueWithIdentifier("surveyFromInterval", sender: self)
+		} else {
+			self.object["enjoyment"] = "default"
+			self.object["location"] = "default"
+			self.object.saveEventually { (success, error) -> Void in
+				if (error == nil){
+					
+				} else {
+					print(error!.userInfo)
+				}
+			}
+		}
+		
+	}
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "surveyFromInterval" {
+			let surveyVC: SurveyViewController = segue.destinationViewController as! SurveyViewController
+			let object: PFObject = self.object as PFObject
+			surveyVC.object = object
+		}
+	}
+
 	
 // UI updaters
 	func timerRun() {
@@ -252,26 +293,16 @@ class IntervalWorkoutViewController: UIViewController {
 		intervalTime = 0
 	}
 	
-	func saveWorkout() {
-		let seconds = Int(self.initialTime) - counterInSeconds
-		let totalTimeWorkedOut = stringConversion(seconds)
-		let workout = Workouts(workoutTitle: "Interval Workout", time: totalTimeWorkedOut)
-		workouts.insert(workout, atIndex: 0)
-		let savedData = NSKeyedArchiver.archivedDataWithRootObject(workouts)
-		let defaults = NSUserDefaults.standardUserDefaults()
-		defaults.setObject(savedData, forKey: "workouts")
-	}
 	
 	
 	func pauseAlert () {
 		let alertController = UIAlertController(title: "Continue?", message: "healthy is... finishing strong!", preferredStyle: .Alert)
-		let OKAction = UIAlertAction(title: "save and exit", style: .Default) { action in
-			self.saveWorkout()
+		let OKAction = UIAlertAction(title: "exit", style: .Destructive) { action in
 			self.resetTimers()
 			self.navigationController?.popToRootViewControllerAnimated(true)
 		}
 		alertController.addAction(OKAction)
-		let cancelAction = UIAlertAction(title: "resume", style: .Default) { action in
+		let cancelAction = UIAlertAction(title: "resume", style: .Cancel) { action in
 			self.setTimer()
 		}
 		alertController.addAction(cancelAction)
@@ -281,28 +312,31 @@ class IntervalWorkoutViewController: UIViewController {
 	func stopAlert () {
 		let alertController = UIAlertController(title: "Workout Complete", message: "", preferredStyle: .Alert)
 		let OKAction = UIAlertAction(title: "save", style: .Default) { action in
-			self.saveWorkout()
-			self.resetTimers()
 			self.surveyAlert()
-			self.navigationController?.popToRootViewControllerAnimated(true)
 		}
 		alertController.addAction(OKAction)
-		let cancelAction = UIAlertAction(title: "trash", style: .Default) { action in
+		let cancelAction = UIAlertAction(title: "trash and exit", style: .Destructive) { action in
 			self.resetTimers()
 			self.navigationController?.popToRootViewControllerAnimated(true)
 		}
 		alertController.addAction(cancelAction)
+		let continueAction = UIAlertAction(title: "Resume Workout", style: .Cancel) { action in
+			self.setTimer()
+		}
+		alertController.addAction(continueAction)
 		self.presentViewController(alertController, animated: true, completion: nil)
 	}
 	
 	func surveyAlert () {
 		let alertController = UIAlertController(title: "Complete Survey?", message: "Please take a moment to complete a quick four question survey", preferredStyle: .Alert)
 		let OKAction = UIAlertAction(title: "yes", style: .Default) { action in
-			let surveyVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("PostWorkoutSurvey")
-			self.presentViewController(surveyVC, animated: true, completion: nil)
+			self.willCompleteSurvey = true
+			self.saveWorkout()
 		}
 		alertController.addAction(OKAction)
-		let cancelAction = UIAlertAction(title: "no thanks", style: .Default) { action in
+		let cancelAction = UIAlertAction(title: "no thanks", style: .Cancel) { action in
+			self.willCompleteSurvey = false
+			self.saveWorkout()
 			self.resetTimers()
 			self.navigationController?.popToRootViewControllerAnimated(true)
 		}

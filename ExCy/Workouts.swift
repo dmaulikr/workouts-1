@@ -8,16 +8,27 @@
 
 import Foundation
 
-class Workouts: NSObject, NSCoding {
+class Workouts {
+	
+	var stringConverter = StringConversion()
 	
 	var dateCompleted: String
-	var totalTime: String
+	var totalTime: Int
+	var timeAsString: String
 	var workoutTitle: String
+	var caloriesBurned: Double
 	
+	var locationAsInt: Int = 3
+	var location: String!
+	var enjoymentAsInt: Int = 4
+	var enjoyment: String!
 	
-	init(workoutTitle: String, time: String){
+	init(workoutTitle: String, time: Int){
+		
 		self.workoutTitle = workoutTitle
 		self.totalTime = time
+		self.timeAsString = stringConverter.timeStringFromSeconds(time)
+		self.caloriesBurned = (Double(time) / 60) * 18
 		
 		// Date
 		let date = NSDate()
@@ -25,18 +36,50 @@ class Workouts: NSObject, NSCoding {
 		dateFormatter.dateFormat = "EEEE hh:mm a"
 		
 		self.dateCompleted = dateFormatter.stringFromDate(date)
+		
+		self.enjoyment = self.workoutEnjoyment(self.enjoymentAsInt)
+		self.location = self.workoutLocation(self.locationAsInt)
 	}
 	
-	required init(coder aDecoder: NSCoder) {
-		dateCompleted = aDecoder.decodeObjectForKey("dateCompleted") as! String
-		totalTime = aDecoder.decodeObjectForKey("totalTime") as! String
-		workoutTitle = aDecoder.decodeObjectForKey("workoutTitle") as! String
+	init(workoutTitle: String, time: Int, location: Int, enjoyment: Int){
+		self.workoutTitle = workoutTitle
+		self.totalTime = time
+		self.timeAsString = stringConverter.timeStringFromSeconds(time)
+		self.caloriesBurned = (Double(time) / 60) * 18
+		
+		// Date
+		let date = NSDate()
+		let dateFormatter = NSDateFormatter()
+		dateFormatter.dateFormat = "EEEE hh:mm a"
+		
+		self.dateCompleted = dateFormatter.stringFromDate(date)
+		
+		self.enjoyment = self.workoutEnjoyment(location)
+		self.location = self.workoutLocation(enjoyment)
 	}
 	
-	func encodeWithCoder(aCoder: NSCoder) {
-		aCoder.encodeObject(dateCompleted, forKey:"dateCompleted")
-		aCoder.encodeObject(totalTime, forKey: "totalTime")
-		aCoder.encodeObject(workoutTitle, forKey: "workoutTitle")
+	
+	
+	func workoutEnjoyment(number: Int) -> String {
+		switch number {
+		case 1: return "awful"
+		case 2: return "bad"
+		case 3: return "good"
+		case 4: return "great"
+		case 5: return "amazing"
+		default: return "good"
+		}
 	}
+	func workoutLocation(number: Int) -> String {
+		switch number {
+		case 1: return "at home"
+		case 2: return "at home"
+		case 3: return "at work"
+		case 4: return "traveling"
+		case 5: return "on the go"
+		default: return "good"
+		}
+	}
+	
 	
 }

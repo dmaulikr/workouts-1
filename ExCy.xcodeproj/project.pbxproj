@@ -27,6 +27,12 @@
 		D34C78E71BB99DED00F64437 /* ZoneBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34C78E61BB99DED00F64437 /* ZoneBrain.swift */; settings = {ASSET_TAGS = (); }; };
 		D34DC5F31BA22DCE005D68F3 /* ProgressView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34DC5F21BA22DCE005D68F3 /* ProgressView.swift */; };
 		D34DC5F51BA22EF3005D68F3 /* StyleKitName.swift in Sources */ = {isa = PBXBuildFile; fileRef = D34DC5F41BA22EF3005D68F3 /* StyleKitName.swift */; };
+		D3556DD51BBA3ECE00E3C541 /* StringConversion.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3556DD41BBA3ECE00E3C541 /* StringConversion.swift */; settings = {ASSET_TAGS = (); }; };
+		D3556DD71BBA530D00E3C541 /* ParseWorkout.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3556DD61BBA530D00E3C541 /* ParseWorkout.swift */; settings = {ASSET_TAGS = (); }; };
+		D3556E3D1BBA777700E3C541 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3556E3B1BBA777700E3C541 /* Bolts.framework */; settings = {ASSET_TAGS = (); }; };
+		D3556E3E1BBA777700E3C541 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3556E3C1BBA777700E3C541 /* Parse.framework */; settings = {ASSET_TAGS = (); }; };
+		D3556E401BBA77BE00E3C541 /* libz.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D3556E3F1BBA77BE00E3C541 /* libz.tbd */; };
+		D3556E421BBA77C500E3C541 /* libsqlite3.tbd in Frameworks */ = {isa = PBXBuildFile; fileRef = D3556E411BBA77C500E3C541 /* libsqlite3.tbd */; };
 		D35665E21A91B4F40041EC4A /* WBArmBlast.png in Resources */ = {isa = PBXBuildFile; fileRef = D35665DC1A91B4F40041EC4A /* WBArmBlast.png */; };
 		D35665E31A91B4F40041EC4A /* WBArmCandy.png in Resources */ = {isa = PBXBuildFile; fileRef = D35665DD1A91B4F40041EC4A /* WBArmCandy.png */; };
 		D35665E41A91B4F40041EC4A /* WBCoreFloorExplosion.png in Resources */ = {isa = PBXBuildFile; fileRef = D35665DE1A91B4F40041EC4A /* WBCoreFloorExplosion.png */; };
@@ -79,8 +85,6 @@
 		D36F798D19E1E21A00839EEF /* splash.png in Resources */ = {isa = PBXBuildFile; fileRef = D36F798C19E1E21A00839EEF /* splash.png */; };
 		D36F799619E32F7F00839EEF /* MicheleHeadshot.png in Resources */ = {isa = PBXBuildFile; fileRef = D36F799519E32F7F00839EEF /* MicheleHeadshot.png */; };
 		D395004F1B2E3DC1002B5B2A /* SurveyViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D395004E1B2E3DC1002B5B2A /* SurveyViewController.swift */; };
-		D39DCBA91B59B25A00997BB7 /* Bolts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39DCBA71B59B25A00997BB7 /* Bolts.framework */; };
-		D39DCBAA1B59B25A00997BB7 /* Parse.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D39DCBA81B59B25A00997BB7 /* Parse.framework */; };
 		D39DCBF61B5DE4E300997BB7 /* ProfileViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DCBF51B5DE4E200997BB7 /* ProfileViewController.swift */; };
 		D39DCBF81B5DE92500997BB7 /* placeholder-user.png in Resources */ = {isa = PBXBuildFile; fileRef = D39DCBF71B5DE92500997BB7 /* placeholder-user.png */; };
 		D39DCBFA1B5EAC5E00997BB7 /* Workouts.swift in Sources */ = {isa = PBXBuildFile; fileRef = D39DCBF91B5EAC5E00997BB7 /* Workouts.swift */; };
@@ -93,8 +97,6 @@
 		D3B877931B597A7D004C2BC7 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B877921B597A7D004C2BC7 /* QuartzCore.framework */; };
 		D3B877971B597A8A004C2BC7 /* StoreKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B877961B597A8A004C2BC7 /* StoreKit.framework */; };
 		D3B877991B597A97004C2BC7 /* SystemConfiguration.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B877981B597A97004C2BC7 /* SystemConfiguration.framework */; };
-		D3B8779B1B597AA2004C2BC7 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B8779A1B597AA2004C2BC7 /* libz.dylib */; };
-		D3B8779D1B597AAF004C2BC7 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B8779C1B597AAF004C2BC7 /* libsqlite3.dylib */; };
 		D3B8779F1B597C5F004C2BC7 /* Accounts.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B8779E1B597C5F004C2BC7 /* Accounts.framework */; };
 		D3B877A11B597C66004C2BC7 /* Social.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D3B877A01B597C66004C2BC7 /* Social.framework */; };
 		D3B877A31B597F37004C2BC7 /* LogInViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3B877A21B597F37004C2BC7 /* LogInViewController.swift */; };
@@ -174,6 +176,12 @@
 		D34C78E61BB99DED00F64437 /* ZoneBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZoneBrain.swift; sourceTree = "<group>"; };
 		D34DC5F21BA22DCE005D68F3 /* ProgressView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProgressView.swift; sourceTree = "<group>"; };
 		D34DC5F41BA22EF3005D68F3 /* StyleKitName.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StyleKitName.swift; sourceTree = "<group>"; };
+		D3556DD41BBA3ECE00E3C541 /* StringConversion.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConversion.swift; sourceTree = "<group>"; };
+		D3556DD61BBA530D00E3C541 /* ParseWorkout.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ParseWorkout.swift; sourceTree = "<group>"; };
+		D3556E3B1BBA777700E3C541 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Bolts.framework; sourceTree = "<group>"; };
+		D3556E3C1BBA777700E3C541 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = Parse.framework; sourceTree = "<group>"; };
+		D3556E3F1BBA77BE00E3C541 /* libz.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libz.tbd; path = usr/lib/libz.tbd; sourceTree = SDKROOT; };
+		D3556E411BBA77C500E3C541 /* libsqlite3.tbd */ = {isa = PBXFileReference; lastKnownFileType = "sourcecode.text-based-dylib-definition"; name = libsqlite3.tbd; path = usr/lib/libsqlite3.tbd; sourceTree = SDKROOT; };
 		D35665DC1A91B4F40041EC4A /* WBArmBlast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WBArmBlast.png; sourceTree = "<group>"; };
 		D35665DD1A91B4F40041EC4A /* WBArmCandy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WBArmCandy.png; sourceTree = "<group>"; };
 		D35665DE1A91B4F40041EC4A /* WBCoreFloorExplosion.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WBCoreFloorExplosion.png; sourceTree = "<group>"; };
@@ -230,8 +238,6 @@
 		D36F798C19E1E21A00839EEF /* splash.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = splash.png; sourceTree = "<group>"; };
 		D36F799519E32F7F00839EEF /* MicheleHeadshot.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MicheleHeadshot.png; sourceTree = "<group>"; };
 		D395004E1B2E3DC1002B5B2A /* SurveyViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SurveyViewController.swift; sourceTree = "<group>"; };
-		D39DCBA71B59B25A00997BB7 /* Bolts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Bolts.framework; path = "../../../Documents/parse-library-1/Bolts.framework"; sourceTree = "<group>"; };
-		D39DCBA81B59B25A00997BB7 /* Parse.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Parse.framework; path = "../../../Documents/parse-library-1/Parse.framework"; sourceTree = "<group>"; };
 		D39DCBF51B5DE4E200997BB7 /* ProfileViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProfileViewController.swift; sourceTree = "<group>"; };
 		D39DCBF71B5DE92500997BB7 /* placeholder-user.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "placeholder-user.png"; sourceTree = "<group>"; };
 		D39DCBF91B5EAC5E00997BB7 /* Workouts.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Workouts.swift; sourceTree = "<group>"; };
@@ -245,8 +251,6 @@
 		D3B877941B597A84004C2BC7 /* Security.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Security.framework; path = System/Library/Frameworks/Security.framework; sourceTree = SDKROOT; };
 		D3B877961B597A8A004C2BC7 /* StoreKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = StoreKit.framework; path = System/Library/Frameworks/StoreKit.framework; sourceTree = SDKROOT; };
 		D3B877981B597A97004C2BC7 /* SystemConfiguration.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = SystemConfiguration.framework; path = System/Library/Frameworks/SystemConfiguration.framework; sourceTree = SDKROOT; };
-		D3B8779A1B597AA2004C2BC7 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
-		D3B8779C1B597AAF004C2BC7 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = usr/lib/libsqlite3.dylib; sourceTree = SDKROOT; };
 		D3B8779E1B597C5F004C2BC7 /* Accounts.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Accounts.framework; path = System/Library/Frameworks/Accounts.framework; sourceTree = SDKROOT; };
 		D3B877A01B597C66004C2BC7 /* Social.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Social.framework; path = System/Library/Frameworks/Social.framework; sourceTree = SDKROOT; };
 		D3B877A21B597F37004C2BC7 /* LogInViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = LogInViewController.swift; sourceTree = "<group>"; };
@@ -300,15 +304,15 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D3556E421BBA77C500E3C541 /* libsqlite3.tbd in Frameworks */,
+				D3556E401BBA77BE00E3C541 /* libz.tbd in Frameworks */,
 				D3B877A11B597C66004C2BC7 /* Social.framework in Frameworks */,
 				D3B8779F1B597C5F004C2BC7 /* Accounts.framework in Frameworks */,
-				D3B8779D1B597AAF004C2BC7 /* libsqlite3.dylib in Frameworks */,
-				D39DCBA91B59B25A00997BB7 /* Bolts.framework in Frameworks */,
-				D3B8779B1B597AA2004C2BC7 /* libz.dylib in Frameworks */,
 				D3B877991B597A97004C2BC7 /* SystemConfiguration.framework in Frameworks */,
-				D39DCBAA1B59B25A00997BB7 /* Parse.framework in Frameworks */,
 				D3B877971B597A8A004C2BC7 /* StoreKit.framework in Frameworks */,
 				D3B877931B597A7D004C2BC7 /* QuartzCore.framework in Frameworks */,
+				D3556E3D1BBA777700E3C541 /* Bolts.framework in Frameworks */,
+				D3556E3E1BBA777700E3C541 /* Parse.framework in Frameworks */,
 				D3B877911B597A77004C2BC7 /* CoreLocation.framework in Frameworks */,
 				D3B8778F1B597A6F004C2BC7 /* CoreGraphics.framework in Frameworks */,
 				D3B8778D1B597A65004C2BC7 /* CFNetwork.framework in Frameworks */,
@@ -346,6 +350,17 @@
 				D34C78E01BB99D3100F64437 /* ZoneIntensity5.png */,
 			);
 			path = PowerZones;
+			sourceTree = "<group>";
+		};
+		D3556DD31BBA3E9800E3C541 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D39DCBF91B5EAC5E00997BB7 /* Workouts.swift */,
+				D3556DD61BBA530D00E3C541 /* ParseWorkout.swift */,
+				D34C78E61BB99DED00F64437 /* ZoneBrain.swift */,
+				D3556DD41BBA3ECE00E3C541 /* StringConversion.swift */,
+			);
+			name = Models;
 			sourceTree = "<group>";
 		};
 		D35665CF1A91B3900041EC4A /* WorkoutButtons */ = {
@@ -462,6 +477,7 @@
 			isa = PBXGroup;
 			children = (
 				D36F78EB19DF556E00839EEF /* AppDelegate.swift */,
+				D36F798219E0DF0D00839EEF /* Main.storyboard */,
 				D3C041F11A8063CA009C7FB7 /* UITabBarControllerViewController.swift */,
 				D3B877A21B597F37004C2BC7 /* LogInViewController.swift */,
 				D30279871B1542B600F07FE1 /* SetupStartViewController.swift */,
@@ -473,9 +489,7 @@
 				D395004E1B2E3DC1002B5B2A /* SurveyViewController.swift */,
 				D39DCBF51B5DE4E200997BB7 /* ProfileViewController.swift */,
 				D39DCC2D1B5ED51F00997BB7 /* AccountSettingsViewController.swift */,
-				D39DCBF91B5EAC5E00997BB7 /* Workouts.swift */,
-				D34C78E61BB99DED00F64437 /* ZoneBrain.swift */,
-				D36F798219E0DF0D00839EEF /* Main.storyboard */,
+				D3556DD31BBA3E9800E3C541 /* Models */,
 				D36F78F219DF556E00839EEF /* Images.xcassets */,
 				D34DC5F41BA22EF3005D68F3 /* StyleKitName.swift */,
 				D34DC5F21BA22DCE005D68F3 /* ProgressView.swift */,
@@ -518,8 +532,10 @@
 		D36F792319DF567300839EEF /* FrameWorks */ = {
 			isa = PBXGroup;
 			children = (
-				D39DCBA71B59B25A00997BB7 /* Bolts.framework */,
-				D39DCBA81B59B25A00997BB7 /* Parse.framework */,
+				D3556E411BBA77C500E3C541 /* libsqlite3.tbd */,
+				D3556E3F1BBA77BE00E3C541 /* libz.tbd */,
+				D3556E3B1BBA777700E3C541 /* Bolts.framework */,
+				D3556E3C1BBA777700E3C541 /* Parse.framework */,
 				D3B877981B597A97004C2BC7 /* SystemConfiguration.framework */,
 				D3B877961B597A8A004C2BC7 /* StoreKit.framework */,
 				D3B877941B597A84004C2BC7 /* Security.framework */,
@@ -528,8 +544,6 @@
 				D3B8778E1B597A6F004C2BC7 /* CoreGraphics.framework */,
 				D3B8778C1B597A65004C2BC7 /* CFNetwork.framework */,
 				D3B8778A1B597A5E004C2BC7 /* AudioToolbox.framework */,
-				D3B8779C1B597AAF004C2BC7 /* libsqlite3.dylib */,
-				D3B8779A1B597AA2004C2BC7 /* libz.dylib */,
 				D3B877A01B597C66004C2BC7 /* Social.framework */,
 				D3B8779E1B597C5F004C2BC7 /* Accounts.framework */,
 			);
@@ -855,6 +869,7 @@
 				D30279881B1542B600F07FE1 /* SetupStartViewController.swift in Sources */,
 				D39DCC2E1B5ED51F00997BB7 /* AccountSettingsViewController.swift in Sources */,
 				D34DC5F51BA22EF3005D68F3 /* StyleKitName.swift in Sources */,
+				D3556DD71BBA530D00E3C541 /* ParseWorkout.swift in Sources */,
 				D34C78E71BB99DED00F64437 /* ZoneBrain.swift in Sources */,
 				D3C041F21A8063CA009C7FB7 /* UITabBarControllerViewController.swift in Sources */,
 				D3C3D7BD1AE1F87500A39567 /* WarmUpViewController.swift in Sources */,
@@ -862,6 +877,7 @@
 				D3F3EFA51AF690C300263896 /* IntervalWorkoutViewController.swift in Sources */,
 				D36F78EC19DF556E00839EEF /* AppDelegate.swift in Sources */,
 				D3D04B621B1CB869007C67A1 /* WarmupWorkoutsViewController.swift in Sources */,
+				D3556DD51BBA3ECE00E3C541 /* StringConversion.swift in Sources */,
 				D34DC5F31BA22DCE005D68F3 /* ProgressView.swift in Sources */,
 				D30279861B14CC8F00F07FE1 /* SelectionWorkoutViewController.swift in Sources */,
 			);
@@ -982,7 +998,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ExCy",
 					"$(PROJECT_DIR)",
-					"/Users/skishepherd/Documents/parse-library-1",
 					"$(PROJECT_DIR)/ExCyTests",
 				);
 				INFOPLIST_FILE = ExCy/Info.plist;
@@ -1012,7 +1027,6 @@
 					"$(inherited)",
 					"$(PROJECT_DIR)/ExCy",
 					"$(PROJECT_DIR)",
-					"/Users/skishepherd/Documents/parse-library-1",
 					"$(PROJECT_DIR)/ExCyTests",
 				);
 				INFOPLIST_FILE = ExCy/Info.plist;
@@ -1032,7 +1046,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"/Users/skishepherd/Documents/parse-library-1",
 				);
 				GCC_PREPROCESSOR_DEFINITIONS = (
 					"DEBUG=1",
@@ -1053,7 +1066,6 @@
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(SDKROOT)/Developer/Library/Frameworks",
 					"$(inherited)",
-					"/Users/skishepherd/Documents/parse-library-1",
 				);
 				INFOPLIST_FILE = ExCyTests/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
