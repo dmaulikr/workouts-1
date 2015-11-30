@@ -11,12 +11,11 @@ import Parse
 
 class ParseWorkout {
 	
-	var stringConverter = StringConversion()
     var workout = PFObject(className: "Workout")
 	
 	init(title: String, time: Int){
 		workout["title"] = title
-		workout["timeWorkedOut"] = stringConverter.timeStringFromSeconds(time)
+		workout["timeWorkedOut"] = StringConversion.timeStringFromSeconds(time)
 		workout["caloriesBurned"] = (Double(time) / 60) * 18
 		workout["enjoyment"] = "default"
 		workout["location"] = "default"
@@ -29,7 +28,7 @@ class ParseWorkout {
 	
 	init(title: String, time: Int, enjoyment: Int, location: Int){
 		workout["title"] = title
-		workout["timeWorkedOut"] = stringConverter.timeStringFromSeconds(time)
+		workout["timeWorkedOut"] = StringConversion.timeStringFromSeconds(time)
 		workout["caloriesBurned"] = (Double(time) / 60) * 18
 		workout["enjoyment"] = workoutEnjoyment(enjoyment)
 		workout["location"] = workoutLocation(location)

@@ -12,10 +12,8 @@ class WarmUpViewController: UIViewController {
 
 	@IBOutlet weak var stopWatchLabel: UILabel!
 	
-	
 	var timer: NSTimer?
 	var warmupTime: Int = 119
-	var stringConverter = StringConversion()
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -32,7 +30,7 @@ class WarmUpViewController: UIViewController {
 	
 	func updateUI() {
 		if warmupTime > 0 {
-			self.stopWatchLabel.text = stringConverter.timeStringFromSeconds(warmupTime) //stringConversion(warmupTime)
+			self.stopWatchLabel.text = StringConversion.timeStringFromSeconds(warmupTime)
 			warmupTime--
 		} else {
 			performSegueWithIdentifier("workoutFromWarmup", sender: self)

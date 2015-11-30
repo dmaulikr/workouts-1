@@ -8,11 +8,7 @@
 
 class StringConversion {
 	
-	init() {
-		
-	}
-	
-	func timeStringFromSeconds (seconds:Int) -> String {
+	class func timeStringFromSeconds(seconds:Int) -> String {
 		let minutesCount = seconds / 60
 		let secondsCount = seconds - (minutesCount * 60)
 		var minuteString = String(minutesCount)

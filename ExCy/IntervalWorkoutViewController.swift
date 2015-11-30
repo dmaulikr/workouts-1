@@ -8,6 +8,7 @@
 
 import UIKit
 import Parse
+import AudioToolbox
 
 class IntervalWorkoutViewController: UIViewController {
 
@@ -21,6 +22,8 @@ class IntervalWorkoutViewController: UIViewController {
 	//Local Save
 	var object: PFObject!
 	var willCompleteSurvey = false
+	var minTemp: Int = 0
+	var maxTemp: Int = 0
 //Timer Variables
 	var countdownTimer:NSTimer?
 	var progressCounter:Int = 1
@@ -38,6 +41,15 @@ class IntervalWorkoutViewController: UIViewController {
 	
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
+		
+		if self.countdownTimer?.valid == nil {
+			
+			self.minAlert()
+			
+		}
+	}
+	
+	func startWorkout () {
 		self.initialTime = Float(counterInSeconds)
 		if fastIntervalCount == 0 && slowIntervalCount == 0 {
 			intervalTime = 5
@@ -54,9 +66,8 @@ class IntervalWorkoutViewController: UIViewController {
 		slowIntervalLabel.text = "\(slowIntervalCount)"
 		fastIntervalLabel.text = "\(fastIntervalCount)"
 		self.pacingHelperLabel.hidden = false
-		
-		
 	}
+	
 	override func viewDidDisappear(animated: Bool) {
 		super.viewDidDisappear(animated)
 	}
@@ -67,8 +78,10 @@ class IntervalWorkoutViewController: UIViewController {
 		let seconds = Int(self.initialTime) - counterInSeconds
 		self.object["username"] = PFUser.currentUser()!.username
 		self.object["title"] = "Interval Workout"
-		self.object["timeWorkedOut"] = stringConversion(seconds)
-		self.object["caloriesBurned"] = (Double(seconds) / 60) * 18
+		self.object["timeWorkedOut"] = StringConversion.timeStringFromSeconds(seconds)
+		self.object["caloriesBurned"] = (Double(seconds) / 60) * 15
+		self.object["minTemp"] = minTemp
+		self.object["maxTemp"] = maxTemp
 		let date = NSDate()
 		let dateFormatter = NSDateFormatter()
 		dateFormatter.dateFormat = "EEEE hh:mm a"
@@ -78,8 +91,9 @@ class IntervalWorkoutViewController: UIViewController {
 		if willCompleteSurvey == true {
 			self.performSegueWithIdentifier("surveyFromInterval", sender: self)
 		} else {
-			self.object["enjoyment"] = "default"
-			self.object["location"] = "default"
+			self.object["enjoyment"] = "Rank"
+			self.object["intensity"] = "Power"
+			self.object["location"] = "at home"
 			self.object.saveEventually { (success, error) -> Void in
 				if (error == nil){
 					
@@ -104,7 +118,7 @@ class IntervalWorkoutViewController: UIViewController {
 	func timerRun() {
 		if counterInSeconds > 0 {
 			counterInSeconds--
-			self.stopwatchLabel.text = stringConversion(counterInSeconds)
+			self.stopwatchLabel.text = StringConversion.timeStringFromSeconds(counterInSeconds)
 			progressCounter++
 			shouldChangeIntervalSpeed()
 			
@@ -114,24 +128,11 @@ class IntervalWorkoutViewController: UIViewController {
 		} else {
 			countdownTimer?.invalidate()
 			countdownTimer = nil
-			stopAlert()
+			maxAlert()
 		}
 	}
 	
-	
-	
-	//used for setting up
-	
-	func stringConversion (seconds:Int) -> String {
-		minutesCount = seconds / 60
-		secondsCount = seconds - (minutesCount * 60)
-		if secondsCount < 10 { secondString = "0\(secondsCount)"}
-		else { secondString = "\(secondsCount)" }
-		if minutesCount < 10 { minuteString = "0\(minutesCount)"}
-		else { minuteString = "\(minutesCount)" }
-		return "\(minuteString):\(secondString)"
-	}
-	
+
 	//used for "saving" the workout
 	
 	
@@ -140,10 +141,12 @@ class IntervalWorkoutViewController: UIViewController {
 	
 	func colorWillSwithToRed (red:Bool) {
 		if red == false {
+			AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
 			self.chartImage.image = UIImage(named: "BurstPlayBlue.png")
 			self.pacingHelperLabel.text = "slow it down"
 			self.pacingHelperLabel.textColor = UIColor(red: 30/255, green: 188/255, blue: 255/255, alpha: 1)
 		} else {
+			AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
 			chartImage.image = UIImage(named: "BurstPlayRed.png")
 			self.pacingHelperLabel.text = "push yourself"
 			self.pacingHelperLabel.textColor = UIColor(red: 238/255, green: 47/255, blue: 70/255, alpha: 1)
@@ -209,7 +212,7 @@ class IntervalWorkoutViewController: UIViewController {
 	//Helper for steppers
 	func updateTimerSettingUI() {
 		counterInSeconds = (minutesCount * 60) + secondsCount
-		self.stopwatchLabel.text = stringConversion(counterInSeconds)
+		self.stopwatchLabel.text = StringConversion.timeStringFromSeconds(counterInSeconds)
 	}
 	
 	
@@ -262,7 +265,7 @@ class IntervalWorkoutViewController: UIViewController {
 	@IBAction func stopButtomPressed(sender: UIButton)
 	{
 		self.setTimer()
-		stopAlert()
+		maxAlert()
 	}
 	
 //Helper and main Timer Function
@@ -292,6 +295,47 @@ class IntervalWorkoutViewController: UIViewController {
 		fastBurstStepper = 0
 		intervalTime = 0
 	}
+	
+	
+	// Alerts
+	func minAlert () {
+		let alertController = UIAlertController(title: "Minimum Temperature", message: "enter the current temperature on the excy thermometer", preferredStyle: .Alert)
+		let cancelAction = UIAlertAction(title: "skip", style: .Destructive) { action in
+			self.startWorkout()
+		}
+		alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
+			textField.placeholder = "min temperature"
+			textField.keyboardType = .NumberPad
+		}
+		let OKAction = UIAlertAction(title: "Enter", style: .Cancel) { action in
+			self.minTemp = Int((alertController.textFields!.first)!.text!)!
+			self.startWorkout()
+		}
+		alertController.addAction(OKAction)
+		alertController.addAction(cancelAction)
+		
+		self.presentViewController(alertController, animated: true, completion: nil)
+	}
+	func maxAlert () {
+		let alertController = UIAlertController(title: "Maximum Temperature", message: "enter the maximum temperature reached while exercising", preferredStyle: .Alert)
+		let cancelAction = UIAlertAction(title: "skip", style: .Destructive) { action in
+			self.stopAlert()
+		}
+		alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
+			textField.placeholder = "max temperature"
+			textField.keyboardType = .NumberPad
+		}
+		let OKAction = UIAlertAction(title: "Enter", style: .Cancel) { action in
+			self.maxTemp = Int((alertController.textFields!.first)!.text!)!
+			self.stopAlert()
+		}
+		alertController.addAction(OKAction)
+		alertController.addAction(cancelAction)
+		
+		self.presentViewController(alertController, animated: true, completion: nil)
+	}
+	
+	
 	
 	
 	
@@ -328,7 +372,7 @@ class IntervalWorkoutViewController: UIViewController {
 	}
 	
 	func surveyAlert () {
-		let alertController = UIAlertController(title: "Complete Survey?", message: "Please take a moment to complete a quick four question survey", preferredStyle: .Alert)
+		let alertController = UIAlertController(title: "track results?", message: "Please take a moment to track results to monitor your progress", preferredStyle: .Alert)
 		let OKAction = UIAlertAction(title: "yes", style: .Default) { action in
 			self.willCompleteSurvey = true
 			self.saveWorkout()

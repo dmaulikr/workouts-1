@@ -11,7 +11,6 @@ import Parse
 
 class LogInViewController: UIViewController {
 
-	@IBOutlet var emailAddressTextField: UITextField!
 	@IBOutlet var emailTextField: UITextField! // actually username text field. change later
 	@IBOutlet var passwordTextField: UITextField!
 	@IBOutlet var mainLogInButton: UIButton!
@@ -44,73 +43,46 @@ class LogInViewController: UIViewController {
     }
     
 	@IBAction func logInButtonPressed(sender: AnyObject) {
-		if emailTextField.text == "" || passwordTextField.text == "" {
+		if emailTextField.text == nil || passwordTextField.text == nil {
 			
 			displayAlert("Error", message: "Please enter a username and password")
 			
 		} else {
-			
 			beginActivityIndicator()
 			
 			var errorMessage = "Please try again later"
-			
-			if isSignUpMode == true {
-				let user = PFUser()
-				user.username = emailTextField.text
-				user.password = passwordTextField.text
-				user.email = emailAddressTextField.text
-				user.signUpInBackgroundWithBlock({ (success, error) -> Void in
+			PFUser.logInWithUsernameInBackground(emailTextField.text!, password: passwordTextField.text!, block: { (user, error) -> Void in
+				self.activityIndicator.stopAnimating()
+				UIApplication.sharedApplication().endIgnoringInteractionEvents()
 					
-					self.activityIndicator.stopAnimating()
-					UIApplication.sharedApplication().endIgnoringInteractionEvents()
-					
-					if error == nil {
-						self.performSegueWithIdentifier("login", sender: self)
-					} else {
-						if let errorString = error!.userInfo["error"] as? String {
-							errorMessage = errorString
-							
-						}
-						self.displayAlert("Failed SignUp", message: errorMessage)
+				if user != nil {
+					self.performSegueWithIdentifier("login", sender: self)
+				} else {
+					if let errorString = error!.userInfo["error"] as? String {
+						errorMessage = errorString
 					}
-				})
-			} else {
-				
-				PFUser.logInWithUsernameInBackground(emailTextField.text!, password: passwordTextField.text!, block: { (user, error) -> Void in
-					
-					self.activityIndicator.stopAnimating()
-					UIApplication.sharedApplication().endIgnoringInteractionEvents()
-					
-					if user != nil {
-						self.performSegueWithIdentifier("login", sender: self)
-					} else {
-						if let errorString = error!.userInfo["error"] as? String {
-							errorMessage = errorString
-						}
-						self.displayAlert("Failed SignUp", message: errorMessage)
-					}
-				})
-			}
-			
-		}
-	}
-
-	@IBAction func signUpButtonPressed(sender: AnyObject) {
-		if isSignUpMode == true {
-			mainLogInButton.setTitle("Log In", forState: .Normal)
-			helperTextLabel.text = "Not registerd?"
-			altButtonPressed.setTitle("Sign Up", forState: .Normal)
-			emailAddressTextField.hidden = true
-			isSignUpMode = false
-		} else {
-			mainLogInButton.setTitle("Sign Up", forState: .Normal)
-			helperTextLabel.text = "Already Registered?"
-			altButtonPressed.setTitle("Log In", forState: .Normal)
-			emailAddressTextField.hidden = false
-			isSignUpMode = true
+					self.displayAlert("Failed SignUp", message: errorMessage)
+				}
+			})
 		}
 	}
 	
+	@IBAction func forgotPassword(sender: UIButton) {
+		let alertController = UIAlertController(title: "ForgotPassword?", message: "enter the email address you used to sign up with Excy", preferredStyle: .Alert)
+		let cancelAction = UIAlertAction(title: "skip", style: .Destructive) { action in }
+		alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
+			textField.placeholder = "User Email Address"
+			textField.keyboardType = .EmailAddress
+		}
+		let OKAction = UIAlertAction(title: "Enter", style: .Cancel) { action in
+			PFUser.requestPasswordResetForEmailInBackground((alertController.textFields!.first)!.text!)
+		}
+		alertController.addAction(OKAction)
+		alertController.addAction(cancelAction)
+		
+		self.presentViewController(alertController, animated: true, completion: nil)
+		
+	}
 	
 	func displayAlert(title: String, message: String) {
 		let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
@@ -134,15 +106,5 @@ class LogInViewController: UIViewController {
 		//Causes the view (or one of its embedded text fields) to resign the first responder status.
 		view.endEditing(true)
 	}
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
-    }
-    */
 
 }

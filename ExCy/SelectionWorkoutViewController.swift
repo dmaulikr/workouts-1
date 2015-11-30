@@ -15,28 +15,34 @@ class SelectionWorkoutViewController: UIViewController {
 	var workoutTime: Int?
 
 	@IBAction func armCandyButtonPressed(sender: UIButton) {
-		if sender.tag == 1 {
+		
+		switch sender.tag {
+		case 1:
 			workoutNumber = 1
 			workoutTime = 420
 			WarmUpAlert()
-		} else if sender.tag == 2 {
+		case 2:
 			workoutNumber = 2
 			workoutTime = 1380
 			WarmUpAlert()
-		} else if sender.tag == 3 {
+		case 3:
 			workoutNumber = 3
 			workoutTime = 900
 			WarmUpAlert()
-		} else if sender.tag == 4 {
+		case 4:
 			workoutNumber = 4
 			workoutTime = 600
 			WarmUpAlert()
-		} else if sender.tag == 5 {
+		case 5:
 			workoutNumber = 5
 			workoutTime = 600
 			WarmUpAlert()
-		} else if sender.tag == 6 {
+		case 6:
 			workoutNumber = 6
+			workoutTime = 420
+			WarmUpAlert()
+		default:
+			workoutNumber = 1
 			workoutTime = 420
 			WarmUpAlert()
 		}

@@ -42,23 +42,9 @@ class WarmupWorkoutsViewController: UIViewController {
 	}
 	
 	
-	func stringConversion (seconds:Int) -> String {
-		let minutesCount = seconds / 60
-		let secondsCount = seconds - (minutesCount * 60)
-		var minuteString = String(minutesCount)
-		var secondString = String(secondsCount)
-		if secondsCount < 10 { secondString = "0\(secondsCount)"}
-		else { secondString = "\(secondsCount)" }
-		if minutesCount < 10 { minuteString = "0\(minutesCount)"}
-		else { minuteString = "\(minutesCount)" }
-		return "\(minuteString):\(secondString)"
-	}
-	
-	
-	
 	func updateUI() {
 		if warmupTime > 0 {
-			self.stopWatchLabel.text = stringConversion(warmupTime)
+			self.stopWatchLabel.text = StringConversion.timeStringFromSeconds(warmupTime)
 			warmupTime--
 		} else {
 			performSegueWithIdentifier("FromWarmUpToWorkout", sender: self)

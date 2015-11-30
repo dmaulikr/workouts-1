@@ -40,7 +40,7 @@ public class workoutsProgressOverlay : NSObject {
 		let color = UIColor(red: 0.500, green: 0.500, blue: 0.500, alpha: 0.332)
 		
 		//// Variable Declarations
-		let expression: CGFloat = progressAmmount * 266
+		let expression: CGFloat = progressAmmount * 264
 		
 		//// overlay Drawing
 		let overlayPath = UIBezierPath(rect: CGRectMake(0, 0, expression, 72))

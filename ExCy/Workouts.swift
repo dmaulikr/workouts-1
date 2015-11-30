@@ -9,9 +9,7 @@
 import Foundation
 
 class Workouts {
-	
-	var stringConverter = StringConversion()
-	
+
 	var dateCompleted: String
 	var totalTime: Int
 	var timeAsString: String
@@ -27,7 +25,7 @@ class Workouts {
 		
 		self.workoutTitle = workoutTitle
 		self.totalTime = time
-		self.timeAsString = stringConverter.timeStringFromSeconds(time)
+		self.timeAsString = String(time)
 		self.caloriesBurned = (Double(time) / 60) * 18
 		
 		// Date
@@ -44,7 +42,7 @@ class Workouts {
 	init(workoutTitle: String, time: Int, location: Int, enjoyment: Int){
 		self.workoutTitle = workoutTitle
 		self.totalTime = time
-		self.timeAsString = stringConverter.timeStringFromSeconds(time)
+		self.timeAsString = StringConversion.timeStringFromSeconds(time)
 		self.caloriesBurned = (Double(time) / 60) * 18
 		
 		// Date
