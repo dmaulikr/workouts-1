@@ -160,6 +160,7 @@
 		D3EA69CF1C0BBBBF00C07917 /* WatchUltimateArmLeg.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EA69C91C0BBBBF00C07917 /* WatchUltimateArmLeg.png */; };
 		D3EA69D11C0BBC2F00C07917 /* WatchWorkoutsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EA69D01C0BBC2F00C07917 /* WatchWorkoutsViewController.swift */; };
 		D3EA69D31C0BD66500C07917 /* VideosAndTipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EA69D21C0BD66500C07917 /* VideosAndTipsViewController.swift */; };
+		D3EA69D51C0D2C6D00C07917 /* TipsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D3EA69D41C0D2C6D00C07917 /* TipsViewController.swift */; };
 		D3EF3BE61A360B3200B1CC02 /* WorkoutsPagePlaceholder.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EF3BE51A360B3200B1CC02 /* WorkoutsPagePlaceholder.png */; };
 		D3EF3BE81A360DCF00B1CC02 /* Arm Candy Workout_1.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EF3BE71A360DCF00B1CC02 /* Arm Candy Workout_1.png */; };
 		D3EF3BEA1A360E2500B1CC02 /* Super Cardio description zone buttons.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EF3BE91A360E2500B1CC02 /* Super Cardio description zone buttons.png */; };
@@ -347,6 +348,7 @@
 		D3EA69C91C0BBBBF00C07917 /* WatchUltimateArmLeg.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WatchUltimateArmLeg.png; sourceTree = "<group>"; };
 		D3EA69D01C0BBC2F00C07917 /* WatchWorkoutsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = WatchWorkoutsViewController.swift; sourceTree = "<group>"; };
 		D3EA69D21C0BD66500C07917 /* VideosAndTipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = VideosAndTipsViewController.swift; sourceTree = "<group>"; };
+		D3EA69D41C0D2C6D00C07917 /* TipsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TipsViewController.swift; sourceTree = "<group>"; };
 		D3EF3BE51A360B3200B1CC02 /* WorkoutsPagePlaceholder.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WorkoutsPagePlaceholder.png; sourceTree = "<group>"; };
 		D3EF3BE71A360DCF00B1CC02 /* Arm Candy Workout_1.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Arm Candy Workout_1.png"; sourceTree = "<group>"; };
 		D3EF3BE91A360E2500B1CC02 /* Super Cardio description zone buttons.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "Super Cardio description zone buttons.png"; sourceTree = "<group>"; };
@@ -596,6 +598,7 @@
 				D39DCC2D1B5ED51F00997BB7 /* AccountSettingsViewController.swift */,
 				D32498B01BBB4D9200C964FF /* HistoryTableViewController.swift */,
 				D3EA69D01C0BBC2F00C07917 /* WatchWorkoutsViewController.swift */,
+				D3EA69D41C0D2C6D00C07917 /* TipsViewController.swift */,
 				D3EA69D21C0BD66500C07917 /* VideosAndTipsViewController.swift */,
 				D3556DD31BBA3E9800E3C541 /* Models */,
 				D36F78F219DF556E00839EEF /* Images.xcassets */,
@@ -1015,6 +1018,7 @@
 			files = (
 				D3EA69D31C0BD66500C07917 /* VideosAndTipsViewController.swift in Sources */,
 				D32498B11BBB4D9200C964FF /* HistoryTableViewController.swift in Sources */,
+				D3EA69D51C0D2C6D00C07917 /* TipsViewController.swift in Sources */,
 				D39DCBFA1B5EAC5E00997BB7 /* Workouts.swift in Sources */,
 				D395004F1B2E3DC1002B5B2A /* SurveyViewController.swift in Sources */,
 				D35666201A91CD5A0041EC4A /* WorkoutsViewController.swift in Sources */,

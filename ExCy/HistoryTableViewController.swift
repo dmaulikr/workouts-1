@@ -114,10 +114,9 @@ class HistoryTableViewController: UITableViewController {
 	func workoutLocation(location: String) -> UIImage {
 		switch location {
 		case "at home": return UIImage(named: "Account_Home.png")!
-		case "at home": return UIImage(named: "Account_Home.png")!
 		case "at work": return UIImage(named: "Account_Work.png")!
 		case "traveling": return UIImage(named: "Account_Traveling.png")!
-		case "on the go": return UIImage(named: "Account_Work.png")!
+		case "on the go": return UIImage(named: "Account_Onthego.png")!
 		default: return UIImage(named: "Account_Home.png")!
 		}
 	}

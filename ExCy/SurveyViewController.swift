@@ -20,9 +20,8 @@ class SurveyViewController: UIViewController {
 	
 	var questionNumber = 0
 	var object: PFObject?
-	var workoutEnjoyment = "Rank"
-	var workoutLocation = "at home"
-	var workoutIntensity = "Power"
+	var workoutEnjoyment = "good"
+	var workoutLocation = "at work"
 	
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -98,8 +97,7 @@ class SurveyViewController: UIViewController {
 			if self.object != nil {
 				self.object!["enjoyment"] = workoutEnjoyment
 				self.object!["location"] = workoutLocation
-				self.object!["intensity"] = workoutIntensity
-				self.object!.saveEventually { (success, error) -> Void in
+				self.object!.saveInBackgroundWithBlock({ success, error in
 					if (error == nil){
 						let completedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainTabBarCtrl")
 						self.presentViewController(completedVC, animated: true, completion: nil)
@@ -108,7 +106,7 @@ class SurveyViewController: UIViewController {
 						let completedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainTabBarCtrl")
 						self.presentViewController(completedVC, animated: true, completion: nil)
 					}
-				}
+				})
 			} else {
 				let completedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainTabBarCtrl")
 				self.presentViewController(completedVC, animated: true, completion: nil)

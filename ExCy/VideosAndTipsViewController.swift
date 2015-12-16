@@ -7,17 +7,22 @@
 //
 
 import UIKit
+import WebKit
 
 class VideosAndTipsViewController: UIViewController {
 
 	@IBOutlet weak var webView: UIWebView!
 	var youtubeURL: String?
+	var tipURL: String?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
 		if let youtubeString = youtubeURL {
+			
 			webView.loadHTMLString(youtubeString, baseURL: nil)
+		} else if let tipString = tipURL {
+			self.webView.loadRequest(NSURLRequest(URL: NSURL(string: tipString)!))
 		} else {
 			webView.loadHTMLString("<iframe width=\"\(view.frame.width)\" height=\"\(view.frame.height / 2)\" src=\"https://www.youtube.com/embed/0eONwwRUIJc\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
 		}

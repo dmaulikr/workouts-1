@@ -71,7 +71,7 @@ class WorkoutsViewController: UIViewController {
 					//do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("LegBlast", ofType: "m4a")!))
 					//} catch { print("Error with audio") }
 					workoutName = "Cycle Leg Blast"
-					zoneBrain = ZoneBrain.init(time: 900, zones: 7)
+					zoneBrain = ZoneBrain.init(time: 900, zones: 15)
 					zoneArray = zoneBrain!.getZoneArray()
 				case 4: workoutTime = 600
 					//do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("CoreFloor", ofType: "m4a")!))
@@ -176,9 +176,9 @@ class WorkoutsViewController: UIViewController {
 		if willCompleteSurvey == true {
 			self.performSegueWithIdentifier("surveyFromWorkout", sender: self)
 		} else {
-			self.object["enjoyment"] = "Rank"
-			self.object["location"] = "default"
-			self.object["intensity"] = "Power"
+			self.object["enjoyment"] = " "
+			self.object["location"] = " "
+			self.object["intensity"] = " "
 			self.object.saveEventually { (success, error) -> Void in
 				if (error == nil){
 					

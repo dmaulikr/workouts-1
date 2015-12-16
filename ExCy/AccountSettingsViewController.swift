@@ -18,16 +18,14 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 	@IBOutlet var workoutsPerWeekLabel: UITextField!
 	@IBOutlet var myFitnessManifestoTextView: UITextView!
 	
-	var defaults = NSUserDefaults.standardUserDefaults()
-	
 	var willSelectInspirationalImage = true
+	
+	var userGoals = PFObject(className: "UserGoals")
 	
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		if let fitnessManifesto: AnyObject = defaults.valueForKey("FitnessManifesto"){
-			myFitnessManifestoTextView.text = (fitnessManifesto as! String)
-		}
+		
 		self.automaticallyAdjustsScrollViewInsets = false
 		
 		if ((PFUser.currentUser()?.email?.isEmpty) == false){
@@ -46,6 +44,34 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 			let LogInVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn") 
 			self.presentViewController(LogInVC, animated: true, completion: nil)
 			
+		} else {
+			
+			userGoals["username"] = PFUser.currentUser()!.username
+			let query = PFQuery(className: "UserGoals")
+			query.whereKey("username", equalTo: (PFUser.currentUser()?.username)!)
+			query.getFirstObjectInBackgroundWithBlock({ object, error in
+				if error == nil {
+					self.userGoals = object!
+					if let fitnessManifesto: String = object!["manifesto"] as? String {
+						self.myFitnessManifestoTextView.text = fitnessManifesto
+					}
+					if let workoutGoal: String = object!["workoutGoal"] as? String {
+						self.workoutsPerWeekLabel.text = workoutGoal
+					}
+					if let calorieGoal: String = object!["calorieGoal"] as? String {
+						self.caloriesPerWeekLabel.text = calorieGoal
+					}
+					if let profileImage = object!["profileImage"] as? PFFile {
+						profileImage.getDataInBackgroundWithBlock {
+							(imageData: NSData?, error: NSError?) -> Void in
+							if error == nil {
+								if let imageData = imageData { self.ProfileImageView.image = UIImage(data: imageData) }
+							}
+						}
+					}
+				} else {
+				}
+			})
 		}
 	}
 	
@@ -54,7 +80,6 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-	
 	
 	// Image changing code
 	func changeImage () {
@@ -83,30 +108,31 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 		changeImage()
 	}
 	
-	
-	
 	@IBAction func changeImageButtonPressed(sender: AnyObject) {
 		willSelectInspirationalImage = false
 		changeImage()
 	}
-	
 	
 	func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
 		if willSelectInspirationalImage {
 			self.dismissViewControllerAnimated(true, completion: nil)
 			let imageData = UIImageJPEGRepresentation(image, 0.6)
 			if (changeSpecificImageNumber == 1) {
-				NSUserDefaults.standardUserDefaults().setObject(imageData, forKey: "InspirationImage1")
+				let parseImage = PFFile(name: "inspirationalImageOne", data: imageData!)
+				userGoals["inspirationalImageOne"] = parseImage
 			} else if (changeSpecificImageNumber == 2) {
-				NSUserDefaults.standardUserDefaults().setObject(imageData, forKey: "InspirationImage2")
+				let parseImage = PFFile(name: "inspirationalImageTwo", data: imageData!)
+				userGoals["inspirationalImageTwo"] = parseImage
 			} else if (changeSpecificImageNumber == 3) {
-				NSUserDefaults.standardUserDefaults().setObject(imageData, forKey: "InspirationImage3")
+				let parseImage = PFFile(name: "inspirationalImageThree", data: imageData!)
+				userGoals["inspirationalImageThree"] = parseImage
 			}
 		} else {
-			self.dismissViewControllerAnimated(true, completion: nil)
 			ProfileImageView.image = image
 			let imageData = UIImageJPEGRepresentation(image, 0.6)
-			NSUserDefaults.standardUserDefaults().setObject(imageData, forKey: "profileImage")
+			let parseImage = PFFile(name: "profileImage", data: imageData!)
+			userGoals["profileImage"] = parseImage
+			self.dismissViewControllerAnimated(true, completion: nil)
 		}
 	}
 	
@@ -116,11 +142,21 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 		if emailAddressTextField.text!.isEmpty {  } else {
 			PFUser.currentUser()?.email = "\(emailAddressTextField.text)" }
 		if caloriesPerWeekLabel.text!.isEmpty {  } else {
-			defaults.setObject("\(caloriesPerWeekLabel.text)", forKey: "CaloriesPerWeek") }
+			userGoals["calorieGoal"] = caloriesPerWeekLabel.text
+		}
 		if workoutsPerWeekLabel.text!.isEmpty {  } else {
-			defaults.setObject("\(workoutsPerWeekLabel.text)", forKey: "WorkoutsPerWeek") }
+			userGoals["workoutGoal"] = workoutsPerWeekLabel!.text
+		}
 		if myFitnessManifestoTextView.text.isEmpty { } else {
-			defaults.setObject("\(myFitnessManifestoTextView.text)", forKey: "FitnessManifesto") }
+			userGoals["manifesto"] = myFitnessManifestoTextView!.text
+		}
+		userGoals.saveInBackgroundWithBlock { (success, error) -> Void in
+			if success {
+				self.navigationController?.popViewControllerAnimated(true)
+			} else {
+				self.navigationController?.popViewControllerAnimated(true)
+			}
+		}
 		
 		
 		navigationController?.popViewControllerAnimated(true)
