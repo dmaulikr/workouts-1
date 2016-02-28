@@ -24,10 +24,6 @@ class UITabBarControllerViewController: UITabBarController {
     }
 	
 	
-	
-	
-	
-	
 	func tabBarUISetUP() {
 		for item in self.tabBar.items! {
 			if let image = item.image {

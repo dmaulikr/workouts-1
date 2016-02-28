@@ -11,21 +11,22 @@ import Parse
 
 class HistoryTableViewController: UITableViewController {
 	
-	var workoutsObject: NSMutableArray! = NSMutableArray()
+	var workoutsObject: NSMutableArray! = NSMutableArray() {
+		didSet{
+			self.tableView.reloadData()
+		}
+	}
 
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		fetchAllObjects()
+		fetchAllObjectsFromLocalDataStore()
 
     }
 
 	override func viewDidAppear(animated: Bool) {
 		super.viewDidAppear(animated)
-		_ = NSTimer.scheduledTimerWithTimeInterval(2.5, target: self, selector: "delayedViewUpdate", userInfo: nil, repeats: false)
-		self.tableView.reloadData()
-		fetchAllObjects()
-		fetchAllObjectsFromLocalDataStore()
-	}
-	func delayedViewUpdate() {
 		self.tableView.reloadData()
 	}
 	
