@@ -11,6 +11,8 @@ import Parse
 import AudioToolbox
 
 class IntervalWorkoutViewController: UIViewController {
+	
+	let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as! String
 
 	@IBOutlet weak var progressView: ProgressView!
 	@IBOutlet var stopwatchLabel: UILabel!
@@ -20,7 +22,7 @@ class IntervalWorkoutViewController: UIViewController {
 	@IBOutlet weak var pacingHelperLabel: UILabel!
 	
 	//Local Save
-	var object: PFObject!
+	var workout: Workout?
 	var willCompleteSurvey = false
 	var minTemp: Int = 0
 	var maxTemp: Int = 0
@@ -32,11 +34,11 @@ class IntervalWorkoutViewController: UIViewController {
 	var intervalTime:Int = 0
 	var intervalMultiplier:Double = 0
 	var imageBool = true
-	
-	
+
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
 	}
 	
 	override func viewDidAppear(animated: Bool) {
@@ -50,7 +52,7 @@ class IntervalWorkoutViewController: UIViewController {
 	}
 	
 	func startWorkout () {
-		self.initialTime = Float(counterInSeconds)
+		self.initialTime = Float(secondsCount)
 		if fastIntervalCount == 0 && slowIntervalCount == 0 {
 			intervalTime = 5
 		} else {
@@ -72,53 +74,41 @@ class IntervalWorkoutViewController: UIViewController {
 		super.viewDidDisappear(animated)
 	}
 	
-// Parse Query
 	func saveWorkout() {
-		self.object = PFObject(className: "Workout")
-		let seconds = Int(self.initialTime) - counterInSeconds
-		self.object["username"] = PFUser.currentUser()!.username
-		self.object["title"] = "Interval Workout"
-		self.object["timeWorkedOut"] = StringConversion.timeStringFromSeconds(seconds)
-		self.object["caloriesBurned"] = (Double(seconds) / 60) * 15
-		self.object["minTemp"] = minTemp
-		self.object["maxTemp"] = maxTemp
-		let date = NSDate()
-		let dateFormatter = NSDateFormatter()
-		dateFormatter.dateFormat = "EEEE hh:mm a"
-		self.object["date"] = dateFormatter.stringFromDate(date)
-		
+		let seconds = Int(self.initialTime) - secondsCount
+		workout = Workout(workoutTitle: "Interval Workout", time: seconds, uid: uid, minTemp: minTemp , maxTemp: maxTemp)
 		
 		if willCompleteSurvey == true {
 			self.performSegueWithIdentifier("surveyFromInterval", sender: self)
 		} else {
-			self.object["enjoyment"] = "Rank"
-			self.object["intensity"] = "Power"
-			self.object["location"] = "at home"
-			self.object.saveEventually { (success, error) -> Void in
-				if (error == nil){
-					
-				} else {
-					print(error!.userInfo)
-				}
-			}
+			postToFirebase()
 		}
 		
 	}
 	
+	func postToFirebase() {
+		let seconds = Int(self.initialTime) - secondsCount
+		let workout = Workout(workoutTitle: "Interval Workout", time: seconds, uid: uid, minTemp: minTemp , maxTemp: maxTemp)
+		let dictionaryWorkout = workout.convertToDictionaryWithoutSurvey()
+		let firebaseWorkout = DataSerice.ds.REF_WORKOUTS.childByAppendingPath(uid).childByAutoId()
+		firebaseWorkout.setValue(dictionaryWorkout)
+	}
+	
+	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "surveyFromInterval" {
 			let surveyVC: SurveyViewController = segue.destinationViewController as! SurveyViewController
-			let object: PFObject = self.object as PFObject
-			surveyVC.object = object
+			let workout = self.workout
+			surveyVC.workout = workout
 		}
 	}
 
 	
 // UI updaters
 	func timerRun() {
-		if counterInSeconds > 0 {
-			counterInSeconds--
-			self.stopwatchLabel.text = StringConversion.timeStringFromSeconds(counterInSeconds)
+		if secondsCount > 0 {
+			secondsCount--
+			self.stopwatchLabel.text = StringConversion.timeStringFromSeconds(secondsCount)
 			progressCounter++
 			shouldChangeIntervalSpeed()
 			
@@ -190,12 +180,12 @@ class IntervalWorkoutViewController: UIViewController {
 	
 // Interval Steppers
 	@IBAction func minuteTimeUp(sender: UIButton) {
-		minutesCount++
+		secondsCount += 60
 		updateTimerSettingUI()
 	}
 	@IBAction func minuteTimeDown(sender: UIButton) {
-		if minutesCount > 0 {
-			minutesCount--
+		if secondsCount > 60 {
+			secondsCount += -60
 		}
 		updateTimerSettingUI()
 	}
@@ -211,8 +201,7 @@ class IntervalWorkoutViewController: UIViewController {
 	}
 	//Helper for steppers
 	func updateTimerSettingUI() {
-		counterInSeconds = (minutesCount * 60) + secondsCount
-		self.stopwatchLabel.text = StringConversion.timeStringFromSeconds(counterInSeconds)
+		self.stopwatchLabel.text = StringConversion.timeStringFromSeconds(secondsCount)
 	}
 	
 	
@@ -243,7 +232,7 @@ class IntervalWorkoutViewController: UIViewController {
 	
 	@IBAction func startButtonPressed(sender: UIButton)
 	{
-		self.initialTime = Float(counterInSeconds)
+		self.initialTime = Float(secondsCount)
 		if fastIntervalCount == 0 && slowIntervalCount == 0 {
 			intervalTime = 5
 		} else {
@@ -283,7 +272,6 @@ class IntervalWorkoutViewController: UIViewController {
 	
 	func resetTimers(){
 		secondsCount = 0
-		minutesCount = 0
 		self.progressCounter = 0
 		self.updateTimerSettingUI()
 		self.chartImage.image = UIImage(named: "BurstPlayGrey.png")
@@ -308,7 +296,9 @@ class IntervalWorkoutViewController: UIViewController {
 			textField.keyboardType = .NumberPad
 		}
 		let OKAction = UIAlertAction(title: "Enter", style: .Cancel) { action in
-			self.minTemp = Int((alertController.textFields!.first)!.text!)!
+			if let temp = alertController.textFields?.first?.text {
+				self.minTemp = Int(temp)!
+			}
 			self.startWorkout()
 		}
 		alertController.addAction(OKAction)
@@ -326,7 +316,9 @@ class IntervalWorkoutViewController: UIViewController {
 			textField.keyboardType = .NumberPad
 		}
 		let OKAction = UIAlertAction(title: "Enter", style: .Cancel) { action in
-			self.maxTemp = Int((alertController.textFields!.first)!.text!)!
+			if let temp = alertController.textFields?.first?.text {
+				self.maxTemp = Int(temp)!
+			}
 			self.stopAlert()
 		}
 		alertController.addAction(OKAction)

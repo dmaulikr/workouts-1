@@ -8,21 +8,31 @@
 
 import UIKit
 import Parse
+import Firebase
 
 class HistoryTableViewController: UITableViewController {
 	
-	var workoutsObject: NSMutableArray! = NSMutableArray() {
-		didSet{
-			self.tableView.reloadData()
-		}
-	}
+	let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as! String
+	
+	var workoutsObject = [Workout]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		fetchAllObjects()
-		fetchAllObjectsFromLocalDataStore()
+		DataSerice.ds.REF_WORKOUTS.childByAppendingPath(uid).queryLimitedToLast(5).observeEventType(.Value, withBlock: { snapshot in
+			if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+				for snap in snapshots {
+					if let workoutDict = snap.value as? [String: AnyObject] {
+						let workout = Workout(dictionary: workoutDict)
+						self.workoutsObject.insert(workout, atIndex: 0)
+						
+					}
+				}
+			}
+			self.tableView.reloadData()
+		})
 
+		
     }
 
 	override func viewDidAppear(animated: Bool) {
@@ -39,8 +49,7 @@ class HistoryTableViewController: UITableViewController {
     // MARK: - Table view data source
 
     override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
-        // #warning Incomplete implementation, return the number of sections
-        return 1
+		return 1
     }
 
     override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
@@ -52,52 +61,22 @@ class HistoryTableViewController: UITableViewController {
 		}
     }
 	
-	func fetchAllObjectsFromLocalDataStore() {
-		let query: PFQuery = PFQuery(className: "Workout")
-		query.fromLocalDatastore()
-		query.whereKey("username", equalTo: (PFUser.currentUser()!.username)!)
-		query.addDescendingOrder("createdAt")
-		query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-			if (error == nil) {
-				let temp: NSArray = objects! as NSArray
-				self.workoutsObject = temp.mutableCopy() as! NSMutableArray
-				self.tableView.reloadData()
-			} else {
-				print(error!.userInfo)
-			}
-		}
-	}
-	func fetchAllObjects() {
-		PFObject.unpinAllObjectsInBackgroundWithBlock(nil)
-		let query: PFQuery = PFQuery(className: "Workout")
-		query.whereKey("username", equalTo: (PFUser.currentUser()!.username)!)
-		query.addDescendingOrder("createdAt")
-		query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-			if (error == nil) {
-				PFObject.pinAllInBackground(objects, block: nil)
-			} else {
-				print(error!.userInfo)
-			}
-		}
-	}
-	
 
     override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! HistoryTableViewCell
 
-		let object: PFObject = self.workoutsObject.objectAtIndex(indexPath.row) as! PFObject
+		let workout = self.workoutsObject[indexPath.row]
+		print(workout)
 		
-		cell.workoutTitleLabel.text = object["title"] as? String
-		cell.totalTimeLabel.text = object["timeWorkedOut"] as? String
-		cell.caloriesBurnedLabel.text = String(object["caloriesBurned"] as! Int)
-		cell.dateCompletedLabel.text = object["date"] as? String
-		cell.enjoymentLabel.text = object["enjoyment"] as? String
-		if let minTemp = object["minTemp"] as? Int {
-			if let maxTemp = object["maxTemp"] as? Int {
-				cell.zoneIntensityLabel.text = "min:\(minTemp)\n max:\(maxTemp)" } }
-		cell.locationLabel.text = object["location"] as? String
-		cell.enjoymentImageView.image = workoutEnjoyment(object["enjoyment"] as! String)
-		cell.locationImageView.image = workoutLocation(object["location"] as! String)
+		cell.workoutTitleLabel.text = workout.workoutTitle
+		cell.totalTimeLabel.text = workout.timeAsString
+		cell.caloriesBurnedLabel.text = "\(workout.caloriesBurned)"
+		cell.dateCompletedLabel.text = workout.dateCompleted
+		cell.enjoymentLabel.text = workout.enjoyment
+		cell.zoneIntensityLabel.text = "min:\(workout.minTemp)\n max:\(workout.maxTemp)"
+		cell.locationLabel.text = workout.location
+		cell.enjoymentImageView.image = workoutEnjoyment(workout.enjoyment)
+		cell.locationImageView.image = workoutLocation(workout.location)
 
         return cell
     }

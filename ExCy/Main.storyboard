@@ -77,8 +77,6 @@
             <string>Dosis-Medium</string>
             <string>Dosis-Medium</string>
             <string>Dosis-Medium</string>
-            <string>Dosis-Medium</string>
-            <string>Dosis-Medium</string>
         </mutableArray>
         <mutableArray key="Dosis-Regular.otf">
             <string>Dosis-Regular</string>
@@ -133,7 +131,6 @@
             <string>Dosis-Regular</string>
         </mutableArray>
         <mutableArray key="Dosis-SemiBold.otf">
-            <string>Dosis-SemiBold</string>
             <string>Dosis-SemiBold</string>
             <string>Dosis-SemiBold</string>
             <string>Dosis-SemiBold</string>
@@ -1963,12 +1960,12 @@ write it down to stay inspired!               </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="14o-5M-pbo" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="721.5" y="1356.5"/>
+            <point key="canvasLocation" x="683.5" y="1706.5"/>
         </scene>
-        <!--More-->
+        <!--More Excy-->
         <scene sceneID="7dm-FG-A0s">
             <objects>
-                <viewController id="lPn-cd-b8Z" sceneMemberID="viewController">
+                <viewController id="lPn-cd-b8Z" customClass="MoreVC" customModule="ExCy" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="YdE-ny-3lg"/>
                         <viewControllerLayoutGuide type="bottom" id="9NN-ZV-Nwg"/>
@@ -1977,77 +1974,84 @@ write it down to stay inspired!               </string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAc-mL-owl">
-                                <rect key="frame" x="40" y="284" width="295" height="49"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="BAc-mL-owl" secondAttribute="height" multiplier="295:49" id="vUd-Lx-pSr"/>
-                                </constraints>
-                                <state key="normal" image="More landing page know zones.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="rnm-1N-LGY" kind="show" id="B1V-gI-Nmp"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8j-iD-b7m">
-                                <rect key="frame" x="40" y="227" width="295" height="49"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="G8j-iD-b7m" secondAttribute="height" multiplier="295:49" id="Yf3-vb-imb"/>
-                                </constraints>
-                                <state key="normal" image="More landing page watch workouts.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="3HT-kK-if3" kind="show" id="daG-M3-SZl"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNR-UD-g4M">
-                                <rect key="frame" x="40" y="170" width="295" height="49"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="TNR-UD-g4M" secondAttribute="height" multiplier="295:49" id="Qru-fM-ox2"/>
-                                </constraints>
-                                <state key="normal" image="More landing page.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="MEG-tG-zmP" kind="show" id="N7f-8f-o10"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkG-Jb-acw">
-                                <rect key="frame" x="40" y="341" width="295" height="49"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="WkG-Jb-acw" secondAttribute="height" multiplier="295:49" id="312-G6-9Wi"/>
-                                    <constraint firstAttribute="width" constant="295" id="zE9-X6-QK8"/>
-                                </constraints>
-                                <state key="normal" image="More landing page tips.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="o4K-2k-gju" kind="show" id="oP3-ml-eAT"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="eoC-T4-Qva">
+                                <rect key="frame" x="36" y="60" width="303" height="518"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExcyLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="rZS-sC-PwR">
+                                        <rect key="frame" x="40" y="0.0" width="224" height="131"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YWV-UH-JFW">
+                                        <rect key="frame" x="0.0" y="131" width="303" height="250"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNR-UD-g4M">
+                                                <rect key="frame" x="0.0" y="0.0" width="303" height="55"/>
+                                                <state key="normal" image="More landing page.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="MEG-tG-zmP" kind="show" id="N7f-8f-o10"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8j-iD-b7m">
+                                                <rect key="frame" x="0.0" y="65" width="303" height="55"/>
+                                                <state key="normal" image="More landing page watch workouts.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="3HT-kK-if3" kind="show" id="daG-M3-SZl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAc-mL-owl">
+                                                <rect key="frame" x="0.0" y="130" width="303" height="55"/>
+                                                <state key="normal" image="More landing page know zones.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="rnm-1N-LGY" kind="show" id="B1V-gI-Nmp"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkG-Jb-acw">
+                                                <rect key="frame" x="0.0" y="195" width="303" height="55"/>
+                                                <state key="normal" image="More landing page tips.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="o4K-2k-gju" kind="show" id="oP3-ml-eAT"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="250" id="HQZ-vV-CXs"/>
+                                        </constraints>
+                                    </stackView>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEb-kv-TRL">
+                                        <rect key="frame" x="78" y="381" width="148" height="137"/>
+                                        <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="20"/>
+                                        <state key="normal" title="Don't have an Excy?">
+                                            <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="purchaseExcy:" destination="lPn-cd-b8Z" eventType="touchUpInside" id="Jfb-NN-ZSu"/>
+                                            <segue destination="lR2-Ue-3k7" kind="show" identifier="toWebView" id="sug-YA-LBr"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.54026693110000001" green="0.7563344836" blue="0.71580058339999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="WkG-Jb-acw" firstAttribute="top" secondItem="BAc-mL-owl" secondAttribute="bottom" constant="8" id="3M2-mf-4rw"/>
-                            <constraint firstItem="WkG-Jb-acw" firstAttribute="height" secondItem="BAc-mL-owl" secondAttribute="height" id="7OZ-W0-ksg"/>
-                            <constraint firstItem="G8j-iD-b7m" firstAttribute="height" secondItem="TNR-UD-g4M" secondAttribute="height" id="9pI-Lt-Hyu"/>
-                            <constraint firstItem="BAc-mL-owl" firstAttribute="height" secondItem="G8j-iD-b7m" secondAttribute="height" id="BZY-jm-gc6"/>
-                            <constraint firstItem="TNR-UD-g4M" firstAttribute="top" secondItem="YdE-ny-3lg" secondAttribute="bottom" constant="126" id="Gjd-lw-deW"/>
-                            <constraint firstItem="G8j-iD-b7m" firstAttribute="top" secondItem="TNR-UD-g4M" secondAttribute="bottom" constant="8" id="RPn-dd-e3p"/>
-                            <constraint firstItem="BAc-mL-owl" firstAttribute="centerX" secondItem="TNR-UD-g4M" secondAttribute="centerX" id="aDq-z4-SGd"/>
-                            <constraint firstItem="WkG-Jb-acw" firstAttribute="centerX" secondItem="TNR-UD-g4M" secondAttribute="centerX" id="bf1-5w-XHm"/>
-                            <constraint firstItem="BAc-mL-owl" firstAttribute="top" secondItem="G8j-iD-b7m" secondAttribute="bottom" constant="8" id="fEl-mj-Cd4"/>
-                            <constraint firstItem="BAc-mL-owl" firstAttribute="centerX" secondItem="SFU-2m-GAv" secondAttribute="centerX" id="h5c-h3-vb5"/>
-                            <constraint firstItem="G8j-iD-b7m" firstAttribute="centerX" secondItem="TNR-UD-g4M" secondAttribute="centerX" id="jK8-ZI-swV"/>
+                            <constraint firstItem="eoC-T4-Qva" firstAttribute="leading" secondItem="SFU-2m-GAv" secondAttribute="leadingMargin" constant="20" id="0UG-iz-zqL"/>
+                            <constraint firstItem="9NN-ZV-Nwg" firstAttribute="top" secondItem="eoC-T4-Qva" secondAttribute="bottom" constant="40" id="AcC-i4-OR3"/>
+                            <constraint firstItem="eoC-T4-Qva" firstAttribute="top" secondItem="SFU-2m-GAv" secondAttribute="topMargin" constant="60" id="IgP-cc-cks"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="eoC-T4-Qva" secondAttribute="trailing" constant="20" id="hdd-4h-9Ef"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="More" id="Uri-Jy-6Bj"/>
+                    <navigationItem key="navigationItem" title="More Excy" id="Uri-Jy-6Bj"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="2BT-iX-IhQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="855.5" y="493.5"/>
+            <point key="canvasLocation" x="875.5" y="853.5"/>
         </scene>
         <!--Selection Workout View Controller-->
         <scene sceneID="vKV-Ir-wxC">
@@ -2061,108 +2065,86 @@ write it down to stay inspired!               </string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5F-lt-gc8">
-                                <rect key="frame" x="40" y="124" width="295" height="55"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="bWH-4E-UVA">
+                                <rect key="frame" x="36" y="20" width="303" height="518"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExcyLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="iX2-3g-gn2">
+                                        <rect key="frame" x="40" y="0.0" width="223" height="97"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="97" id="g0q-Y1-zGg"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="8o0-SJ-0o1">
+                                        <rect key="frame" x="0.0" y="117" width="303" height="401"/>
+                                        <subviews>
+                                            <button opaque="NO" tag="1" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="c5F-lt-gc8">
+                                                <rect key="frame" x="0.0" y="0.0" width="303" height="59"/>
+                                                <state key="normal" image="WBArmCandy.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="armCandyButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="VjC-hR-JOF"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0XC-Ah-Yfm">
+                                                <rect key="frame" x="0.0" y="69" width="303" height="58"/>
+                                                <state key="normal" image="WBSuperCycleCardio.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="armCandyButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="64u-cW-xKb"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pr1-YC-HeC">
+                                                <rect key="frame" x="0.0" y="137" width="303" height="59"/>
+                                                <state key="normal" image="WBCycleLegBlast.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="armCandyButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="nIS-UO-Jf1"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52A-Mm-yxB">
+                                                <rect key="frame" x="0.0" y="206" width="303" height="58"/>
+                                                <state key="normal" image="WBCoreFloorExplosion.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="armCandyButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="yaU-ZD-NRY"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYT-r3-MDx">
+                                                <rect key="frame" x="0.0" y="274" width="303" height="59"/>
+                                                <state key="normal" image="WBArmBlast.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="armCandyButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="8Ai-zw-ps5"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAV-6O-ONq">
+                                                <rect key="frame" x="0.0" y="343" width="303" height="58"/>
+                                                <state key="normal" image="WBUltimateArmLegTone.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="armCandyButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="Y4B-eX-X6Q"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="width" secondItem="c5F-lt-gc8" secondAttribute="height" multiplier="59:11" id="3zn-oL-Hxd"/>
-                                    <constraint firstAttribute="width" constant="295" id="RYB-hw-mlz"/>
+                                    <constraint firstItem="iX2-3g-gn2" firstAttribute="leading" secondItem="bWH-4E-UVA" secondAttribute="leading" constant="40" id="gkY-xP-Kw3"/>
                                 </constraints>
-                                <state key="normal" image="WBArmCandy.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="armCandyButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="VjC-hR-JOF"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="2" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0XC-Ah-Yfm">
-                                <rect key="frame" x="40" y="187" width="295" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="ZD5-mL-0mG"/>
-                                </constraints>
-                                <state key="normal" image="WBSuperCycleCardio.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="armCandyButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="64u-cW-xKb"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="3" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="pr1-YC-HeC">
-                                <rect key="frame" x="40" y="250" width="295" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="pr1-YC-HeC" secondAttribute="height" multiplier="59:11" id="Im7-bG-edF"/>
-                                </constraints>
-                                <state key="normal" image="WBCycleLegBlast.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="armCandyButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="nIS-UO-Jf1"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="5" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="DYT-r3-MDx">
-                                <rect key="frame" x="40" y="376" width="295" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="DYT-r3-MDx" secondAttribute="height" multiplier="59:11" id="Bhf-Sz-Qlt"/>
-                                </constraints>
-                                <state key="normal" image="WBArmBlast.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="armCandyButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="8Ai-zw-ps5"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="4" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="52A-Mm-yxB">
-                                <rect key="frame" x="40" y="313" width="295" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="52A-Mm-yxB" secondAttribute="height" multiplier="59:11" id="KNn-df-9x7"/>
-                                </constraints>
-                                <state key="normal" image="WBCoreFloorExplosion.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="armCandyButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="yaU-ZD-NRY"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" tag="6" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uAV-6O-ONq">
-                                <rect key="frame" x="40" y="439" width="295" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" secondItem="uAV-6O-ONq" secondAttribute="height" multiplier="59:11" id="i4l-o4-7Qv"/>
-                                </constraints>
-                                <state key="normal" image="WBUltimateArmLegTone.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="armCandyButtonPressed:" destination="W60-WS-Rgd" eventType="touchUpInside" id="Y4B-eX-X6Q"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" text="Workouts" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eEV-Rt-5XC">
-                                <rect key="frame" x="147" y="24" width="81" height="27"/>
-                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="21"/>
-                                <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.54026693110000001" green="0.7563344836" blue="0.71580058339999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="52A-Mm-yxB" firstAttribute="top" secondItem="pr1-YC-HeC" secondAttribute="bottom" constant="8" id="0ZA-0w-iNn"/>
-                            <constraint firstItem="eEV-Rt-5XC" firstAttribute="top" secondItem="dnA-OL-MkK" secondAttribute="bottom" constant="4" id="0bS-mG-sMQ"/>
-                            <constraint firstItem="uAV-6O-ONq" firstAttribute="centerX" secondItem="Ztv-GH-OcJ" secondAttribute="centerX" id="67n-qd-FmJ"/>
-                            <constraint firstItem="pr1-YC-HeC" firstAttribute="top" secondItem="0XC-Ah-Yfm" secondAttribute="bottom" constant="8" symbolic="YES" id="6yh-Mj-Lpa"/>
-                            <constraint firstItem="0XC-Ah-Yfm" firstAttribute="leading" secondItem="c5F-lt-gc8" secondAttribute="leading" id="9ZT-6v-ykz"/>
-                            <constraint firstItem="0XC-Ah-Yfm" firstAttribute="trailing" secondItem="c5F-lt-gc8" secondAttribute="trailing" id="EIN-3e-qGP"/>
-                            <constraint firstItem="uAV-6O-ONq" firstAttribute="height" secondItem="DYT-r3-MDx" secondAttribute="height" id="Hza-bE-0JV"/>
-                            <constraint firstItem="DYT-r3-MDx" firstAttribute="height" secondItem="52A-Mm-yxB" secondAttribute="height" id="KgS-7O-R56"/>
-                            <constraint firstItem="0XC-Ah-Yfm" firstAttribute="top" secondItem="c5F-lt-gc8" secondAttribute="bottom" constant="8" symbolic="YES" id="Nfq-PS-aTP"/>
-                            <constraint firstItem="eEV-Rt-5XC" firstAttribute="centerX" secondItem="Ztv-GH-OcJ" secondAttribute="centerX" id="Oid-mA-nSz"/>
-                            <constraint firstItem="c5F-lt-gc8" firstAttribute="top" secondItem="eEV-Rt-5XC" secondAttribute="bottom" constant="73" id="Oug-Eo-QkI"/>
-                            <constraint firstItem="DYT-r3-MDx" firstAttribute="top" secondItem="52A-Mm-yxB" secondAttribute="bottom" constant="8" id="Xay-lE-J2Z"/>
-                            <constraint firstItem="0XC-Ah-Yfm" firstAttribute="leading" secondItem="pr1-YC-HeC" secondAttribute="leading" id="ZmW-CV-nBG"/>
-                            <constraint firstItem="c5F-lt-gc8" firstAttribute="centerX" secondItem="Ztv-GH-OcJ" secondAttribute="centerX" id="bWf-qs-BzG"/>
-                            <constraint firstItem="0XC-Ah-Yfm" firstAttribute="top" secondItem="Ztv-GH-OcJ" secondAttribute="top" constant="187" id="iq1-AU-Bzo"/>
-                            <constraint firstItem="pr1-YC-HeC" firstAttribute="centerX" secondItem="Ztv-GH-OcJ" secondAttribute="centerX" id="jxK-WD-abp"/>
-                            <constraint firstItem="52A-Mm-yxB" firstAttribute="centerX" secondItem="Ztv-GH-OcJ" secondAttribute="centerX" id="ket-dY-7WP"/>
-                            <constraint firstItem="52A-Mm-yxB" firstAttribute="height" secondItem="pr1-YC-HeC" secondAttribute="height" id="kil-yc-xs6"/>
-                            <constraint firstItem="DYT-r3-MDx" firstAttribute="centerX" secondItem="Ztv-GH-OcJ" secondAttribute="centerX" id="rVe-Ea-9ZE"/>
-                            <constraint firstItem="uAV-6O-ONq" firstAttribute="top" secondItem="DYT-r3-MDx" secondAttribute="bottom" constant="8" id="yhx-Pt-nON"/>
+                            <constraint firstItem="bWH-4E-UVA" firstAttribute="leading" secondItem="Ztv-GH-OcJ" secondAttribute="leadingMargin" constant="20" id="3E4-va-9Q4"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bWH-4E-UVA" secondAttribute="trailing" constant="20" id="M1M-1H-eOg"/>
+                            <constraint firstItem="bWH-4E-UVA" firstAttribute="top" secondItem="dnA-OL-MkK" secondAttribute="bottom" constant="20" id="N0A-2B-DPL"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="bWH-4E-UVA" secondAttribute="bottom" constant="80" id="bHo-Gi-d99"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="k7T-Mj-N0m"/>
@@ -2291,76 +2273,36 @@ write it down to stay inspired!               </string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yxM-Bt-hFf">
-                                <rect key="frame" x="21" y="135" width="332" height="349"/>
+                                <rect key="frame" x="21" y="89" width="332" height="440"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="burst play" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CXo-DD-s4i">
-                                        <rect key="frame" x="121" y="0.0" width="90" height="31"/>
-                                        <constraints>
-                                            <constraint firstAttribute="width" constant="90" id="3eE-NN-Aa4"/>
-                                            <constraint firstAttribute="height" constant="31" id="ObL-DK-QHj"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="24"/>
-                                        <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="EjU-ge-q10">
+                                        <rect key="frame" x="81" y="0.0" width="170" height="122"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExcyLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="0Gz-j0-uuF">
+                                                <rect key="frame" x="0.0" y="0.0" width="170" height="75"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="75" id="0ew-Sb-0CY"/>
+                                                    <constraint firstAttribute="width" constant="170" id="UOq-tn-WTD"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="burst play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGC-rE-DvM">
+                                                <rect key="frame" x="38" y="90" width="94" height="32"/>
+                                                <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="25"/>
+                                                <color key="textColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1nP-BZ-876">
-                                        <rect key="frame" x="0.0" y="41" width="332" height="245"/>
+                                        <rect key="frame" x="0.0" y="132" width="332" height="245"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDE-Yr-bI4">
                                                 <rect key="frame" x="0.0" y="0.0" width="332" height="120"/>
                                                 <subviews>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="kau-w7-7j1">
-                                                        <rect key="frame" x="299" y="18" width="25" height="25"/>
-                                                        <state key="normal" image="StepperButtonsPlus.png">
-                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="secondTimeUp:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="SFe-fX-lft"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QHZ-7g-cab">
-                                                        <rect key="frame" x="299" y="76" width="25" height="25"/>
-                                                        <state key="normal" image="StepperButtonsMinus.png">
-                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="secondTimeDown:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="hql-t4-edU"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Jnf-Sc-TMi">
-                                                        <rect key="frame" x="85" y="18" width="25" height="25"/>
-                                                        <state key="normal" image="StepperButtonsPlus.png">
-                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="minuteTimeUp:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="se3-FA-zFX"/>
-                                                        </connections>
-                                                    </button>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="dPJ-6V-FQY">
-                                                        <rect key="frame" x="85" y="76" width="25" height="25"/>
-                                                        <state key="normal" image="StepperButtonsMinus.png">
-                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="minuteTimeDown:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="nll-fH-kea"/>
-                                                        </connections>
-                                                    </button>
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="joM-4T-BUu">
                                                         <rect key="frame" x="73" y="22" width="1" height="75"/>
                                                         <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="min" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="m8M-Gy-jEc">
-                                                        <rect key="frame" x="82" y="49" width="30" height="23"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" verticalHuggingPriority="251" fixedFrame="YES" text="sec" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="eij-oZ-6st">
-                                                        <rect key="frame" x="300" y="49" width="24" height="23"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
-                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
                                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="8hA-Yt-PeH">
                                                         <rect key="frame" x="15" y="8" width="45" height="45"/>
                                                     </imageView>
@@ -2371,9 +2313,57 @@ write it down to stay inspired!               </string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="00:00" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dtl-So-Ggo">
-                                                        <rect key="frame" x="131" y="21" width="151" height="78"/>
+                                                        <rect key="frame" x="117" y="13" width="182" height="94"/>
                                                         <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="61"/>
                                                         <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="yIL-1O-5Cx">
+                                                        <rect key="frame" x="82" y="8" width="40" height="40"/>
+                                                        <state key="normal" image="StepperButtonsPlus.png">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="minuteTimeUp:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="dny-2o-sHh"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HJK-ej-57R">
+                                                        <rect key="frame" x="284" y="8" width="40" height="40"/>
+                                                        <state key="normal" image="StepperButtonsPlus.png">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="secondTimeUp:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="tIh-Zh-hvf"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bqG-Jo-XTO">
+                                                        <rect key="frame" x="284" y="72" width="40" height="40"/>
+                                                        <state key="normal" image="StepperButtonsMinus.png">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="secondTimeDown:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="DnB-D6-mgJ"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="IN4-at-tPY">
+                                                        <rect key="frame" x="82" y="72" width="40" height="40"/>
+                                                        <state key="normal" image="StepperButtonsMinus.png">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="minuteTimeDown:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="Xlf-Ot-gln"/>
+                                                        </connections>
+                                                    </button>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="min" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Ckf-f5-tM0">
+                                                        <rect key="frame" x="89" y="48" width="28" height="23"/>
+                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sec" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="CP1-Q8-s4c">
+                                                        <rect key="frame" x="292" y="48" width="24" height="23"/>
+                                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
+                                                        <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                 </subviews>
@@ -2401,7 +2391,7 @@ write it down to stay inspired!               </string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fXl-cU-ANf">
-                                                        <rect key="frame" x="82" y="77" width="25" height="25"/>
+                                                        <rect key="frame" x="76" y="69" width="40" height="40"/>
                                                         <state key="normal" image="StepperButtonsPlus.png">
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
@@ -2419,17 +2409,8 @@ write it down to stay inspired!               </string>
                                                         <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
-                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4C-cf-7Kk">
-                                                        <rect key="frame" x="225" y="77" width="25" height="25"/>
-                                                        <state key="normal" image="StepperButtonsPlus.png">
-                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                        </state>
-                                                        <connections>
-                                                            <action selector="fastIntervalUp:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="ZsT-hU-mrF"/>
-                                                        </connections>
-                                                    </button>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="wLT-1n-9E1">
-                                                        <rect key="frame" x="299" y="77" width="25" height="25"/>
+                                                        <rect key="frame" x="292" y="69" width="40" height="40"/>
                                                         <state key="normal" image="StepperButtonsMinus.png">
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
@@ -2450,7 +2431,7 @@ write it down to stay inspired!               </string>
                                                         <nil key="highlightedColor"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="d0S-YU-CsY">
-                                                        <rect key="frame" x="156" y="77" width="25" height="25"/>
+                                                        <rect key="frame" x="146" y="69" width="40" height="40"/>
                                                         <state key="normal" image="StepperButtonsMinus.png">
                                                             <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                         </state>
@@ -2467,6 +2448,15 @@ write it down to stay inspired!               </string>
                                                         <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                         <nil key="highlightedColor"/>
                                                     </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="F4C-cf-7Kk">
+                                                        <rect key="frame" x="217" y="69" width="40" height="40"/>
+                                                        <state key="normal" image="StepperButtonsPlus.png">
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="fastIntervalUp:" destination="CEO-kJ-iW9" eventType="touchUpInside" id="ZsT-hU-mrF"/>
+                                                        </connections>
+                                                    </button>
                                                 </subviews>
                                                 <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                 <constraints>
@@ -2478,7 +2468,7 @@ write it down to stay inspired!               </string>
                                         <variation key="heightClass=compact" spacing="3"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" translatesAutoresizingMaskIntoConstraints="NO" id="fnc-Xw-Guk">
-                                        <rect key="frame" x="0.0" y="296" width="332" height="53"/>
+                                        <rect key="frame" x="0.0" y="387" width="332" height="53"/>
                                         <subviews>
                                             <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4o-fg-xQf">
                                                 <rect key="frame" x="0.0" y="0.0" width="332" height="53"/>
@@ -2523,6 +2513,7 @@ write it down to stay inspired!               </string>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="wyc-Wc-7sf" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <panGestureRecognizer minimumNumberOfTouches="1" id="qus-CK-SmU"/>
             </objects>
             <point key="canvasLocation" x="965.5" y="-444.5"/>
         </scene>
@@ -2596,61 +2587,61 @@ write it down to stay inspired!               </string>
                                                                     <rect key="frame" x="-16" y="-9" width="155" height="83"/>
                                                                 </variation>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8gp-fP-oFq">
-                                                                <rect key="frame" x="299" y="18" width="25" height="25"/>
-                                                                <state key="normal" image="StepperButtonsPlus.png">
-                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="secondTimeUp:" destination="iCL-pB-wpq" eventType="touchUpInside" id="SoY-DV-bfN"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="VaA-2i-gLw">
-                                                                <rect key="frame" x="299" y="76" width="25" height="25"/>
-                                                                <state key="normal" image="StepperButtonsMinus.png">
-                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="secondTimeDown:" destination="iCL-pB-wpq" eventType="touchUpInside" id="FlP-9p-hN9"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="uhw-uQ-HhC">
-                                                                <rect key="frame" x="99" y="18" width="25" height="25"/>
-                                                                <state key="normal" image="StepperButtonsPlus.png">
-                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="minuteTimeUp:" destination="iCL-pB-wpq" eventType="touchUpInside" id="uYW-Px-O4U"/>
-                                                                </connections>
-                                                            </button>
-                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UPm-0t-NHH">
-                                                                <rect key="frame" x="99" y="76" width="25" height="25"/>
-                                                                <state key="normal" image="StepperButtonsMinus.png">
-                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="minuteTimeDown:" destination="iCL-pB-wpq" eventType="touchUpInside" id="gDw-zD-FzL"/>
-                                                                </connections>
-                                                            </button>
                                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="XxA-Ee-bzb">
                                                                 <rect key="frame" x="90" y="22" width="1" height="75"/>
                                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             </view>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="min" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="QCL-Rd-To7">
-                                                                <rect key="frame" x="96" y="51" width="30" height="17"/>
-                                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="15"/>
-                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
-                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sec" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="87N-cl-ful">
-                                                                <rect key="frame" x="300" y="48" width="24" height="23"/>
-                                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="15"/>
-                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                                <nil key="highlightedColor"/>
-                                                            </label>
                                                             <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="rRX-xt-I8V">
                                                                 <rect key="frame" x="23" y="8" width="45" height="45"/>
                                                             </imageView>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Zhe-hw-1xa">
+                                                                <rect key="frame" x="99" y="7" width="40" height="40"/>
+                                                                <state key="normal" image="StepperButtonsPlus.png">
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="minuteTimeUp:" destination="iCL-pB-wpq" eventType="touchUpInside" id="c6C-uw-Z7G"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="JhB-lq-1AB">
+                                                                <rect key="frame" x="99" y="71" width="40" height="40"/>
+                                                                <state key="normal" image="StepperButtonsMinus.png">
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="minuteTimeDown:" destination="iCL-pB-wpq" eventType="touchUpInside" id="SDg-bZ-pNQ"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="min" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Fqn-Jt-Aaa">
+                                                                <rect key="frame" x="106" y="47" width="28" height="23"/>
+                                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fCr-oV-kyG">
+                                                                <rect key="frame" x="284" y="7" width="40" height="40"/>
+                                                                <state key="normal" image="StepperButtonsPlus.png">
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="secondTimeUp:" destination="iCL-pB-wpq" eventType="touchUpInside" id="6EX-xL-aqD"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ucc-f1-3xI">
+                                                                <rect key="frame" x="284" y="71" width="40" height="40"/>
+                                                                <state key="normal" image="StepperButtonsMinus.png">
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="secondTimeDown:" destination="iCL-pB-wpq" eventType="touchUpInside" id="dkn-1Q-rWE"/>
+                                                                </connections>
+                                                            </button>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="sec" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Q5r-4t-Oag">
+                                                                <rect key="frame" x="292" y="47" width="24" height="23"/>
+                                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
+                                                                <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
                                                         </subviews>
                                                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                                                     </view>
@@ -2677,21 +2668,12 @@ write it down to stay inspired!               </string>
                                                                 <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="calibratedRGB"/>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
-                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqz-ou-W6v">
-                                                                <rect key="frame" x="99" y="77" width="25" height="25"/>
-                                                                <state key="normal" image="StepperButtonsPlus.png">
-                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                                                </state>
-                                                                <connections>
-                                                                    <action selector="slowIntervalUp:" destination="iCL-pB-wpq" eventType="touchUpInside" id="aXN-M7-58q"/>
-                                                                </connections>
-                                                            </button>
                                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="l55-Mv-B6j">
                                                                 <rect key="frame" x="90" y="22" width="1" height="75"/>
                                                                 <color key="backgroundColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                             </view>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="slow" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wJk-NZ-VOj">
-                                                                <rect key="frame" x="132" y="77" width="33" height="23"/>
+                                                                <rect key="frame" x="127" y="85" width="33" height="23"/>
                                                                 <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="15"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -2703,7 +2685,7 @@ write it down to stay inspired!               </string>
                                                                 <nil key="highlightedColor"/>
                                                             </label>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="MFy-Ht-c0S">
-                                                                <rect key="frame" x="225" y="76" width="25" height="25"/>
+                                                                <rect key="frame" x="216" y="76" width="40" height="40"/>
                                                                 <state key="normal" image="StepperButtonsPlus.png">
                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
@@ -2712,7 +2694,7 @@ write it down to stay inspired!               </string>
                                                                 </connections>
                                                             </button>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="m8u-C7-ASu">
-                                                                <rect key="frame" x="299" y="76" width="25" height="25"/>
+                                                                <rect key="frame" x="292" y="76" width="40" height="40"/>
                                                                 <state key="normal" image="StepperButtonsMinus.png">
                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
@@ -2721,7 +2703,7 @@ write it down to stay inspired!               </string>
                                                                 </connections>
                                                             </button>
                                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="fast" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rpv-Jr-AIT">
-                                                                <rect key="frame" x="258" y="77" width="33" height="23"/>
+                                                                <rect key="frame" x="258" y="84" width="33" height="23"/>
                                                                 <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="15"/>
                                                                 <color key="textColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
                                                                 <nil key="highlightedColor"/>
@@ -2736,12 +2718,21 @@ write it down to stay inspired!               </string>
                                                                 <rect key="frame" x="23" y="21" width="45" height="45"/>
                                                             </imageView>
                                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="y8s-iG-fvl">
-                                                                <rect key="frame" x="173" y="77" width="25" height="25"/>
+                                                                <rect key="frame" x="158" y="76" width="40" height="40"/>
                                                                 <state key="normal" image="StepperButtonsMinus.png">
                                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                                 </state>
                                                                 <connections>
                                                                     <action selector="slowIntervalDown:" destination="iCL-pB-wpq" eventType="touchUpInside" id="Suk-B3-PTO"/>
+                                                                </connections>
+                                                            </button>
+                                                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="fqz-ou-W6v">
+                                                                <rect key="frame" x="90" y="76" width="40" height="40"/>
+                                                                <state key="normal" image="StepperButtonsPlus.png">
+                                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                                </state>
+                                                                <connections>
+                                                                    <action selector="slowIntervalUp:" destination="iCL-pB-wpq" eventType="touchUpInside" id="aXN-M7-58q"/>
                                                                 </connections>
                                                             </button>
                                                         </subviews>
@@ -3172,148 +3163,137 @@ write it down to stay inspired!               </string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heK-Ai-5mR">
-                                <rect key="frame" x="73" y="404" width="229" height="55"/>
-                                <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
-                                <state key="normal" title="Log in">
-                                    <color key="titleColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="logInButtonPressed:" destination="r9u-uC-Djn" eventType="touchUpInside" id="oGZ-hb-qCn"/>
-                                </connections>
-                            </button>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="   Username (required)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4HP-el-dfU">
-                                <rect key="frame" x="73" y="247" width="229" height="55"/>
-                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="cEg-2c-Qg8"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
-                                <textInputTraits key="textInputTraits"/>
-                            </textField>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise for Busy Lives" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sim-3A-9rl">
-                                <rect key="frame" x="97" y="189" width="180" height="27"/>
-                                <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="21"/>
-                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dont have Excy?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l7Q-Ns-QmW">
-                                <rect key="frame" x="73" y="589" width="129" height="27"/>
-                                <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="21"/>
-                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase one here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEa-by-m1j">
-                                <rect key="frame" x="73" y="618" width="160" height="22"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="160" id="fFs-A6-cuT"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="21"/>
-                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teO-FI-b6b">
-                                <rect key="frame" x="228" y="619" width="26" height="28"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="26" id="j6B-Hw-sSr"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                <state key="normal" title="▷">
-                                    <color key="titleColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
-                                </state>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxI-f4-IeU">
-                                <rect key="frame" x="228" y="516" width="74" height="42"/>
-                                <color key="backgroundColor" red="0.2156862745" green="0.3803921569" blue="0.94117647059999998" alpha="0.5" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="74" id="7sl-6V-MvI"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
-                                <state key="normal" title="Sign Up">
-                                    <color key="titleColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="z5b-ms-SvS" kind="show" id="S5s-Ej-gJv"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5a-p5-a4n">
-                                <rect key="frame" x="73" y="516" width="155" height="42"/>
-                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.17999999999999999" colorSpace="calibratedWhite"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="42" id="9UF-VE-j2V"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="16"/>
-                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                                <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                <size key="shadowOffset" width="1" height="1"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="excy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="wl6-Cs-FO5">
-                                <rect key="frame" x="107" y="64" width="160" height="117"/>
-                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="92"/>
-                                <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="   Password (required)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="533-BX-oT7">
-                                <rect key="frame" x="73" y="310" width="229" height="55"/>
-                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="Hwr-TC-W0S"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
-                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                            </textField>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWG-Bp-0la">
-                                <rect key="frame" x="126" y="467" width="123" height="41"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="41" id="Kd0-KL-4mg"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
-                                <state key="normal" title="Forgot Password?">
-                                    <color key="titleColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <action selector="forgotPassword:" destination="r9u-uC-Djn" eventType="touchUpInside" id="fjf-BK-tta"/>
-                                </connections>
-                            </button>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="20" translatesAutoresizingMaskIntoConstraints="NO" id="RbU-Vs-y58">
+                                <rect key="frame" x="41" y="25" width="293" height="587"/>
+                                <subviews>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="ASM-sT-Jvq">
+                                        <rect key="frame" x="0.0" y="0.0" width="293" height="179"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" image="ExcyLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="Ha8-ka-JLN">
+                                                <rect key="frame" x="35" y="0.0" width="224" height="152"/>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise for Busy Lives" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Sim-3A-9rl">
+                                                <rect key="frame" x="57" y="152" width="180" height="27"/>
+                                                <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="21"/>
+                                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="hgB-Qk-OYy">
+                                        <rect key="frame" x="0.0" y="199" width="293" height="216"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="peW-GC-oRM">
+                                                <rect key="frame" x="0.0" y="0.0" width="293" height="103"/>
+                                                <subviews>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="   Email (required)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="4HP-el-dfU">
+                                                        <rect key="frame" x="0.0" y="0.0" width="293" height="46"/>
+                                                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits"/>
+                                                    </textField>
+                                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="   Password (required)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="533-BX-oT7">
+                                                        <rect key="frame" x="0.0" y="56" width="293" height="47"/>
+                                                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
+                                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                                    </textField>
+                                                </subviews>
+                                            </stackView>
+                                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="rh2-Pc-tpL">
+                                                <rect key="frame" x="0.0" y="113" width="293" height="103"/>
+                                                <subviews>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="heK-Ai-5mR">
+                                                        <rect key="frame" x="0.0" y="0.0" width="293" height="52"/>
+                                                        <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
+                                                        <state key="normal" title="Log in">
+                                                            <color key="titleColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="logInButtonPressed:" destination="r9u-uC-Djn" eventType="touchUpInside" id="oGZ-hb-qCn"/>
+                                                        </connections>
+                                                    </button>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bWG-Bp-0la">
+                                                        <rect key="frame" x="0.0" y="52" width="293" height="51"/>
+                                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
+                                                        <state key="normal" title="Forgot Password?">
+                                                            <color key="titleColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <action selector="forgotPassword:" destination="r9u-uC-Djn" eventType="touchUpInside" id="fjf-BK-tta"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hnb-xM-4m2">
+                                        <rect key="frame" x="0.0" y="435" width="293" height="51"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5a-p5-a4n">
+                                                <rect key="frame" x="0.0" y="0.0" width="140" height="51"/>
+                                                <color key="backgroundColor" white="0.66666666666666663" alpha="0.17999999999999999" colorSpace="calibratedWhite"/>
+                                                <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="16"/>
+                                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                                <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                <size key="shadowOffset" width="1" height="1"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxI-f4-IeU">
+                                                <rect key="frame" x="140" y="0.0" width="153" height="51"/>
+                                                <color key="backgroundColor" red="0.2156862745" green="0.3803921569" blue="0.94117647059999998" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
+                                                <state key="normal" title="Sign Up">
+                                                    <color key="titleColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="z5b-ms-SvS" kind="show" id="S5s-Ej-gJv"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Tfl-PM-gP4">
+                                        <rect key="frame" x="0.0" y="506" width="293" height="81"/>
+                                        <subviews>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="SWC-Tl-IlM">
+                                                <rect key="frame" x="44" y="0.0" width="206" height="81"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an Excy?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="hEa-by-m1j">
+                                                        <rect key="frame" x="0.0" y="0.0" width="156" height="81"/>
+                                                        <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="21"/>
+                                                        <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="teO-FI-b6b">
+                                                        <rect key="frame" x="156" y="0.0" width="50" height="81"/>
+                                                        <constraints>
+                                                            <constraint firstAttribute="width" constant="50" id="Fai-it-jB6"/>
+                                                        </constraints>
+                                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                        <state key="normal" title="▷">
+                                                            <color key="titleColor" red="0.93725490196078431" green="0.93725490196078431" blue="0.95686274509803926" alpha="1" colorSpace="calibratedRGB"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="D93-fv-deZ" kind="show" identifier="toWebView" id="oPh-Py-mzD"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.54117647058823526" green="0.75686274509803919" blue="0.71764705882352942" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="4HP-el-dfU" firstAttribute="leading" secondItem="pdG-uZ-QAT" secondAttribute="leadingMargin" constant="57" id="079-RY-btm"/>
-                            <constraint firstItem="heK-Ai-5mR" firstAttribute="trailing" secondItem="sxI-f4-IeU" secondAttribute="trailing" id="0JL-ev-nbE"/>
-                            <constraint firstItem="teO-FI-b6b" firstAttribute="firstBaseline" secondItem="hEa-by-m1j" secondAttribute="firstBaseline" id="1Gz-Cf-1XL"/>
-                            <constraint firstItem="Sim-3A-9rl" firstAttribute="top" secondItem="wl6-Cs-FO5" secondAttribute="bottom" constant="8" symbolic="YES" id="3tF-77-rgB"/>
-                            <constraint firstItem="533-BX-oT7" firstAttribute="trailing" secondItem="heK-Ai-5mR" secondAttribute="trailing" id="8Ba-dN-WGj"/>
-                            <constraint firstItem="hEa-by-m1j" firstAttribute="top" secondItem="l7Q-Ns-QmW" secondAttribute="bottom" constant="2" id="Be1-V3-Zy9"/>
-                            <constraint firstItem="teO-FI-b6b" firstAttribute="top" secondItem="sxI-f4-IeU" secondAttribute="bottom" constant="61" id="Hzv-2d-puV"/>
-                            <constraint firstItem="teO-FI-b6b" firstAttribute="baseline" secondItem="hEa-by-m1j" secondAttribute="firstBaseline" id="J5i-EB-g4n"/>
-                            <constraint firstItem="4HP-el-dfU" firstAttribute="centerX" secondItem="Sim-3A-9rl" secondAttribute="centerX" id="Ksn-lp-Uij"/>
-                            <constraint firstItem="bWG-Bp-0la" firstAttribute="centerX" secondItem="heK-Ai-5mR" secondAttribute="centerX" id="Lrq-L7-HML"/>
-                            <constraint firstItem="l7Q-Ns-QmW" firstAttribute="leading" secondItem="y5a-p5-a4n" secondAttribute="leading" id="Nof-dA-Ei7"/>
-                            <constraint firstItem="4HP-el-dfU" firstAttribute="top" secondItem="Sim-3A-9rl" secondAttribute="bottom" constant="31" id="Ojz-C8-KY7"/>
-                            <constraint firstItem="4HP-el-dfU" firstAttribute="leading" secondItem="533-BX-oT7" secondAttribute="leading" id="OlK-MB-thU"/>
-                            <constraint firstItem="533-BX-oT7" firstAttribute="trailing" secondItem="4HP-el-dfU" secondAttribute="trailing" id="QRs-tL-c2H"/>
-                            <constraint firstItem="sxI-f4-IeU" firstAttribute="leading" secondItem="y5a-p5-a4n" secondAttribute="trailing" id="Qbs-sv-pmc"/>
-                            <constraint firstItem="wl6-Cs-FO5" firstAttribute="centerX" secondItem="pdG-uZ-QAT" secondAttribute="centerX" id="Qk4-eA-9wR"/>
-                            <constraint firstItem="hEa-by-m1j" firstAttribute="top" secondItem="sxI-f4-IeU" secondAttribute="bottom" constant="60" id="R7X-6r-Swm"/>
-                            <constraint firstItem="y5a-p5-a4n" firstAttribute="top" secondItem="sxI-f4-IeU" secondAttribute="top" id="Rxt-CJ-zuM"/>
-                            <constraint firstItem="y5a-p5-a4n" firstAttribute="top" secondItem="bWG-Bp-0la" secondAttribute="bottom" constant="8" symbolic="YES" id="UOj-Hu-cVy"/>
-                            <constraint firstItem="sxI-f4-IeU" firstAttribute="bottom" secondItem="y5a-p5-a4n" secondAttribute="bottom" id="X7k-2D-X6p"/>
-                            <constraint firstItem="teO-FI-b6b" firstAttribute="leading" secondItem="sxI-f4-IeU" secondAttribute="leading" id="Yow-JC-YCw"/>
-                            <constraint firstItem="0Mh-u1-olu" firstAttribute="top" secondItem="hEa-by-m1j" secondAttribute="bottom" constant="27" id="bov-aq-hJs"/>
-                            <constraint firstItem="heK-Ai-5mR" firstAttribute="leading" secondItem="y5a-p5-a4n" secondAttribute="leading" id="ewS-fW-hj3"/>
-                            <constraint firstItem="wl6-Cs-FO5" firstAttribute="centerX" secondItem="Sim-3A-9rl" secondAttribute="centerX" id="g30-Hw-aft"/>
-                            <constraint firstItem="wl6-Cs-FO5" firstAttribute="top" secondItem="GJs-8T-zA4" secondAttribute="bottom" constant="64" id="hwe-bM-TLz"/>
-                            <constraint firstItem="533-BX-oT7" firstAttribute="top" secondItem="4HP-el-dfU" secondAttribute="bottom" constant="8" symbolic="YES" id="nAn-Ez-lKx"/>
-                            <constraint firstItem="hEa-by-m1j" firstAttribute="leading" secondItem="l7Q-Ns-QmW" secondAttribute="leading" id="saN-Ih-558"/>
-                            <constraint firstItem="heK-Ai-5mR" firstAttribute="top" secondItem="533-BX-oT7" secondAttribute="bottom" constant="39" id="til-hA-3Wt"/>
-                            <constraint firstItem="bWG-Bp-0la" firstAttribute="top" secondItem="heK-Ai-5mR" secondAttribute="bottom" constant="8" symbolic="YES" id="x5w-qD-hY9"/>
-                            <constraint firstAttribute="bottom" secondItem="teO-FI-b6b" secondAttribute="bottom" constant="20" symbolic="YES" id="yd0-kn-Zv4"/>
-                            <constraint firstItem="533-BX-oT7" firstAttribute="leading" secondItem="heK-Ai-5mR" secondAttribute="leading" id="zXR-M7-1wU"/>
+                            <constraint firstItem="RbU-Vs-y58" firstAttribute="leading" secondItem="pdG-uZ-QAT" secondAttribute="leadingMargin" constant="25" id="8ep-BF-nRm"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="RbU-Vs-y58" secondAttribute="trailing" constant="25" id="NVu-4Y-rmk"/>
+                            <constraint firstItem="RbU-Vs-y58" firstAttribute="top" secondItem="GJs-8T-zA4" secondAttribute="bottom" constant="25" id="bKK-JQ-8co"/>
+                            <constraint firstItem="0Mh-u1-olu" firstAttribute="top" secondItem="RbU-Vs-y58" secondAttribute="bottom" constant="55" id="zMa-yz-vpM"/>
                         </constraints>
                     </view>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
@@ -3702,20 +3682,51 @@ write it down to stay inspired!               </string>
                                     <action selector="stopButtomPressed:" destination="NEG-jg-zpm" eventType="touchUpInside" id="xAp-xJ-66s"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" alpha="0.80000000000000004" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="OqB-Zk-ceq">
+                                <rect key="frame" x="280" y="106" width="55" height="55"/>
+                                <constraints>
+                                    <constraint firstAttribute="width" secondItem="OqB-Zk-ceq" secondAttribute="height" multiplier="1:1" id="s4Y-k7-JeH"/>
+                                </constraints>
+                                <state key="normal" image="AudioIcon"/>
+                                <connections>
+                                    <action selector="muteAudio:" destination="NEG-jg-zpm" eventType="touchUpInside" id="uoO-Le-Gno"/>
+                                </connections>
+                            </button>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExcyLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="s7m-r9-NLQ">
+                                <rect key="frame" x="75" y="30" width="224" height="68"/>
+                            </imageView>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gZH-H0-fdh">
+                                <rect key="frame" x="113" y="513" width="148" height="38"/>
+                                <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="20"/>
+                                <state key="normal" title="Don't have an Excy?">
+                                    <color key="titleColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                                </state>
+                                <connections>
+                                    <action selector="purchaseExcy:" destination="NEG-jg-zpm" eventType="touchUpInside" id="Mvx-rZ-iKw"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" red="0.54026693110000001" green="0.7563344836" blue="0.71580058339999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
                             <constraint firstItem="v2o-ml-Xqr" firstAttribute="centerX" secondItem="5Rn-IV-cgF" secondAttribute="centerX" id="5B9-6b-5Mh"/>
                             <constraint firstItem="84L-gW-Mec" firstAttribute="leading" secondItem="ihn-Sw-eMp" secondAttribute="leading" id="695-k1-NuP"/>
+                            <constraint firstItem="OqB-Zk-ceq" firstAttribute="bottom" secondItem="v2o-ml-Xqr" secondAttribute="bottom" id="89U-tl-zN6"/>
                             <constraint firstItem="fJl-8Z-MLW" firstAttribute="trailing" secondItem="ihn-Sw-eMp" secondAttribute="trailing" id="8Jp-rf-5sV"/>
+                            <constraint firstItem="OqB-Zk-ceq" firstAttribute="top" secondItem="v2o-ml-Xqr" secondAttribute="top" id="C9m-a5-Wiv"/>
                             <constraint firstItem="ihn-Sw-eMp" firstAttribute="top" secondItem="97Y-9D-yM0" secondAttribute="bottom" constant="8" id="Dhu-Zm-yhk"/>
                             <constraint firstItem="84L-gW-Mec" firstAttribute="top" secondItem="ihn-Sw-eMp" secondAttribute="bottom" constant="8" id="FUy-Ma-8Ld"/>
+                            <constraint firstItem="gZH-H0-fdh" firstAttribute="top" secondItem="fJl-8Z-MLW" secondAttribute="bottom" constant="8" id="G2E-oB-jwo"/>
+                            <constraint firstItem="gZH-H0-fdh" firstAttribute="centerX" secondItem="5Rn-IV-cgF" secondAttribute="centerX" id="Gcs-nl-FCe"/>
+                            <constraint firstItem="s7m-r9-NLQ" firstAttribute="top" relation="greaterThanOrEqual" secondItem="jzb-dI-qpe" secondAttribute="bottom" constant="30" id="Huq-tO-gpV"/>
                             <constraint firstItem="97Y-9D-yM0" firstAttribute="top" secondItem="mgO-5j-hcY" secondAttribute="bottom" constant="8" id="NCl-2L-l6D"/>
+                            <constraint firstItem="v2o-ml-Xqr" firstAttribute="top" secondItem="s7m-r9-NLQ" secondAttribute="bottom" constant="8" id="P01-eQ-bs4"/>
                             <constraint firstItem="97Y-9D-yM0" firstAttribute="centerX" secondItem="5Rn-IV-cgF" secondAttribute="centerX" id="Vhb-4b-ays"/>
                             <constraint firstItem="fJl-8Z-MLW" firstAttribute="leading" secondItem="84L-gW-Mec" secondAttribute="trailing" constant="8" id="Vzr-hp-Ff6"/>
                             <constraint firstItem="97Y-9D-yM0" firstAttribute="centerY" secondItem="5Rn-IV-cgF" secondAttribute="centerY" id="W8U-ui-XSD"/>
+                            <constraint firstItem="OqB-Zk-ceq" firstAttribute="trailing" secondItem="v2o-ml-Xqr" secondAttribute="trailing" id="XaB-Tv-WWe"/>
                             <constraint firstItem="mgO-5j-hcY" firstAttribute="top" secondItem="v2o-ml-Xqr" secondAttribute="bottom" constant="8" id="XqB-pr-004"/>
                             <constraint firstItem="fJl-8Z-MLW" firstAttribute="width" secondItem="84L-gW-Mec" secondAttribute="width" id="Xvt-g0-tJS"/>
+                            <constraint firstItem="s7m-r9-NLQ" firstAttribute="centerX" secondItem="5Rn-IV-cgF" secondAttribute="centerX" id="eQ5-ab-u4q"/>
                             <constraint firstItem="ihn-Sw-eMp" firstAttribute="centerX" secondItem="5Rn-IV-cgF" secondAttribute="centerX" id="tR9-j8-cLx"/>
                             <constraint firstItem="fJl-8Z-MLW" firstAttribute="top" secondItem="ihn-Sw-eMp" secondAttribute="bottom" constant="8" id="wS9-WA-npf"/>
                             <constraint firstItem="mgO-5j-hcY" firstAttribute="centerX" secondItem="5Rn-IV-cgF" secondAttribute="centerX" id="wiv-aw-O1q"/>
@@ -3726,6 +3737,7 @@ write it down to stay inspired!               </string>
                     <nil key="simulatedTopBarMetrics"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                     <connections>
+                        <outlet property="audioButton" destination="OqB-Zk-ceq" id="mGC-kQ-sIu"/>
                         <outlet property="currentMinZoneLabel" destination="bco-Cz-YW9" id="Ns2-i7-YlO"/>
                         <outlet property="progressView" destination="Prz-nE-DHK" id="VSZ-mv-Q8z"/>
                         <outlet property="stopwatchLabel" destination="zag-YV-Oqc" id="EH6-WS-nGN"/>
@@ -3803,7 +3815,7 @@ write it down to stay inspired!               </string>
             </objects>
             <point key="canvasLocation" x="249.5" y="1356.5"/>
         </scene>
-        <!--Workouts-->
+        <!--Excy-->
         <scene sceneID="RSh-cn-qFm">
             <objects>
                 <viewController id="MEG-tG-zmP" sceneMemberID="viewController">
@@ -3815,101 +3827,89 @@ write it down to stay inspired!               </string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="618"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZv-ez-dQb">
-                                <rect key="frame" x="36" y="187" width="303" height="55"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="g9T-vC-45D">
+                                <rect key="frame" x="36" y="60" width="303" height="498"/>
+                                <subviews>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExcyLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="m3H-Sd-Ic7">
+                                        <rect key="frame" x="40" y="0.0" width="223" height="97"/>
+                                        <constraints>
+                                            <constraint firstAttribute="height" constant="97" id="yde-cx-Ejp"/>
+                                        </constraints>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="qws-3d-wT3">
+                                        <rect key="frame" x="0.0" y="97" width="303" height="401"/>
+                                        <subviews>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QkE-jT-FUf">
+                                                <rect key="frame" x="0.0" y="0.0" width="303" height="59"/>
+                                                <state key="normal" image="WBArmCandy.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="nFw-aM-RoW" kind="show" id="K5z-Ob-GDm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="CZv-ez-dQb">
+                                                <rect key="frame" x="0.0" y="69" width="303" height="58"/>
+                                                <state key="normal" image="WBSuperCycleCardio.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="LKz-Xy-p9O" kind="show" id="DBG-BC-OKz"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PA7-34-K1o">
+                                                <rect key="frame" x="0.0" y="137" width="303" height="59"/>
+                                                <state key="normal" image="WBCycleLegBlast.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="v2B-9r-Krt" kind="show" id="nSn-dq-49q"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jo-u1-73e">
+                                                <rect key="frame" x="0.0" y="206" width="303" height="58"/>
+                                                <state key="normal" image="WBCoreFloorExplosion.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="y7R-qG-Fjs" kind="show" id="VI4-cM-W9J"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOK-Yp-nbU">
+                                                <rect key="frame" x="0.0" y="274" width="303" height="59"/>
+                                                <state key="normal" image="WBArmBlast.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="QdD-d2-gfP" kind="show" id="ifv-0k-zxp"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icg-et-w71">
+                                                <rect key="frame" x="0.0" y="343" width="303" height="58"/>
+                                                <state key="normal" image="WBUltimateArmLegTone.png">
+                                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="5y1-At-hNn" kind="show" id="k6a-yd-A86"/>
+                                                </connections>
+                                            </button>
+                                        </subviews>
+                                    </stackView>
+                                </subviews>
                                 <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="BEf-es-hEC"/>
+                                    <constraint firstItem="m3H-Sd-Ic7" firstAttribute="leading" secondItem="g9T-vC-45D" secondAttribute="leading" constant="40" id="D3I-Ns-FZT"/>
                                 </constraints>
-                                <state key="normal" image="WBSuperCycleCardio.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="LKz-Xy-p9O" kind="show" id="DBG-BC-OKz"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="PA7-34-K1o">
-                                <rect key="frame" x="36" y="250" width="303" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="X6o-bd-754"/>
-                                </constraints>
-                                <state key="normal" image="WBCycleLegBlast.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="v2B-9r-Krt" kind="show" id="nSn-dq-49q"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="3jo-u1-73e">
-                                <rect key="frame" x="36" y="313" width="303" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="ewl-nc-tpx"/>
-                                </constraints>
-                                <state key="normal" image="WBCoreFloorExplosion.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="y7R-qG-Fjs" kind="show" id="VI4-cM-W9J"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="icg-et-w71">
-                                <rect key="frame" x="36" y="439" width="303" height="55"/>
-                                <state key="normal" image="WBUltimateArmLegTone.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="5y1-At-hNn" kind="show" id="k6a-yd-A86"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="QkE-jT-FUf">
-                                <rect key="frame" x="36" y="124" width="303" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="wiv-9Z-Xr3"/>
-                                </constraints>
-                                <state key="normal" image="WBArmCandy.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="nFw-aM-RoW" kind="show" id="K5z-Ob-GDm"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="HOK-Yp-nbU">
-                                <rect key="frame" x="36" y="376" width="303" height="55"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="55" id="Up7-yQ-vIm"/>
-                                </constraints>
-                                <state key="normal" image="WBArmBlast.png">
-                                    <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                </state>
-                                <connections>
-                                    <segue destination="QdD-d2-gfP" kind="show" id="ifv-0k-zxp"/>
-                                </connections>
-                            </button>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.54026693110000001" green="0.7563344836" blue="0.71580058339999997" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="PA7-34-K1o" firstAttribute="trailing" secondItem="3jo-u1-73e" secondAttribute="trailing" id="5cf-NP-IXL"/>
-                            <constraint firstItem="icg-et-w71" firstAttribute="height" secondItem="HOK-Yp-nbU" secondAttribute="height" id="60E-pf-VOr"/>
-                            <constraint firstItem="HOK-Yp-nbU" firstAttribute="trailing" secondItem="3jo-u1-73e" secondAttribute="trailing" id="Aq8-3W-fMj"/>
-                            <constraint firstItem="QkE-jT-FUf" firstAttribute="trailing" secondItem="CZv-ez-dQb" secondAttribute="trailing" id="Bme-F9-AMK"/>
-                            <constraint firstItem="HOK-Yp-nbU" firstAttribute="leading" secondItem="icg-et-w71" secondAttribute="leading" id="K77-UN-fZA"/>
-                            <constraint firstItem="3jo-u1-73e" firstAttribute="top" secondItem="PA7-34-K1o" secondAttribute="bottom" constant="8" symbolic="YES" id="MvG-AK-KJH"/>
-                            <constraint firstItem="PA7-34-K1o" firstAttribute="leading" secondItem="3jo-u1-73e" secondAttribute="leading" id="NpM-F8-LXF"/>
-                            <constraint firstItem="PA7-34-K1o" firstAttribute="centerX" secondItem="qV4-jD-8me" secondAttribute="centerX" id="Stw-aY-bXd"/>
-                            <constraint firstItem="QkE-jT-FUf" firstAttribute="leading" secondItem="CZv-ez-dQb" secondAttribute="leading" id="Uqb-bI-Mjo"/>
-                            <constraint firstItem="CZv-ez-dQb" firstAttribute="trailing" secondItem="PA7-34-K1o" secondAttribute="trailing" id="bQ0-rd-oG8"/>
-                            <constraint firstItem="HOK-Yp-nbU" firstAttribute="leading" secondItem="3jo-u1-73e" secondAttribute="leading" id="bRn-qe-Alx"/>
-                            <constraint firstItem="QkE-jT-FUf" firstAttribute="leading" secondItem="qV4-jD-8me" secondAttribute="leadingMargin" constant="20" id="f3X-HW-buL"/>
-                            <constraint firstItem="CZv-ez-dQb" firstAttribute="top" secondItem="QkE-jT-FUf" secondAttribute="bottom" constant="8" symbolic="YES" id="gB8-6n-i4G"/>
-                            <constraint firstItem="wo0-xV-lDw" firstAttribute="top" relation="lessThanOrEqual" secondItem="icg-et-w71" secondAttribute="bottom" constant="124" id="gi6-aT-b9i"/>
-                            <constraint firstItem="PA7-34-K1o" firstAttribute="leading" secondItem="CZv-ez-dQb" secondAttribute="leading" id="gu6-tg-L9R"/>
-                            <constraint firstItem="PA7-34-K1o" firstAttribute="top" secondItem="CZv-ez-dQb" secondAttribute="bottom" constant="8" symbolic="YES" id="jSq-BU-jJe"/>
-                            <constraint firstItem="HOK-Yp-nbU" firstAttribute="top" secondItem="3jo-u1-73e" secondAttribute="bottom" constant="8" symbolic="YES" id="o0W-ap-z8U"/>
-                            <constraint firstItem="QkE-jT-FUf" firstAttribute="top" secondItem="dqW-sS-epV" secondAttribute="bottom" constant="80" id="scq-PA-YWS"/>
-                            <constraint firstItem="icg-et-w71" firstAttribute="top" secondItem="HOK-Yp-nbU" secondAttribute="bottom" constant="8" symbolic="YES" id="wuk-dq-JdR"/>
-                            <constraint firstItem="icg-et-w71" firstAttribute="trailing" secondItem="HOK-Yp-nbU" secondAttribute="trailing" id="xDN-B1-u55"/>
+                            <constraint firstAttribute="bottomMargin" secondItem="g9T-vC-45D" secondAttribute="bottom" constant="60" id="4Xx-16-iBI"/>
+                            <constraint firstItem="g9T-vC-45D" firstAttribute="leading" secondItem="qV4-jD-8me" secondAttribute="leadingMargin" constant="20" id="5TA-2P-KEP"/>
+                            <constraint firstItem="g9T-vC-45D" firstAttribute="top" secondItem="qV4-jD-8me" secondAttribute="topMargin" constant="60" id="5lX-X0-x4e"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="g9T-vC-45D" secondAttribute="trailing" constant="20" id="SDa-JT-p41"/>
                         </constraints>
                     </view>
-                    <navigationItem key="navigationItem" title="Workouts" id="ryl-Jh-JnO"/>
+                    <navigationItem key="navigationItem" title="Excy" id="ryl-Jh-JnO"/>
                     <simulatedScreenMetrics key="simulatedDestinationMetrics" type="retina47"/>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="S5U-kA-haM" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -4426,11 +4426,11 @@ write it down to stay inspired!               </string>
             </objects>
             <point key="canvasLocation" x="2704.5" y="1695.5"/>
         </scene>
-        <!--start-->
+        <!--play-->
         <scene sceneID="l0n-QJ-zj8">
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" navigationBarHidden="YES" id="Eyr-JJ-r8g" sceneMemberID="viewController">
-                    <tabBarItem key="tabBarItem" title="start" image="TabBarIconStart" id="0U5-OY-tIw"/>
+                    <tabBarItem key="tabBarItem" title="play" image="TabBarIconStart" id="0U5-OY-tIw"/>
                     <toolbarItems/>
                     <navigationBar key="navigationBar" contentMode="scaleToFill" id="7xq-pq-kf3">
                         <rect key="frame" x="0.0" y="0.0" width="320" height="44"/>
@@ -4457,174 +4457,134 @@ write it down to stay inspired!               </string>
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6UZ-og-IM2">
-                                <rect key="frame" x="93" y="621" width="179" height="38"/>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillProportionally" spacing="18" translatesAutoresizingMaskIntoConstraints="NO" id="gbd-Vq-few">
+                                <rect key="frame" x="41" y="20" width="293" height="627"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Purchase one here" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7z-BG-Coi">
-                                        <rect key="frame" x="0.0" y="0.0" width="149" height="38"/>
-                                        <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="21"/>
-                                        <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3q-gV-Qoe">
-                                        <rect key="frame" x="149" y="0.0" width="30" height="38"/>
-                                        <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
-                                        <state key="normal" title="▷">
-                                            <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        </state>
-                                    </button>
-                                </subviews>
-                                <constraints>
-                                    <constraint firstAttribute="trailing" secondItem="e3q-gV-Qoe" secondAttribute="trailing" id="0Ra-3Q-Z1w"/>
-                                    <constraint firstItem="e3q-gV-Qoe" firstAttribute="centerY" secondItem="V7z-BG-Coi" secondAttribute="centerY" id="34k-RJ-1je"/>
-                                    <constraint firstItem="e3q-gV-Qoe" firstAttribute="bottom" secondItem="V7z-BG-Coi" secondAttribute="bottom" id="4Kk-gF-GHR"/>
-                                    <constraint firstItem="e3q-gV-Qoe" firstAttribute="top" secondItem="6UZ-og-IM2" secondAttribute="topMargin" id="AWy-ep-vQg"/>
-                                    <constraint firstItem="V7z-BG-Coi" firstAttribute="leading" secondItem="6UZ-og-IM2" secondAttribute="leading" id="B0W-gu-SY1"/>
-                                    <constraint firstItem="e3q-gV-Qoe" firstAttribute="top" secondItem="6UZ-og-IM2" secondAttribute="top" id="Jc2-0b-sJG"/>
-                                    <constraint firstItem="V7z-BG-Coi" firstAttribute="centerY" secondItem="6UZ-og-IM2" secondAttribute="centerY" id="L0i-vw-Y91"/>
-                                    <constraint firstItem="e3q-gV-Qoe" firstAttribute="leading" secondItem="6UZ-og-IM2" secondAttribute="leading" constant="149" id="N1X-7K-ubZ"/>
-                                    <constraint firstItem="e3q-gV-Qoe" firstAttribute="top" secondItem="6UZ-og-IM2" secondAttribute="top" id="Nbt-7L-Gov"/>
-                                    <constraint firstAttribute="bottom" secondItem="V7z-BG-Coi" secondAttribute="bottom" id="RIS-Ld-xah"/>
-                                    <constraint firstItem="V7z-BG-Coi" firstAttribute="top" secondItem="6UZ-og-IM2" secondAttribute="top" id="Rhx-47-MLG"/>
-                                    <constraint firstItem="V7z-BG-Coi" firstAttribute="top" secondItem="e3q-gV-Qoe" secondAttribute="top" id="S4X-vr-Cer"/>
-                                    <constraint firstItem="V7z-BG-Coi" firstAttribute="leading" secondItem="6UZ-og-IM2" secondAttribute="leading" id="UQ8-CT-CvC"/>
-                                    <constraint firstItem="V7z-BG-Coi" firstAttribute="top" secondItem="6UZ-og-IM2" secondAttribute="top" id="X2J-hT-Gel"/>
-                                    <constraint firstItem="V7z-BG-Coi" firstAttribute="leading" secondItem="6UZ-og-IM2" secondAttribute="leading" id="XlT-uk-eSO"/>
-                                    <constraint firstAttribute="bottom" secondItem="e3q-gV-Qoe" secondAttribute="bottom" id="YAx-Zb-Mgk"/>
-                                    <constraint firstItem="V7z-BG-Coi" firstAttribute="leading" secondItem="6UZ-og-IM2" secondAttribute="leading" id="a4U-Bi-ZpE"/>
-                                    <constraint firstItem="e3q-gV-Qoe" firstAttribute="top" secondItem="6UZ-og-IM2" secondAttribute="top" id="bNu-r8-fip"/>
-                                    <constraint firstAttribute="bottom" secondItem="e3q-gV-Qoe" secondAttribute="bottom" id="bzh-ip-wjb"/>
-                                    <constraint firstItem="e3q-gV-Qoe" firstAttribute="centerY" secondItem="6UZ-og-IM2" secondAttribute="centerY" id="cKV-zO-j7Q"/>
-                                    <constraint firstItem="V7z-BG-Coi" firstAttribute="bottom" secondItem="6UZ-og-IM2" secondAttribute="bottomMargin" id="ch8-rD-906"/>
-                                    <constraint firstItem="V7z-BG-Coi" firstAttribute="top" secondItem="6UZ-og-IM2" secondAttribute="topMargin" id="d0a-zc-MXJ"/>
-                                    <constraint firstItem="V7z-BG-Coi" firstAttribute="top" secondItem="6UZ-og-IM2" secondAttribute="top" id="e5E-nL-DhX"/>
-                                    <constraint firstItem="e3q-gV-Qoe" firstAttribute="top" secondItem="6UZ-og-IM2" secondAttribute="top" id="f6S-4y-Hso"/>
-                                    <constraint firstItem="e3q-gV-Qoe" firstAttribute="leading" secondItem="V7z-BG-Coi" secondAttribute="trailing" id="j1B-VF-2Wg"/>
-                                    <constraint firstItem="e3q-gV-Qoe" firstAttribute="trailing" secondItem="6UZ-og-IM2" secondAttribute="trailingMargin" id="k9U-MZ-NcW"/>
-                                    <constraint firstItem="e3q-gV-Qoe" firstAttribute="bottom" secondItem="6UZ-og-IM2" secondAttribute="bottomMargin" id="lSC-v6-Y9m"/>
-                                    <constraint firstItem="V7z-BG-Coi" firstAttribute="leading" secondItem="6UZ-og-IM2" secondAttribute="leadingMargin" id="mlt-Y9-cfC"/>
-                                    <constraint firstItem="V7z-BG-Coi" firstAttribute="top" secondItem="6UZ-og-IM2" secondAttribute="top" id="oPT-ec-FuS"/>
-                                    <constraint firstAttribute="trailing" secondItem="e3q-gV-Qoe" secondAttribute="trailing" id="t0q-ae-Qfy"/>
-                                    <constraint firstAttribute="trailing" secondItem="e3q-gV-Qoe" secondAttribute="trailing" id="wFq-hZ-I3V"/>
-                                    <constraint firstAttribute="bottom" secondItem="V7z-BG-Coi" secondAttribute="bottom" id="wN1-3H-B2p"/>
-                                </constraints>
-                            </stackView>
-                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZrH-ul-AIi">
-                                <rect key="frame" x="93" y="99" width="180" height="395"/>
-                                <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise for Busy Lives" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8q-iy-IHr">
-                                        <rect key="frame" x="0.0" y="0.0" width="180" height="35"/>
-                                        <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="21"/>
-                                        <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hSf-WI-XkA">
-                                        <rect key="frame" x="0.0" y="40" width="180" height="36"/>
-                                        <segments>
-                                            <segment title="Female"/>
-                                            <segment title="Male"/>
-                                        </segments>
-                                    </segmentedControl>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="   Age" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wqq-0C-8JM">
-                                        <rect key="frame" x="0.0" y="80" width="180" height="35"/>
-                                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="   Height in Inches" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6bO-5x-Dsa">
-                                        <rect key="frame" x="0.0" y="120" width="180" height="35"/>
-                                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="   Weight in Pounds" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j1H-0z-gqy">
-                                        <rect key="frame" x="0.0" y="160" width="180" height="35"/>
-                                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="   Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bCf-Mb-Bem">
-                                        <rect key="frame" x="0.0" y="200" width="180" height="35"/>
-                                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="   Username (required)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APw-9D-uai">
-                                        <rect key="frame" x="0.0" y="240" width="180" height="35"/>
-                                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits"/>
-                                    </textField>
-                                    <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="   Password (required)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H3V-Vq-rVi">
-                                        <rect key="frame" x="0.0" y="280" width="180" height="35"/>
-                                        <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
-                                        <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
-                                    </textField>
-                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AS2-eW-H3c">
-                                        <rect key="frame" x="0.0" y="320" width="180" height="35"/>
-                                        <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
-                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
-                                        <state key="normal" title="Sign Up">
-                                            <color key="titleColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
-                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
-                                        </state>
-                                        <connections>
-                                            <action selector="SignUpButtonPressed:" destination="z5b-ms-SvS" eventType="touchUpInside" id="dka-Wz-Mgw"/>
-                                        </connections>
-                                    </button>
-                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBj-HQ-YTD">
-                                        <rect key="frame" x="0.0" y="360" width="180" height="35"/>
+                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExcyLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="FTQ-WZ-Ffs">
+                                        <rect key="frame" x="0.0" y="0.0" width="293" height="107"/>
+                                    </imageView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="ZrH-ul-AIi">
+                                        <rect key="frame" x="0.0" y="125" width="293" height="438"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZS-NZ-kpT">
-                                                <rect key="frame" x="0.0" y="0.0" width="107" height="35"/>
-                                                <color key="backgroundColor" white="0.66666666669999997" alpha="0.17999999999999999" colorSpace="calibratedWhite"/>
-                                                <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="16"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise for Busy Lives" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8q-iy-IHr">
+                                                <rect key="frame" x="0.0" y="0.0" width="293" height="40"/>
+                                                <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="21"/>
                                                 <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <nil key="highlightedColor"/>
-                                                <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
-                                                <size key="shadowOffset" width="1" height="1"/>
                                             </label>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ujl-ZW-qEA">
-                                                <rect key="frame" x="107" y="0.0" width="73" height="35"/>
-                                                <color key="backgroundColor" red="0.2156862745" green="0.3803921569" blue="0.94117647059999998" alpha="0.5" colorSpace="calibratedRGB"/>
+                                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hSf-WI-XkA">
+                                                <rect key="frame" x="0.0" y="45" width="293" height="40"/>
+                                                <segments>
+                                                    <segment title="Female"/>
+                                                    <segment title="Male"/>
+                                                </segments>
+                                            </segmentedControl>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="   Age" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wqq-0C-8JM">
+                                                <rect key="frame" x="0.0" y="89" width="293" height="39"/>
+                                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
                                                 <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
-                                                <state key="normal" title="Log In">
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="   Height in Inches" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="6bO-5x-Dsa">
+                                                <rect key="frame" x="0.0" y="133" width="293" height="39"/>
+                                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="   Weight in Pounds" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j1H-0z-gqy">
+                                                <rect key="frame" x="0.0" y="177" width="293" height="40"/>
+                                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="   Email Address (required)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bCf-Mb-Bem">
+                                                <rect key="frame" x="0.0" y="222" width="293" height="39"/>
+                                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="   Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APw-9D-uai">
+                                                <rect key="frame" x="0.0" y="266" width="293" height="39"/>
+                                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits"/>
+                                            </textField>
+                                            <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" borderStyle="line" placeholder="   Password (required)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H3V-Vq-rVi">
+                                                <rect key="frame" x="0.0" y="310" width="293" height="40"/>
+                                                <color key="backgroundColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
+                                                <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
+                                            </textField>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AS2-eW-H3c">
+                                                <rect key="frame" x="0.0" y="355" width="293" height="39"/>
+                                                <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
+                                                <state key="normal" title="Sign Up">
                                                     <color key="titleColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
                                                     <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
                                                 </state>
                                                 <connections>
-                                                    <segue destination="r9u-uC-Djn" kind="show" id="Jsj-17-632"/>
+                                                    <action selector="SignUpButtonPressed:" destination="z5b-ms-SvS" eventType="touchUpInside" id="dka-Wz-Mgw"/>
+                                                </connections>
+                                            </button>
+                                            <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="HBj-HQ-YTD">
+                                                <rect key="frame" x="0.0" y="399" width="293" height="39"/>
+                                                <subviews>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZS-NZ-kpT">
+                                                        <rect key="frame" x="0.0" y="0.0" width="107" height="39"/>
+                                                        <color key="backgroundColor" white="0.66666666669999997" alpha="0.17999999999999999" colorSpace="calibratedWhite"/>
+                                                        <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="16"/>
+                                                        <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                        <nil key="highlightedColor"/>
+                                                        <color key="shadowColor" white="0.66666666666666663" alpha="1" colorSpace="calibratedWhite"/>
+                                                        <size key="shadowOffset" width="1" height="1"/>
+                                                    </label>
+                                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ujl-ZW-qEA">
+                                                        <rect key="frame" x="107" y="0.0" width="186" height="39"/>
+                                                        <color key="backgroundColor" red="0.2156862745" green="0.3803921569" blue="0.94117647059999998" alpha="0.5" colorSpace="calibratedRGB"/>
+                                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
+                                                        <state key="normal" title="Log In">
+                                                            <color key="titleColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
+                                                            <color key="titleShadowColor" white="0.5" alpha="1" colorSpace="calibratedWhite"/>
+                                                        </state>
+                                                        <connections>
+                                                            <segue destination="r9u-uC-Djn" kind="show" id="Jsj-17-632"/>
+                                                        </connections>
+                                                    </button>
+                                                </subviews>
+                                            </stackView>
+                                        </subviews>
+                                    </stackView>
+                                    <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6UZ-og-IM2">
+                                        <rect key="frame" x="0.0" y="581" width="293" height="46"/>
+                                        <subviews>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an Excy?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V7z-BG-Coi">
+                                                <rect key="frame" x="0.0" y="0.0" width="156" height="46"/>
+                                                <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="21"/>
+                                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="e3q-gV-Qoe">
+                                                <rect key="frame" x="156" y="0.0" width="137" height="46"/>
+                                                <fontDescription key="fontDescription" type="boldSystem" pointSize="21"/>
+                                                <state key="normal" title="▷">
+                                                    <color key="titleColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="calibratedRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="D93-fv-deZ" kind="show" identifier="toWebView" id="n1g-Df-bj3"/>
                                                 </connections>
                                             </button>
                                         </subviews>
                                     </stackView>
                                 </subviews>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Dont have Excy?" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="awY-Vs-lQV">
-                                <rect key="frame" x="93" y="586" width="179" height="27"/>
-                                <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="21"/>
-                                <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="excy" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="v4m-gW-pEn">
-                                <rect key="frame" x="98" y="-26" width="160" height="117"/>
-                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="92"/>
-                                <color key="textColor" red="1" green="0.99997437" blue="0.99999129769999995" alpha="1" colorSpace="calibratedRGB"/>
-                                <nil key="highlightedColor"/>
-                            </label>
                         </subviews>
                         <color key="backgroundColor" red="0.54117647059999996" green="0.75686274509999996" blue="0.71764705880000002" alpha="1" colorSpace="calibratedRGB"/>
                         <constraints>
-                            <constraint firstItem="6UZ-og-IM2" firstAttribute="leading" secondItem="jvN-dO-Dk8" secondAttribute="leadingMargin" constant="77" id="13v-pU-BJj"/>
-                            <constraint firstItem="ZrH-ul-AIi" firstAttribute="top" secondItem="v4m-gW-pEn" secondAttribute="bottom" constant="8" symbolic="YES" id="9ff-a1-3SR"/>
-                            <constraint firstItem="6UZ-og-IM2" firstAttribute="leading" secondItem="awY-Vs-lQV" secondAttribute="leading" id="BSw-TZ-dZD"/>
-                            <constraint firstItem="6UZ-og-IM2" firstAttribute="leading" secondItem="ZrH-ul-AIi" secondAttribute="leading" id="KHk-EF-fSS"/>
-                            <constraint firstItem="v4m-gW-pEn" firstAttribute="top" secondItem="jvN-dO-Dk8" secondAttribute="topMargin" constant="-26" id="LKx-0Q-HGo"/>
-                            <constraint firstItem="C74-tX-ET2" firstAttribute="top" secondItem="6UZ-og-IM2" secondAttribute="bottom" constant="8" symbolic="YES" id="RCf-tI-2Jg"/>
-                            <constraint firstItem="6UZ-og-IM2" firstAttribute="top" secondItem="awY-Vs-lQV" secondAttribute="bottom" constant="8" symbolic="YES" id="TAG-9E-Lql"/>
-                            <constraint firstItem="6UZ-og-IM2" firstAttribute="centerX" secondItem="v4m-gW-pEn" secondAttribute="centerX" constant="4.5" id="jI7-cC-rqR"/>
-                            <constraint firstItem="6UZ-og-IM2" firstAttribute="centerX" secondItem="awY-Vs-lQV" secondAttribute="centerX" id="q4F-tI-DuY"/>
+                            <constraint firstItem="C74-tX-ET2" firstAttribute="top" secondItem="gbd-Vq-few" secondAttribute="bottom" constant="20" id="InZ-VC-SMY"/>
+                            <constraint firstItem="gbd-Vq-few" firstAttribute="leading" secondItem="jvN-dO-Dk8" secondAttribute="leadingMargin" constant="25" id="Myc-Qt-Q1L"/>
+                            <constraint firstItem="gbd-Vq-few" firstAttribute="top" secondItem="pLr-D2-XD5" secondAttribute="bottom" constant="20" id="dUu-TN-Dmz"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="gbd-Vq-few" secondAttribute="trailing" constant="25" id="fih-MZ-bA4"/>
                         </constraints>
                     </view>
                     <nil key="simulatedStatusBarMetrics"/>
@@ -5006,7 +4966,7 @@ write it down to stay inspired!               </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="IPO-Yn-5zc" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1153.5" y="1356.5"/>
+            <point key="canvasLocation" x="1115.5" y="1706.5"/>
         </scene>
         <!--Videos And Tips View Controller-->
         <scene sceneID="pqb-mr-Pcd">
@@ -5039,7 +4999,97 @@ write it down to stay inspired!               </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XKy-xW-mvF" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="1153.5" y="2219.5"/>
+            <point key="canvasLocation" x="1598.5" y="1424.5"/>
+        </scene>
+        <!--Videos And Tips View Controller-->
+        <scene sceneID="BzC-fX-26Z">
+            <objects>
+                <viewController id="tZE-YK-m8P" customClass="VideosAndTipsViewController" customModule="ExCy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="zXo-sI-rAq"/>
+                        <viewControllerLayoutGuide type="bottom" id="uE8-z1-fbu"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="sF1-0N-4n1">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="5km-RT-bUf">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Bcp-Jm-fEd">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem id="VLc-Mt-fEZ">
+                                        <barButtonItem key="leftBarButtonItem" title="back" id="7GV-WO-zSy">
+                                            <connections>
+                                                <action selector="goBackFromWorkout:" destination="tZE-YK-m8P" id="rg8-wS-XHb"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="5km-RT-bUf" firstAttribute="leading" secondItem="sF1-0N-4n1" secondAttribute="leading" id="2iz-0O-Cb1"/>
+                            <constraint firstAttribute="trailing" secondItem="5km-RT-bUf" secondAttribute="trailing" id="BYK-UP-K57"/>
+                            <constraint firstItem="uE8-z1-fbu" firstAttribute="top" secondItem="5km-RT-bUf" secondAttribute="bottom" id="phA-5G-aaF"/>
+                            <constraint firstItem="5km-RT-bUf" firstAttribute="top" secondItem="sF1-0N-4n1" secondAttribute="top" id="y9G-9W-FcG"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="5km-RT-bUf" id="det-dl-yzO"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="j9K-ma-qCx" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="4274" y="1232"/>
+        </scene>
+        <!--Videos And Tips View Controller-->
+        <scene sceneID="HLD-wR-EpQ">
+            <objects>
+                <viewController id="D93-fv-deZ" customClass="VideosAndTipsViewController" customModule="ExCy" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="80j-6A-NX7"/>
+                        <viewControllerLayoutGuide type="bottom" id="3Fv-Xd-gIn"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="9wW-m5-jXS">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <webView contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="iDD-5a-gyn">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                                <color key="backgroundColor" red="0.36078431370000003" green="0.38823529410000002" blue="0.4039215686" alpha="1" colorSpace="deviceRGB"/>
+                            </webView>
+                            <navigationBar contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="iKE-MJ-Wmk">
+                                <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
+                                <items>
+                                    <navigationItem title="Title" id="6Nm-NI-exY">
+                                        <barButtonItem key="leftBarButtonItem" title="back" id="acb-k3-sEh">
+                                            <connections>
+                                                <action selector="goBack:" destination="D93-fv-deZ" id="GkC-Bz-5HJ"/>
+                                            </connections>
+                                        </barButtonItem>
+                                    </navigationItem>
+                                </items>
+                            </navigationBar>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="iDD-5a-gyn" firstAttribute="leading" secondItem="9wW-m5-jXS" secondAttribute="leading" id="UcZ-cA-ex8"/>
+                            <constraint firstItem="3Fv-Xd-gIn" firstAttribute="top" secondItem="iDD-5a-gyn" secondAttribute="bottom" id="X5Q-zU-Rz8"/>
+                            <constraint firstItem="iDD-5a-gyn" firstAttribute="top" secondItem="9wW-m5-jXS" secondAttribute="top" id="mhZ-mo-11b"/>
+                            <constraint firstAttribute="trailing" secondItem="iDD-5a-gyn" secondAttribute="trailing" id="xH6-mx-vTN"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="webView" destination="iDD-5a-gyn" id="Yhy-MT-KCY"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="XB5-dQ-dzv" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="-1611.5" y="-700.5"/>
         </scene>
     </scenes>
     <resources>
@@ -5052,6 +5102,7 @@ write it down to stay inspired!               </string>
         <image name="Arm candy live graph.png" width="619" height="188"/>
         <image name="Arm candy workout description buttons.png" width="618" height="196"/>
         <image name="Arm candy workout description summary.png" width="618" height="975"/>
+        <image name="AudioIcon" width="500" height="500"/>
         <image name="BurstPlayGrey.png" width="618" height="220"/>
         <image name="Core floor summary font.png" width="618" height="914"/>
         <image name="Core floor summary graph.png" width="619" height="188"/>
@@ -5060,6 +5111,7 @@ write it down to stay inspired!               </string>
         <image name="Cycle leg blast live graph.png" width="618" height="188"/>
         <image name="Cycleblast zone.png" width="619" height="196"/>
         <image name="Excy WarmUpLive_P3.png" width="190" height="58"/>
+        <image name="ExcyLogoWhite" width="224" height="97"/>
         <image name="More landing page know zones.png" width="617" height="102"/>
         <image name="More landing page tips.png" width="618" height="102"/>
         <image name="More landing page watch workouts.png" width="618" height="102"/>
@@ -5113,11 +5165,12 @@ write it down to stay inspired!               </string>
         <image name="placeholder-user.png" width="600" height="600"/>
     </resources>
     <inferredMetricsTieBreakers>
+        <segue reference="n1g-Df-bj3"/>
         <segue reference="gob-cb-QIo"/>
         <segue reference="KGm-0h-6mN"/>
-        <segue reference="NZb-KM-HME"/>
-        <segue reference="pq6-N9-FPV"/>
-        <segue reference="A6v-lq-MET"/>
-        <segue reference="inQ-Bl-4bp"/>
+        <segue reference="sug-YA-LBr"/>
+        <segue reference="Uh7-pb-s7k"/>
+        <segue reference="WPM-9b-gdZ"/>
+        <segue reference="bxg-jf-lAw"/>
     </inferredMetricsTieBreakers>
 </document>

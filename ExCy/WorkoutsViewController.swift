@@ -10,8 +10,11 @@ import UIKit
 import Parse
 import AVFoundation
 import AudioToolbox
+import Firebase
 
 class WorkoutsViewController: UIViewController {
+	
+	let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as! String
 	
 	var workoutNumber: Int?
 	var workoutTime: Int?
@@ -23,13 +26,14 @@ class WorkoutsViewController: UIViewController {
 	
 	@IBOutlet weak var currentMinZoneLabel: UILabel!
 	@IBOutlet weak var targetZoneImageView: UIImageView!
+	@IBOutlet weak var audioButton: UIButton!
 	
 	var timer: NSTimer?
 	var progressCounter = 0
 	var initialTime: Float = 1
 	
 	//Local Save
-	var object: PFObject!
+	var workout: Workout!
 	var willCompleteSurvey = false
 	var workoutName = "Arm Candy"
 	
@@ -39,7 +43,7 @@ class WorkoutsViewController: UIViewController {
 	var minTemp: Int = 0
 	var maxTemp: Int = 0
 	
-	//var audioPlayer: AVAudioPlayer!
+	var audioPlayer: AVAudioPlayer!
 	
 	
 	override func viewDidLoad() {
@@ -56,44 +60,44 @@ class WorkoutsViewController: UIViewController {
 			if let newNumber = workoutNumber {
 				switch newNumber {
 				case 1: workoutTime = 420
-					//do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("ArmCandy", ofType: "m4a")!))
-					//} catch { print("Error with audio") }
+					do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("ArmCandy", ofType: "m4a")!))
+					} catch { print("Error with audio") }
 					workoutName = "Arm Candy"
 					zoneBrain = ZoneBrain.init(time: 420, zones: 7)
 					zoneArray = zoneBrain!.getZoneArray()
 				case 2: workoutTime = 1380
-					//do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("SuperCycle", ofType: "m4a")!))
-					//} catch { print("Error with audio") }
+					do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("SuperCycle", ofType: "m4a")!))
+					} catch { print("Error with audio") }
 					workoutName = "Super Cycle Cardio"
 					zoneBrain = ZoneBrain.init(time: 1380, zones: 23)
 					zoneArray = zoneBrain!.getZoneArray()
 				case 3: workoutTime = 900
-					//do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("LegBlast", ofType: "m4a")!))
-					//} catch { print("Error with audio") }
+					do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("LegBlast", ofType: "mp3")!))
+					} catch { print("Error with audio") }
 					workoutName = "Cycle Leg Blast"
 					zoneBrain = ZoneBrain.init(time: 900, zones: 15)
 					zoneArray = zoneBrain!.getZoneArray()
 				case 4: workoutTime = 600
-					//do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("CoreFloor", ofType: "m4a")!))
-					//} catch { print("Error with audio") }
+					do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("CoreFloor", ofType: "mp3")!))
+					} catch { print("Error with audio") }
 					workoutName = "Core Floor Explosion"
 					zoneBrain = ZoneBrain.init(time: 600, zones: 10)
 					zoneArray = zoneBrain!.getZoneArray()
 				case 5: workoutTime = 600
-					//do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("ArmBlast", ofType: "m4a")!))
-					//} catch { print("Error with audio") }
+					do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("ArmBlast", ofType: "m4a")!))
+					} catch { print("Error with audio") }
 					workoutName = "Arm Blast"
 					zoneBrain = ZoneBrain.init(time: 600, zones: 10)
 					zoneArray = zoneBrain!.getZoneArray()
 				case 6: workoutTime = 420
-					//do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("UltimateArmLeg", ofType: "m4a")!))
-					//} catch { print("Error with audio") }
+					do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("UltimateArmLeg", ofType: "m4a")!))
+					} catch { print("Error with audio") }
 					workoutName = "Ultimate Arm & Leg Toning"
 					zoneBrain = ZoneBrain.init(time: 420, zones: 7)
 					zoneArray = zoneBrain!.getZoneArray()
 				default: workoutTime = 420
-					//do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("ArmCandy", ofType: "m4a")!))
-					//} catch { print("Error with audio") }
+					do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("ArmCandy", ofType: "m4a")!))
+					} catch { print("Error with audio") }
 					workoutName = "Arm Candy"
 					zoneBrain = ZoneBrain.init(time: 420, zones: 7)
 					zoneArray = zoneBrain!.getZoneArray()
@@ -106,7 +110,7 @@ class WorkoutsViewController: UIViewController {
 		self.targetZoneImageView.image = UIImage(named: "ZoneIntensity\(zoneArray!.first!).png")
 		self.initialTime = Float(workoutTime!)
 		self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateUI"), userInfo: nil, repeats: true)
-		//self.audioPlayer.play()
+		self.audioPlayer.play()
 	}
 	
 	override func viewDidAppear(animated: Bool) {
@@ -120,6 +124,17 @@ class WorkoutsViewController: UIViewController {
 		
 		
 	}
+	
+	@IBAction func muteAudio() {
+		if self.audioPlayer.volume > 0 {
+			self.audioPlayer.volume = 0
+			self.audioButton.alpha = 0.3
+		} else {
+			self.audioPlayer.volume = 1
+			self.audioButton.alpha = 1
+		}
+	}
+	
 	
 	override func viewWillLayoutSubviews() {
 		if let newNumber = workoutNumber {
@@ -157,49 +172,39 @@ class WorkoutsViewController: UIViewController {
 		}
 	}
 	
-	// Parse Query
 	func saveWorkout() {
-		self.object = PFObject(className: "Workout")
 		let seconds = Int(self.initialTime) - workoutTime!
-		self.object["username"] = PFUser.currentUser()!.username
-		self.object["title"] = workoutName
-		self.object["timeWorkedOut"] = StringConversion.timeStringFromSeconds(seconds)
-		self.object["caloriesBurned"] = (Double(seconds) / 60) * 14
-		self.object["minTemp"] = minTemp
-		self.object["maxTemp"] = maxTemp
-		let date = NSDate()
-		let dateFormatter = NSDateFormatter()
-		dateFormatter.dateFormat = "EEEE hh:mm a"
-		self.object["date"] = dateFormatter.stringFromDate(date)
-		
+		workout = Workout(workoutTitle: workoutName, time: seconds, uid: uid, minTemp: minTemp , maxTemp: maxTemp)
 		
 		if willCompleteSurvey == true {
 			self.performSegueWithIdentifier("surveyFromWorkout", sender: self)
 		} else {
-			self.object["enjoyment"] = " "
-			self.object["location"] = " "
-			self.object["intensity"] = " "
-			self.object.saveEventually { (success, error) -> Void in
-				if (error == nil){
-					
-				} else {
-					print(error!.userInfo)
-				}
-			}
+			postToFirebase()
 		}
 		
+	}
+	
+	func postToFirebase() {
+		let seconds = Int(self.initialTime) - workoutTime!
+		let workout = Workout(workoutTitle: workoutName, time: seconds, uid: uid, minTemp: minTemp , maxTemp: maxTemp)
+		let dictionaryWorkout = workout.convertToDictionaryWithoutSurvey()
+		let firebaseWorkout = DataSerice.ds.REF_WORKOUTS.childByAppendingPath(uid).childByAutoId()
+		firebaseWorkout.setValue(dictionaryWorkout)
 	}
 	
 	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
 		if segue.identifier == "surveyFromWorkout" {
 			let surveyVC: SurveyViewController = segue.destinationViewController as! SurveyViewController
-			let object: PFObject = self.object as PFObject
-			surveyVC.object = object
+			let workout = self.workout
+			surveyVC.workout = workout
+		}
+		if segue.identifier == "toWebView" {
+			if let detailVC: VideosAndTipsViewController = segue.destinationViewController as? VideosAndTipsViewController {
+				detailVC.tipURL = "http://excy.com"
+			}
 		}
 	}
 
-	
-	
 	
 	override func viewDidDisappear(animated: Bool) {
 		super.viewDidDisappear(animated)
@@ -216,13 +221,10 @@ class WorkoutsViewController: UIViewController {
 			self.progressView.setNeedsDisplay()
 			self.setUpZoneView()
 			
-		} else if (workoutTime != nil) && workoutTime == 0 {
-			
-			self.timer?.invalidate()
+		} else if workoutTime == 0 {
 			self.timer = nil
 			maxAlert()
 		} else {
-			self.timer?.invalidate()
 			self.timer = nil
 			maxAlert()
 		}
@@ -233,10 +235,10 @@ class WorkoutsViewController: UIViewController {
 		if (self.timer != nil) {
 			self.timer?.invalidate()
 			self.timer = nil
-			//self.audioPlayer.pause()
+			self.audioPlayer.pause()
 		} else {
 			self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateUI", userInfo: nil, repeats: true)
-			//self.audioPlayer.play()
+			self.audioPlayer.play()
 		}
 	}
 	
@@ -257,6 +259,9 @@ class WorkoutsViewController: UIViewController {
 		maxAlert()
 	}
 	
+	@IBAction func purchaseExcy(sender: AnyObject) {
+		
+	}
 	
 //Workout Alerts
 	
@@ -287,8 +292,10 @@ class WorkoutsViewController: UIViewController {
 			textField.keyboardType = .NumberPad
 		}
 		let OKAction = UIAlertAction(title: "Enter", style: .Cancel) { action in
-			self.minTemp = Int((alertController.textFields!.first)!.text!)!
-			self.currentMinZoneLabel.text = (alertController.textFields!.first)!.text!
+			if let temp = alertController.textFields?.first?.text {
+				self.minTemp = Int(temp)!
+				self.currentMinZoneLabel.text = temp
+			}
 			self.startWorkout()
 		}
 		alertController.addAction(OKAction)
@@ -306,7 +313,9 @@ class WorkoutsViewController: UIViewController {
 			textField.keyboardType = .NumberPad
 		}
 		let OKAction = UIAlertAction(title: "Enter", style: .Cancel) { action in
-			self.maxTemp = Int((alertController.textFields!.first)!.text!)!
+			if let temp = alertController.textFields?.first?.text {
+				self.maxTemp = Int(temp)!
+			}
 			self.stopAlert()
 		}
 		alertController.addAction(OKAction)
@@ -323,7 +332,6 @@ class WorkoutsViewController: UIViewController {
 	func pauseAlert () {
 		let alertController = UIAlertController(title: "Continue?", message: "healthy is... finishing strong!", preferredStyle: .Alert)
 		let OKAction = UIAlertAction(title: "exit", style: .Destructive) { action in
-			self.setTimer()
 			self.navigationController?.popToRootViewControllerAnimated(true)
 		}
 		alertController.addAction(OKAction)
@@ -341,8 +349,8 @@ class WorkoutsViewController: UIViewController {
 		}
 		alertController.addAction(OKAction)
 		let cancelAction = UIAlertAction(title: "trash and exit", style: .Destructive) { action in
-			self.setTimer()
-			//self.audioPlayer.stop()
+			self.audioPlayer.stop()
+			self.timer?.invalidate()
 			self.navigationController?.popToRootViewControllerAnimated(true)
 		}
 		alertController.addAction(cancelAction)
@@ -358,14 +366,15 @@ class WorkoutsViewController: UIViewController {
 		let OKAction = UIAlertAction(title: "yes", style: .Default) { action in
 			self.willCompleteSurvey = true
 			self.saveWorkout()
-			//self.audioPlayer.stop()
+			self.audioPlayer.stop()
+			self.timer = nil
 		}
 		alertController.addAction(OKAction)
 		let cancelAction = UIAlertAction(title: "no thanks", style: .Cancel) { action in
 			self.willCompleteSurvey = false
 			self.saveWorkout()
-			self.setTimer()
-			//self.audioPlayer.stop()
+			self.audioPlayer.stop()
+			self.timer = nil
 			self.navigationController?.popToRootViewControllerAnimated(true)
 		}
 		alertController.addAction(cancelAction)

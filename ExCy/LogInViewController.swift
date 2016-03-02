@@ -7,7 +7,7 @@
 //
 
 import UIKit
-import Parse
+import Firebase
 
 class LogInViewController: UIViewController {
 
@@ -20,7 +20,6 @@ class LogInViewController: UIViewController {
 	var isSignUpMode = true
 	var activityIndicator:UIActivityIndicatorView = UIActivityIndicatorView()
 	
-	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
@@ -30,10 +29,8 @@ class LogInViewController: UIViewController {
     }
 	
 	override func viewDidAppear(animated: Bool) {
-		navigationController?.removeFromParentViewController()
-		let currentUser = PFUser.currentUser()
-		if  currentUser != nil {
-			performSegueWithIdentifier("login", sender: self)
+		if NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) != nil {
+			self.performSegueWithIdentifier("login", sender: nil)
 		}
 	}
 
@@ -44,26 +41,31 @@ class LogInViewController: UIViewController {
     
 	@IBAction func logInButtonPressed(sender: AnyObject) {
 		if emailTextField.text == nil || passwordTextField.text == nil {
-			
 			displayAlert("Error", message: "Please enter a username and password")
-			
 		} else {
 			beginActivityIndicator()
-			
-			var errorMessage = "Please try again later"
-			PFUser.logInWithUsernameInBackground(emailTextField.text!, password: passwordTextField.text!, block: { (user, error) -> Void in
+			DataSerice.ds.REF_BASE.authUser(emailTextField.text!, password: passwordTextField.text, withCompletionBlock: { (error, data) -> Void in
 				self.activityIndicator.stopAnimating()
 				UIApplication.sharedApplication().endIgnoringInteractionEvents()
-					
-				if user != nil {
-					self.performSegueWithIdentifier("login", sender: self)
-				} else {
-					if let errorString = error!.userInfo["error"] as? String {
-						errorMessage = errorString
+				if error != nil {
+					if error.code == -8 {
+						self.displayAlert("User does not exist", message: "Problem logging in. Please try a different email address or password")
+					} else {
+						self.displayAlert("Error", message: "Problem logging in. Please try a different email address or password")
 					}
-					self.displayAlert("Failed SignUp", message: errorMessage)
+				} else {
+					NSUserDefaults.standardUserDefaults().setValue(data.uid, forKey: KEY_UID)
+					self.performSegueWithIdentifier("login", sender: nil)
 				}
 			})
+		}
+	}
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "toWebView" {
+			if let detailVC: VideosAndTipsViewController = segue.destinationViewController as? VideosAndTipsViewController {
+				detailVC.tipURL = "http://excy.com"
+			}
 		}
 	}
 	
@@ -75,7 +77,13 @@ class LogInViewController: UIViewController {
 			textField.keyboardType = .EmailAddress
 		}
 		let OKAction = UIAlertAction(title: "Enter", style: .Cancel) { action in
-			PFUser.requestPasswordResetForEmailInBackground((alertController.textFields!.first)!.text!)
+			DataSerice.ds.REF_BASE.resetPasswordForUser((alertController.textFields!.first)!.text!, withCompletionBlock: { (error) -> Void in
+				if error == nil {
+					self.displayAlert("email sent", message: "please check your email to reset your password")
+				} else {
+					self.displayAlert("Error", message: "Please try again")
+				}
+			})
 		}
 		alertController.addAction(OKAction)
 		alertController.addAction(cancelAction)

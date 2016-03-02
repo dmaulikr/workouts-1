@@ -30,11 +30,19 @@ class VideosAndTipsViewController: UIViewController {
 		
     }
 
+	@IBAction func goBack(sender: AnyObject) {
+		let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
+		self.presentViewController(loginVC, animated: true, completion: nil)
+	}
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
+	@IBAction func goBackFromWorkout(sender: AnyObject) {
+		let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ArmCandyView")
+		self.presentViewController(loginVC, animated: true, completion: nil)
+	}
 
     /*
     // MARK: - Navigation

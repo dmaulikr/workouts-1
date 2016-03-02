@@ -9,27 +9,24 @@
 import UIKit
 
 //Timer Variables
-var minutesCount:Int = 0
-var minuteString:String = ""
 var secondsCount:Int = 0
-var secondString:String = ""
 var initialTime:Float = 0.0
 //Interval variables
 var fastIntervalCount:Int = 0
 var slowIntervalCount:Int = 0
 var slowBurstStepper = 0
 var fastBurstStepper = 0
-var counterInSeconds:Int = 0
+//var counterInSeconds:Int = 0
 
 class SetupStartViewController: UIViewController {
 	
 	@IBOutlet var stopwatchLabel: UILabel!
 	@IBOutlet weak var slowIntervalLabel: UILabel!
 	@IBOutlet weak var fastIntervalLabel: UILabel!
-	
-	
+
 	override func viewDidLoad() {
 		super.viewDidLoad()
+		
 	}
 	
 	override func viewDidAppear(animated: Bool) {
@@ -45,28 +42,19 @@ class SetupStartViewController: UIViewController {
 	
 	
 	//used for setting up
-	
-	func stringConversion (seconds:Int) -> String {
-		minutesCount = seconds / 60
-		secondsCount = seconds - (minutesCount * 60)
-		if secondsCount < 10 { secondString = "0\(secondsCount)"}
-		else { secondString = "\(secondsCount)" }
-		if minutesCount < 10 { minuteString = "0\(minutesCount)"}
-		else { minuteString = "\(minutesCount)" }
-		return "\(minuteString):\(secondString)"
+
+	//Helper for steppers
+	func updateTimerSettingUI() {
+		self.stopwatchLabel.text = StringConversion.timeStringFromSeconds(secondsCount)
 	}
 	
-	//used for "saving" the workout
-
-	
-	// Interval Steppers
 	@IBAction func minuteTimeUp(sender: UIButton) {
-		minutesCount++
+		secondsCount += 60
 		updateTimerSettingUI()
 	}
 	@IBAction func minuteTimeDown(sender: UIButton) {
-		if minutesCount > 0 {
-			minutesCount--
+		if secondsCount > 60 {
+			secondsCount += -60
 		}
 		updateTimerSettingUI()
 	}
@@ -80,12 +68,6 @@ class SetupStartViewController: UIViewController {
 		}
 		updateTimerSettingUI()
 	}
-	//Helper for steppers
-	func updateTimerSettingUI() {
-		counterInSeconds = (minutesCount * 60) + secondsCount
-		self.stopwatchLabel.text = stringConversion(counterInSeconds)
-	}
-	
 	
 	@IBAction func slowIntervalUp(sender: UIButton) {
 		slowIntervalCount++
@@ -108,14 +90,15 @@ class SetupStartViewController: UIViewController {
 		fastIntervalLabel.text = "\(fastIntervalCount)"
 	}
 	
+
 	
 	
 	// Start Stop and Pause Buttons
 	
 	@IBAction func startButtonPressed(sender: UIButton)
 	{
-		if counterInSeconds < 1 {
-			counterInSeconds = 60 * 5
+		if secondsCount < 1 {
+			secondsCount = 60 * 5
 			if fastIntervalCount == 0 && slowIntervalCount == 0 {
 				fastIntervalCount = 7
 				slowIntervalCount = 7
@@ -130,7 +113,6 @@ class SetupStartViewController: UIViewController {
 	
 	func resetTimers(){
 		secondsCount = 0
-		minutesCount = 0
 		updateTimerSettingUI()
 		fastIntervalCount = 0
 		fastIntervalLabel.text = "000"

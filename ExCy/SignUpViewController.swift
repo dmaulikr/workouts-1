@@ -8,10 +8,11 @@
 
 import UIKit
 import Parse
+import Firebase
+
+let KEY_UID = "uid"
 
 class SignUpViewController: UIViewController {
-	
-	
 	
 	@IBOutlet weak var genderSelection: UISegmentedControl!
 	@IBOutlet weak var ageTextField: UITextField!
@@ -26,10 +27,20 @@ class SignUpViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		
 		let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
 		view.addGestureRecognizer(tap)
 		
+	}
+	
+	
+	func checkIfFieldsFilled() -> (success: Bool, message: String) {
+		guard ageTextField.text?.characters.count > 0 else { return (false, "Please enter age") }
+		guard heightTextField.text?.characters.count > 0 else { return (false, "Please enter height") }
+		guard weightTextField.text?.characters.count > 0 else { return (false, "Please enter weight") }
+		guard emailAddressTextField.text?.characters.count > 0 else { return (false, "Please enter email address") }
+		guard usernameTextField.text?.characters.count > 0 else { return (false, "Please enter username") }
+		guard passwordTextField.text?.characters.count > 0 else { return (false, "Please enter password") }
+		return (true, "")
 	}
 	
 	override func viewDidAppear(animated: Bool) {
@@ -38,47 +49,35 @@ class SignUpViewController: UIViewController {
 
 	@IBAction func SignUpButtonPressed(sender: UIButton) {
 		
-		if emailAddressTextField.text?.characters.count > 0 || passwordTextField.text?.characters.count > 0 || emailAddressTextField.text?.characters.count > 0 {
+		let gender = self.genderSelection.selectedSegmentIndex == 0 ? "female" : "male"
+		
+		let success = checkIfFieldsFilled()
+		if success.success {
 			
-			self.activityIndicator.startAnimating()
-			let user = PFUser()
-			user.username = usernameTextField.text
-			user.password = passwordTextField.text
-			user.email = emailAddressTextField.text
-			
-			if genderSelection.selectedSegmentIndex == 0 { user["gender"] = "female"
-			} else { user["gender"] = "male" }
-			
-			if heightTextField.text == nil { user["height"] = 67
-			} else { user["height"] = Int(heightTextField.text!) }
-			
-			if weightTextField.text == nil { user["weight"] = 200
-			} else { user["weight"] = Int(weightTextField.text!) }
-			
-			if ageTextField.text == nil { user["age"] = 30
-			} else { user["age"] = Int(ageTextField.text!) }
-			
-			
-			user.signUpInBackgroundWithBlock({ (success, error) -> Void in
-				var errorMessage = "Please try again later"
-				
-				self.activityIndicator.stopAnimating()
-				UIApplication.sharedApplication().endIgnoringInteractionEvents()
-				
+			DataSerice.ds.REF_BASE.createUser(emailAddressTextField.text!, password: passwordTextField.text!) { (error, result) -> Void in
 				if error == nil {
+					NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
+					DataSerice.ds.REF_BASE.authUser(self.emailAddressTextField.text!, password: self.passwordTextField.text!) { error, data in
+						if error == nil {
+							let user: [String: AnyObject] = [
+								"age": Int(self.ageTextField.text!)!,
+								"height": Int(self.heightTextField.text!)!,
+								"weight": Int(self.weightTextField.text!)!,
+								"email": self.emailAddressTextField.text!,
+								"username": self.usernameTextField.text!,
+								"gender": gender,
+								"memberSince": StringFromDate.stringFromDate(NSDate())
+							]
+							DataSerice.ds.createFirebaseUser(data.uid, user: user)
+						}
+					}
 					self.performSegueWithIdentifier("landingPage", sender: self)
 				} else {
-					if let errorString = error!.userInfo["error"] as? String {
-						errorMessage = errorString
-						
-					}
-					self.displayAlert("Failed SignUp", message: errorMessage)
+					self.displayAlert("Could not create account", message: "Problem creating account. Please try something else")
 				}
-			})
-
+			}
 		} else {
-			
-			displayAlert("Error", message: "Please enter a username, password and email")
+			displayAlert("Error", message: success.message )
 		}
 		
 	}
@@ -92,6 +91,15 @@ class SignUpViewController: UIViewController {
 		view.addSubview(activityIndicator)
 		activityIndicator.startAnimating()
 		UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+	}
+	
+
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "toWebView" {
+			if let detailVC: VideosAndTipsViewController = segue.destinationViewController as? VideosAndTipsViewController {
+				detailVC.tipURL = "http://excy.com"
+			}
+		}
 	}
 	
 	func displayAlert(title: String, message: String) {

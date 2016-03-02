@@ -32,7 +32,7 @@ class TipsViewController: UIViewController {
     }
 
 	@IBAction func exerciseWhileWatchingTV() {
-		stringToPass = "http://excy.com/2015/11/24/easily-exercise-with-excy-while-watching-tv/"
+		stringToPass = "http://excy.com/2015/12/29/easily-exercise-with-excy-while-watching-tv/"
 		performSegueWithIdentifier("TipsToWeb", sender: self)
 	}
 	
@@ -47,17 +47,17 @@ class TipsViewController: UIViewController {
 	}
 	
 	@IBAction func hitExcyHard() {
-		stringToPass = "http://excy.com/2015/11/22/hiit-excy-hard-for-total-efficiency/"
+		stringToPass = "http://excy.com/2015/12/09/hiit-excy-hard-for-total-efficiency/"
 		performSegueWithIdentifier("TipsToWeb", sender: self)
 	}
 	
 	@IBAction func doTenShortExcyBursts() {
-		stringToPass = "http://excy.com/2015/11/19/do-10-short-excy-bursts-throughout-the-day/"
+		stringToPass = "http://excy.com/2016/02/07/excy-tip-do-10-short-exercise-cycling-bursts-throughout-the-day/"
 		performSegueWithIdentifier("TipsToWeb", sender: self)
 	}
 	
 	@IBAction func multiTaskExcyFitness() {
-		stringToPass = "http://excy.com/2015/11/23/multi-task-excy-fitness-to-fit-anywhere/"
+		stringToPass = "http://excy.com/2016/01/08/multi-task-excy-fitness-to-fit-anywhere/"
 		performSegueWithIdentifier("TipsToWeb", sender: self)
 	}
 	

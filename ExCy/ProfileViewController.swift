@@ -8,10 +8,11 @@
 
 import UIKit
 import Parse
-
+import Firebase
 
 class ProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
+	let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as! String
 
 	@IBOutlet var profileImage: UIImageView!
 	@IBOutlet var usernameLabel: UILabel!
@@ -34,97 +35,57 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 	@IBOutlet var workoutLocationLabels: [UILabel]!
 	@IBOutlet var workoutLocationImages: [UIImageView]!
 	
-	var workoutsObject: NSMutableArray = NSMutableArray() {
-		didSet{
-			self.updateView()
-			print("Im being called once the workouts object was set")
-		}
-	}
-	
+	var workoutsObject = [Workout]()
+	var userDict = [String: AnyObject]()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
-		if PFUser.currentUser() == nil {
-			
-		} else {
-			usernameLabel.text = PFUser.currentUser()?.username
-			
-			let dateFormatter = NSDateFormatter()
-			dateFormatter.dateStyle = NSDateFormatterStyle.MediumStyle
-			let strDate = dateFormatter.stringFromDate(PFUser.currentUser()!.createdAt!)
-			memberSinceLabel.text = "friend since: \(strDate)"
-			self.fetchAllObjects()
-			self.fetchAllObjectsFromLocalDataStore()
-			
-			updatePersonalProfile()
-		}
+		
+		queryFirebaseWorkouts()
+		
+		DataSerice.ds.REF_USERS.childByAppendingPath(uid).observeEventType(.Value, withBlock: { snapshot in
+			if let snapshot = snapshot.value as? [String: AnyObject] {
+				self.userDict = snapshot
+				print(self.userDict)
+			}
+			self.updatePersonalProfile()
+		})
     }
 	
-	//Query
-	
-	
-	func fetchAllObjectsFromLocalDataStore() {
-		let query: PFQuery = PFQuery(className: "Workout")
-		query.fromLocalDatastore()
-		query.whereKey("username", equalTo: (PFUser.currentUser()!.username)!)
-		query.addDescendingOrder("createdAt")
-		query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-			if (error == nil) {
-				let temp: NSArray = objects! as NSArray
-				self.workoutsObject = temp.mutableCopy() as! NSMutableArray
-			} else {
-				print(error!.userInfo)
-			}
-		}
-		
-//		let personalQuery: PFQuery = PFQuery(className: "UserGoals")
-//		personalQuery.fromLocalDatastore()
-//		personalQuery.whereKey("username", equalTo: (PFUser.currentUser()!.username)!)
-//		personalQuery.addDescendingOrder("createdAt")
-//		personalQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-//			if (error == nil) {
-//				let temp: NSArray = objects! as NSArray
-//				self.goalsObject = temp.mutableCopy() as! NSMutableArray
-//			} else {
-//				print(error!.userInfo)
-//			}
-//		}
-	}
-	
-	
-	func fetchAllObjects() {
-		PFObject.unpinAllObjectsInBackgroundWithBlock(nil)
-		let query: PFQuery = PFQuery(className: "Workout")
-		query.whereKey("username", equalTo: (PFUser.currentUser()!.username)!)
-		query.addDescendingOrder("createdAt")
-		query.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-			if (error == nil) {
-				PFObject.pinAllInBackground(objects, block: nil)
-			} else {
-				print(error!.userInfo)
-			}
-		}
-		
-//		let personalQuery: PFQuery = PFQuery(className: "UserGoals")
-//		personalQuery.whereKey("username", equalTo: (PFUser.currentUser()!.username)!)
-//		personalQuery.addDescendingOrder("createdAt")
-//		personalQuery.findObjectsInBackgroundWithBlock { (objects, error) -> Void in
-//			if (error == nil) {
-//				PFObject.pinAllInBackground(objects, block: nil)
-//			} else {
-//				print(error!.userInfo)
-//			}
-//		}
-	}
-	
 	override func viewDidAppear(animated: Bool) {
-		updatePersonalProfile()
+		//updatePersonalProfile()
 	}
 	
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
 		
     }
+	
+	func queryFirebaseWorkouts() {
+
+		DataSerice.ds.REF_WORKOUTS.childByAppendingPath(uid).queryLimitedToLast(5).observeEventType(.Value, withBlock: { snapshot in
+			if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+				for snap in snapshots {
+					if let workoutDict = snap.value as? [String: AnyObject] {
+						let workout = Workout(dictionary: workoutDict)
+						self.workoutsObject.insert(workout, atIndex: 0)
+						
+					}
+				}
+			}
+			self.updateView()
+		})
+	}
+	
+	func updatePersonalProfile() {
+		// profile Image
+		// Inspirational Image
+		if let username = userDict["username"] as? String { usernameLabel.text = username }
+		if let memberSince = userDict["memberSince"] as? String { memberSinceLabel.text = memberSince }
+		if let caloriesGoal = userDict["calorieGoal"] as? String { caloriesGoalLabel.text = caloriesGoal }
+		if let workoutsGoal = userDict["workoutGoal"] as? String { workoutsGoalLabel.text = workoutsGoal }
+		if let fitnessManifesto = userDict["manifesto"] as? String {  fitnessManifestoLabel.text = fitnessManifesto}
+	}
 	
 	// View updates
 	
@@ -135,93 +96,38 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 			for var index = 0; index < 5; index++ {
 				if self.workoutsObject.count > index {
 					print("Workouts are greater than 0")
-					if let workout = self.workoutsObject.objectAtIndex(index) as? PFObject {
-						print("workouts exist")
-						self.workoutTitleLabels[index].text = workout["title"] as? String
-						self.workoutTimeLabels[index].text = workout["timeWorkedOut"] as? String
-						self.workoutDateLabels[index].text = workout["date"] as? String
-						if let minTemp = workout["minTemp"] as? Int {
-							if let maxTemp = workout["maxTemp"] as? Int {
-								self.workoutIntensityLabels[index].text = "min:\(minTemp)\n max:\(maxTemp)"}}
-						self.caloriesButnedLabels[index].text = String(workout["caloriesBurned"] as! Int)
-						self.enjoymentLabels[index].text = workout["enjoyment"] as? String
-						self.workoutLocationLabels[index].text = workout["location"] as? String
-						self.enjoymentImageViews[index].image = self.workoutEnjoyment((workout["enjoyment"] as! String))
-						self.workoutLocationImages[index].image = self.workoutLocation((workout["location"] as! String))
+					let workout = self.workoutsObject[index]
+					self.workoutTitleLabels[index].text = workout.workoutTitle
+					self.workoutTimeLabels[index].text = workout.timeAsString
+					self.workoutDateLabels[index].text = workout.dateCompleted
+					self.workoutIntensityLabels[index].text = "min:\(workout.minTemp)\n max:\(workout.maxTemp)"
+					self.caloriesButnedLabels[index].text = "\(workout.caloriesBurned)"
+					self.enjoymentLabels[index].text = workout.enjoyment
+					self.workoutLocationLabels[index].text = workout.location
+					self.enjoymentImageViews[index].image = self.workoutEnjoyment(workout.enjoyment)
+					self.workoutLocationImages[index].image = self.workoutLocation(workout.location)
+				} else {
+					self.workoutTitleLabels[index].text = "---"
+					self.workoutTimeLabels[index].text = "---"
+					self.workoutDateLabels[index].text = "---"
+					self.workoutIntensityLabels[index].text = "---"
+					self.caloriesButnedLabels[index].text = "---"
+					self.enjoymentLabels[index].text = "---"
+					self.workoutLocationLabels[index].text = "---"
+					self.enjoymentImageViews[index].image = self.workoutEnjoyment("enjoyment")
+					self.workoutLocationImages[index].image = self.workoutLocation("location")
 
-					} else {
-						self.workoutTitleLabels[index].text = "---"
-						self.workoutTimeLabels[index].text = "---"
-						self.workoutDateLabels[index].text = "---"
-						self.workoutIntensityLabels[index].text = "---"
-						self.caloriesButnedLabels[index].text = "---"
-						self.enjoymentLabels[index].text = "---"
-						self.workoutLocationLabels[index].text = "---"
-						self.enjoymentImageViews[index].image = self.workoutEnjoyment("enjoyment")
-						self.workoutLocationImages[index].image = self.workoutLocation("location")
-
-					}
 				}
 			}
 		}
 	}
 	
-	func updatePersonalProfile () {
-		let query = PFQuery(className: "UserGoals")
-		query.whereKey("username", equalTo: (PFUser.currentUser()?.username)!)
-		query.getFirstObjectInBackgroundWithBlock({ object, error in
-			if error == nil {
-				if let userImageFile = object!["inspirationalImageOne"] as? PFFile {
-					userImageFile.getDataInBackgroundWithBlock {
-						(imageData: NSData?, error: NSError?) -> Void in
-						if error == nil {
-							if let imageData = imageData { self.InspirationImage1.image = UIImage(data: imageData) }
-						}
-					}
-				}
-				if let userImageFile = object!["inspirationalImageTwo"] as? PFFile {
-					userImageFile.getDataInBackgroundWithBlock {
-						(imageData: NSData?, error: NSError?) -> Void in
-						if error == nil {
-							if let imageData = imageData { self.inspirationImage2.image = UIImage(data: imageData) }
-						}
-					}
-				}
-				if let userImageFile = object!["inspirationalImageThree"] as? PFFile {
-					userImageFile.getDataInBackgroundWithBlock {
-						(imageData: NSData?, error: NSError?) -> Void in
-						if error == nil {
-							if let imageData = imageData { self.inspirationImage3.image = UIImage(data: imageData) }
-						}
-					}
-				}
-				if let profileImage = object!["profileImage"] as? PFFile {
-					profileImage.getDataInBackgroundWithBlock {
-						(imageData: NSData?, error: NSError?) -> Void in
-						if error == nil {
-							if let imageData = imageData { self.profileImage.image = UIImage(data: imageData) }
-						}
-					}
-				}
-				if let calorieGoal = object!["calorieGoal"] as? String {
-					self.caloriesGoalLabel.text = calorieGoal
-				}
-				if let workoutGoal = object!["workoutGoal"] as? String {
-					self.workoutsGoalLabel.text = workoutGoal
-				}
-				if let manifesto = object!["manifesto"] as? String {
-					self.fitnessManifestoLabel.text = manifesto
-				}
-			} else {
-				
-			}
-		})
-	}
+
 	
 	
 	@IBAction func recentHistoryUpdate(sender: UIButton) {
 		updateView()
-		updatePersonalProfile()
+		//updatePersonalProfile()
 	}
 	
 	@IBAction func changeImageButtonPressed(sender: AnyObject) {
@@ -234,8 +140,6 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 	
 	func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
 		self.dismissViewControllerAnimated(true, completion: nil)
-		//let blueColor = UIColor(red: 50/255, green: 145/255, blue: 210/255, alpha: 1.0)
-		//let croppedImage = Toucan(image: image).maskWithRoundedRect(cornerRadius: 50.0, borderWidth: 15.0, borderColor: blueColor).image
 		profileImage.image = image
 		let imageData = UIImageJPEGRepresentation(image, 0.6)
 		let parseImage = PFFile(name: "profileImage", data: imageData!)

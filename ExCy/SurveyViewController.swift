@@ -10,7 +10,10 @@ import UIKit
 import Parse
 
 class SurveyViewController: UIViewController {
-
+	
+	
+	let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as! String
+	
 	@IBOutlet weak var questionLabel: UILabel!
 	@IBOutlet weak var labelOutlet: UILabel!
 	@IBOutlet weak var descriptionView: UIView!
@@ -19,7 +22,7 @@ class SurveyViewController: UIViewController {
 	@IBOutlet weak var submitButton: UIButton!
 	
 	var questionNumber = 0
-	var object: PFObject?
+	var workout: Workout?
 	var workoutEnjoyment = "good"
 	var workoutLocation = "at work"
 	
@@ -94,19 +97,11 @@ class SurveyViewController: UIViewController {
 	
 	@IBAction func submitButtonPressed(sender: UIButton) {
 		if questionNumber >= 2 {
-			if self.object != nil {
-				self.object!["enjoyment"] = workoutEnjoyment
-				self.object!["location"] = workoutLocation
-				self.object!.saveInBackgroundWithBlock({ success, error in
-					if (error == nil){
-						let completedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainTabBarCtrl")
-						self.presentViewController(completedVC, animated: true, completion: nil)
-					} else {
-						print(error!.userInfo)
-						let completedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainTabBarCtrl")
-						self.presentViewController(completedVC, animated: true, completion: nil)
-					}
-				})
+			if self.workout != nil {
+				self.workout!.addLocationAndEnjoyment(workoutLocation, enjoyment: workoutEnjoyment)
+				postToFirebase()
+				let completedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainTabBarCtrl")
+				self.presentViewController(completedVC, animated: true, completion: nil)
 			} else {
 				let completedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainTabBarCtrl")
 				self.presentViewController(completedVC, animated: true, completion: nil)
@@ -124,6 +119,12 @@ class SurveyViewController: UIViewController {
 			}
 		}
 		labelOutlet.hidden = true
+	}
+	
+	func postToFirebase() {
+		let dictionaryWorkout = workout!.convertToDictionarySurvey()
+		let firebaseWorkout = DataSerice.ds.REF_WORKOUTS.childByAppendingPath(uid).childByAutoId()
+		firebaseWorkout.setValue(dictionaryWorkout)
 	}
 	
 	

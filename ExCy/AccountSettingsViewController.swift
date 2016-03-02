@@ -10,6 +10,8 @@ import UIKit
 import Parse
 
 class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
+	
+	let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as! String
 
 	@IBOutlet var ProfileImageView: UIImageView!
 	@IBOutlet var emailAddressTextField: UITextField!
@@ -20,59 +22,33 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 	
 	var willSelectInspirationalImage = true
 	
-	var userGoals = PFObject(className: "UserGoals")
-	
+	var userGoals = [String:AnyObject]()
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
 		self.automaticallyAdjustsScrollViewInsets = false
-		
-		if ((PFUser.currentUser()?.email?.isEmpty) == false){
-			emailAddressTextField.hidden = true
-			signMeUpLabel.hidden = true
-		}
-		
+
 		let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
 		view.addGestureRecognizer(tap)
     }
 	
 	override func viewDidAppear(animated: Bool) {
-		let currentUser = PFUser.currentUser()
-		if  currentUser == nil {
-			
-			let LogInVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn") 
-			self.presentViewController(LogInVC, animated: true, completion: nil)
-			
-		} else {
-			
-			userGoals["username"] = PFUser.currentUser()!.username
-			let query = PFQuery(className: "UserGoals")
-			query.whereKey("username", equalTo: (PFUser.currentUser()?.username)!)
-			query.getFirstObjectInBackgroundWithBlock({ object, error in
-				if error == nil {
-					self.userGoals = object!
-					if let fitnessManifesto: String = object!["manifesto"] as? String {
-						self.myFitnessManifestoTextView.text = fitnessManifesto
-					}
-					if let workoutGoal: String = object!["workoutGoal"] as? String {
-						self.workoutsPerWeekLabel.text = workoutGoal
-					}
-					if let calorieGoal: String = object!["calorieGoal"] as? String {
-						self.caloriesPerWeekLabel.text = calorieGoal
-					}
-					if let profileImage = object!["profileImage"] as? PFFile {
-						profileImage.getDataInBackgroundWithBlock {
-							(imageData: NSData?, error: NSError?) -> Void in
-							if error == nil {
-								if let imageData = imageData { self.ProfileImageView.image = UIImage(data: imageData) }
-							}
-						}
-					}
-				} else {
-				}
-			})
-		}
+		
+		DataSerice.ds.REF_USERS.childByAppendingPath(uid).observeEventType(.Value, withBlock: { snapshot in
+			if let snapshot = snapshot.value as? [String: AnyObject] {
+				self.userGoals = snapshot
+				print(self.userGoals)
+			}
+			self.updatePersonalProfile()
+		})
+	}
+	
+	func updatePersonalProfile() {
+		if let emailAddress = userGoals["email"] as? String { emailAddressTextField.text = emailAddress }
+		if let caloriesGoal = userGoals["calorieGoal"] as? String { caloriesPerWeekLabel.text = caloriesGoal }
+		if let workoutsGoal = userGoals["workoutGoal"] as? String { workoutsPerWeekLabel.text = workoutsGoal }
+		if let fitnessManifesto = userGoals["manifesto"] as? String {  myFitnessManifestoTextView.text = fitnessManifesto}
 	}
 	
 
@@ -139,8 +115,6 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 
 	@IBAction func saveAccountChangesButtonPressed(sender: UIButton) {
 		
-		if emailAddressTextField.text!.isEmpty {  } else {
-			PFUser.currentUser()?.email = "\(emailAddressTextField.text)" }
 		if caloriesPerWeekLabel.text!.isEmpty {  } else {
 			userGoals["calorieGoal"] = caloriesPerWeekLabel.text
 		}
@@ -150,29 +124,16 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 		if myFitnessManifestoTextView.text.isEmpty { } else {
 			userGoals["manifesto"] = myFitnessManifestoTextView!.text
 		}
-		userGoals.saveInBackgroundWithBlock { (success, error) -> Void in
-			if success {
-				self.navigationController?.popViewControllerAnimated(true)
-			} else {
-				self.navigationController?.popViewControllerAnimated(true)
-			}
-		}
-		
+		DataSerice.ds.REF_USERS.childByAppendingPath(uid).updateChildValues(userGoals)
 		
 		navigationController?.popViewControllerAnimated(true)
 		
 	}
 	
 	@IBAction func logOutButtonPRessed(sender: AnyObject) {
-		PFUser.logOutInBackgroundWithBlock { (error) -> Void in
-			if error == nil {
-				let LogInVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn") as UIViewController
-				self.presentViewController(LogInVC, animated: true, completion: nil)
-			} else {
-				print("Error: \(error)\n Please try again")
-			}
-		}
-		
+		NSUserDefaults.standardUserDefaults().setValue(nil, forKey: KEY_UID)
+		let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
+		self.presentViewController(loginVC, animated: true, completion: nil)
 	}
 	
 	func textFieldShouldReturn(textField: UITextField) -> Bool {
