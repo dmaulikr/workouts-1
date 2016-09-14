@@ -66,7 +66,7 @@ class SignUpViewController: UIViewController {
 								"email": self.emailAddressTextField.text!,
 								"username": self.usernameTextField.text!,
 								"gender": gender,
-								"memberSince": StringFromDate.stringFromDate(NSDate())
+								"memberSince": StringFromDate.startStringFromDate(NSDate())
 							]
 							DataSerice.ds.createFirebaseUser(data.uid, user: user)
 						}

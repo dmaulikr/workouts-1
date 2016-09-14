@@ -60,11 +60,18 @@ class SelectionWorkoutViewController: UIViewController {
 					detailVC.workoutNumber = workoutNumber
 				}
 
+			} else if segue.identifier == "toWebView" {
+				if let detailVC: VideosAndTipsViewController = segue.destinationViewController as? VideosAndTipsViewController {
+					detailVC.tipURL = "http://excy.com"
+				}
 			}
 		}
 	}
 	
 	
+	@IBAction func dontHaveExcy(sender: AnyObject) {
+		
+	}
 	
 	func WarmUpAlert () {
 		

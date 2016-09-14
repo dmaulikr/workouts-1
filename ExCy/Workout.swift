@@ -15,6 +15,12 @@ struct StringFromDate {
 		dateFormatter.dateFormat = "EEEE hh:mm a"
 		return dateFormatter.stringFromDate(date)
 	}
+	static func startStringFromDate(date: NSDate) -> String {
+		let date = date
+		let dateFormatter = NSDateFormatter()
+		dateFormatter.dateFormat = "MMM d yyyy"
+		return dateFormatter.stringFromDate(date)
+	}
 }
 
 class Workout {
@@ -33,7 +39,7 @@ class Workout {
 	init(workoutTitle: String, time: Int, uid: String, minTemp: Int = 0, maxTemp: Int = 0){
 		self.workoutTitle = workoutTitle
 		self.timeAsString = StringConversion.timeStringFromSeconds(time)
-		self.caloriesBurned = (Double(time) / 60) * 18
+		self.caloriesBurned = (Double(time) / 60) * 13
 		self.minTemp = minTemp
 		self.maxTemp = maxTemp
 		

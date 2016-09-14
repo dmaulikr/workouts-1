@@ -106,7 +106,18 @@ class SetupStartViewController: UIViewController {
 		}
 		WarmUpAlert()
 	}
+	
+	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+		if segue.identifier == "toWebView" {
+			if let detailVC: VideosAndTipsViewController = segue.destinationViewController as? VideosAndTipsViewController {
+				detailVC.tipURL = "http://excy.com"
+			}
+		}
+	}
 
+	@IBAction func dontHaveExcy(sender: AnyObject) {
+		
+	}
 	
 	
 	// Alert Views

@@ -14,8 +14,7 @@ import Firebase
 
 class WorkoutsViewController: UIViewController {
 	
-	let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as! String
-	
+
 	var workoutNumber: Int?
 	var workoutTime: Int?
 	@IBOutlet weak var workoutButton: UIButton!
@@ -173,6 +172,11 @@ class WorkoutsViewController: UIViewController {
 	}
 	
 	func saveWorkout() {
+		guard let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String else {
+			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
+			self.presentViewController(loginVC, animated: true, completion: nil)
+			return
+		}
 		let seconds = Int(self.initialTime) - workoutTime!
 		workout = Workout(workoutTitle: workoutName, time: seconds, uid: uid, minTemp: minTemp , maxTemp: maxTemp)
 		
@@ -185,6 +189,11 @@ class WorkoutsViewController: UIViewController {
 	}
 	
 	func postToFirebase() {
+		guard let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String else {
+			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
+			self.presentViewController(loginVC, animated: true, completion: nil)
+			return
+		}
 		let seconds = Int(self.initialTime) - workoutTime!
 		let workout = Workout(workoutTitle: workoutName, time: seconds, uid: uid, minTemp: minTemp , maxTemp: maxTemp)
 		let dictionaryWorkout = workout.convertToDictionaryWithoutSurvey()

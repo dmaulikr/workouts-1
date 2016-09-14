@@ -12,8 +12,7 @@ import Parse
 class SurveyViewController: UIViewController {
 	
 	
-	let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as! String
-	
+
 	@IBOutlet weak var questionLabel: UILabel!
 	@IBOutlet weak var labelOutlet: UILabel!
 	@IBOutlet weak var descriptionView: UIView!
@@ -122,6 +121,11 @@ class SurveyViewController: UIViewController {
 	}
 	
 	func postToFirebase() {
+		guard let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String else {
+			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
+			self.presentViewController(loginVC, animated: true, completion: nil)
+			return
+		}
 		let dictionaryWorkout = workout!.convertToDictionarySurvey()
 		let firebaseWorkout = DataSerice.ds.REF_WORKOUTS.childByAppendingPath(uid).childByAutoId()
 		firebaseWorkout.setValue(dictionaryWorkout)

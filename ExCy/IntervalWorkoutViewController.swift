@@ -12,8 +12,6 @@ import AudioToolbox
 
 class IntervalWorkoutViewController: UIViewController {
 	
-	let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as! String
-
 	@IBOutlet weak var progressView: ProgressView!
 	@IBOutlet var stopwatchLabel: UILabel!
 	@IBOutlet weak var slowIntervalLabel: UILabel!
@@ -75,6 +73,11 @@ class IntervalWorkoutViewController: UIViewController {
 	}
 	
 	func saveWorkout() {
+		guard let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String else {
+			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
+			self.presentViewController(loginVC, animated: true, completion: nil)
+			return
+		}
 		let seconds = Int(self.initialTime) - secondsCount
 		workout = Workout(workoutTitle: "Interval Workout", time: seconds, uid: uid, minTemp: minTemp , maxTemp: maxTemp)
 		
@@ -87,6 +90,11 @@ class IntervalWorkoutViewController: UIViewController {
 	}
 	
 	func postToFirebase() {
+		guard let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String else {
+			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
+			self.presentViewController(loginVC, animated: true, completion: nil)
+			return
+		}
 		let seconds = Int(self.initialTime) - secondsCount
 		let workout = Workout(workoutTitle: "Interval Workout", time: seconds, uid: uid, minTemp: minTemp , maxTemp: maxTemp)
 		let dictionaryWorkout = workout.convertToDictionaryWithoutSurvey()

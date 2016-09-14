@@ -7,12 +7,12 @@
 //
 
 import UIKit
-import Parse
 import Firebase
+import Alamofire
 
 class ProfileViewController: UIViewController, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
 
-	let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as! String
+	
 
 	@IBOutlet var profileImage: UIImageView!
 	@IBOutlet var usernameLabel: UILabel!
@@ -38,8 +38,19 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 	var workoutsObject = [Workout]()
 	var userDict = [String: AnyObject]()
 	
+	static var imageCache = NSCache()
+	var request: Request?
+	
     override func viewDidLoad() {
         super.viewDidLoad()
+		
+		
+		guard let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String else {
+			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
+			self.presentViewController(loginVC, animated: true, completion: nil)
+			return
+		}
+		
 		
 		queryFirebaseWorkouts()
 		
@@ -53,7 +64,22 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
     }
 	
 	override func viewDidAppear(animated: Bool) {
-		//updatePersonalProfile()
+		guard let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String else {
+			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
+			self.presentViewController(loginVC, animated: true, completion: nil)
+			return
+		}
+		
+		
+		queryFirebaseWorkouts()
+		
+		DataSerice.ds.REF_USERS.childByAppendingPath(uid).observeEventType(.Value, withBlock: { snapshot in
+			if let snapshot = snapshot.value as? [String: AnyObject] {
+				self.userDict = snapshot
+				print(self.userDict)
+			}
+			self.updatePersonalProfile()
+		})
 	}
 	
     override func didReceiveMemoryWarning() {
@@ -62,6 +88,12 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
     }
 	
 	func queryFirebaseWorkouts() {
+		
+		guard let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String else {
+			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
+			self.presentViewController(loginVC, animated: true, completion: nil)
+			return
+		}
 
 		DataSerice.ds.REF_WORKOUTS.childByAppendingPath(uid).queryLimitedToLast(5).observeEventType(.Value, withBlock: { snapshot in
 			if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
@@ -78,13 +110,65 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 	}
 	
 	func updatePersonalProfile() {
-		// profile Image
-		// Inspirational Image
+		
 		if let username = userDict["username"] as? String { usernameLabel.text = username }
 		if let memberSince = userDict["memberSince"] as? String { memberSinceLabel.text = memberSince }
 		if let caloriesGoal = userDict["calorieGoal"] as? String { caloriesGoalLabel.text = caloriesGoal }
 		if let workoutsGoal = userDict["workoutGoal"] as? String { workoutsGoalLabel.text = workoutsGoal }
 		if let fitnessManifesto = userDict["manifesto"] as? String {  fitnessManifestoLabel.text = fitnessManifesto}
+		
+		if let profileUrl = userDict["profileImageUrl"] as? String {
+			if let profile = ProfileViewController.imageCache.objectForKey(profileUrl) as? UIImage {
+				self.profileImage.image = profile
+			} else {
+				request = Alamofire.request(.GET, profileUrl).validate(contentType: ["image/*"]).response { request, response, data, error in
+					if error == nil {
+						let image = UIImage(data: data!)!
+						self.profileImage.image = image
+						ProfileViewController.imageCache.setObject(image, forKey: profileUrl)
+					}
+				}
+			}
+		}
+		if let inspiringImageUrl1 = userDict["inspiringImage1"] as? String {
+			if let inspiration = ProfileViewController.imageCache.objectForKey(inspiringImageUrl1) as? UIImage {
+				self.InspirationImage1.image = inspiration
+			} else {
+				request = Alamofire.request(.GET, inspiringImageUrl1).validate(contentType: ["image/*"]).response { request, response, data, error in
+					if error == nil {
+						let image = UIImage(data: data!)!
+						self.InspirationImage1.image = image
+						ProfileViewController.imageCache.setObject(image, forKey: inspiringImageUrl1)
+					}
+				}
+			}
+		}
+		if let inspiringImageUrl2 = userDict["inspiringImage2"] as? String {
+			if let inspiration = ProfileViewController.imageCache.objectForKey(inspiringImageUrl2) as? UIImage {
+				self.inspirationImage2.image = inspiration
+			} else {
+				request = Alamofire.request(.GET, inspiringImageUrl2).validate(contentType: ["image/*"]).response { request, response, data, error in
+					if error == nil {
+						let image = UIImage(data: data!)!
+						self.inspirationImage2.image = image
+						ProfileViewController.imageCache.setObject(image, forKey: inspiringImageUrl2)
+					}
+				}
+			}
+		}
+		if let inspiringImageUrl3 = userDict["inspiringImage3"] as? String {
+			if let inspiration = ProfileViewController.imageCache.objectForKey(inspiringImageUrl3) as? UIImage {
+				self.inspirationImage3.image = inspiration
+			} else {
+				request = Alamofire.request(.GET, inspiringImageUrl3).validate(contentType: ["image/*"]).response { request, response, data, error in
+					if error == nil {
+						let image = UIImage(data: data!)!
+						self.inspirationImage3.image = image
+						ProfileViewController.imageCache.setObject(image, forKey: inspiringImageUrl3)
+					}
+				}
+			}
+		}
 	}
 	
 	// View updates
@@ -130,25 +214,46 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 		//updatePersonalProfile()
 	}
 	
-	@IBAction func changeImageButtonPressed(sender: AnyObject) {
-		let image = UIImagePickerController()
-		image.delegate = self
-		image.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
-		image.allowsEditing = false
-		self.presentViewController(image, animated: true, completion: nil)
-	}
-	
-	func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
-		self.dismissViewControllerAnimated(true, completion: nil)
-		profileImage.image = image
-		let imageData = UIImageJPEGRepresentation(image, 0.6)
-		let parseImage = PFFile(name: "profileImage", data: imageData!)
-		let userGoals = PFObject(className: "UserGoals")
-		userGoals["profileImage"] = parseImage
-		userGoals["username"] = PFUser.currentUser()!.username
-		userGoals.saveInBackground()
-		
-	}
+//	@IBAction func changeImageButtonPressed(sender: AnyObject) {
+//		let image = UIImagePickerController()
+//		image.delegate = self
+//		image.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+//		image.allowsEditing = false
+//		self.presentViewController(image, animated: true, completion: nil)
+//	}
+//	
+//	func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+//		self.dismissViewControllerAnimated(true, completion: nil)
+//		profileImage.image = image
+//		
+//		let urlStr = "https://post.imageshack.us/upload_api.php"
+//		let url = NSURL(string: urlStr)!
+//		let imageData = UIImageJPEGRepresentation(image, 0.4)
+//		let keyData = "2679GJMV25b978622f28e584f5e6e432b7af8e82".dataUsingEncoding(NSUTF8StringEncoding)
+//		let keyJSON = "json".dataUsingEncoding(NSUTF8StringEncoding)
+//		Alamofire.upload(.POST, url, multipartFormData: { multipartFormData in
+//			multipartFormData.appendBodyPart(data: imageData!, name: "fileUpload", mimeType: "image/jpg")
+//			multipartFormData.appendBodyPart(data: keyData!, name: "key")
+//			multipartFormData.appendBodyPart(data: keyJSON!, name: "format")
+//		}) { encodingResult in
+//			switch encodingResult {
+//			case .Success(let upload, _, _) :
+//				upload.responseJSON{ response in
+//					if let info = response.result.value as? [String: AnyObject] {
+//						if let links = info["links"] as? [String: AnyObject] {
+//							if let imgLink = links["image_link"] as? String {
+//								print("LINK: \(imgLink)")
+//							}
+//						}
+//					}
+//				}
+//			case .Failure(let error):
+//				print(error)
+//			}
+//		}
+//		//DataSerice.ds.REF_USERS.childByAppendingPath(uid).updateChildValues( blahblabhblahb )
+//		
+//	}
 	func workoutEnjoyment(enjoyment: String) -> UIImage {
 		switch enjoyment {
 		case "awful": return UIImage(named: "SmilieIcons_sad.png")!

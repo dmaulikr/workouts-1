@@ -19,7 +19,6 @@ class VideosAndTipsViewController: UIViewController {
         super.viewDidLoad()
 		
 		if let youtubeString = youtubeURL {
-			
 			webView.loadHTMLString(youtubeString, baseURL: nil)
 		} else if let tipString = tipURL {
 			self.webView.loadRequest(NSURLRequest(URL: NSURL(string: tipString)!))
@@ -29,6 +28,11 @@ class VideosAndTipsViewController: UIViewController {
 
 		
     }
+	
+	override func viewDidDisappear(animated: Bool) {
+		youtubeURL = nil
+		tipURL = nil
+	}
 
 	@IBAction func goBack(sender: AnyObject) {
 		let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
