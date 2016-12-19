@@ -9,17 +9,17 @@
 import Foundation
 
 struct StringFromDate {
-	static func stringFromDate(date: NSDate) -> String {
+	static func stringFromDate(_ date: Date) -> String {
 		let date = date
-		let dateFormatter = NSDateFormatter()
+		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "EEEE hh:mm a"
-		return dateFormatter.stringFromDate(date)
+		return dateFormatter.string(from: date)
 	}
-	static func startStringFromDate(date: NSDate) -> String {
+	static func startStringFromDate(_ date: Date) -> String {
 		let date = date
-		let dateFormatter = NSDateFormatter()
+		let dateFormatter = DateFormatter()
 		dateFormatter.dateFormat = "MMM d yyyy"
-		return dateFormatter.stringFromDate(date)
+		return dateFormatter.string(from: date)
 	}
 }
 
@@ -44,13 +44,13 @@ class Workout {
 		self.maxTemp = maxTemp
 		
 		// Date
-		let date = NSDate()
+		let date = Date()
 		self.dateCompleted = StringFromDate.stringFromDate(date)
 		self.uid = uid
 	}
 	
 	
-	func addLocationAndEnjoyment(location: String, enjoyment: String){
+	func addLocationAndEnjoyment(_ location: String, enjoyment: String){
 		self.enjoyment = enjoyment
 		self.location = location
 	}
@@ -87,32 +87,32 @@ class Workout {
 
 	func convertToDictionaryWithoutSurvey() -> [String: AnyObject] {
 		return [
-			"uid": self.uid,
-			"workoutTitle": self.workoutTitle,
-			"totalTime": self.timeAsString,
-			"caloriesBurned": self.caloriesBurned,
-			"dateCompleted": self.dateCompleted,
-			"minTemp": self.minTemp,
-			"maxTemp": self.maxTemp
+			"uid": self.uid as AnyObject,
+			"workoutTitle": self.workoutTitle as AnyObject,
+			"totalTime": self.timeAsString as AnyObject,
+			"caloriesBurned": self.caloriesBurned as AnyObject,
+			"dateCompleted": self.dateCompleted as AnyObject,
+			"minTemp": self.minTemp as AnyObject,
+			"maxTemp": self.maxTemp as AnyObject
 		]
 	}
 	func convertToDictionarySurvey() -> [String: AnyObject] {
 		return [
-			"uid": self.uid,
-			"workoutTitle": self.workoutTitle,
-			"totalTime": self.timeAsString,
-			"caloriesBurned": self.caloriesBurned,
-			"dateCompleted": self.dateCompleted,
-			"minTemp": self.minTemp,
-			"maxTemp": self.maxTemp,
-			"enjoyment": self.enjoyment,
-			"location":self.location,
+			"uid": self.uid as AnyObject,
+			"workoutTitle": self.workoutTitle as AnyObject,
+			"totalTime": self.timeAsString as AnyObject,
+			"caloriesBurned": self.caloriesBurned as AnyObject,
+			"dateCompleted": self.dateCompleted as AnyObject,
+			"minTemp": self.minTemp as AnyObject,
+			"maxTemp": self.maxTemp as AnyObject,
+			"enjoyment": self.enjoyment as AnyObject,
+			"location":self.location as AnyObject,
 		]
 	}
 	
 	
 	
-	func workoutEnjoyment(number: Int) -> String {
+	func workoutEnjoyment(_ number: Int) -> String {
 		switch number {
 		case 1: return "awful"
 		case 2: return "bad"
@@ -122,7 +122,7 @@ class Workout {
 		default: return "good"
 		}
 	}
-	func workoutLocation(number: Int) -> String {
+	func workoutLocation(_ number: Int) -> String {
 		switch number {
 		case 1: return "at home"
 		case 2: return "at home"

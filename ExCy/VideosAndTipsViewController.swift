@@ -21,7 +21,7 @@ class VideosAndTipsViewController: UIViewController {
 		if let youtubeString = youtubeURL {
 			webView.loadHTMLString(youtubeString, baseURL: nil)
 		} else if let tipString = tipURL {
-			self.webView.loadRequest(NSURLRequest(URL: NSURL(string: tipString)!))
+			self.webView.loadRequest(URLRequest(url: URL(string: tipString)!))
 		} else {
 			webView.loadHTMLString("<iframe width=\"\(view.frame.width)\" height=\"\(view.frame.height / 2)\" src=\"https://www.youtube.com/embed/0eONwwRUIJc\" frameborder=\"0\" allowfullscreen></iframe>", baseURL: nil)
 		}
@@ -29,23 +29,23 @@ class VideosAndTipsViewController: UIViewController {
 		
     }
 	
-	override func viewDidDisappear(animated: Bool) {
+	override func viewDidDisappear(_ animated: Bool) {
 		youtubeURL = nil
 		tipURL = nil
 	}
 
-	@IBAction func goBack(sender: AnyObject) {
-		let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
-		self.presentViewController(loginVC, animated: true, completion: nil)
+	@IBAction func goBack(_ sender: AnyObject) {
+		let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogIn")
+		self.present(loginVC, animated: true, completion: nil)
 	}
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
-	@IBAction func goBackFromWorkout(sender: AnyObject) {
-		let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("ArmCandyView")
-		self.presentViewController(loginVC, animated: true, completion: nil)
+	@IBAction func goBackFromWorkout(_ sender: AnyObject) {
+		let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "ArmCandyView")
+		self.present(loginVC, animated: true, completion: nil)
 	}
 
     /*

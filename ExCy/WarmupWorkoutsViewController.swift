@@ -13,27 +13,27 @@ class WarmupWorkoutsViewController: UIViewController {
 	@IBOutlet weak var stopWatchLabel: UILabel!
 	
 	var workoutNumber: Int?
-	var timer: NSTimer?
+	var timer: Timer?
 	var warmupTime: Int = 119
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
 	
-	override func viewDidAppear(animated: Bool) {
+	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-		self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateUI"), userInfo: nil, repeats: true)
+		self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(WarmupWorkoutsViewController.updateUI), userInfo: nil, repeats: true)
 	}
 	
-	override func viewDidDisappear(animated: Bool) {
+	override func viewDidDisappear(_ animated: Bool) {
 		super.viewDidDisappear(animated)
 		self.timer?.invalidate()
 	}
 	
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let identifier = segue.identifier {
 			if identifier == "FromWarmUpToWorkout" {
-				if let detailVC: WorkoutsViewController = segue.destinationViewController as? WorkoutsViewController {
+				if let detailVC: WorkoutsViewController = segue.destination as? WorkoutsViewController {
 					detailVC.workoutNumber = workoutNumber
 				}
 				
@@ -45,20 +45,20 @@ class WarmupWorkoutsViewController: UIViewController {
 	func updateUI() {
 		if warmupTime > 0 {
 			self.stopWatchLabel.text = StringConversion.timeStringFromSeconds(warmupTime)
-			warmupTime--
+			warmupTime -= 1
 		} else {
-			performSegueWithIdentifier("FromWarmUpToWorkout", sender: self)
+			performSegue(withIdentifier: "FromWarmUpToWorkout", sender: self)
 		}
 		
 	}
 	
-	@IBAction func pauseButtonPressed(sender: UIButton) {
+	@IBAction func pauseButtonPressed(_ sender: UIButton) {
 		self.timer?.invalidate()
 	}
 	
 	
-	@IBAction func stopButtonPressed(sender: UIButton) {
-		performSegueWithIdentifier("FromWarmUpToWorkout", sender: self)
+	@IBAction func stopButtonPressed(_ sender: UIButton) {
+		performSegue(withIdentifier: "FromWarmUpToWorkout", sender: self)
 	}
 
     /*

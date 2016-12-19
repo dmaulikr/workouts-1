@@ -12,18 +12,18 @@ class WarmUpViewController: UIViewController {
 
 	@IBOutlet weak var stopWatchLabel: UILabel!
 	
-	var timer: NSTimer?
+	var timer: Timer?
 	var warmupTime: Int = 119
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
 	}
 	
-	override func viewDidAppear(animated: Bool) {
+	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
-		self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateUI"), userInfo: nil, repeats: true)
+		self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(WarmUpViewController.updateUI), userInfo: nil, repeats: true)
 	}
-	override func viewDidDisappear(animated: Bool) {
+	override func viewDidDisappear(_ animated: Bool) {
 		super.viewDidDisappear(animated)
 		self.timer?.invalidate()
 	}
@@ -31,19 +31,19 @@ class WarmUpViewController: UIViewController {
 	func updateUI() {
 		if warmupTime > 0 {
 			self.stopWatchLabel.text = StringConversion.timeStringFromSeconds(warmupTime)
-			warmupTime--
+			warmupTime -= 1
 		} else {
-			performSegueWithIdentifier("workoutFromWarmup", sender: self)
+			performSegue(withIdentifier: "workoutFromWarmup", sender: self)
 		}
 		
 	}
 	
-	@IBAction func pauseButtonPressed(sender: UIButton) {
+	@IBAction func pauseButtonPressed(_ sender: UIButton) {
 		
 	}
 	
 	
-	@IBAction func stopButtonPressed(sender: UIButton) {
+	@IBAction func stopButtonPressed(_ sender: UIButton) {
 		
 	}
 

@@ -12,11 +12,11 @@
 
 import UIKit
 
-public class StyleKitName : NSObject {
+open class StyleKitName : NSObject {
 
     //// Drawing Methods
 
-    public class func drawCanvas1(progressAmmount: CGFloat) {
+    open class func drawCanvas1(_ progressAmmount: CGFloat) {
         //// Color Declarations
         let color = UIColor(red: 0.500, green: 0.500, blue: 0.500, alpha: 0.332)
 
@@ -24,18 +24,18 @@ public class StyleKitName : NSObject {
         let expression: CGFloat = progressAmmount * 297
 
         //// overlay Drawing
-        let overlayPath = UIBezierPath(rect: CGRectMake(0, 0, expression, 95))
+        let overlayPath = UIBezierPath(rect: CGRect(x: 0, y: 0, width: expression, height: 95))
         color.setFill()
         overlayPath.fill()
     }
 
 }
 
-public class workoutsProgressOverlay : NSObject {
+open class workoutsProgressOverlay : NSObject {
 	
 	//// Drawing Methods
 	
-	public class func drawCanvas1(progressAmmount: CGFloat) {
+	open class func drawCanvas1(_ progressAmmount: CGFloat) {
 		//// Color Declarations
 		let color = UIColor(red: 0.500, green: 0.500, blue: 0.500, alpha: 0.332)
 		
@@ -43,7 +43,7 @@ public class workoutsProgressOverlay : NSObject {
 		let expression: CGFloat = progressAmmount * 264
 		
 		//// overlay Drawing
-		let overlayPath = UIBezierPath(rect: CGRectMake(0, 0, expression, 72))
+		let overlayPath = UIBezierPath(rect: CGRect(x: 0, y: 0, width: expression, height: 72))
 		color.setFill()
 		overlayPath.fill()
 	}
@@ -51,9 +51,9 @@ public class workoutsProgressOverlay : NSObject {
 }
 
 @objc protocol StyleKitSettableImage {
-    func setImage(image: UIImage!)
+    func setImage(_ image: UIImage!)
 }
 
 @objc protocol StyleKitSettableSelectedImage {
-    func setSelectedImage(image: UIImage!)
+    func setSelectedImage(_ image: UIImage!)
 }

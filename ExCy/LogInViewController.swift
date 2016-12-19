@@ -28,9 +28,9 @@ class LogInViewController: UIViewController {
 		
     }
 	
-	override func viewDidAppear(animated: Bool) {
-		if NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) != nil {
-			self.performSegueWithIdentifier("login", sender: nil)
+	override func viewDidAppear(_ animated: Bool) {
+		if UserDefaults.standard.value(forKey: KEY_UID) != nil {
+			self.performSegue(withIdentifier: "login", sender: nil)
 		}
 	}
 
@@ -39,14 +39,14 @@ class LogInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-	@IBAction func logInButtonPressed(sender: AnyObject) {
+	@IBAction func logInButtonPressed(_ sender: AnyObject) {
 		if emailTextField.text == nil || passwordTextField.text == nil {
 			displayAlert("Error", message: "Please enter a username and password")
 		} else {
 			beginActivityIndicator()
 			DataSerice.ds.REF_BASE.authUser(emailTextField.text!, password: passwordTextField.text, withCompletionBlock: { (error, data) -> Void in
 				self.activityIndicator.stopAnimating()
-				UIApplication.sharedApplication().endIgnoringInteractionEvents()
+				UIApplication.shared.endIgnoringInteractionEvents()
 				if error != nil {
 					if error.code == -8 {
 						self.displayAlert("User does not exist", message: "Problem logging in. Please try a different email address or password")
@@ -54,30 +54,30 @@ class LogInViewController: UIViewController {
 						self.displayAlert("Error", message: "Problem logging in. Please try a different email address or password")
 					}
 				} else {
-					NSUserDefaults.standardUserDefaults().setValue(data.uid, forKey: KEY_UID)
-					self.performSegueWithIdentifier("login", sender: nil)
+					UserDefaults.standard.setValue(data?.uid, forKey: KEY_UID)
+					self.performSegue(withIdentifier: "login", sender: nil)
 				}
 			})
 		}
 	}
 	
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "toWebView" {
-			if let detailVC: VideosAndTipsViewController = segue.destinationViewController as? VideosAndTipsViewController {
+			if let detailVC: VideosAndTipsViewController = segue.destination as? VideosAndTipsViewController {
 				detailVC.tipURL = "http://excy.com"
 			}
 		}
 	}
 	
-	@IBAction func forgotPassword(sender: UIButton) {
-		let alertController = UIAlertController(title: "ForgotPassword?", message: "enter the email address you used to sign up with Excy", preferredStyle: .Alert)
-		let cancelAction = UIAlertAction(title: "skip", style: .Destructive) { action in }
-		alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
+	@IBAction func forgotPassword(_ sender: UIButton) {
+		let alertController = UIAlertController(title: "ForgotPassword?", message: "enter the email address you used to sign up with Excy", preferredStyle: .alert)
+		let cancelAction = UIAlertAction(title: "skip", style: .destructive) { action in }
+		alertController.addTextField { (textField) -> Void in
 			textField.placeholder = "User Email Address"
-			textField.keyboardType = .EmailAddress
+			textField.keyboardType = .emailAddress
 		}
-		let OKAction = UIAlertAction(title: "Enter", style: .Cancel) { action in
-			DataSerice.ds.REF_BASE.resetPasswordForUser((alertController.textFields!.first)!.text!, withCompletionBlock: { (error) -> Void in
+		let OKAction = UIAlertAction(title: "Enter", style: .cancel) { action in
+			DataSerice.ds.REF_BASE.resetPassword(forUser: (alertController.textFields!.first)!.text!, withCompletionBlock: { (error) -> Void in
 				if error == nil {
 					self.displayAlert("email sent", message: "please check your email to reset your password")
 				} else {
@@ -88,26 +88,26 @@ class LogInViewController: UIViewController {
 		alertController.addAction(OKAction)
 		alertController.addAction(cancelAction)
 		
-		self.presentViewController(alertController, animated: true, completion: nil)
+		self.present(alertController, animated: true, completion: nil)
 		
 	}
 	
-	func displayAlert(title: String, message: String) {
-		let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-		alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
-			self.dismissViewControllerAnimated(true, completion: nil)
+	func displayAlert(_ title: String, message: String) {
+		let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
+			self.dismiss(animated: true, completion: nil)
 		}))
-		self.presentViewController(alert, animated: true, completion: nil)
+		self.present(alert, animated: true, completion: nil)
 	}
 	
 	func beginActivityIndicator() {
-		activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
+		activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
 		activityIndicator.center = self.view.center
 		activityIndicator.hidesWhenStopped = true
-		activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+		activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
 		view.addSubview(activityIndicator)
 		activityIndicator.startAnimating()
-		UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+		UIApplication.shared.beginIgnoringInteractionEvents()
 	}
 	
 	func DismissKeyboard(){

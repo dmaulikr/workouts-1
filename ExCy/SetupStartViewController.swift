@@ -29,12 +29,12 @@ class SetupStartViewController: UIViewController {
 		
 	}
 	
-	override func viewDidAppear(animated: Bool) {
+	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		resetTimers()
 		
 	}
-	override func viewDidDisappear(animated: Bool) {
+	override func viewDidDisappear(_ animated: Bool) {
 		super.viewDidDisappear(animated)
 	}
 	
@@ -48,44 +48,44 @@ class SetupStartViewController: UIViewController {
 		self.stopwatchLabel.text = StringConversion.timeStringFromSeconds(secondsCount)
 	}
 	
-	@IBAction func minuteTimeUp(sender: UIButton) {
+	@IBAction func minuteTimeUp(_ sender: UIButton) {
 		secondsCount += 60
 		updateTimerSettingUI()
 	}
-	@IBAction func minuteTimeDown(sender: UIButton) {
+	@IBAction func minuteTimeDown(_ sender: UIButton) {
 		if secondsCount > 60 {
 			secondsCount += -60
 		}
 		updateTimerSettingUI()
 	}
-	@IBAction func secondTimeUp(sender: UIButton) {
-		secondsCount++
+	@IBAction func secondTimeUp(_ sender: UIButton) {
+		secondsCount += 1
 		updateTimerSettingUI()
 	}
-	@IBAction func secondTimeDown(sender: UIButton) {
+	@IBAction func secondTimeDown(_ sender: UIButton) {
 		if secondsCount > 1 {
-			secondsCount--
+			secondsCount -= 1
 		}
 		updateTimerSettingUI()
 	}
 	
-	@IBAction func slowIntervalUp(sender: UIButton) {
-		slowIntervalCount++
+	@IBAction func slowIntervalUp(_ sender: UIButton) {
+		slowIntervalCount += 1
 		slowIntervalLabel.text = "\(slowIntervalCount)"
 	}
-	@IBAction func slowIntervalDown(sender: UIButton) {
+	@IBAction func slowIntervalDown(_ sender: UIButton) {
 		if slowIntervalCount > 0 {
-			slowIntervalCount--
+			slowIntervalCount -= 1
 		}
 		slowIntervalLabel.text = "\(slowIntervalCount)"
 	}
-	@IBAction func fastIntervalUp(sender: UIButton) {
-		fastIntervalCount++
+	@IBAction func fastIntervalUp(_ sender: UIButton) {
+		fastIntervalCount += 1
 		fastIntervalLabel.text = "\(fastIntervalCount)"
 	}
-	@IBAction func fastIntervalDown(sender: UIButton) {
+	@IBAction func fastIntervalDown(_ sender: UIButton) {
 		if fastIntervalCount > 0{
-			fastIntervalCount--
+			fastIntervalCount -= 1
 		}
 		fastIntervalLabel.text = "\(fastIntervalCount)"
 	}
@@ -95,7 +95,7 @@ class SetupStartViewController: UIViewController {
 	
 	// Start Stop and Pause Buttons
 	
-	@IBAction func startButtonPressed(sender: UIButton)
+	@IBAction func startButtonPressed(_ sender: UIButton)
 	{
 		if secondsCount < 1 {
 			secondsCount = 60 * 5
@@ -107,15 +107,15 @@ class SetupStartViewController: UIViewController {
 		WarmUpAlert()
 	}
 	
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "toWebView" {
-			if let detailVC: VideosAndTipsViewController = segue.destinationViewController as? VideosAndTipsViewController {
+			if let detailVC: VideosAndTipsViewController = segue.destination as? VideosAndTipsViewController {
 				detailVC.tipURL = "http://excy.com"
 			}
 		}
 	}
 
-	@IBAction func dontHaveExcy(sender: AnyObject) {
+	@IBAction func dontHaveExcy(_ sender: AnyObject) {
 		
 	}
 	
@@ -134,43 +134,43 @@ class SetupStartViewController: UIViewController {
 	}
 	
 	func WarmUpAlert () {
-		let alertController = UIAlertController(title: "Would you like to warm up?", message: "A quick 2 minute warm up can really enhance your workout experience and is highly recommended for optimal health", preferredStyle: .Alert)
-		let OKAction = UIAlertAction(title: "Skip", style: .Default) { action in
+		let alertController = UIAlertController(title: "Would you like to warm up?", message: "A quick 2 minute warm up can really enhance your workout experience and is highly recommended for optimal health", preferredStyle: .alert)
+		let OKAction = UIAlertAction(title: "Skip", style: .default) { action in
 			//write some code in here if I need to
-			self.performSegueWithIdentifier("workout", sender: self)
+			self.performSegue(withIdentifier: "workout", sender: self)
 		}
 		alertController.addAction(OKAction)
-		let cancelAction = UIAlertAction(title: "Warm Up", style: .Cancel) { action in
-			self.performSegueWithIdentifier("warmup", sender: self)
+		let cancelAction = UIAlertAction(title: "Warm Up", style: .cancel) { action in
+			self.performSegue(withIdentifier: "warmup", sender: self)
 		}
 		alertController.addAction(cancelAction)
-		self.presentViewController(alertController, animated: true, completion: nil)
+		self.present(alertController, animated: true, completion: nil)
 	}
 	
 	func pauseAlert () {
-		let alertController = UIAlertController(title: "Continue?", message: "healthy is... finishing strong!", preferredStyle: .Alert)
-		let OKAction = UIAlertAction(title: "exit workout", style: .Default) { action in
+		let alertController = UIAlertController(title: "Continue?", message: "healthy is... finishing strong!", preferredStyle: .alert)
+		let OKAction = UIAlertAction(title: "exit workout", style: .default) { action in
 			self.resetTimers()
 		}
 		alertController.addAction(OKAction)
-		let cancelAction = UIAlertAction(title: "resume", style: .Default) { action in
+		let cancelAction = UIAlertAction(title: "resume", style: .default) { action in
 			
 		}
 		alertController.addAction(cancelAction)
-		self.presentViewController(alertController, animated: true, completion: nil)
+		self.present(alertController, animated: true, completion: nil)
 	}
 	
 	func stopAlert () {
-		let alertController = UIAlertController(title: "Workout Complete", message: "", preferredStyle: .Alert)
-		let OKAction = UIAlertAction(title: "Save", style: .Default) { action in
+		let alertController = UIAlertController(title: "Workout Complete", message: "", preferredStyle: .alert)
+		let OKAction = UIAlertAction(title: "Save", style: .default) { action in
 			
 		}
 		alertController.addAction(OKAction)
-		let cancelAction = UIAlertAction(title: "trash", style: .Default) { action in
+		let cancelAction = UIAlertAction(title: "trash", style: .default) { action in
 			self.resetTimers()
 		}
 		alertController.addAction(cancelAction)
-		self.presentViewController(alertController, animated: true, completion: nil)
+		self.present(alertController, animated: true, completion: nil)
 	}
 	
 	

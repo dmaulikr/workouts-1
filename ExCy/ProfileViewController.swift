@@ -38,24 +38,24 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 	var workoutsObject = [Workout]()
 	var userDict = [String: AnyObject]()
 	
-	static var imageCache = NSCache()
+	static var imageCache = NSCache<AnyObject, AnyObject>()
 	var request: Request?
 	
     override func viewDidLoad() {
         super.viewDidLoad()
 		
 		
-		guard let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String else {
-			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
-			self.presentViewController(loginVC, animated: true, completion: nil)
+		guard let uid = UserDefaults.standard.value(forKey: KEY_UID) as? String else {
+			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogIn")
+			self.present(loginVC, animated: true, completion: nil)
 			return
 		}
 		
 		
 		queryFirebaseWorkouts()
 		
-		DataSerice.ds.REF_USERS.childByAppendingPath(uid).observeEventType(.Value, withBlock: { snapshot in
-			if let snapshot = snapshot.value as? [String: AnyObject] {
+		DataSerice.ds.REF_USERS.child(byAppendingPath: uid).observe(.value, with: { snapshot in
+			if let snapshot = snapshot?.value as? [String: AnyObject] {
 				self.userDict = snapshot
 				print(self.userDict)
 			}
@@ -63,18 +63,18 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 		})
     }
 	
-	override func viewDidAppear(animated: Bool) {
-		guard let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String else {
-			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
-			self.presentViewController(loginVC, animated: true, completion: nil)
+	override func viewDidAppear(_ animated: Bool) {
+		guard let uid = UserDefaults.standard.value(forKey: KEY_UID) as? String else {
+			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogIn")
+			self.present(loginVC, animated: true, completion: nil)
 			return
 		}
 		
 		
 		queryFirebaseWorkouts()
 		
-		DataSerice.ds.REF_USERS.childByAppendingPath(uid).observeEventType(.Value, withBlock: { snapshot in
-			if let snapshot = snapshot.value as? [String: AnyObject] {
+		DataSerice.ds.REF_USERS.child(byAppendingPath: uid).observe(.value, with: { snapshot in
+			if let snapshot = snapshot?.value as? [String: AnyObject] {
 				self.userDict = snapshot
 				print(self.userDict)
 			}
@@ -89,18 +89,18 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 	
 	func queryFirebaseWorkouts() {
 		
-		guard let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String else {
-			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
-			self.presentViewController(loginVC, animated: true, completion: nil)
+		guard let uid = UserDefaults.standard.value(forKey: KEY_UID) as? String else {
+			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogIn")
+			self.present(loginVC, animated: true, completion: nil)
 			return
 		}
 
-		DataSerice.ds.REF_WORKOUTS.childByAppendingPath(uid).queryLimitedToLast(5).observeEventType(.Value, withBlock: { snapshot in
-			if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+		DataSerice.ds.REF_WORKOUTS.child(byAppendingPath: uid).queryLimited(toLast: 5).observe(.value, with: { snapshot in
+			if let snapshots = snapshot?.children.allObjects as? [FDataSnapshot] {
 				for snap in snapshots {
 					if let workoutDict = snap.value as? [String: AnyObject] {
 						let workout = Workout(dictionary: workoutDict)
-						self.workoutsObject.insert(workout, atIndex: 0)
+						self.workoutsObject.insert(workout, at: 0)
 						
 					}
 				}
@@ -118,7 +118,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 		if let fitnessManifesto = userDict["manifesto"] as? String {  fitnessManifestoLabel.text = fitnessManifesto}
 		
 		if let profileUrl = userDict["profileImageUrl"] as? String {
-			if let profile = ProfileViewController.imageCache.objectForKey(profileUrl) as? UIImage {
+			if let profile = ProfileViewController.imageCache.object(forKey: profileUrl as AnyObject) as? UIImage {
 				self.profileImage.image = profile
 			} else {
 				request = Alamofire.request(.GET, profileUrl).validate(contentType: ["image/*"]).response { request, response, data, error in
@@ -131,7 +131,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 			}
 		}
 		if let inspiringImageUrl1 = userDict["inspiringImage1"] as? String {
-			if let inspiration = ProfileViewController.imageCache.objectForKey(inspiringImageUrl1) as? UIImage {
+			if let inspiration = ProfileViewController.imageCache.object(forKey: inspiringImageUrl1 as AnyObject) as? UIImage {
 				self.InspirationImage1.image = inspiration
 			} else {
 				request = Alamofire.request(.GET, inspiringImageUrl1).validate(contentType: ["image/*"]).response { request, response, data, error in
@@ -144,7 +144,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 			}
 		}
 		if let inspiringImageUrl2 = userDict["inspiringImage2"] as? String {
-			if let inspiration = ProfileViewController.imageCache.objectForKey(inspiringImageUrl2) as? UIImage {
+			if let inspiration = ProfileViewController.imageCache.object(forKey: inspiringImageUrl2 as AnyObject) as? UIImage {
 				self.inspirationImage2.image = inspiration
 			} else {
 				request = Alamofire.request(.GET, inspiringImageUrl2).validate(contentType: ["image/*"]).response { request, response, data, error in
@@ -157,7 +157,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 			}
 		}
 		if let inspiringImageUrl3 = userDict["inspiringImage3"] as? String {
-			if let inspiration = ProfileViewController.imageCache.objectForKey(inspiringImageUrl3) as? UIImage {
+			if let inspiration = ProfileViewController.imageCache.object(forKey: inspiringImageUrl3 as AnyObject) as? UIImage {
 				self.inspirationImage3.image = inspiration
 			} else {
 				request = Alamofire.request(.GET, inspiringImageUrl3).validate(contentType: ["image/*"]).response { request, response, data, error in
@@ -174,10 +174,10 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 	// View updates
 	
 	func updateView() {
-		dispatch_async(dispatch_get_main_queue()) { [unowned self] in
+		DispatchQueue.main.async { [unowned self] in
 			print("Im being called in update view")
 			
-			for var index = 0; index < 5; index++ {
+			for index in 0 ..< 5 {
 				if self.workoutsObject.count > index {
 					print("Workouts are greater than 0")
 					let workout = self.workoutsObject[index]
@@ -209,7 +209,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 
 	
 	
-	@IBAction func recentHistoryUpdate(sender: UIButton) {
+	@IBAction func recentHistoryUpdate(_ sender: UIButton) {
 		updateView()
 		//updatePersonalProfile()
 	}
@@ -254,7 +254,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 //		//DataSerice.ds.REF_USERS.childByAppendingPath(uid).updateChildValues( blahblabhblahb )
 //		
 //	}
-	func workoutEnjoyment(enjoyment: String) -> UIImage {
+	func workoutEnjoyment(_ enjoyment: String) -> UIImage {
 		switch enjoyment {
 		case "awful": return UIImage(named: "SmilieIcons_sad.png")!
 		case "bad": return UIImage(named: "SmilieIcons_sad.png")!
@@ -264,7 +264,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 		default: return UIImage(named: "SmilieIcons_happy.png")!
 		}
 	}
-	func workoutLocation(location: String) -> UIImage {
+	func workoutLocation(_ location: String) -> UIImage {
 		switch location {
 		case "at home": return UIImage(named: "Account_Home.png")!
 		case "at work": return UIImage(named: "Account_Work.png")!

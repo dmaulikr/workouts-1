@@ -30,9 +30,9 @@ class SurveyViewController: UIViewController {
 
         // Do any additional setup after loading the view.
     }
-	override func viewDidAppear(animated: Bool) {
+	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(true)
-		submitButton.setTitle("submit", forState: UIControlState.Normal)
+		submitButton.setTitle("submit", for: UIControlState())
 		
 	}
 
@@ -41,7 +41,7 @@ class SurveyViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
 	
-	@IBAction func zoneSelection(sender: UISegmentedControl) {
+	@IBAction func zoneSelection(_ sender: UISegmentedControl) {
 		
 		switch questionNumber {
 		
@@ -94,41 +94,41 @@ class SurveyViewController: UIViewController {
 		
 	}
 	
-	@IBAction func submitButtonPressed(sender: UIButton) {
+	@IBAction func submitButtonPressed(_ sender: UIButton) {
 		if questionNumber >= 2 {
 			if self.workout != nil {
 				self.workout!.addLocationAndEnjoyment(workoutLocation, enjoyment: workoutEnjoyment)
 				postToFirebase()
-				let completedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainTabBarCtrl")
-				self.presentViewController(completedVC, animated: true, completion: nil)
+				let completedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarCtrl")
+				self.present(completedVC, animated: true, completion: nil)
 			} else {
-				let completedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("MainTabBarCtrl")
-				self.presentViewController(completedVC, animated: true, completion: nil)
+				let completedVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "MainTabBarCtrl")
+				self.present(completedVC, animated: true, completion: nil)
 			}
 			
 		} else {
-			questionNumber++
+			questionNumber += 1
 			switch questionNumber {
 			case 1: questionsView.image = UIImage(named: "Survey3-3")
 					questionLabel.text = "Using the slider below, please let us know where you worked out today."
 			case 2: questionsView.image = UIImage(named: "Survey4-3")
 					questionLabel.text = "Using the below slider, what best describes how you feel after today's excy workout?"
-					submitButton.setTitle("complete", forState: UIControlState.Normal)
+					submitButton.setTitle("complete", for: UIControlState())
 			default: questionLabel.text = "Using the slider below, please rate your average exercise intensity throughout today's workout"
 			}
 		}
-		labelOutlet.hidden = true
+		labelOutlet.isHidden = true
 	}
 	
 	func postToFirebase() {
-		guard let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String else {
-			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
-			self.presentViewController(loginVC, animated: true, completion: nil)
+		guard let uid = UserDefaults.standard.value(forKey: KEY_UID) as? String else {
+			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogIn")
+			self.present(loginVC, animated: true, completion: nil)
 			return
 		}
 		let dictionaryWorkout = workout!.convertToDictionarySurvey()
-		let firebaseWorkout = DataSerice.ds.REF_WORKOUTS.childByAppendingPath(uid).childByAutoId()
-		firebaseWorkout.setValue(dictionaryWorkout)
+		let firebaseWorkout = DataSerice.ds.REF_WORKOUTS.child(byAppendingPath: uid).childByAutoId()
+		firebaseWorkout?.setValue(dictionaryWorkout)
 	}
 	
 	

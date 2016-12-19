@@ -178,7 +178,6 @@
 		D3FED9C01B838D780054ABCE /* SmilieIcons_happy.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FED9B91B838D780054ABCE /* SmilieIcons_happy.png */; };
 		D3FED9C11B838D780054ABCE /* SmilieIcons_sad.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FED9BA1B838D780054ABCE /* SmilieIcons_sad.png */; };
 		D3FED9C21B838D780054ABCE /* SmilieIcons_satisfied.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FED9BB1B838D780054ABCE /* SmilieIcons_satisfied.png */; };
-		E6BD25990E875E46ABCE0850 /* Pods_ExCy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 8A3242AF2CF064084EE27336 /* Pods_ExCy.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -192,9 +191,6 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		10AB80665B5FC177620FA569 /* Pods-ExCy.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExCy.release.xcconfig"; path = "Pods/Target Support Files/Pods-ExCy/Pods-ExCy.release.xcconfig"; sourceTree = "<group>"; };
-		32C5BAB7931C59CBBEF46FB7 /* Pods-ExCy.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExCy.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExCy/Pods-ExCy.debug.xcconfig"; sourceTree = "<group>"; };
-		8A3242AF2CF064084EE27336 /* Pods_ExCy.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ExCy.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D30279851B14CC8F00F07FE1 /* SelectionWorkoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SelectionWorkoutViewController.swift; sourceTree = "<group>"; };
 		D30279871B1542B600F07FE1 /* SetupStartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SetupStartViewController.swift; sourceTree = "<group>"; };
 		D31998D31BFAC59800131CA6 /* SignUpViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SignUpViewController.swift; sourceTree = "<group>"; };
@@ -391,7 +387,6 @@
 				D3B8778F1B597A6F004C2BC7 /* CoreGraphics.framework in Frameworks */,
 				D3B8778D1B597A65004C2BC7 /* CFNetwork.framework in Frameworks */,
 				D3B8778B1B597A5E004C2BC7 /* AudioToolbox.framework in Frameworks */,
-				E6BD25990E875E46ABCE0850 /* Pods_ExCy.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -405,15 +400,6 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		44122030238D3377760E0990 /* Pods */ = {
-			isa = PBXGroup;
-			children = (
-				32C5BAB7931C59CBBEF46FB7 /* Pods-ExCy.debug.xcconfig */,
-				10AB80665B5FC177620FA569 /* Pods-ExCy.release.xcconfig */,
-			);
-			name = Pods;
-			sourceTree = "<group>";
-		};
 		D31998F31BFC476A00131CA6 /* Audio */ = {
 			isa = PBXGroup;
 			children = (
@@ -583,8 +569,6 @@
 				D36F78E819DF556E00839EEF /* ExCy */,
 				D36F78FE19DF556F00839EEF /* ExCyTests */,
 				D36F78E719DF556E00839EEF /* Products */,
-				44122030238D3377760E0990 /* Pods */,
-				D68BFA4764774820F4F9A8DE /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -799,14 +783,6 @@
 			path = AccountAssets;
 			sourceTree = "<group>";
 		};
-		D68BFA4764774820F4F9A8DE /* Frameworks */ = {
-			isa = PBXGroup;
-			children = (
-				8A3242AF2CF064084EE27336 /* Pods_ExCy.framework */,
-			);
-			name = Frameworks;
-			sourceTree = "<group>";
-		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -814,12 +790,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D36F790519DF556F00839EEF /* Build configuration list for PBXNativeTarget "ExCy" */;
 			buildPhases = (
-				2D26E94AE49FB9013DB0019D /* Check Pods Manifest.lock */,
 				D36F78E219DF556E00839EEF /* Sources */,
 				D36F78E319DF556E00839EEF /* Frameworks */,
 				D36F78E419DF556E00839EEF /* Resources */,
-				2E7B14E5FFBDDCBBECC7EB42 /* Embed Pods Frameworks */,
-				EF453444EBDD6ADCE1CABE08 /* Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -861,6 +834,7 @@
 					D36F78E519DF556E00839EEF = {
 						CreatedOnToolsVersion = 6.0.1;
 						DevelopmentTeam = 346UU47B6A;
+						LastSwiftMigration = 0820;
 						SystemCapabilities = {
 							com.apple.InAppPurchase = {
 								enabled = 0;
@@ -869,6 +843,7 @@
 					};
 					D36F78FA19DF556F00839EEF = {
 						CreatedOnToolsVersion = 6.0.1;
+						LastSwiftMigration = 0820;
 						TestTargetID = D36F78E519DF556E00839EEF;
 					};
 				};
@@ -1041,54 +1016,6 @@
 		};
 /* End PBXResourcesBuildPhase section */
 
-/* Begin PBXShellScriptBuildPhase section */
-		2D26E94AE49FB9013DB0019D /* Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Check Pods Manifest.lock";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_ROOT}/../Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [[ $? != 0 ]] ; then\n    cat << EOM\nerror: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\nEOM\n    exit 1\nfi\n";
-			showEnvVarsInLog = 0;
-		};
-		2E7B14E5FFBDDCBBECC7EB42 /* Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Embed Pods Frameworks";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ExCy/Pods-ExCy-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		EF453444EBDD6ADCE1CABE08 /* Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-ExCy/Pods-ExCy-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-/* End PBXShellScriptBuildPhase section */
-
 /* Begin PBXSourcesBuildPhase section */
 		D36F78E219DF556E00839EEF /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
@@ -1223,7 +1150,6 @@
 		};
 		D36F790619DF556F00839EEF /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 32C5BAB7931C59CBBEF46FB7 /* Pods-ExCy.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1248,13 +1174,13 @@
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "ExCy/**";
 			};
 			name = Debug;
 		};
 		D36F790719DF556F00839EEF /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 10AB80665B5FC177620FA569 /* Pods-ExCy.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_SEARCH_USER_PATHS = NO;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
@@ -1278,6 +1204,7 @@
 				PRODUCT_BUNDLE_IDENTIFIER = "com.excyapp.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				PROVISIONING_PROFILE = "";
+				SWIFT_VERSION = 3.0;
 				USER_HEADER_SEARCH_PATHS = "ExCy/**";
 			};
 			name = Release;
@@ -1298,6 +1225,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lregancg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExCy.app/ExCy";
 			};
 			name = Debug;
@@ -1314,6 +1242,7 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.lregancg.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/ExCy.app/ExCy";
 			};
 			name = Release;

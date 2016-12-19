@@ -25,7 +25,7 @@ class IntervalWorkoutViewController: UIViewController {
 	var minTemp: Int = 0
 	var maxTemp: Int = 0
 //Timer Variables
-	var countdownTimer:NSTimer?
+	var countdownTimer:Timer?
 	var progressCounter:Int = 1
 	var initialTime:Float = 0.0
 //Interval variables
@@ -39,10 +39,10 @@ class IntervalWorkoutViewController: UIViewController {
 		
 	}
 	
-	override func viewDidAppear(animated: Bool) {
+	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		
-		if self.countdownTimer?.valid == nil {
+		if self.countdownTimer?.isValid == nil {
 			
 			self.minAlert()
 			
@@ -65,24 +65,24 @@ class IntervalWorkoutViewController: UIViewController {
 		self.setTimer()
 		slowIntervalLabel.text = "\(slowIntervalCount)"
 		fastIntervalLabel.text = "\(fastIntervalCount)"
-		self.pacingHelperLabel.hidden = false
+		self.pacingHelperLabel.isHidden = false
 	}
 	
-	override func viewDidDisappear(animated: Bool) {
+	override func viewDidDisappear(_ animated: Bool) {
 		super.viewDidDisappear(animated)
 	}
 	
 	func saveWorkout() {
-		guard let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String else {
-			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
-			self.presentViewController(loginVC, animated: true, completion: nil)
+		guard let uid = UserDefaults.standard.value(forKey: KEY_UID) as? String else {
+			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogIn")
+			self.present(loginVC, animated: true, completion: nil)
 			return
 		}
 		let seconds = Int(self.initialTime) - secondsCount
 		workout = Workout(workoutTitle: "Interval Workout", time: seconds, uid: uid, minTemp: minTemp , maxTemp: maxTemp)
 		
 		if willCompleteSurvey == true {
-			self.performSegueWithIdentifier("surveyFromInterval", sender: self)
+			self.performSegue(withIdentifier: "surveyFromInterval", sender: self)
 		} else {
 			postToFirebase()
 		}
@@ -90,22 +90,22 @@ class IntervalWorkoutViewController: UIViewController {
 	}
 	
 	func postToFirebase() {
-		guard let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String else {
-			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
-			self.presentViewController(loginVC, animated: true, completion: nil)
+		guard let uid = UserDefaults.standard.value(forKey: KEY_UID) as? String else {
+			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogIn")
+			self.present(loginVC, animated: true, completion: nil)
 			return
 		}
 		let seconds = Int(self.initialTime) - secondsCount
 		let workout = Workout(workoutTitle: "Interval Workout", time: seconds, uid: uid, minTemp: minTemp , maxTemp: maxTemp)
 		let dictionaryWorkout = workout.convertToDictionaryWithoutSurvey()
-		let firebaseWorkout = DataSerice.ds.REF_WORKOUTS.childByAppendingPath(uid).childByAutoId()
-		firebaseWorkout.setValue(dictionaryWorkout)
+		let firebaseWorkout = DataSerice.ds.REF_WORKOUTS.child(byAppendingPath: uid).childByAutoId()
+		firebaseWorkout?.setValue(dictionaryWorkout)
 	}
 	
 	
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "surveyFromInterval" {
-			let surveyVC: SurveyViewController = segue.destinationViewController as! SurveyViewController
+			let surveyVC: SurveyViewController = segue.destination as! SurveyViewController
 			let workout = self.workout
 			surveyVC.workout = workout
 		}
@@ -115,9 +115,9 @@ class IntervalWorkoutViewController: UIViewController {
 // UI updaters
 	func timerRun() {
 		if secondsCount > 0 {
-			secondsCount--
+			secondsCount -= 1
 			self.stopwatchLabel.text = StringConversion.timeStringFromSeconds(secondsCount)
-			progressCounter++
+			progressCounter += 1
 			shouldChangeIntervalSpeed()
 			
 			self.progressView.progress = CGFloat(progressCounter) / CGFloat(initialTime)
@@ -137,7 +137,7 @@ class IntervalWorkoutViewController: UIViewController {
 	
 // Intervals Logic
 	
-	func colorWillSwithToRed (red:Bool) {
+	func colorWillSwithToRed (_ red:Bool) {
 		if red == false {
 			AudioServicesPlayAlertSound(SystemSoundID(kSystemSoundID_Vibrate))
 			self.chartImage.image = UIImage(named: "BurstPlayBlue.png")
@@ -167,7 +167,7 @@ class IntervalWorkoutViewController: UIViewController {
 	func intervalChange () {
 		if imageBool == true {
 			if slowBurstStepper < slowIntervalCount {
-				slowBurstStepper++
+				slowBurstStepper += 1
 			} else if slowBurstStepper == slowIntervalCount {
 				imageBool = false
 				colorWillSwithToRed(true)
@@ -175,7 +175,7 @@ class IntervalWorkoutViewController: UIViewController {
 			}
 		} else if imageBool == false {
 			if fastBurstStepper < fastIntervalCount {
-				fastBurstStepper++
+				fastBurstStepper += 1
 			} else if fastBurstStepper == fastIntervalCount {
 				imageBool = true
 				colorWillSwithToRed(false)
@@ -187,23 +187,23 @@ class IntervalWorkoutViewController: UIViewController {
 	
 	
 // Interval Steppers
-	@IBAction func minuteTimeUp(sender: UIButton) {
+	@IBAction func minuteTimeUp(_ sender: UIButton) {
 		secondsCount += 60
 		updateTimerSettingUI()
 	}
-	@IBAction func minuteTimeDown(sender: UIButton) {
+	@IBAction func minuteTimeDown(_ sender: UIButton) {
 		if secondsCount > 60 {
 			secondsCount += -60
 		}
 		updateTimerSettingUI()
 	}
-	@IBAction func secondTimeUp(sender: UIButton) {
-		secondsCount++
+	@IBAction func secondTimeUp(_ sender: UIButton) {
+		secondsCount += 1
 		updateTimerSettingUI()
 	}
-	@IBAction func secondTimeDown(sender: UIButton) {
+	@IBAction func secondTimeDown(_ sender: UIButton) {
 		if secondsCount > 1 {
-			secondsCount--
+			secondsCount -= 1
 		}
 		updateTimerSettingUI()
 	}
@@ -213,23 +213,23 @@ class IntervalWorkoutViewController: UIViewController {
 	}
 	
 	
-	@IBAction func slowIntervalUp(sender: UIButton) {
-		slowIntervalCount++
+	@IBAction func slowIntervalUp(_ sender: UIButton) {
+		slowIntervalCount += 1
 		slowIntervalLabel.text = "\(slowIntervalCount)"
 	}
-	@IBAction func slowIntervalDown(sender: UIButton) {
+	@IBAction func slowIntervalDown(_ sender: UIButton) {
 		if slowIntervalCount > 0 {
-			slowIntervalCount--
+			slowIntervalCount -= 1
 		}
 		slowIntervalLabel.text = "\(slowIntervalCount)"
 	}
-	@IBAction func fastIntervalUp(sender: UIButton) {
-		fastIntervalCount++
+	@IBAction func fastIntervalUp(_ sender: UIButton) {
+		fastIntervalCount += 1
 		fastIntervalLabel.text = "\(fastIntervalCount)"
 	}
-	@IBAction func fastIntervalDown(sender: UIButton) {
+	@IBAction func fastIntervalDown(_ sender: UIButton) {
 		if fastIntervalCount > 0{
-			fastIntervalCount--
+			fastIntervalCount -= 1
 		}
 		fastIntervalLabel.text = "\(fastIntervalCount)"
 	}
@@ -238,7 +238,7 @@ class IntervalWorkoutViewController: UIViewController {
 	
 // Start Stop and Pause Buttons
 	
-	@IBAction func startButtonPressed(sender: UIButton)
+	@IBAction func startButtonPressed(_ sender: UIButton)
 	{
 		self.initialTime = Float(secondsCount)
 		if fastIntervalCount == 0 && slowIntervalCount == 0 {
@@ -254,12 +254,12 @@ class IntervalWorkoutViewController: UIViewController {
 		}
 		self.setTimer()
 	}
-	@IBAction func pauseButtonPressed(sender: UIButton)
+	@IBAction func pauseButtonPressed(_ sender: UIButton)
 	{
 		self.setTimer()
 		pauseAlert()
 	}
-	@IBAction func stopButtomPressed(sender: UIButton)
+	@IBAction func stopButtomPressed(_ sender: UIButton)
 	{
 		self.setTimer()
 		maxAlert()
@@ -271,7 +271,7 @@ class IntervalWorkoutViewController: UIViewController {
 			countdownTimer?.invalidate()
 			countdownTimer = nil
 		} else {
-			countdownTimer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "timerRun", userInfo: nil, repeats: true)
+			countdownTimer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(IntervalWorkoutViewController.timerRun), userInfo: nil, repeats: true)
 		}
 	}
 	
@@ -295,15 +295,15 @@ class IntervalWorkoutViewController: UIViewController {
 	
 	// Alerts
 	func minAlert () {
-		let alertController = UIAlertController(title: "Minimum Temperature", message: "enter the current temperature on the excy thermometer", preferredStyle: .Alert)
-		let cancelAction = UIAlertAction(title: "skip", style: .Destructive) { action in
+		let alertController = UIAlertController(title: "Minimum Temperature", message: "enter the current temperature on the excy thermometer", preferredStyle: .alert)
+		let cancelAction = UIAlertAction(title: "skip", style: .destructive) { action in
 			self.startWorkout()
 		}
-		alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
+		alertController.addTextField { (textField) -> Void in
 			textField.placeholder = "min temperature"
-			textField.keyboardType = .NumberPad
+			textField.keyboardType = .numberPad
 		}
-		let OKAction = UIAlertAction(title: "Enter", style: .Cancel) { action in
+		let OKAction = UIAlertAction(title: "Enter", style: .cancel) { action in
 			if let temp = alertController.textFields?.first?.text {
 				self.minTemp = Int(temp)!
 			}
@@ -312,18 +312,18 @@ class IntervalWorkoutViewController: UIViewController {
 		alertController.addAction(OKAction)
 		alertController.addAction(cancelAction)
 		
-		self.presentViewController(alertController, animated: true, completion: nil)
+		self.present(alertController, animated: true, completion: nil)
 	}
 	func maxAlert () {
-		let alertController = UIAlertController(title: "Maximum Temperature", message: "enter the maximum temperature reached while exercising", preferredStyle: .Alert)
-		let cancelAction = UIAlertAction(title: "skip", style: .Destructive) { action in
+		let alertController = UIAlertController(title: "Maximum Temperature", message: "enter the maximum temperature reached while exercising", preferredStyle: .alert)
+		let cancelAction = UIAlertAction(title: "skip", style: .destructive) { action in
 			self.stopAlert()
 		}
-		alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
+		alertController.addTextField { (textField) -> Void in
 			textField.placeholder = "max temperature"
-			textField.keyboardType = .NumberPad
+			textField.keyboardType = .numberPad
 		}
-		let OKAction = UIAlertAction(title: "Enter", style: .Cancel) { action in
+		let OKAction = UIAlertAction(title: "Enter", style: .cancel) { action in
 			if let temp = alertController.textFields?.first?.text {
 				self.maxTemp = Int(temp)!
 			}
@@ -332,7 +332,7 @@ class IntervalWorkoutViewController: UIViewController {
 		alertController.addAction(OKAction)
 		alertController.addAction(cancelAction)
 		
-		self.presentViewController(alertController, animated: true, completion: nil)
+		self.present(alertController, animated: true, completion: nil)
 	}
 	
 	
@@ -340,52 +340,52 @@ class IntervalWorkoutViewController: UIViewController {
 	
 	
 	func pauseAlert () {
-		let alertController = UIAlertController(title: "Continue?", message: "healthy is... finishing strong!", preferredStyle: .Alert)
-		let OKAction = UIAlertAction(title: "exit", style: .Destructive) { action in
+		let alertController = UIAlertController(title: "Continue?", message: "healthy is... finishing strong!", preferredStyle: .alert)
+		let OKAction = UIAlertAction(title: "exit", style: .destructive) { action in
 			self.resetTimers()
-			self.navigationController?.popToRootViewControllerAnimated(true)
+			self.navigationController?.popToRootViewController(animated: true)
 		}
 		alertController.addAction(OKAction)
-		let cancelAction = UIAlertAction(title: "resume", style: .Cancel) { action in
+		let cancelAction = UIAlertAction(title: "resume", style: .cancel) { action in
 			self.setTimer()
 		}
 		alertController.addAction(cancelAction)
-		self.presentViewController(alertController, animated: true, completion: nil)
+		self.present(alertController, animated: true, completion: nil)
 	}
 	
 	func stopAlert () {
-		let alertController = UIAlertController(title: "Workout Complete", message: "", preferredStyle: .Alert)
-		let OKAction = UIAlertAction(title: "save", style: .Default) { action in
+		let alertController = UIAlertController(title: "Workout Complete", message: "", preferredStyle: .alert)
+		let OKAction = UIAlertAction(title: "save", style: .default) { action in
 			self.surveyAlert()
 		}
 		alertController.addAction(OKAction)
-		let cancelAction = UIAlertAction(title: "trash and exit", style: .Destructive) { action in
+		let cancelAction = UIAlertAction(title: "trash and exit", style: .destructive) { action in
 			self.resetTimers()
-			self.navigationController?.popToRootViewControllerAnimated(true)
+			self.navigationController?.popToRootViewController(animated: true)
 		}
 		alertController.addAction(cancelAction)
-		let continueAction = UIAlertAction(title: "Resume Workout", style: .Cancel) { action in
+		let continueAction = UIAlertAction(title: "Resume Workout", style: .cancel) { action in
 			self.setTimer()
 		}
 		alertController.addAction(continueAction)
-		self.presentViewController(alertController, animated: true, completion: nil)
+		self.present(alertController, animated: true, completion: nil)
 	}
 	
 	func surveyAlert () {
-		let alertController = UIAlertController(title: "track results?", message: "Please take a moment to track results to monitor your progress", preferredStyle: .Alert)
-		let OKAction = UIAlertAction(title: "yes", style: .Default) { action in
+		let alertController = UIAlertController(title: "track results?", message: "Please take a moment to track results to monitor your progress", preferredStyle: .alert)
+		let OKAction = UIAlertAction(title: "yes", style: .default) { action in
 			self.willCompleteSurvey = true
 			self.saveWorkout()
 		}
 		alertController.addAction(OKAction)
-		let cancelAction = UIAlertAction(title: "no thanks", style: .Cancel) { action in
+		let cancelAction = UIAlertAction(title: "no thanks", style: .cancel) { action in
 			self.willCompleteSurvey = false
 			self.saveWorkout()
 			self.resetTimers()
-			self.navigationController?.popToRootViewControllerAnimated(true)
+			self.navigationController?.popToRootViewController(animated: true)
 		}
 		alertController.addAction(cancelAction)
-		self.presentViewController(alertController, animated: true, completion: nil)
+		self.present(alertController, animated: true, completion: nil)
 	}
 	
 

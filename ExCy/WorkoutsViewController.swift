@@ -11,6 +11,30 @@ import Parse
 import AVFoundation
 import AudioToolbox
 import Firebase
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 class WorkoutsViewController: UIViewController {
 	
@@ -27,7 +51,7 @@ class WorkoutsViewController: UIViewController {
 	@IBOutlet weak var targetZoneImageView: UIImageView!
 	@IBOutlet weak var audioButton: UIButton!
 	
-	var timer: NSTimer?
+	var timer: Timer?
 	var progressCounter = 0
 	var initialTime: Float = 1
 	
@@ -51,51 +75,51 @@ class WorkoutsViewController: UIViewController {
 
 	}
 	
-	override func viewWillAppear(animated: Bool) {
+	override func viewWillAppear(_ animated: Bool) {
 		
-		if (timer?.valid != nil) {
+		if (timer?.isValid != nil) {
 			
 		} else {
 			if let newNumber = workoutNumber {
 				switch newNumber {
 				case 1: workoutTime = 420
-					do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("ArmCandy", ofType: "m4a")!))
+					do { self.audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "ArmCandy", ofType: "m4a")!))
 					} catch { print("Error with audio") }
 					workoutName = "Arm Candy"
 					zoneBrain = ZoneBrain.init(time: 420, zones: 7)
 					zoneArray = zoneBrain!.getZoneArray()
 				case 2: workoutTime = 1380
-					do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("SuperCycle", ofType: "m4a")!))
+					do { self.audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "SuperCycle", ofType: "m4a")!))
 					} catch { print("Error with audio") }
 					workoutName = "Super Cycle Cardio"
 					zoneBrain = ZoneBrain.init(time: 1380, zones: 23)
 					zoneArray = zoneBrain!.getZoneArray()
 				case 3: workoutTime = 900
-					do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("LegBlast", ofType: "mp3")!))
+					do { self.audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "LegBlast", ofType: "mp3")!))
 					} catch { print("Error with audio") }
 					workoutName = "Cycle Leg Blast"
 					zoneBrain = ZoneBrain.init(time: 900, zones: 15)
 					zoneArray = zoneBrain!.getZoneArray()
 				case 4: workoutTime = 600
-					do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("CoreFloor", ofType: "mp3")!))
+					do { self.audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "CoreFloor", ofType: "mp3")!))
 					} catch { print("Error with audio") }
 					workoutName = "Core Floor Explosion"
 					zoneBrain = ZoneBrain.init(time: 600, zones: 10)
 					zoneArray = zoneBrain!.getZoneArray()
 				case 5: workoutTime = 600
-					do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("ArmBlast", ofType: "m4a")!))
+					do { self.audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "ArmBlast", ofType: "m4a")!))
 					} catch { print("Error with audio") }
 					workoutName = "Arm Blast"
 					zoneBrain = ZoneBrain.init(time: 600, zones: 10)
 					zoneArray = zoneBrain!.getZoneArray()
 				case 6: workoutTime = 420
-					do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("UltimateArmLeg", ofType: "m4a")!))
+					do { self.audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "UltimateArmLeg", ofType: "m4a")!))
 					} catch { print("Error with audio") }
 					workoutName = "Ultimate Arm & Leg Toning"
 					zoneBrain = ZoneBrain.init(time: 420, zones: 7)
 					zoneArray = zoneBrain!.getZoneArray()
 				default: workoutTime = 420
-					do { self.audioPlayer = try AVAudioPlayer(contentsOfURL: NSURL(fileURLWithPath: NSBundle.mainBundle().pathForResource("ArmCandy", ofType: "m4a")!))
+					do { self.audioPlayer = try AVAudioPlayer(contentsOf: URL(fileURLWithPath: Bundle.main.path(forResource: "ArmCandy", ofType: "m4a")!))
 					} catch { print("Error with audio") }
 					workoutName = "Arm Candy"
 					zoneBrain = ZoneBrain.init(time: 420, zones: 7)
@@ -108,14 +132,14 @@ class WorkoutsViewController: UIViewController {
 	func startWorkout() {
 		self.targetZoneImageView.image = UIImage(named: "ZoneIntensity\(zoneArray!.first!).png")
 		self.initialTime = Float(workoutTime!)
-		self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: Selector("updateUI"), userInfo: nil, repeats: true)
+		self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(WorkoutsViewController.updateUI), userInfo: nil, repeats: true)
 		self.audioPlayer.play()
 	}
 	
-	override func viewDidAppear(animated: Bool) {
+	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		
-		if (timer?.valid != nil) {
+		if (timer?.isValid != nil) {
 			
 		} else {
 			minAlert()
@@ -159,7 +183,7 @@ class WorkoutsViewController: UIViewController {
 	
 	func setUpZoneView() {
 		if zoneBrain == nil { return }
-		zoneIncrementTime++
+		zoneIncrementTime += 1
 		if zoneIncrementTime >= zoneBrain!.zoneChangeInSeconds {
 			zoneIncrementTime = 0
 			zoneArray?.removeFirst()
@@ -172,16 +196,16 @@ class WorkoutsViewController: UIViewController {
 	}
 	
 	func saveWorkout() {
-		guard let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String else {
-			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
-			self.presentViewController(loginVC, animated: true, completion: nil)
+		guard let uid = UserDefaults.standard.value(forKey: KEY_UID) as? String else {
+			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogIn")
+			self.present(loginVC, animated: true, completion: nil)
 			return
 		}
 		let seconds = Int(self.initialTime) - workoutTime!
 		workout = Workout(workoutTitle: workoutName, time: seconds, uid: uid, minTemp: minTemp , maxTemp: maxTemp)
 		
 		if willCompleteSurvey == true {
-			self.performSegueWithIdentifier("surveyFromWorkout", sender: self)
+			self.performSegue(withIdentifier: "surveyFromWorkout", sender: self)
 		} else {
 			postToFirebase()
 		}
@@ -189,42 +213,42 @@ class WorkoutsViewController: UIViewController {
 	}
 	
 	func postToFirebase() {
-		guard let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String else {
-			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
-			self.presentViewController(loginVC, animated: true, completion: nil)
+		guard let uid = UserDefaults.standard.value(forKey: KEY_UID) as? String else {
+			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogIn")
+			self.present(loginVC, animated: true, completion: nil)
 			return
 		}
 		let seconds = Int(self.initialTime) - workoutTime!
 		let workout = Workout(workoutTitle: workoutName, time: seconds, uid: uid, minTemp: minTemp , maxTemp: maxTemp)
 		let dictionaryWorkout = workout.convertToDictionaryWithoutSurvey()
-		let firebaseWorkout = DataSerice.ds.REF_WORKOUTS.childByAppendingPath(uid).childByAutoId()
-		firebaseWorkout.setValue(dictionaryWorkout)
+		let firebaseWorkout = DataSerice.ds.REF_WORKOUTS.child(byAppendingPath: uid).childByAutoId()
+		firebaseWorkout?.setValue(dictionaryWorkout)
 	}
 	
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "surveyFromWorkout" {
-			let surveyVC: SurveyViewController = segue.destinationViewController as! SurveyViewController
+			let surveyVC: SurveyViewController = segue.destination as! SurveyViewController
 			let workout = self.workout
 			surveyVC.workout = workout
 		}
 		if segue.identifier == "toWebView" {
-			if let detailVC: VideosAndTipsViewController = segue.destinationViewController as? VideosAndTipsViewController {
+			if let detailVC: VideosAndTipsViewController = segue.destination as? VideosAndTipsViewController {
 				detailVC.tipURL = "http://excy.com"
 			}
 		}
 	}
 
 	
-	override func viewDidDisappear(animated: Bool) {
+	override func viewDidDisappear(_ animated: Bool) {
 		super.viewDidDisappear(animated)
 	}
 	
 	
 	func updateUI() {
 		if (workoutTime != nil) && workoutTime > 0 {
-			workoutTime!--
+			workoutTime! -= 1
 			self.stopwatchLabel.text = StringConversion.timeStringFromSeconds(workoutTime!) //stringConversion(workoutTime!)
-			self.progressCounter++
+			self.progressCounter += 1
 			
 			self.progressView.progress = CGFloat(progressCounter) / CGFloat(initialTime)
 			self.progressView.setNeedsDisplay()
@@ -246,29 +270,29 @@ class WorkoutsViewController: UIViewController {
 			self.timer = nil
 			self.audioPlayer.pause()
 		} else {
-			self.timer = NSTimer.scheduledTimerWithTimeInterval(1.0, target: self, selector: "updateUI", userInfo: nil, repeats: true)
+			self.timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(WorkoutsViewController.updateUI), userInfo: nil, repeats: true)
 			self.audioPlayer.play()
 		}
 	}
 	
 	
 	
-	@IBAction func startButtonPressed(sender: UIButton)
+	@IBAction func startButtonPressed(_ sender: UIButton)
 	{
 		self.setTimer()
 	}
-	@IBAction func pauseButtonPressed(sender: UIButton)
+	@IBAction func pauseButtonPressed(_ sender: UIButton)
 	{
 		self.setTimer()
 		pauseAlert()
 	}
-	@IBAction func stopButtomPressed(sender: UIButton)
+	@IBAction func stopButtomPressed(_ sender: UIButton)
 	{
 		self.setTimer()
 		maxAlert()
 	}
 	
-	@IBAction func purchaseExcy(sender: AnyObject) {
+	@IBAction func purchaseExcy(_ sender: AnyObject) {
 		
 	}
 	
@@ -292,15 +316,15 @@ class WorkoutsViewController: UIViewController {
 	
 	
 	func minAlert () {
-		let alertController = UIAlertController(title: "Minimum Temperature", message: "enter the current temperature on the excy thermometer", preferredStyle: .Alert)
-		let cancelAction = UIAlertAction(title: "skip", style: .Destructive) { action in
+		let alertController = UIAlertController(title: "Minimum Temperature", message: "enter the current temperature on the excy thermometer", preferredStyle: .alert)
+		let cancelAction = UIAlertAction(title: "skip", style: .destructive) { action in
 			self.startWorkout()
 		}
-		alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
+		alertController.addTextField { (textField) -> Void in
 			textField.placeholder = "min temperature"
-			textField.keyboardType = .NumberPad
+			textField.keyboardType = .numberPad
 		}
-		let OKAction = UIAlertAction(title: "Enter", style: .Cancel) { action in
+		let OKAction = UIAlertAction(title: "Enter", style: .cancel) { action in
 			if let temp = alertController.textFields?.first?.text {
 				self.minTemp = Int(temp)!
 				self.currentMinZoneLabel.text = temp
@@ -310,18 +334,18 @@ class WorkoutsViewController: UIViewController {
 		alertController.addAction(OKAction)
 		alertController.addAction(cancelAction)
 		
-		self.presentViewController(alertController, animated: true, completion: nil)
+		self.present(alertController, animated: true, completion: nil)
 	}
 	func maxAlert () {
-		let alertController = UIAlertController(title: "Maximum Temperature", message: "enter the maximum temperature reached while exercising", preferredStyle: .Alert)
-		let cancelAction = UIAlertAction(title: "skip", style: .Destructive) { action in
+		let alertController = UIAlertController(title: "Maximum Temperature", message: "enter the maximum temperature reached while exercising", preferredStyle: .alert)
+		let cancelAction = UIAlertAction(title: "skip", style: .destructive) { action in
 			self.stopAlert()
 		}
-		alertController.addTextFieldWithConfigurationHandler { (textField) -> Void in
+		alertController.addTextField { (textField) -> Void in
 			textField.placeholder = "max temperature"
-			textField.keyboardType = .NumberPad
+			textField.keyboardType = .numberPad
 		}
-		let OKAction = UIAlertAction(title: "Enter", style: .Cancel) { action in
+		let OKAction = UIAlertAction(title: "Enter", style: .cancel) { action in
 			if let temp = alertController.textFields?.first?.text {
 				self.maxTemp = Int(temp)!
 			}
@@ -330,7 +354,7 @@ class WorkoutsViewController: UIViewController {
 		alertController.addAction(OKAction)
 		alertController.addAction(cancelAction)
 		
-		self.presentViewController(alertController, animated: true, completion: nil)
+		self.present(alertController, animated: true, completion: nil)
 	}
 	
 	
@@ -339,55 +363,55 @@ class WorkoutsViewController: UIViewController {
 	
 	
 	func pauseAlert () {
-		let alertController = UIAlertController(title: "Continue?", message: "healthy is... finishing strong!", preferredStyle: .Alert)
-		let OKAction = UIAlertAction(title: "exit", style: .Destructive) { action in
-			self.navigationController?.popToRootViewControllerAnimated(true)
+		let alertController = UIAlertController(title: "Continue?", message: "healthy is... finishing strong!", preferredStyle: .alert)
+		let OKAction = UIAlertAction(title: "exit", style: .destructive) { action in
+			self.navigationController?.popToRootViewController(animated: true)
 		}
 		alertController.addAction(OKAction)
-		let cancelAction = UIAlertAction(title: "resume", style: .Cancel) { action in
+		let cancelAction = UIAlertAction(title: "resume", style: .cancel) { action in
 			self.setTimer()
 		}
 		alertController.addAction(cancelAction)
-		self.presentViewController(alertController, animated: true, completion: nil)
+		self.present(alertController, animated: true, completion: nil)
 	}
 	
 	func stopAlert () {
-		let alertController = UIAlertController(title: "Workout Complete", message: "", preferredStyle: .Alert)
-		let OKAction = UIAlertAction(title: "save", style: .Default) { action in
+		let alertController = UIAlertController(title: "Workout Complete", message: "", preferredStyle: .alert)
+		let OKAction = UIAlertAction(title: "save", style: .default) { action in
 			self.surveyAlert()
 		}
 		alertController.addAction(OKAction)
-		let cancelAction = UIAlertAction(title: "trash and exit", style: .Destructive) { action in
+		let cancelAction = UIAlertAction(title: "trash and exit", style: .destructive) { action in
 			self.audioPlayer.stop()
 			self.timer?.invalidate()
-			self.navigationController?.popToRootViewControllerAnimated(true)
+			self.navigationController?.popToRootViewController(animated: true)
 		}
 		alertController.addAction(cancelAction)
-		let continueAction = UIAlertAction(title: "Resume Workout", style: .Cancel) { action in
+		let continueAction = UIAlertAction(title: "Resume Workout", style: .cancel) { action in
 			self.setTimer()
 		}
 		alertController.addAction(continueAction)
-		self.presentViewController(alertController, animated: true, completion: nil)
+		self.present(alertController, animated: true, completion: nil)
 	}
 	
 	func surveyAlert () {
-		let alertController = UIAlertController(title: "track results?", message: "Please take a moment to track results to monitor your progress", preferredStyle: .Alert)
-		let OKAction = UIAlertAction(title: "yes", style: .Default) { action in
+		let alertController = UIAlertController(title: "track results?", message: "Please take a moment to track results to monitor your progress", preferredStyle: .alert)
+		let OKAction = UIAlertAction(title: "yes", style: .default) { action in
 			self.willCompleteSurvey = true
 			self.saveWorkout()
 			self.audioPlayer.stop()
 			self.timer = nil
 		}
 		alertController.addAction(OKAction)
-		let cancelAction = UIAlertAction(title: "no thanks", style: .Cancel) { action in
+		let cancelAction = UIAlertAction(title: "no thanks", style: .cancel) { action in
 			self.willCompleteSurvey = false
 			self.saveWorkout()
 			self.audioPlayer.stop()
 			self.timer = nil
-			self.navigationController?.popToRootViewControllerAnimated(true)
+			self.navigationController?.popToRootViewController(animated: true)
 		}
 		alertController.addAction(cancelAction)
-		self.presentViewController(alertController, animated: true, completion: nil)
+		self.present(alertController, animated: true, completion: nil)
 	}
 	
 	

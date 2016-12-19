@@ -9,6 +9,30 @@
 import UIKit
 import Parse
 import Firebase
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l < r
+  case (nil, _?):
+    return true
+  default:
+    return false
+  }
+}
+
+// FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
+// Consider refactoring the code to use the non-optional operators.
+fileprivate func > <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
+  switch (lhs, rhs) {
+  case let (l?, r?):
+    return l > r
+  default:
+    return rhs < lhs
+  }
+}
+
 
 let KEY_UID = "uid"
 
@@ -27,7 +51,7 @@ class SignUpViewController: UIViewController {
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
-		let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+		let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(SignUpViewController.DismissKeyboard))
 		view.addGestureRecognizer(tap)
 		
 	}
@@ -43,11 +67,11 @@ class SignUpViewController: UIViewController {
 		return (true, "")
 	}
 	
-	override func viewDidAppear(animated: Bool) {
+	override func viewDidAppear(_ animated: Bool) {
 		
 	}
 
-	@IBAction func SignUpButtonPressed(sender: UIButton) {
+	@IBAction func SignUpButtonPressed(_ sender: UIButton) {
 		
 		let gender = self.genderSelection.selectedSegmentIndex == 0 ? "female" : "male"
 		
@@ -56,7 +80,7 @@ class SignUpViewController: UIViewController {
 			
 			DataSerice.ds.REF_BASE.createUser(emailAddressTextField.text!, password: passwordTextField.text!) { (error, result) -> Void in
 				if error == nil {
-					NSUserDefaults.standardUserDefaults().setValue(result[KEY_UID], forKey: KEY_UID)
+					UserDefaults.standard.setValue(result?[KEY_UID], forKey: KEY_UID)
 					DataSerice.ds.REF_BASE.authUser(self.emailAddressTextField.text!, password: self.passwordTextField.text!) { error, data in
 						if error == nil {
 							let user: [String: AnyObject] = [
@@ -66,12 +90,12 @@ class SignUpViewController: UIViewController {
 								"email": self.emailAddressTextField.text!,
 								"username": self.usernameTextField.text!,
 								"gender": gender,
-								"memberSince": StringFromDate.startStringFromDate(NSDate())
+								"memberSince": StringFromDate.startStringFromDate(Date())
 							]
-							DataSerice.ds.createFirebaseUser(data.uid, user: user)
+							DataSerice.ds.createFirebaseUser((data?.uid)!, user: user)
 						}
 					}
-					self.performSegueWithIdentifier("landingPage", sender: self)
+					self.performSegue(withIdentifier: "landingPage", sender: self)
 				} else {
 					self.displayAlert("Could not create account", message: "Problem creating account. Please try something else")
 				}
@@ -84,30 +108,30 @@ class SignUpViewController: UIViewController {
 	
 	
 	func beginActivityIndicator() {
-		activityIndicator = UIActivityIndicatorView(frame: CGRectMake(0, 0, 50, 50))
+		activityIndicator = UIActivityIndicatorView(frame: CGRect(x: 0, y: 0, width: 50, height: 50))
 		activityIndicator.center = self.view.center
 		activityIndicator.hidesWhenStopped = true
-		activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.Gray
+		activityIndicator.activityIndicatorViewStyle = UIActivityIndicatorViewStyle.gray
 		view.addSubview(activityIndicator)
 		activityIndicator.startAnimating()
-		UIApplication.sharedApplication().beginIgnoringInteractionEvents()
+		UIApplication.shared.beginIgnoringInteractionEvents()
 	}
 	
 
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "toWebView" {
-			if let detailVC: VideosAndTipsViewController = segue.destinationViewController as? VideosAndTipsViewController {
+			if let detailVC: VideosAndTipsViewController = segue.destination as? VideosAndTipsViewController {
 				detailVC.tipURL = "http://excy.com"
 			}
 		}
 	}
 	
-	func displayAlert(title: String, message: String) {
-		let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.Alert)
-		alert.addAction(UIAlertAction(title: "OK", style: .Default, handler: { (action) -> Void in
+	func displayAlert(_ title: String, message: String) {
+		let alert = UIAlertController(title: title, message: message, preferredStyle: UIAlertControllerStyle.alert)
+		alert.addAction(UIAlertAction(title: "OK", style: .default, handler: { (action) -> Void in
 			
 		}))
-		self.presentViewController(alert, animated: true, completion: nil)
+		self.present(alert, animated: true, completion: nil)
 	}
 	func DismissKeyboard(){
 		//Causes the view (or one of its embedded text fields) to resign the first responder status.

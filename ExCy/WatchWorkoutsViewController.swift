@@ -26,8 +26,8 @@ class WatchWorkoutsViewController: UIViewController {
 
 	// MARK: - Navigation
 	
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-		if let detailVC: VideosAndTipsViewController = segue.destinationViewController as? VideosAndTipsViewController {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+		if let detailVC: VideosAndTipsViewController = segue.destination as? VideosAndTipsViewController {
 			detailVC.youtubeURL = stringToPass
 		}
 		
@@ -37,32 +37,32 @@ class WatchWorkoutsViewController: UIViewController {
 	
 	@IBAction func armCandyVideo() {
 		stringToPass = "<iframe width=\"\(view.frame.width)\" height=\"\(view.frame.height / 2)\" src=\"https://www.youtube.com/embed/0eONwwRUIJc\" frameborder=\"0\" allowfullscreen></iframe>"
-		performSegueWithIdentifier("WatchVideos", sender: self)
+		performSegue(withIdentifier: "WatchVideos", sender: self)
 	}
 	
 	@IBAction func superCycleVideo() {
 		stringToPass = "<iframe width=\"\(view.frame.width)\" height=\"\(view.frame.height / 2)\" src=\"https://www.youtube.com/embed/tSRh26o3zaI\" frameborder=\"0\" allowfullscreen></iframe>"
-		performSegueWithIdentifier("WatchVideos", sender: self)
+		performSegue(withIdentifier: "WatchVideos", sender: self)
 	}
 	
 	@IBAction func cycleLegVideo() {
 		stringToPass = "<iframe width=\"\(view.frame.width)\" height=\"\(view.frame.height / 2)\" src=\"https://www.youtube.com/embed/aIxytWycNhg\" frameborder=\"0\" allowfullscreen></iframe>"
-		performSegueWithIdentifier("WatchVideos", sender: self)
+		performSegue(withIdentifier: "WatchVideos", sender: self)
 	}
 	
 	@IBAction func coreFloorVideo() {
 		stringToPass = "<iframe width=\"\(view.frame.width)\" height=\"\(view.frame.height / 2)\" src=\"https://www.youtube.com/embed/RA-dtZcF75c\" frameborder=\"0\" allowfullscreen></iframe>"
-		performSegueWithIdentifier("WatchVideos", sender: self)
+		performSegue(withIdentifier: "WatchVideos", sender: self)
 	}
 	
 	@IBAction func armBlastVideo() {
 		stringToPass = "<iframe width=\"\(view.frame.width)\" height=\"\(view.frame.height / 2)\" src=\"https://www.youtube.com/embed/4k7JUFgF57M\" frameborder=\"0\" allowfullscreen></iframe>"
-		performSegueWithIdentifier("WatchVideos", sender: self)
+		performSegue(withIdentifier: "WatchVideos", sender: self)
 	}
 	
 	@IBAction func armLegVideo() {
 		stringToPass = "<iframe width=\"\(view.frame.width)\" height=\"\(view.frame.height / 2)\" src=\"https://www.youtube.com/embed/QnwdAfD3XLI\" frameborder=\"0\" allowfullscreen></iframe>"
-		performSegueWithIdentifier("WatchVideos", sender: self)
+		performSegue(withIdentifier: "WatchVideos", sender: self)
 	}
 	
 	

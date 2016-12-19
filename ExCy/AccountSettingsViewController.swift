@@ -31,20 +31,20 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 		
 		self.automaticallyAdjustsScrollViewInsets = false
 
-		let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: "DismissKeyboard")
+		let tap: UITapGestureRecognizer = UITapGestureRecognizer(target: self, action: #selector(AccountSettingsViewController.DismissKeyboard))
 		view.addGestureRecognizer(tap)
     }
 	
-	override func viewDidAppear(animated: Bool) {
+	override func viewDidAppear(_ animated: Bool) {
 		
-		guard let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String else {
-			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
-			self.presentViewController(loginVC, animated: true, completion: nil)
+		guard let uid = UserDefaults.standard.value(forKey: KEY_UID) as? String else {
+			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogIn")
+			self.present(loginVC, animated: true, completion: nil)
 			return
 		}
 		
-		DataSerice.ds.REF_USERS.childByAppendingPath(uid).observeEventType(.Value, withBlock: { snapshot in
-			if let snapshot = snapshot.value as? [String: AnyObject] {
+		DataSerice.ds.REF_USERS.child(byAppendingPath: uid).observe(.value, with: { snapshot in
+			if let snapshot = snapshot?.value as? [String: AnyObject] {
 				self.userGoals = snapshot
 				print(self.userGoals)
 			}
@@ -69,69 +69,69 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 	func changeImage () {
 		let image = UIImagePickerController()
 		image.delegate = self
-		image.sourceType = UIImagePickerControllerSourceType.PhotoLibrary
+		image.sourceType = UIImagePickerControllerSourceType.photoLibrary
 		image.allowsEditing = false
-		self.presentViewController(image, animated: true, completion: nil)
+		self.present(image, animated: true, completion: nil)
 	}
 	
 	var changeSpecificImageNumber = 1
 	
-	@IBAction func changeInspirationalImage1(sender: UIButton) {
+	@IBAction func changeInspirationalImage1(_ sender: UIButton) {
 		willSelectInspirationalImage = true
 		changeSpecificImageNumber = 1
 		changeImage()
 	}
-	@IBAction func changeInspirationalImage2(sender: UIButton) {
+	@IBAction func changeInspirationalImage2(_ sender: UIButton) {
 		willSelectInspirationalImage = true
 		changeSpecificImageNumber = 2
 		changeImage()
 	}
-	@IBAction func changeInspirationalImage3(sender: UIButton) {
+	@IBAction func changeInspirationalImage3(_ sender: UIButton) {
 		willSelectInspirationalImage = true
 		changeSpecificImageNumber = 3
 		changeImage()
 	}
 	
-	@IBAction func changeImageButtonPressed(sender: AnyObject) {
+	@IBAction func changeImageButtonPressed(_ sender: AnyObject) {
 		willSelectInspirationalImage = false
 		changeImage()
 	}
 	
-	func imagePickerController(picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [NSObject : AnyObject]!) {
+	func imagePickerController(_ picker: UIImagePickerController, didFinishPickingImage image: UIImage!, editingInfo: [AnyHashable: Any]!) {
 		if willSelectInspirationalImage {
-			self.dismissViewControllerAnimated(true, completion: nil)
+			self.dismiss(animated: true, completion: nil)
 			if (changeSpecificImageNumber == 1) {
 				saveImage(image, named: "inspiringImage1")
-				inspiringButtonOne.backgroundColor = UIColor.clearColor()
-				inspiringButtonOne.setBackgroundImage(image, forState: .Normal)
+				inspiringButtonOne.backgroundColor = UIColor.clear
+				inspiringButtonOne.setBackgroundImage(image, for: UIControlState())
 			} else if (changeSpecificImageNumber == 2) {
 				saveImage(image, named: "inspiringImage2")
-				inspiringButtonTwo.backgroundColor = UIColor.clearColor()
-				inspiringButtonTwo.setBackgroundImage(image, forState: .Normal)
+				inspiringButtonTwo.backgroundColor = UIColor.clear
+				inspiringButtonTwo.setBackgroundImage(image, for: UIControlState())
 			} else if (changeSpecificImageNumber == 3) {
 				saveImage(image, named: "inspiringImage3")
-				inspiringButtonThree.backgroundColor = UIColor.clearColor()
-				inspiringButtonThree.setBackgroundImage(image, forState: .Normal)
+				inspiringButtonThree.backgroundColor = UIColor.clear
+				inspiringButtonThree.setBackgroundImage(image, for: UIControlState())
 			}
 		} else {
 			ProfileImageView.image = image
 			saveImage(image, named: "profileImageUrl")
-			self.dismissViewControllerAnimated(true, completion: nil)
+			self.dismiss(animated: true, completion: nil)
 		}
 	}
 	
-	func saveImage(image: UIImage, named: String) {
+	func saveImage(_ image: UIImage, named: String) {
 		
-		guard let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String else {
-			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
-			self.presentViewController(loginVC, animated: true, completion: nil)
+		guard let uid = UserDefaults.standard.value(forKey: KEY_UID) as? String else {
+			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogIn")
+			self.present(loginVC, animated: true, completion: nil)
 			return
 		}
 		let urlStr = "https://post.imageshack.us/upload_api.php"
-		let url = NSURL(string: urlStr)!
+		let url = URL(string: urlStr)!
 		let imageData = UIImageJPEGRepresentation(image, 0.2)!
-		let keyData = "2679GJMV25b978622f28e584f5e6e432b7af8e82".dataUsingEncoding(NSUTF8StringEncoding)!
-		let keyJSON = "json".dataUsingEncoding(NSUTF8StringEncoding)!
+		let keyData = "2679GJMV25b978622f28e584f5e6e432b7af8e82".data(using: String.Encoding.utf8)!
+		let keyJSON = "json".data(using: String.Encoding.utf8)!
 		Alamofire.upload(.POST, url, multipartFormData: { multipartFormData in
 			multipartFormData.appendBodyPart(data: imageData, name: "fileupload", fileName: "image", mimeType: "image/jpg")
 			multipartFormData.appendBodyPart(data: keyData, name: "key")
@@ -149,8 +149,8 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 							return
 						}
 						guard let responseJSON = response.result.value as? [String: AnyObject],
-						links = responseJSON["links"] as? [String: AnyObject],
-						imgLink = links["image_link"] as? String else {
+						let links = responseJSON["links"] as? [String: AnyObject],
+						let imgLink = links["image_link"] as? String else {
 							print("shits on fire yo")
 							return
 						}
@@ -173,37 +173,37 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 	}
 	
 
-	@IBAction func saveAccountChangesButtonPressed(sender: UIButton) {
+	@IBAction func saveAccountChangesButtonPressed(_ sender: UIButton) {
 		
-		guard let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as? String else {
-			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
-			self.presentViewController(loginVC, animated: true, completion: nil)
+		guard let uid = UserDefaults.standard.value(forKey: KEY_UID) as? String else {
+			let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogIn")
+			self.present(loginVC, animated: true, completion: nil)
 			return
 		}
 		
 		if caloriesPerWeekLabel.text!.isEmpty {  } else {
-			userGoals["calorieGoal"] = caloriesPerWeekLabel.text
+			userGoals["calorieGoal"] = caloriesPerWeekLabel.text as AnyObject?
 		}
 		if workoutsPerWeekLabel.text!.isEmpty {  } else {
-			userGoals["workoutGoal"] = workoutsPerWeekLabel!.text
+			userGoals["workoutGoal"] = workoutsPerWeekLabel!.text as AnyObject?
 		}
 		if myFitnessManifestoTextView.text.isEmpty { } else {
-			userGoals["manifesto"] = myFitnessManifestoTextView!.text
+			userGoals["manifesto"] = myFitnessManifestoTextView!.text as AnyObject?
 		}
 		print(self.userGoals)
-		DataSerice.ds.REF_USERS.childByAppendingPath(uid).updateChildValues(userGoals)
+		DataSerice.ds.REF_USERS.child(byAppendingPath: uid).updateChildValues(userGoals)
 		
-		navigationController?.popViewControllerAnimated(true)
+		navigationController?.popViewController(animated: true)
 		
 	}
 	
-	@IBAction func logOutButtonPRessed(sender: AnyObject) {
-		NSUserDefaults.standardUserDefaults().setValue(nil, forKey: KEY_UID)
-		let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewControllerWithIdentifier("LogIn")
-		self.presentViewController(loginVC, animated: true, completion: nil)
+	@IBAction func logOutButtonPRessed(_ sender: AnyObject) {
+		UserDefaults.standard.setValue(nil, forKey: KEY_UID)
+		let loginVC = UIStoryboard(name: "Main", bundle: nil).instantiateViewController(withIdentifier: "LogIn")
+		self.present(loginVC, animated: true, completion: nil)
 	}
 	
-	func textFieldShouldReturn(textField: UITextField) -> Bool {
+	func textFieldShouldReturn(_ textField: UITextField) -> Bool {
 		textField.resignFirstResponder()
 		return true
 	}

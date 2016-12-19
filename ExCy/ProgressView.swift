@@ -12,7 +12,7 @@ class ProgressView: UIView {
 	
 	var progress: CGFloat =  0.0
 
-	override func drawRect(rect: CGRect) {
+	override func draw(_ rect: CGRect) {
 		StyleKitName.drawCanvas1(progress)
     }
 
@@ -24,7 +24,7 @@ class WorkoutProgressView: UIView {
 	
 	var progress: CGFloat =  0.0
 	
-	override func drawRect(rect: CGRect) {
+	override func draw(_ rect: CGRect) {
 		workoutsProgressOverlay.drawCanvas1(progress)
 	}
 	

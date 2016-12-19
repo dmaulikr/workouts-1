@@ -12,19 +12,19 @@ import Firebase
 
 class HistoryTableViewController: UITableViewController {
 	
-	let uid = NSUserDefaults.standardUserDefaults().valueForKey(KEY_UID) as! String
+	let uid = UserDefaults.standard.value(forKey: KEY_UID) as! String
 	
 	var workoutsObject = [Workout]()
 
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		DataSerice.ds.REF_WORKOUTS.childByAppendingPath(uid).queryLimitedToLast(5).observeEventType(.Value, withBlock: { snapshot in
-			if let snapshots = snapshot.children.allObjects as? [FDataSnapshot] {
+		DataSerice.ds.REF_WORKOUTS.child(byAppendingPath: uid).queryLimited(toLast: 5).observe(.value, with: { snapshot in
+			if let snapshots = snapshot?.children.allObjects as? [FDataSnapshot] {
 				for snap in snapshots {
 					if let workoutDict = snap.value as? [String: AnyObject] {
 						let workout = Workout(dictionary: workoutDict)
-						self.workoutsObject.insert(workout, atIndex: 0)
+						self.workoutsObject.insert(workout, at: 0)
 						
 					}
 				}
@@ -35,7 +35,7 @@ class HistoryTableViewController: UITableViewController {
 		
     }
 
-	override func viewDidAppear(animated: Bool) {
+	override func viewDidAppear(_ animated: Bool) {
 		super.viewDidAppear(animated)
 		self.tableView.reloadData()
 	}
@@ -48,11 +48,11 @@ class HistoryTableViewController: UITableViewController {
 
     // MARK: - Table view data source
 
-    override func numberOfSectionsInTableView(tableView: UITableView) -> Int {
+    override func numberOfSections(in tableView: UITableView) -> Int {
 		return 1
     }
 
-    override func tableView(tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
+    override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
 		
 		if self.workoutsObject.count > 20 {
 			return 20
@@ -62,8 +62,8 @@ class HistoryTableViewController: UITableViewController {
     }
 	
 
-    override func tableView(tableView: UITableView, cellForRowAtIndexPath indexPath: NSIndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCellWithIdentifier("Cell", forIndexPath: indexPath) as! HistoryTableViewCell
+    override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: "Cell", for: indexPath) as! HistoryTableViewCell
 
 		let workout = self.workoutsObject[indexPath.row]
 		print(workout)
@@ -81,7 +81,7 @@ class HistoryTableViewController: UITableViewController {
         return cell
     }
 	
-	func workoutEnjoyment(enjoyment: String) -> UIImage {
+	func workoutEnjoyment(_ enjoyment: String) -> UIImage {
 		switch enjoyment {
 		case "awful": return UIImage(named: "SmilieIcons_sad.png")!
 		case "bad": return UIImage(named: "SmilieIcons_sad.png")!
@@ -91,7 +91,7 @@ class HistoryTableViewController: UITableViewController {
 		default: return UIImage(named: "SmilieIcons_happy.png")!
 		}
 	}
-	func workoutLocation(location: String) -> UIImage {
+	func workoutLocation(_ location: String) -> UIImage {
 		switch location {
 		case "at home": return UIImage(named: "Account_Home.png")!
 		case "at work": return UIImage(named: "Account_Work.png")!

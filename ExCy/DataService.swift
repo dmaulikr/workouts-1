@@ -15,16 +15,16 @@ class DataSerice {
 	
 	static let ds = DataSerice()
 	
-	private var _REF_BASE = Firebase(url: "\(URL_BASE)")
-	private var _REF_WORKOUTS = Firebase(url: "\(URL_BASE)/workouts")
-	private var _REF_USERS = Firebase(url: "\(URL_BASE)/users")
+	fileprivate var _REF_BASE = Firebase(url: "\(URL_BASE)")
+	fileprivate var _REF_WORKOUTS = Firebase(url: "\(URL_BASE)/workouts")
+	fileprivate var _REF_USERS = Firebase(url: "\(URL_BASE)/users")
 	
-	var REF_BASE: Firebase { return _REF_BASE }
-	var REF_WORKOUTS: Firebase { return _REF_WORKOUTS }
-	var REF_USERS: Firebase { return _REF_USERS }
+	var REF_BASE: Firebase { return _REF_BASE! }
+	var REF_WORKOUTS: Firebase { return _REF_WORKOUTS! }
+	var REF_USERS: Firebase { return _REF_USERS! }
 	
-	func createFirebaseUser(uid: String, user: [String: AnyObject]) {
-		REF_USERS.childByAppendingPath(uid).setValue(user)
+	func createFirebaseUser(_ uid: String, user: [String: AnyObject]) {
+		REF_USERS.child(byAppendingPath: uid).setValue(user)
 	}
 	
 }

@@ -14,7 +14,7 @@ class SelectionWorkoutViewController: UIViewController {
 	var workoutNumber = 1
 	var workoutTime: Int?
 
-	@IBAction func armCandyButtonPressed(sender: UIButton) {
+	@IBAction func armCandyButtonPressed(_ sender: UIButton) {
 		
 		switch sender.tag {
 		case 1:
@@ -49,19 +49,19 @@ class SelectionWorkoutViewController: UIViewController {
 	}
 
 	
-	override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if let identifier = segue.identifier {
 			if identifier == "selectedWorkoutSegue" {
-				if let detailVC: WorkoutsViewController = segue.destinationViewController as? WorkoutsViewController {
+				if let detailVC: WorkoutsViewController = segue.destination as? WorkoutsViewController {
 					detailVC.workoutNumber = workoutNumber
 				}
 			}else if segue.identifier == "warmUpWorkout" {
-				if let detailVC: WarmupWorkoutsViewController = segue.destinationViewController as? WarmupWorkoutsViewController {
+				if let detailVC: WarmupWorkoutsViewController = segue.destination as? WarmupWorkoutsViewController {
 					detailVC.workoutNumber = workoutNumber
 				}
 
 			} else if segue.identifier == "toWebView" {
-				if let detailVC: VideosAndTipsViewController = segue.destinationViewController as? VideosAndTipsViewController {
+				if let detailVC: VideosAndTipsViewController = segue.destination as? VideosAndTipsViewController {
 					detailVC.tipURL = "http://excy.com"
 				}
 			}
@@ -69,25 +69,25 @@ class SelectionWorkoutViewController: UIViewController {
 	}
 	
 	
-	@IBAction func dontHaveExcy(sender: AnyObject) {
+	@IBAction func dontHaveExcy(_ sender: AnyObject) {
 		
 	}
 	
 	func WarmUpAlert () {
 		
-		let alertController = UIAlertController(title: "Would you like to warm up?", message: "A quick 2 minute warm up can really enhance your workout experience and is highly recommended for optimal health", preferredStyle: .Alert)
-		let OKAction = UIAlertAction(title: "Skip", style: .Default) { action in
-			self.performSegueWithIdentifier("selectedWorkoutSegue", sender: self)
+		let alertController = UIAlertController(title: "Would you like to warm up?", message: "A quick 2 minute warm up can really enhance your workout experience and is highly recommended for optimal health", preferredStyle: .alert)
+		let OKAction = UIAlertAction(title: "Skip", style: .default) { action in
+			self.performSegue(withIdentifier: "selectedWorkoutSegue", sender: self)
 		}
 		
 		alertController.addAction(OKAction)
-		let cancelAction = UIAlertAction(title: "Warm Up", style: .Cancel) { action in
-			self.performSegueWithIdentifier("warmUpWorkout", sender: self)
+		let cancelAction = UIAlertAction(title: "Warm Up", style: .cancel) { action in
+			self.performSegue(withIdentifier: "warmUpWorkout", sender: self)
 		}
 		
 		alertController.addAction(cancelAction)
 		
-		self.presentViewController(alertController, animated: true, completion: nil)
+		self.present(alertController, animated: true, completion: nil)
 	}
 	
 }
