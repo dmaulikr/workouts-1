@@ -54,7 +54,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 		
 		queryFirebaseWorkouts()
 		
-		DataSerice.ds.REF_USERS.child(byAppendingPath: uid).observe(.value, with: { snapshot in
+		DataSerice.ds.REF_USERS.child(uid).observe(.value, with: { snapshot in
 			if let snapshot = snapshot.value as? [String: AnyObject] {
 				self.userDict = snapshot
 				print(self.userDict)
@@ -73,7 +73,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 		
 		queryFirebaseWorkouts()
 		
-		DataSerice.ds.REF_USERS.child(byAppendingPath: uid).observe(.value, with: { snapshot in
+		DataSerice.ds.REF_USERS.child(uid).observe(.value, with: { snapshot in
 			if let snapshot = snapshot.value as? [String: AnyObject] {
 				self.userDict = snapshot
 				print(self.userDict)
@@ -95,7 +95,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 			return
 		}
 
-		DataSerice.ds.REF_WORKOUTS.child(byAppendingPath: uid).queryLimited(toLast: 5).observe(.value, with: { snapshot in
+		DataSerice.ds.REF_WORKOUTS.child(uid).queryLimited(toLast: 5).observe(.value, with: { snapshot in
 			if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
 				for snap in snapshots {
 					if let workoutDict = snap.value as? [String: AnyObject] {
@@ -121,28 +121,20 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 			if let profile = ProfileViewController.imageCache.object(forKey: profileUrl as AnyObject) as? UIImage {
 				self.profileImage.image = profile
 			} else {
-                Alamofire.download(profileUrl).responseData(completionHandler: { (response) in
+                Alamofire.request(profileUrl).responseData(completionHandler: { (response) in
                     if response.error == nil {
                         let image = UIImage(data: response.result.value!)
                         self.profileImage.image = image
                         ProfileViewController.imageCache.setObject(image!, forKey: profileUrl as AnyObject)
                     }
                 })
-                // Previous request type
-//                request = Alamofire.request(profileUrl).validate(contentType: ["image/*"]).response { request, response, data, error in
-//					if error == nil {
-//                        let image = UIImage(data: data!)!
-//                        self.profileImage.image = image
-//                        ProfileViewController.imageCache.setObject(image, forKey: profileUrl)
-//					}
-//				}
 			}
 		}
 		if let inspiringImageUrl1 = userDict["inspiringImage1"] as? String {
 			if let inspiration = ProfileViewController.imageCache.object(forKey: inspiringImageUrl1 as AnyObject) as? UIImage {
 				self.InspirationImage1.image = inspiration
 			} else {
-                Alamofire.download(inspiringImageUrl1).responseData(completionHandler: { (response) in
+                Alamofire.request(inspiringImageUrl1).responseData(completionHandler: { (response) in
                     if response.error == nil {
                         let image = UIImage(data: response.result.value!)
                         self.InspirationImage1.image = image
@@ -155,7 +147,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 			if let inspiration = ProfileViewController.imageCache.object(forKey: inspiringImageUrl2 as AnyObject) as? UIImage {
 				self.inspirationImage2.image = inspiration
 			} else {
-                Alamofire.download(inspiringImageUrl2).responseData(completionHandler: { (response) in
+                Alamofire.request(inspiringImageUrl2).responseData(completionHandler: { (response) in
                     if response.error == nil {
                         let image = UIImage(data: response.result.value!)
                         self.inspirationImage2.image = image
@@ -168,7 +160,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 			if let inspiration = ProfileViewController.imageCache.object(forKey: inspiringImageUrl3 as AnyObject) as? UIImage {
 				self.inspirationImage3.image = inspiration
 			} else {
-                Alamofire.download(inspiringImageUrl3).responseData(completionHandler: { (response) in
+                Alamofire.request(inspiringImageUrl3).responseData(completionHandler: { (response) in
                     if response.error == nil {
                         let image = UIImage(data: response.result.value!)
                         self.inspirationImage3.image = image
@@ -187,7 +179,6 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 			
 			for index in 0 ..< 5 {
 				if self.workoutsObject.count > index {
-					print("Workouts are greater than 0")
 					let workout = self.workoutsObject[index]
 					self.workoutTitleLabels[index].text = workout.workoutTitle
 					self.workoutTimeLabels[index].text = workout.timeAsString

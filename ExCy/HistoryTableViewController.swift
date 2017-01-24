@@ -19,7 +19,7 @@ class HistoryTableViewController: UITableViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 		
-		DataSerice.ds.REF_WORKOUTS.child(byAppendingPath: uid).queryLimited(toLast: 5).observe(.value, with: { snapshot in
+		DataSerice.ds.REF_WORKOUTS.child(uid).queryLimited(toLast: 5).observe(.value, with: { snapshot in
 			if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
 				for snap in snapshots {
 					if let workoutDict = snap.value as? [String: AnyObject] {

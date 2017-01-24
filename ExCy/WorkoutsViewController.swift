@@ -220,7 +220,7 @@ class WorkoutsViewController: UIViewController {
 		let seconds = Int(self.initialTime) - workoutTime!
 		let workout = Workout(workoutTitle: workoutName, time: seconds, uid: uid, minTemp: minTemp , maxTemp: maxTemp)
 		let dictionaryWorkout = workout.convertToDictionaryWithoutSurvey()
-		let firebaseWorkout = DataSerice.ds.REF_WORKOUTS.child(byAppendingPath: uid).childByAutoId()
+		let firebaseWorkout = DataSerice.ds.REF_WORKOUTS.child(uid).childByAutoId()
 		firebaseWorkout.setValue(dictionaryWorkout)
 	}
 	
