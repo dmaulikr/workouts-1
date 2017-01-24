@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Parse
 import AVFoundation
 import AudioToolbox
 import Firebase
@@ -222,7 +221,7 @@ class WorkoutsViewController: UIViewController {
 		let workout = Workout(workoutTitle: workoutName, time: seconds, uid: uid, minTemp: minTemp , maxTemp: maxTemp)
 		let dictionaryWorkout = workout.convertToDictionaryWithoutSurvey()
 		let firebaseWorkout = DataSerice.ds.REF_WORKOUTS.child(byAppendingPath: uid).childByAutoId()
-		firebaseWorkout?.setValue(dictionaryWorkout)
+		firebaseWorkout.setValue(dictionaryWorkout)
 	}
 	
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {

@@ -7,24 +7,15 @@
 //
 
 import UIKit
-import Parse
-import Bolts
+import Firebase
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
 
 	var window: UIWindow?
 	func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
-		
-		Parse.enableLocalDatastore()
-		
-		// Initialize Parse.
-		Parse.setApplicationId("o1yxSm5Qk5Yu2ImuUu83AECXJ3tgkjec9zJalBv3",
-			clientKey: "3wH8GE1OGVKzfucoY1UgBELA82I8x4fsmvAyFxA0")
-		
-		// [Optional] Track statistics around application opens.
-		PFAnalytics.trackAppOpened(launchOptions: launchOptions)
-		
+        // Firebase setup
+		FIRApp.configure()
 		
 		
 		return true

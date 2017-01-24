@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import Parse
 import Alamofire
 
 class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITextViewDelegate, UINavigationControllerDelegate, UIImagePickerControllerDelegate {
@@ -43,8 +42,8 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 			return
 		}
 		
-		DataSerice.ds.REF_USERS.child(byAppendingPath: uid).observe(.value, with: { snapshot in
-			if let snapshot = snapshot?.value as? [String: AnyObject] {
+		DataSerice.ds.REF_USERS.child(uid).observe(.value, with: { snapshot in
+			if let snapshot = snapshot.value as? [String: AnyObject] {
 				self.userGoals = snapshot
 				print(self.userGoals)
 			}
@@ -132,44 +131,37 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 		let imageData = UIImageJPEGRepresentation(image, 0.2)!
 		let keyData = "2679GJMV25b978622f28e584f5e6e432b7af8e82".data(using: String.Encoding.utf8)!
 		let keyJSON = "json".data(using: String.Encoding.utf8)!
-		Alamofire.upload(.POST, url, multipartFormData: { multipartFormData in
-			multipartFormData.appendBodyPart(data: imageData, name: "fileupload", fileName: "image", mimeType: "image/jpg")
-			multipartFormData.appendBodyPart(data: keyData, name: "key")
-			multipartFormData.appendBodyPart(data: keyJSON, name: "format")
-			}) { encodingResult in
-				switch encodingResult {
-				case .Success(let upload, _, _) :
-					print(upload)
-					upload.responseJSON { response in
-						
-						guard response.result.isSuccess else {
-							print("shit went down \(response.result.error)")
-							print(response.result.description )
-							print("shit went down \(response.result.value)")
-							return
-						}
-						guard let responseJSON = response.result.value as? [String: AnyObject],
-						let links = responseJSON["links"] as? [String: AnyObject],
-						let imgLink = links["image_link"] as? String else {
-							print("shits on fire yo")
-							return
-						}
-						self.userGoals[named] = imgLink
-						DataSerice.ds.REF_USERS.childByAppendingPath(uid).updateChildValues(self.userGoals)
-//						if let info = response.result.value as? [String: AnyObject] {
-//							if let links = info["links"] as? [String: AnyObject] {
-//								if let imgLink = links["image_link"] as? String {
-//									let newImage = [named: imgLink]
-//									self.userGoals[named] = imgLink
-//									DataSerice.ds.REF_USERS.childByAppendingPath(uid).updateChildValues(newImage)
-//								}
-//							}
-//						}
-					}
-				case .Failure(let error):
-					print(error)
-				}
-		}
+        
+
+        Alamofire.upload(multipartFormData: { (multipartFormData) in
+            multipartFormData.append(imageData, withName: "fileupload", fileName: "image", mimeType: "image/jpg")
+            multipartFormData.append(keyData, withName: "key")
+            multipartFormData.append(keyJSON, withName: "format")
+        }, to: url) { (result) in
+            switch result {
+            case .success(let upload, _, _) :
+                print(upload)
+                upload.responseJSON { response in
+                    
+                    guard response.result.isSuccess else {
+                        print("shit went down \(response.result.error)")
+                        print(response.result.description )
+                        print("shit went down \(response.result.value)")
+                        return
+                    }
+                    guard let responseJSON = response.result.value as? [String: AnyObject],
+                        let links = responseJSON["links"] as? [String: AnyObject],
+                        let imgLink = links["image_link"] as? String else {
+                            print("shits on fire yo")
+                            return
+                    }
+                    self.userGoals[named] = imgLink as AnyObject?
+                    DataSerice.ds.REF_USERS.child(uid).updateChildValues(self.userGoals)
+                }
+            case .failure(let error):
+                print(error)
+            }
+        }
 	}
 	
 
@@ -191,7 +183,7 @@ class AccountSettingsViewController: UIViewController, UITextFieldDelegate, UITe
 			userGoals["manifesto"] = myFitnessManifestoTextView!.text as AnyObject?
 		}
 		print(self.userGoals)
-		DataSerice.ds.REF_USERS.child(byAppendingPath: uid).updateChildValues(userGoals)
+		DataSerice.ds.REF_USERS.child(uid).updateChildValues(userGoals)
 		
 		navigationController?.popViewController(animated: true)
 		

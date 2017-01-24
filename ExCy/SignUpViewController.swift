@@ -9,6 +9,7 @@
 import UIKit
 import Parse
 import Firebase
+import FirebaseAuth
 // FIXME: comparison operators with optionals were removed from the Swift Standard Libary.
 // Consider refactoring the code to use the non-optional operators.
 fileprivate func < <T : Comparable>(lhs: T?, rhs: T?) -> Bool {
@@ -77,29 +78,25 @@ class SignUpViewController: UIViewController {
 		
 		let success = checkIfFieldsFilled()
 		if success.success {
-			
-			DataSerice.ds.REF_BASE.createUser(emailAddressTextField.text!, password: passwordTextField.text!) { (error, result) -> Void in
-				if error == nil {
-					UserDefaults.standard.setValue(result?[KEY_UID], forKey: KEY_UID)
-					DataSerice.ds.REF_BASE.authUser(self.emailAddressTextField.text!, password: self.passwordTextField.text!) { error, data in
-						if error == nil {
-							let user: [String: AnyObject] = [
-								"age": Int(self.ageTextField.text!)!,
-								"height": Int(self.heightTextField.text!)!,
-								"weight": Int(self.weightTextField.text!)!,
-								"email": self.emailAddressTextField.text!,
-								"username": self.usernameTextField.text!,
-								"gender": gender,
-								"memberSince": StringFromDate.startStringFromDate(Date())
-							]
-							DataSerice.ds.createFirebaseUser((data?.uid)!, user: user)
-						}
-					}
-					self.performSegue(withIdentifier: "landingPage", sender: self)
-				} else {
-					self.displayAlert("Could not create account", message: "Problem creating account. Please try something else")
-				}
-			}
+            FIRAuth.auth()?.createUser(withEmail: emailAddressTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
+                UserDefaults.standard.setValue(user?.uid, forKey: KEY_UID)
+                if error == nil {
+                    let specs: [String: Any] = [
+                        "age": Int(self.ageTextField.text!) ?? 30,
+                        "height": Int(self.heightTextField.text!)!,
+                        "weight": Int(self.weightTextField.text!)!,
+                        "email": self.emailAddressTextField.text!,
+                        "username": self.usernameTextField.text!,
+                        "gender": gender,
+                        "memberSince": StringFromDate.startStringFromDate(Date())
+                    ]
+                   DataSerice.ds.createFirebaseUser((user?.uid)!, user: specs)
+                    self.performSegue(withIdentifier: "landingPage", sender: self)
+                } else {
+                    self.displayAlert("Could not create account", message: "Problem creating account. Please try something else")
+                }
+                
+            })
 		} else {
 			displayAlert("Error", message: success.message )
 		}

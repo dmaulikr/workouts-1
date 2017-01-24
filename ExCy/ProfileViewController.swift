@@ -55,7 +55,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 		queryFirebaseWorkouts()
 		
 		DataSerice.ds.REF_USERS.child(byAppendingPath: uid).observe(.value, with: { snapshot in
-			if let snapshot = snapshot?.value as? [String: AnyObject] {
+			if let snapshot = snapshot.value as? [String: AnyObject] {
 				self.userDict = snapshot
 				print(self.userDict)
 			}
@@ -74,7 +74,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 		queryFirebaseWorkouts()
 		
 		DataSerice.ds.REF_USERS.child(byAppendingPath: uid).observe(.value, with: { snapshot in
-			if let snapshot = snapshot?.value as? [String: AnyObject] {
+			if let snapshot = snapshot.value as? [String: AnyObject] {
 				self.userDict = snapshot
 				print(self.userDict)
 			}
@@ -96,7 +96,7 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 		}
 
 		DataSerice.ds.REF_WORKOUTS.child(byAppendingPath: uid).queryLimited(toLast: 5).observe(.value, with: { snapshot in
-			if let snapshots = snapshot?.children.allObjects as? [FDataSnapshot] {
+			if let snapshots = snapshot.children.allObjects as? [FIRDataSnapshot] {
 				for snap in snapshots {
 					if let workoutDict = snap.value as? [String: AnyObject] {
 						let workout = Workout(dictionary: workoutDict)
@@ -121,52 +121,60 @@ class ProfileViewController: UIViewController, UINavigationControllerDelegate, U
 			if let profile = ProfileViewController.imageCache.object(forKey: profileUrl as AnyObject) as? UIImage {
 				self.profileImage.image = profile
 			} else {
-				request = Alamofire.request(.GET, profileUrl).validate(contentType: ["image/*"]).response { request, response, data, error in
-					if error == nil {
-						let image = UIImage(data: data!)!
-						self.profileImage.image = image
-						ProfileViewController.imageCache.setObject(image, forKey: profileUrl)
-					}
-				}
+                Alamofire.download(profileUrl).responseData(completionHandler: { (response) in
+                    if response.error == nil {
+                        let image = UIImage(data: response.result.value!)
+                        self.profileImage.image = image
+                        ProfileViewController.imageCache.setObject(image!, forKey: profileUrl as AnyObject)
+                    }
+                })
+                // Previous request type
+//                request = Alamofire.request(profileUrl).validate(contentType: ["image/*"]).response { request, response, data, error in
+//					if error == nil {
+//                        let image = UIImage(data: data!)!
+//                        self.profileImage.image = image
+//                        ProfileViewController.imageCache.setObject(image, forKey: profileUrl)
+//					}
+//				}
 			}
 		}
 		if let inspiringImageUrl1 = userDict["inspiringImage1"] as? String {
 			if let inspiration = ProfileViewController.imageCache.object(forKey: inspiringImageUrl1 as AnyObject) as? UIImage {
 				self.InspirationImage1.image = inspiration
 			} else {
-				request = Alamofire.request(.GET, inspiringImageUrl1).validate(contentType: ["image/*"]).response { request, response, data, error in
-					if error == nil {
-						let image = UIImage(data: data!)!
-						self.InspirationImage1.image = image
-						ProfileViewController.imageCache.setObject(image, forKey: inspiringImageUrl1)
-					}
-				}
+                Alamofire.download(inspiringImageUrl1).responseData(completionHandler: { (response) in
+                    if response.error == nil {
+                        let image = UIImage(data: response.result.value!)
+                        self.InspirationImage1.image = image
+                        ProfileViewController.imageCache.setObject(image!, forKey: inspiringImageUrl1 as AnyObject)
+                    }
+                })
 			}
 		}
 		if let inspiringImageUrl2 = userDict["inspiringImage2"] as? String {
 			if let inspiration = ProfileViewController.imageCache.object(forKey: inspiringImageUrl2 as AnyObject) as? UIImage {
 				self.inspirationImage2.image = inspiration
 			} else {
-				request = Alamofire.request(.GET, inspiringImageUrl2).validate(contentType: ["image/*"]).response { request, response, data, error in
-					if error == nil {
-						let image = UIImage(data: data!)!
-						self.inspirationImage2.image = image
-						ProfileViewController.imageCache.setObject(image, forKey: inspiringImageUrl2)
-					}
-				}
+                Alamofire.download(inspiringImageUrl2).responseData(completionHandler: { (response) in
+                    if response.error == nil {
+                        let image = UIImage(data: response.result.value!)
+                        self.inspirationImage2.image = image
+                        ProfileViewController.imageCache.setObject(image!, forKey: inspiringImageUrl2 as AnyObject)
+                    }
+                })
 			}
 		}
 		if let inspiringImageUrl3 = userDict["inspiringImage3"] as? String {
 			if let inspiration = ProfileViewController.imageCache.object(forKey: inspiringImageUrl3 as AnyObject) as? UIImage {
 				self.inspirationImage3.image = inspiration
 			} else {
-				request = Alamofire.request(.GET, inspiringImageUrl3).validate(contentType: ["image/*"]).response { request, response, data, error in
-					if error == nil {
-						let image = UIImage(data: data!)!
-						self.inspirationImage3.image = image
-						ProfileViewController.imageCache.setObject(image, forKey: inspiringImageUrl3)
-					}
-				}
+                Alamofire.download(inspiringImageUrl3).responseData(completionHandler: { (response) in
+                    if response.error == nil {
+                        let image = UIImage(data: response.result.value!)
+                        self.inspirationImage3.image = image
+                        ProfileViewController.imageCache.setObject(image!, forKey: inspiringImageUrl3 as AnyObject)
+                    }
+                })
 			}
 		}
 	}

@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+<dict>
+	<key>AD_UNIT_ID_FOR_BANNER_TEST</key>
+	<string>ca-app-pub-3940256099942544/2934735716</string>
+	<key>AD_UNIT_ID_FOR_INTERSTITIAL_TEST</key>
+	<string>ca-app-pub-3940256099942544/4411468910</string>
+	<key>CLIENT_ID</key>
+	<string>974192858023-egflkn7cvceupb7mbduh1rl6a4444pu3.apps.googleusercontent.com</string>
+	<key>REVERSED_CLIENT_ID</key>
+	<string>com.googleusercontent.apps.974192858023-egflkn7cvceupb7mbduh1rl6a4444pu3</string>
+	<key>API_KEY</key>
+	<string>AIzaSyBv9M-DpxZyGMLciqd_3evnkABLotWtSgc</string>
+	<key>GCM_SENDER_ID</key>
+	<string>974192858023</string>
+	<key>PLIST_VERSION</key>
+	<string>1</string>
+	<key>BUNDLE_ID</key>
+	<string>com.excyapp.ExCy</string>
+	<key>PROJECT_ID</key>
+	<string>firebase-excy</string>
+	<key>STORAGE_BUCKET</key>
+	<string>firebase-excy.appspot.com</string>
+	<key>IS_ADS_ENABLED</key>
+	<true/>
+	<key>IS_ANALYTICS_ENABLED</key>
+	<false/>
+	<key>IS_APPINVITE_ENABLED</key>
+	<false/>
+	<key>IS_GCM_ENABLED</key>
+	<true/>
+	<key>IS_SIGNIN_ENABLED</key>
+	<true/>
+	<key>GOOGLE_APP_ID</key>
+	<string>1:974192858023:ios:f04d8d0f5de3af92</string>
+	<key>DATABASE_URL</key>
+	<string>https://excy.firebaseio.com</string>
+</dict>
+</plist>

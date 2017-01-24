@@ -128,7 +128,7 @@ class SurveyViewController: UIViewController {
 		}
 		let dictionaryWorkout = workout!.convertToDictionarySurvey()
 		let firebaseWorkout = DataSerice.ds.REF_WORKOUTS.child(byAppendingPath: uid).childByAutoId()
-		firebaseWorkout?.setValue(dictionaryWorkout)
+		firebaseWorkout.setValue(dictionaryWorkout)
 	}
 	
 	

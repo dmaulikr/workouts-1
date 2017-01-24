@@ -8,6 +8,7 @@
 
 import UIKit
 import Firebase
+import FirebaseAuth
 
 class LogInViewController: UIViewController {
 
@@ -39,25 +40,23 @@ class LogInViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
+    
 	@IBAction func logInButtonPressed(_ sender: AnyObject) {
 		if emailTextField.text == nil || passwordTextField.text == nil {
 			displayAlert("Error", message: "Please enter a username and password")
 		} else {
 			beginActivityIndicator()
-			DataSerice.ds.REF_BASE.authUser(emailTextField.text!, password: passwordTextField.text, withCompletionBlock: { (error, data) -> Void in
-				self.activityIndicator.stopAnimating()
-				UIApplication.shared.endIgnoringInteractionEvents()
-				if error != nil {
-					if error.code == -8 {
-						self.displayAlert("User does not exist", message: "Problem logging in. Please try a different email address or password")
-					} else {
-						self.displayAlert("Error", message: "Problem logging in. Please try a different email address or password")
-					}
-				} else {
-					UserDefaults.standard.setValue(data?.uid, forKey: KEY_UID)
-					self.performSegue(withIdentifier: "login", sender: nil)
-				}
-			})
+            
+            FIRAuth.auth()?.signIn(withEmail: emailTextField.text!, password: passwordTextField.text!, completion: { (user, error) in
+                self.activityIndicator.stopAnimating()
+                UIApplication.shared.endIgnoringInteractionEvents()
+                if error != nil {
+                    self.displayAlert("Error", message: "Problem logging in. Please try a different email address or password")
+                } else {
+                    UserDefaults.standard.setValue(user?.uid, forKey: KEY_UID)
+                    self.performSegue(withIdentifier: "login", sender: nil)
+                }
+            })
 		}
 	}
 	
@@ -77,13 +76,13 @@ class LogInViewController: UIViewController {
 			textField.keyboardType = .emailAddress
 		}
 		let OKAction = UIAlertAction(title: "Enter", style: .cancel) { action in
-			DataSerice.ds.REF_BASE.resetPassword(forUser: (alertController.textFields!.first)!.text!, withCompletionBlock: { (error) -> Void in
-				if error == nil {
-					self.displayAlert("email sent", message: "please check your email to reset your password")
-				} else {
-					self.displayAlert("Error", message: "Please try again")
-				}
-			})
+            FIRAuth.auth()?.sendPasswordReset(withEmail: (alertController.textFields!.first)!.text!, completion: { (error) in
+                if error == nil {
+                    self.displayAlert("email sent", message: "please check your email to reset your password")
+                } else {
+                    self.displayAlert("Error", message: "Please try again")
+                }
+            })
 		}
 		alertController.addAction(OKAction)
 		alertController.addAction(cancelAction)
