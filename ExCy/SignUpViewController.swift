@@ -59,8 +59,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
             self.view.layoutIfNeeded()
             UIView.animate(withDuration: 0.25, animations: { 
                 self.view.layoutIfNeeded()
-                self.textfieldBottomLayoutContstraint.constant = rect.height - 30
-                self.textfieldTopLayoutContstraint.constant = -rect.height + 30
+                self.textfieldBottomLayoutContstraint.constant = rect.height * 0.75
+                self.textfieldTopLayoutContstraint.constant = -(rect.height * 0.75)
             })
         }
     }
@@ -144,8 +144,8 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 		//Causes the view (or one of its embedded text fields) to resign the first responder status.
         if let keyboardHeight = keyboardHeight {
             if keyboardVisible {
-                self.textfieldBottomLayoutContstraint.constant -= keyboardHeight + 30
-                self.textfieldTopLayoutContstraint.constant += keyboardHeight - 30
+                self.textfieldBottomLayoutContstraint.constant -= keyboardHeight * 0.75
+                self.textfieldTopLayoutContstraint.constant += keyboardHeight * 0.75
             }
         }
 		view.endEditing(true)
