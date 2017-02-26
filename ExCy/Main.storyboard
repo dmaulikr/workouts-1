@@ -44,34 +44,9 @@
                                     <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6VL-bj-MS5">
                                         <rect key="frame" x="0.0" y="-38" width="375" height="1591"/>
                                         <subviews>
-                                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder-user.png" translatesAutoresizingMaskIntoConstraints="NO" id="U88-HI-ZXg">
-                                                <rect key="frame" x="16" y="66" width="90" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            </imageView>
-                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b7L-GW-qGb">
-                                                <rect key="frame" x="121" y="66" width="238" height="90"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="friend since Aug 5, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcW-wT-okN">
-                                                        <rect key="frame" x="15" y="53" width="215" height="25"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="19"/>
-                                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNB-ia-inO">
-                                                        <rect key="frame" x="15" y="14" width="215" height="31"/>
-                                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                                        <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="24"/>
-                                                        <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                        <nil key="highlightedColor"/>
-                                                    </label>
-                                                </subviews>
-                                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                            </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="K4m-Iq-f8y">
                                                 <rect key="frame" x="16" y="368" width="343" height="80"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4,OOO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfO-4P-1af">
                                                         <rect key="frame" x="124" y="8" width="57" height="31"/>
@@ -113,7 +88,7 @@
                                             </view>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="86b-Z5-lce">
                                                 <rect key="frame" x="16" y="227" width="343" height="126"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Healthy is..." lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9dH-Bt-swZ">
                                                         <rect key="frame" x="21" y="8" width="98" height="28"/>
@@ -136,7 +111,7 @@ write it down to stay inspired!</string>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="v9q-te-xs4">
                                                 <rect key="frame" x="16" y="171" width="343" height="41"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.90588235294117647" green="0.078431372549019607" blue="0.23137254901960785" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Quick Stats">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -148,7 +123,7 @@ write it down to stay inspired!</string>
                                             </button>
                                             <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="4OM-mx-hzM">
                                                 <rect key="frame" x="16" y="463" width="343" height="137"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="My Inspiration:" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0K3-04-YIv">
                                                         <rect key="frame" x="21" y="8" width="128" height="28"/>
@@ -174,7 +149,7 @@ write it down to stay inspired!</string>
                                             </view>
                                             <view alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="vXR-gw-u6J">
                                                 <rect key="frame" x="16" y="671" width="343" height="159"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="1" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="----" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="0vx-4M-eOp">
                                                         <rect key="frame" x="23" y="13" width="155" height="37"/>
@@ -250,7 +225,7 @@ write it down to stay inspired!</string>
                                             </view>
                                             <view alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ywB-Hc-WOj">
                                                 <rect key="frame" x="16" y="845" width="343" height="159"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="----" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="j2U-Aj-9B9">
                                                         <rect key="frame" x="15" y="116" width="52" height="22"/>
@@ -326,7 +301,7 @@ write it down to stay inspired!</string>
                                             </view>
                                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0hG-AU-nH0">
                                                 <rect key="frame" x="16" y="613" width="343" height="41"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <color key="backgroundColor" red="0.4823529412" green="0.75294117650000003" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <state key="normal" title="Recent History">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -338,7 +313,7 @@ write it down to stay inspired!</string>
                                             </button>
                                             <view alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="sVK-rq-bQW">
                                                 <rect key="frame" x="16" y="1019" width="343" height="159"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="----" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="686-IV-0fT">
                                                         <rect key="frame" x="15" y="116" width="52" height="22"/>
@@ -414,7 +389,7 @@ write it down to stay inspired!</string>
                                             </view>
                                             <view alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="BsL-iQ-HwQ">
                                                 <rect key="frame" x="16" y="1193" width="343" height="159"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="----" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RKx-7f-Der">
                                                         <rect key="frame" x="15" y="116" width="52" height="22"/>
@@ -490,7 +465,7 @@ write it down to stay inspired!</string>
                                             </view>
                                             <view alpha="0.89999997615814209" contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="Xr3-2C-cSa">
                                                 <rect key="frame" x="16" y="1367" width="343" height="159"/>
-                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" tag="2" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="----" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="81p-o3-Lah">
                                                         <rect key="frame" x="15" y="116" width="52" height="22"/>
@@ -564,6 +539,40 @@ write it down to stay inspired!</string>
                                                 </subviews>
                                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                             </view>
+                                            <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="a0j-lA-7ev">
+                                                <rect key="frame" x="16" y="52" width="343" height="104"/>
+                                                <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                <subviews>
+                                                    <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="placeholder-user.png" translatesAutoresizingMaskIntoConstraints="NO" id="U88-HI-ZXg">
+                                                        <rect key="frame" x="0.0" y="7" width="90" height="90"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                    </imageView>
+                                                    <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="b7L-GW-qGb">
+                                                        <rect key="frame" x="105" y="8" width="238" height="90"/>
+                                                        <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                        <subviews>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="friend since Aug 5, 2014" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IcW-wT-okN">
+                                                                <rect key="frame" x="15" y="53" width="215" height="25"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="19"/>
+                                                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="User Name" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="fNB-ia-inO">
+                                                                <rect key="frame" x="15" y="14" width="215" height="31"/>
+                                                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                                                <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="24"/>
+                                                                <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                                <nil key="highlightedColor"/>
+                                                            </label>
+                                                        </subviews>
+                                                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                        <edgeInsets key="layoutMargins" top="8" left="8" bottom="8" right="8"/>
+                                                    </view>
+                                                </subviews>
+                                                <color key="backgroundColor" white="0.0" alpha="0.0" colorSpace="calibratedWhite"/>
+                                            </view>
                                         </subviews>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="1591" id="clE-R1-oBw"/>
@@ -576,7 +585,7 @@ write it down to stay inspired!</string>
                                     <constraint firstItem="6VL-bj-MS5" firstAttribute="top" secondItem="S2K-jF-pgm" secondAttribute="top" constant="-38" id="8f1-yP-dFL"/>
                                     <constraint firstAttribute="bottom" secondItem="6VL-bj-MS5" secondAttribute="bottom" constant="38" id="rOz-hT-31p"/>
                                     <constraint firstItem="6VL-bj-MS5" firstAttribute="leading" secondItem="S2K-jF-pgm" secondAttribute="leading" id="tD9-3p-myl"/>
-                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="375" id="zh0-JS-NVE"/>
+                                    <constraint firstAttribute="width" relation="lessThanOrEqual" constant="450" id="zh0-JS-NVE"/>
                                 </constraints>
                             </scrollView>
                         </subviews>
@@ -659,7 +668,7 @@ write it down to stay inspired!</string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="8ad-hr-P8X" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="-776" y="1401"/>
+            <point key="canvasLocation" x="-776.08695652173924" y="1400.5434782608697"/>
         </scene>
         <!--Account Settings View Controller-->
         <scene sceneID="NU3-u7-2yY">
@@ -989,7 +998,7 @@ write it down to stay inspired!               </string>
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="6000"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tips" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2F-ZH-k3c">
-                                                <rect key="frame" x="190.33333333333334" y="80" width="34" height="28"/>
+                                                <rect key="frame" x="190" y="80" width="34" height="28"/>
                                                 <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="22"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2255,20 +2264,20 @@ write it down to stay inspired!               </string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yxM-Bt-hFf">
-                                <rect key="frame" x="41" y="112.66666666666666" width="332" height="462.66666666666674"/>
+                                <rect key="frame" x="41" y="112.33333333333334" width="332" height="462.66666666666663"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="EjU-ge-q10">
                                         <rect key="frame" x="116" y="0.0" width="100" height="96.666666666666671"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExcyLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="0Gz-j0-uuF">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="49.999999999999986"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="50.000000000000014"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="0ew-Sb-0CY"/>
                                                     <constraint firstAttribute="width" constant="100" id="UOq-tn-WTD"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="burst play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGC-rE-DvM">
-                                                <rect key="frame" x="3.3333333333333428" y="64.999999999999986" width="93.333333333333314" height="31.666666666666686"/>
+                                                <rect key="frame" x="3.3333333333333428" y="65.000000000000014" width="93.333333333333314" height="31.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="25"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2276,10 +2285,10 @@ write it down to stay inspired!               </string>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1nP-BZ-876">
-                                        <rect key="frame" x="0.0" y="106.66666666666667" width="332" height="244.99999999999994"/>
+                                        <rect key="frame" x="0.0" y="106.66666666666669" width="332" height="245"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDE-Yr-bI4">
-                                                <rect key="frame" x="0.0" y="0.0" width="332" height="119.99999999999997"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="332" height="120"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="joM-4T-BUu">
                                                         <rect key="frame" x="73" y="22" width="1" height="75"/>
@@ -2374,7 +2383,7 @@ write it down to stay inspired!               </string>
                                                 </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uyZ-EG-ZsC">
-                                                <rect key="frame" x="0.0" y="129.99999999999997" width="332" height="115"/>
+                                                <rect key="frame" x="0.0" y="130" width="332" height="115"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPU-T8-eD8">
                                                         <rect key="frame" x="82" y="11" width="99" height="58"/>
@@ -2471,10 +2480,10 @@ write it down to stay inspired!               </string>
                                         <variation key="heightClass=compact" spacing="3"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fnc-Xw-Guk">
-                                        <rect key="frame" x="0.0" y="361.66666666666663" width="332" height="101.00000000000006"/>
+                                        <rect key="frame" x="0.0" y="361.66666666666669" width="332" height="101"/>
                                         <subviews>
                                             <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4o-fg-xQf">
-                                                <rect key="frame" x="0.0" y="0.0" width="332" height="53.000000000000057"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="332" height="53"/>
                                                 <color key="backgroundColor" red="0.54901960780000003" green="0.77647058820000003" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="332" id="Rig-di-T8q"/>
@@ -2493,7 +2502,7 @@ write it down to stay inspired!               </string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5N-4K-YvN">
-                                                <rect key="frame" x="0.0" y="63.000000000000057" width="332" height="38"/>
+                                                <rect key="frame" x="0.0" y="63" width="332" height="38"/>
                                                 <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="20"/>
                                                 <state key="normal" title="Don't have an Excy?">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2875,7 +2884,7 @@ write it down to stay inspired!               </string>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warm up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flX-tU-WqY">
-                                <rect key="frame" x="167" y="147" width="80" height="30"/>
+                                <rect key="frame" x="167.33333333333334" y="147" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="vS4-xQ-1zy"/>
                                 </constraints>
@@ -2920,7 +2929,7 @@ write it down to stay inspired!               </string>
                                 <rect key="frame" x="44" y="195" width="325" height="44"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kK-kZ-vBb">
-                                        <rect key="frame" x="16" y="16" width="75" height="23"/>
+                                        <rect key="frame" x="16" y="16" width="75.666666666666657" height="23"/>
                                         <constraints>
                                             <constraint firstAttribute="height" constant="23" id="sQ2-CP-Zh0"/>
                                         </constraints>
@@ -2929,10 +2938,10 @@ write it down to stay inspired!               </string>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="YVs-ao-GiP">
-                                        <rect key="frame" x="16" y="11" width="75" height="1"/>
+                                        <rect key="frame" x="16" y="11" width="75.666666666666657" height="1"/>
                                     </imageView>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mb6-gd-J9F">
-                                        <rect key="frame" x="99" y="9" width="129" height="25"/>
+                                        <rect key="frame" x="99.666666666666643" y="9" width="128.33333333333337" height="25"/>
                                         <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="70"/>
                                         <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
@@ -3246,17 +3255,15 @@ write it down to stay inspired!               </string>
                                     <stackView opaque="NO" contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="Hnb-xM-4m2">
                                         <rect key="frame" x="0.0" y="481.33333333333326" width="324" height="56.666666666666742"/>
                                         <subviews>
-                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="y5a-p5-a4n">
-                                                <rect key="frame" x="0.0" y="0.0" width="140" height="56.666666666666686"/>
-                                                <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Don't have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" minimumFontSize="8" translatesAutoresizingMaskIntoConstraints="NO" id="y5a-p5-a4n">
+                                                <rect key="frame" x="0.0" y="0.0" width="162" height="56.666666666666686"/>
                                                 <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="16"/>
                                                 <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
-                                                <color key="shadowColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <size key="shadowOffset" width="1" height="1"/>
                                             </label>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="sxI-f4-IeU">
-                                                <rect key="frame" x="140" y="0.0" width="184" height="56.666666666666686"/>
+                                                <rect key="frame" x="162" y="0.0" width="162" height="56.666666666666686"/>
                                                 <color key="backgroundColor" red="0.2156862745" green="0.3803921569" blue="0.94117647059999998" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
                                                 <state key="normal" title="Sign Up">
@@ -3268,6 +3275,9 @@ write it down to stay inspired!               </string>
                                                 </connections>
                                             </button>
                                         </subviews>
+                                        <constraints>
+                                            <constraint firstItem="sxI-f4-IeU" firstAttribute="width" secondItem="y5a-p5-a4n" secondAttribute="width" id="zlO-o4-bYg"/>
+                                        </constraints>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="Tfl-PM-gP4">
                                         <rect key="frame" x="0.0" y="558" width="324" height="98"/>
@@ -3544,7 +3554,7 @@ write it down to stay inspired!               </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="WyJ-Ko-L9a" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="4103.5" y="178.5"/>
+            <point key="canvasLocation" x="4443" y="-205"/>
         </scene>
         <!--workout-->
         <scene sceneID="0TO-5F-dQY">
@@ -4548,7 +4558,7 @@ write it down to stay inspired!               </string>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExcyLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="FTQ-WZ-Ffs">
                                                 <rect key="frame" x="0.0" y="0.0" width="324" height="90"/>
                                                 <constraints>
-                                                    <constraint firstAttribute="height" constant="90" id="Cmq-Bk-zl3"/>
+                                                    <constraint firstAttribute="height" relation="lessThanOrEqual" constant="90" id="Cmq-Bk-zl3"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Exercise for Busy Lives" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="d8q-iy-IHr">
@@ -4563,7 +4573,7 @@ write it down to stay inspired!               </string>
                                         <rect key="frame" x="0.0" y="161" width="324" height="460.66666666666663"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hSf-WI-XkA">
-                                                <rect key="frame" x="0.0" y="0.0" width="324" height="45.666666666666657"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="324" height="45.333333333333343"/>
                                                 <segments>
                                                     <segment title="Female"/>
                                                     <segment title="Male"/>
@@ -4571,7 +4581,7 @@ write it down to stay inspired!               </string>
                                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             </segmentedControl>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SJk-aD-c03">
-                                                <rect key="frame" x="0.0" y="54.666666666666657" width="324" height="296.66666666666674"/>
+                                                <rect key="frame" x="0.0" y="54.333333333333343" width="324" height="297"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Weight (pounds)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j1H-0z-gqy">
                                                         <rect key="frame" x="0.0" y="0.0" width="324" height="45.333333333333343"/>
@@ -4586,25 +4596,25 @@ write it down to stay inspired!               </string>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Age (years)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wqq-0C-8JM">
-                                                        <rect key="frame" x="0.0" y="100.66666666666666" width="324" height="45.333333333333371"/>
+                                                        <rect key="frame" x="0.0" y="100.66666666666666" width="324" height="45.333333333333314"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APw-9D-uai">
-                                                        <rect key="frame" x="0.0" y="151.00000000000003" width="324" height="45"/>
+                                                        <rect key="frame" x="0.0" y="150.99999999999997" width="324" height="45.333333333333371"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bCf-Mb-Bem">
-                                                        <rect key="frame" x="0.0" y="201.00000000000003" width="324" height="45.333333333333314"/>
+                                                        <rect key="frame" x="0.0" y="201.33333333333334" width="324" height="45.333333333333314"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H3V-Vq-rVi">
-                                                        <rect key="frame" x="0.0" y="251.33333333333331" width="324" height="45.333333333333371"/>
+                                                        <rect key="frame" x="0.0" y="251.66666666666669" width="324" height="45.333333333333371"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -4628,11 +4638,9 @@ write it down to stay inspired!               </string>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZS-NZ-kpT">
                                                         <rect key="frame" x="0.0" y="0.0" width="162" height="44.333333333333258"/>
-                                                        <color key="backgroundColor" red="0.66666668653488159" green="0.66666668653488159" blue="0.66666668653488159" alpha="0.17999999999999999" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="16"/>
                                                         <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
-                                                        <color key="shadowColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <size key="shadowOffset" width="1" height="1"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ujl-ZW-qEA">
@@ -5318,9 +5326,9 @@ write it down to stay inspired!               </string>
         <segue reference="n1g-Df-bj3"/>
         <segue reference="CJu-xi-fd4"/>
         <segue reference="LdL-wb-UYF"/>
-        <segue reference="pq6-N9-FPV"/>
-        <segue reference="JOK-h9-eAA"/>
-        <segue reference="0SY-z2-tXw"/>
+        <segue reference="JGN-ZX-J4U"/>
+        <segue reference="Uh7-pb-s7k"/>
         <segue reference="bxg-jf-lAw"/>
+        <segue reference="pq6-N9-FPV"/>
     </inferredMetricsTieBreakers>
 </document>

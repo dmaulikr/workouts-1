@@ -40,15 +40,9 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         
         NotificationCenter.default.addObserver(self, selector: #selector(keyboardWillShow(notification:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         
-//        NotificationCenter.default.addObserver(self, selector: #selector(textFieldShouldBeginEditing(notification:)), name: NSNotification.Name.UITextFieldTextDidBeginEditing , object: nil)
-//        
         self.TextFieldArray = [weightTextField: 1, heightTextField: 2, ageTextField: 3, usernameTextField: 4, emailAddressTextField: 5, passwordTextField: 6]
 		
 	}
-    
-//    func textFieldShouldBeginEditing(notification: NSNotification) {
-//        
-//    }
     
     func keyboardWillShow(notification: NSNotification) {
         if let info = notification.userInfo {
@@ -65,7 +59,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
         }
     }
 	
-	
 	func checkIfFieldsFilled() -> (success: Bool, message: String) {
 		guard ageTextField.text!.characters.count > 0 else { return (false, "Please enter age") }
 		guard heightTextField.text!.characters.count > 0 else { return (false, "Please enter height") }
@@ -79,8 +72,6 @@ class SignUpViewController: UIViewController, UITextFieldDelegate {
 	override func viewDidAppear(_ animated: Bool) {
 		
 	}
-
-    
 
 	@IBAction func SignUpButtonPressed(_ sender: UIButton) {
 		
