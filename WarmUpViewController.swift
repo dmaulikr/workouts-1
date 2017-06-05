@@ -14,6 +14,7 @@ class WarmUpViewController: UIViewController {
 	
 	var timer: Timer?
 	var warmupTime: Int = 119
+    var isCounting = true
 	
 	override func viewDidLoad() {
 		super.viewDidLoad()
@@ -39,12 +40,18 @@ class WarmUpViewController: UIViewController {
 	}
 	
 	@IBAction func pauseButtonPressed(_ sender: UIButton) {
-		
+        if isCounting {
+            timer?.invalidate()
+            isCounting = !isCounting
+        } else {
+            timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(WarmUpViewController.updateUI), userInfo: nil, repeats: true)
+            isCounting = !isCounting
+        }
 	}
 	
 	
 	@IBAction func stopButtonPressed(_ sender: UIButton) {
-		
+		self.timer?.invalidate()
 	}
 
     /*

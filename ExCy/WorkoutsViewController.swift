@@ -73,6 +73,7 @@ class WorkoutsViewController: UIViewController {
 		
 
 	}
+    
 	
 	override func viewWillAppear(_ animated: Bool) {
 		
@@ -253,9 +254,6 @@ class WorkoutsViewController: UIViewController {
 			self.progressView.setNeedsDisplay()
 			self.setUpZoneView()
 			
-		} else if workoutTime == 0 {
-			self.timer = nil
-			maxAlert()
 		} else {
 			self.timer = nil
 			maxAlert()

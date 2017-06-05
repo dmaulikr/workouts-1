@@ -151,7 +151,6 @@
 		D3DB1B2B1AAA1C6D0038719B /* more landing page apple health.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DB1B261AAA1C6D0038719B /* more landing page apple health.png */; };
 		D3DB1B2C1AAA1C6D0038719B /* More landing page know zones.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DB1B271AAA1C6D0038719B /* More landing page know zones.png */; };
 		D3DB1B2D1AAA1C6D0038719B /* More landing page tips.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DB1B281AAA1C6D0038719B /* More landing page tips.png */; };
-		D3DB1B2E1AAA1C6D0038719B /* More landing page watch workouts.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DB1B291AAA1C6D0038719B /* More landing page watch workouts.png */; };
 		D3DB1B2F1AAA1C6D0038719B /* More landing page.png in Resources */ = {isa = PBXBuildFile; fileRef = D3DB1B2A1AAA1C6D0038719B /* More landing page.png */; };
 		D3EA69CA1C0BBBBF00C07917 /* WatchArmBlast.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EA69C41C0BBBBF00C07917 /* WatchArmBlast.png */; };
 		D3EA69CB1C0BBBBF00C07917 /* WatchArmCandy.png in Resources */ = {isa = PBXBuildFile; fileRef = D3EA69C51C0BBBBF00C07917 /* WatchArmCandy.png */; };
@@ -179,7 +178,9 @@
 		D3FED9C11B838D780054ABCE /* SmilieIcons_sad.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FED9BA1B838D780054ABCE /* SmilieIcons_sad.png */; };
 		D3FED9C21B838D780054ABCE /* SmilieIcons_satisfied.png in Resources */ = {isa = PBXBuildFile; fileRef = D3FED9BB1B838D780054ABCE /* SmilieIcons_satisfied.png */; };
 		DC89F6477EADD879F0B92E9E /* Pods_ExCy.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D1D8D2D2824C818B44D55C25 /* Pods_ExCy.framework */; };
+		E006D08C1ED319CA00464D77 /* Excy_Live_Button.png in Resources */ = {isa = PBXBuildFile; fileRef = E006D08B1ED319CA00464D77 /* Excy_Live_Button.png */; };
 		E08A686B1E3550F200B0D843 /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = E08A686A1E3550F200B0D843 /* GoogleService-Info.plist */; };
+		E0BA64761ED3A2C80059265D /* MorePage_Videos.png in Resources */ = {isa = PBXBuildFile; fileRef = E0BA64751ED3A2C80059265D /* MorePage_Videos.png */; };
 		E0CC20611E099306004BC5A9 /* Alamofire.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E0CC20601E099306004BC5A9 /* Alamofire.framework */; };
 /* End PBXBuildFile section */
 
@@ -347,7 +348,6 @@
 		D3DB1B261AAA1C6D0038719B /* more landing page apple health.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "more landing page apple health.png"; sourceTree = "<group>"; };
 		D3DB1B271AAA1C6D0038719B /* More landing page know zones.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "More landing page know zones.png"; sourceTree = "<group>"; };
 		D3DB1B281AAA1C6D0038719B /* More landing page tips.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "More landing page tips.png"; sourceTree = "<group>"; };
-		D3DB1B291AAA1C6D0038719B /* More landing page watch workouts.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "More landing page watch workouts.png"; sourceTree = "<group>"; };
 		D3DB1B2A1AAA1C6D0038719B /* More landing page.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "More landing page.png"; sourceTree = "<group>"; };
 		D3EA69C41C0BBBBF00C07917 /* WatchArmBlast.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WatchArmBlast.png; sourceTree = "<group>"; };
 		D3EA69C51C0BBBBF00C07917 /* WatchArmCandy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = WatchArmCandy.png; sourceTree = "<group>"; };
@@ -374,7 +374,9 @@
 		D3FED9B91B838D780054ABCE /* SmilieIcons_happy.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SmilieIcons_happy.png; sourceTree = "<group>"; };
 		D3FED9BA1B838D780054ABCE /* SmilieIcons_sad.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SmilieIcons_sad.png; sourceTree = "<group>"; };
 		D3FED9BB1B838D780054ABCE /* SmilieIcons_satisfied.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = SmilieIcons_satisfied.png; sourceTree = "<group>"; };
+		E006D08B1ED319CA00464D77 /* Excy_Live_Button.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = Excy_Live_Button.png; sourceTree = "<group>"; };
 		E08A686A1E3550F200B0D843 /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		E0BA64751ED3A2C80059265D /* MorePage_Videos.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = MorePage_Videos.png; sourceTree = "<group>"; };
 		E0CC20601E099306004BC5A9 /* Alamofire.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Alamofire.framework; path = "../Library/Developer/Xcode/DerivedData/ExCy-fvxlclwbdlgxslbjgqeiipyhefft/Build/Products/Debug-iphonesimulator/Alamofire/Alamofire.framework"; sourceTree = "<group>"; };
 		FE28C91EE0FC06D4620F7902 /* Pods-ExCyTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ExCyTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ExCyTests/Pods-ExCyTests.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -727,8 +729,9 @@
 				D3DB1B261AAA1C6D0038719B /* more landing page apple health.png */,
 				D3DB1B271AAA1C6D0038719B /* More landing page know zones.png */,
 				D3DB1B281AAA1C6D0038719B /* More landing page tips.png */,
-				D3DB1B291AAA1C6D0038719B /* More landing page watch workouts.png */,
+				E006D08B1ED319CA00464D77 /* Excy_Live_Button.png */,
 				D3DB1B2A1AAA1C6D0038719B /* More landing page.png */,
+				E0BA64751ED3A2C80059265D /* MorePage_Videos.png */,
 				D3DB1B241AAA1AD50038719B /* Excy_SplashNew.png */,
 				D3DB1B221A92E62B0038719B /* SplashBackExcy.png */,
 				D3C0421E1A85862D009C7FB7 /* ExcyIntensityChart.png */,
@@ -960,6 +963,7 @@
 				D36F794C19DF72E900839EEF /* Dosis-Regular.otf in Resources */,
 				D35665E31A91B4F40041EC4A /* WBArmCandy.png in Resources */,
 				D36F795519DF735200839EEF /* arrow.png in Resources */,
+				E0BA64761ED3A2C80059265D /* MorePage_Videos.png in Resources */,
 				D3DB1B251AAA1AD50038719B /* Excy_SplashNew.png in Resources */,
 				D39DCBF81B5DE92500997BB7 /* placeholder-user.png in Resources */,
 				D35666101A91C3BD0041EC4A /* Arm candy live graph.png in Resources */,
@@ -975,6 +979,7 @@
 				D319995A1C0BA15500131CA6 /* TipImage07.png in Resources */,
 				D31999601C0BA15500131CA6 /* TipImage13.png in Resources */,
 				D31999571C0BA15500131CA6 /* TipImage04.png in Resources */,
+				E006D08C1ED319CA00464D77 /* Excy_Live_Button.png in Resources */,
 				D3EA69CA1C0BBBBF00C07917 /* WatchArmBlast.png in Resources */,
 				D35666091A91C3BD0041EC4A /* Arm and leg description.png in Resources */,
 				D3FED9BF1B838D780054ABCE /* Account_Work.png in Resources */,
@@ -1010,7 +1015,6 @@
 				D319995D1C0BA15500131CA6 /* TipImage10.png in Resources */,
 				D319995C1C0BA15500131CA6 /* TipImage09.png in Resources */,
 				D3EA69CF1C0BBBBF00C07917 /* WatchUltimateArmLeg.png in Resources */,
-				D3DB1B2E1AAA1C6D0038719B /* More landing page watch workouts.png in Resources */,
 				D36F794A19DF72E900839EEF /* Dosis-Light.otf in Resources */,
 				D35665E41A91B4F40041EC4A /* WBCoreFloorExplosion.png in Resources */,
 				D35665E51A91B4F40041EC4A /* WBCycleLegBlast.png in Resources */,

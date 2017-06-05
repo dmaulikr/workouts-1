@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11762" systemVersion="16D32" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="r9u-uC-Djn">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="12120" systemVersion="16E195" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="r9u-uC-Djn">
     <device id="retina5_5" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
     <dependencies>
-        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="11757"/>
+        <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="12088"/>
         <capability name="Alignment constraints to the first baseline" minToolsVersion="6.0"/>
         <capability name="Alignment constraints with different attributes" minToolsVersion="5.1"/>
         <capability name="Aspect ratio constraints" minToolsVersion="5.1"/>
@@ -48,8 +48,8 @@
                                                 <rect key="frame" x="16" y="368" width="343" height="80"/>
                                                 <autoresizingMask key="autoresizingMask" flexibleMinX="YES" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                 <subviews>
-                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="4,OOO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfO-4P-1af">
-                                                        <rect key="frame" x="124" y="8" width="57" height="31"/>
+                                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="1,OOO" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="sfO-4P-1af">
+                                                        <rect key="frame" x="127" y="8" width="52" height="31"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="24"/>
                                                         <color key="textColor" red="0.59999999999999998" green="0.59999999999999998" blue="0.59999999999999998" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -998,7 +998,7 @@ write it down to stay inspired!               </string>
                                         <rect key="frame" x="0.0" y="0.0" width="414" height="6000"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Tips" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="V2F-ZH-k3c">
-                                                <rect key="frame" x="190" y="80" width="34" height="28"/>
+                                                <rect key="frame" x="190.66666666666666" y="80" width="34" height="28"/>
                                                 <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="22"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -1959,17 +1959,44 @@ write it down to stay inspired!               </string>
                                 <rect key="frame" x="40" y="84" width="334" height="583"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" image="ExcyLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="rZS-sC-PwR">
-                                        <rect key="frame" x="117" y="0.0" width="100" height="98"/>
+                                        <rect key="frame" x="117" y="0.0" width="100" height="132.33333333333334"/>
                                         <constraints>
                                             <constraint firstAttribute="height" relation="greaterThanOrEqual" constant="50" id="EbC-CX-ytm"/>
                                             <constraint firstAttribute="width" constant="100" id="dme-e0-lXW"/>
                                         </constraints>
                                     </imageView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="YWV-UH-JFW">
-                                        <rect key="frame" x="0.0" y="98" width="334" height="252.66666666666669"/>
+                                        <rect key="frame" x="0.0" y="132.33333333333337" width="334" height="318.33333333333326"/>
                                         <subviews>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNR-UD-g4M">
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bIp-zj-b8D">
                                                 <rect key="frame" x="0.0" y="0.0" width="334" height="55.666666666666657"/>
+                                                <state key="normal" image="Excy_Live_Button.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <action selector="liveButtonPressed:" destination="lPn-cd-b8Z" eventType="touchUpInside" id="lOI-su-HIm"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8j-iD-b7m">
+                                                <rect key="frame" x="0.0" y="65.666666666666657" width="334" height="55.666666666666686"/>
+                                                <state key="normal" image="MorePage_Videos.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="3HT-kK-if3" kind="show" id="daG-M3-SZl"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkG-Jb-acw">
+                                                <rect key="frame" x="0.0" y="131.33333333333334" width="334" height="55.666666666666629"/>
+                                                <state key="normal" image="More landing page tips.png">
+                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                </state>
+                                                <connections>
+                                                    <segue destination="o4K-2k-gju" kind="show" id="oP3-ml-eAT"/>
+                                                </connections>
+                                            </button>
+                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="TNR-UD-g4M">
+                                                <rect key="frame" x="0.0" y="196.99999999999997" width="334" height="55.666666666666686"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" secondItem="TNR-UD-g4M" secondAttribute="height" multiplier="6:1" id="BVz-Cc-bWi"/>
                                                 </constraints>
@@ -1980,17 +2007,8 @@ write it down to stay inspired!               </string>
                                                     <segue destination="MEG-tG-zmP" kind="show" id="N7f-8f-o10"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="G8j-iD-b7m">
-                                                <rect key="frame" x="0.0" y="65.666666666666657" width="334" height="55.666666666666657"/>
-                                                <state key="normal" image="More landing page watch workouts.png">
-                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="3HT-kK-if3" kind="show" id="daG-M3-SZl"/>
-                                                </connections>
-                                            </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="BAc-mL-owl">
-                                                <rect key="frame" x="0.0" y="131.33333333333331" width="334" height="55.666666666666686"/>
+                                                <rect key="frame" x="0.0" y="262.66666666666663" width="334" height="55.666666666666629"/>
                                                 <state key="normal" image="More landing page know zones.png">
                                                     <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 </state>
@@ -1998,19 +2016,10 @@ write it down to stay inspired!               </string>
                                                     <segue destination="rnm-1N-LGY" kind="show" id="B1V-gI-Nmp"/>
                                                 </connections>
                                             </button>
-                                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="WkG-Jb-acw">
-                                                <rect key="frame" x="0.0" y="197" width="334" height="55.666666666666686"/>
-                                                <state key="normal" image="More landing page tips.png">
-                                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                                </state>
-                                                <connections>
-                                                    <segue destination="o4K-2k-gju" kind="show" id="oP3-ml-eAT"/>
-                                                </connections>
-                                            </button>
                                         </subviews>
                                     </stackView>
                                     <button opaque="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zEb-kv-TRL">
-                                        <rect key="frame" x="93" y="350.66666666666674" width="148" height="232.33333333333326"/>
+                                        <rect key="frame" x="93" y="450.66666666666657" width="148" height="132.33333333333343"/>
                                         <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="20"/>
                                         <state key="normal" title="Don't have an Excy?">
                                             <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2021,6 +2030,9 @@ write it down to stay inspired!               </string>
                                         </connections>
                                     </button>
                                 </subviews>
+                                <constraints>
+                                    <constraint firstItem="zEb-kv-TRL" firstAttribute="height" secondItem="rZS-sC-PwR" secondAttribute="height" id="92B-4u-UXr"/>
+                                </constraints>
                             </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.54026693110000001" green="0.7563344836" blue="0.71580058339999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2264,20 +2276,20 @@ write it down to stay inspired!               </string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="yxM-Bt-hFf">
-                                <rect key="frame" x="41" y="112.33333333333334" width="332" height="462.66666666666663"/>
+                                <rect key="frame" x="41" y="113" width="332" height="462.66666666666663"/>
                                 <subviews>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="15" translatesAutoresizingMaskIntoConstraints="NO" id="EjU-ge-q10">
-                                        <rect key="frame" x="116" y="0.0" width="100" height="96.666666666666671"/>
+                                        <rect key="frame" x="116" y="0.0" width="100" height="96.666666666666657"/>
                                         <subviews>
                                             <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="ExcyLogoWhite" translatesAutoresizingMaskIntoConstraints="NO" id="0Gz-j0-uuF">
-                                                <rect key="frame" x="0.0" y="0.0" width="100" height="50.000000000000014"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="100" height="50"/>
                                                 <constraints>
                                                     <constraint firstAttribute="height" constant="50" id="0ew-Sb-0CY"/>
                                                     <constraint firstAttribute="width" constant="100" id="UOq-tn-WTD"/>
                                                 </constraints>
                                             </imageView>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="burst play" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="rGC-rE-DvM">
-                                                <rect key="frame" x="3.3333333333333428" y="65.000000000000014" width="93.333333333333314" height="31.666666666666657"/>
+                                                <rect key="frame" x="3.3333333333333428" y="65" width="93.333333333333314" height="31.666666666666657"/>
                                                 <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="25"/>
                                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -2285,10 +2297,10 @@ write it down to stay inspired!               </string>
                                         </subviews>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="1nP-BZ-876">
-                                        <rect key="frame" x="0.0" y="106.66666666666669" width="332" height="245"/>
+                                        <rect key="frame" x="0.0" y="106.66666666666667" width="332" height="245"/>
                                         <subviews>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="jDE-Yr-bI4">
-                                                <rect key="frame" x="0.0" y="0.0" width="332" height="120"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="332" height="120.00000000000003"/>
                                                 <subviews>
                                                     <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="joM-4T-BUu">
                                                         <rect key="frame" x="73" y="22" width="1" height="75"/>
@@ -2383,7 +2395,7 @@ write it down to stay inspired!               </string>
                                                 </variation>
                                             </view>
                                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="uyZ-EG-ZsC">
-                                                <rect key="frame" x="0.0" y="130" width="332" height="115"/>
+                                                <rect key="frame" x="0.0" y="130.00000000000003" width="332" height="115"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="000" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="nPU-T8-eD8">
                                                         <rect key="frame" x="82" y="11" width="99" height="58"/>
@@ -2480,10 +2492,10 @@ write it down to stay inspired!               </string>
                                         <variation key="heightClass=compact" spacing="3"/>
                                     </stackView>
                                     <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" spacing="10" translatesAutoresizingMaskIntoConstraints="NO" id="fnc-Xw-Guk">
-                                        <rect key="frame" x="0.0" y="361.66666666666669" width="332" height="101"/>
+                                        <rect key="frame" x="0.0" y="361.66666666666663" width="332" height="100.99999999999994"/>
                                         <subviews>
                                             <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="T4o-fg-xQf">
-                                                <rect key="frame" x="0.0" y="0.0" width="332" height="53"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="332" height="52.999999999999943"/>
                                                 <color key="backgroundColor" red="0.54901960780000003" green="0.77647058820000003" blue="0.24313725489999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <constraints>
                                                     <constraint firstAttribute="width" constant="332" id="Rig-di-T8q"/>
@@ -2502,7 +2514,7 @@ write it down to stay inspired!               </string>
                                                 </connections>
                                             </button>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="h5N-4K-YvN">
-                                                <rect key="frame" x="0.0" y="63" width="332" height="38"/>
+                                                <rect key="frame" x="0.0" y="62.999999999999943" width="332" height="38"/>
                                                 <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="20"/>
                                                 <state key="normal" title="Don't have an Excy?">
                                                     <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
@@ -2869,116 +2881,123 @@ write it down to stay inspired!               </string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="6wM-CJ-3Yg">
-                                <rect key="frame" x="44" y="247" width="325" height="157"/>
+                                <rect key="frame" x="44" y="322.33333333333331" width="327" height="100"/>
                                 <subviews>
                                     <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Excy WarmUpLive_P3.png" translatesAutoresizingMaskIntoConstraints="NO" id="cZ6-ck-Hl3">
-                                        <rect key="frame" x="0.0" y="0.0" width="325" height="157"/>
+                                        <rect key="frame" x="0.0" y="0.0" width="327" height="100"/>
                                     </imageView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstAttribute="bottom" secondItem="cZ6-ck-Hl3" secondAttribute="bottom" id="bcR-MN-z6N"/>
-                                    <constraint firstItem="cZ6-ck-Hl3" firstAttribute="top" secondItem="6wM-CJ-3Yg" secondAttribute="top" id="ciL-Bg-nO3"/>
-                                    <constraint firstAttribute="trailing" secondItem="cZ6-ck-Hl3" secondAttribute="trailing" id="vOQ-if-sPg"/>
-                                    <constraint firstItem="cZ6-ck-Hl3" firstAttribute="leading" secondItem="6wM-CJ-3Yg" secondAttribute="leading" id="wKc-Kc-MSU"/>
+                                    <constraint firstItem="cZ6-ck-Hl3" firstAttribute="top" secondItem="6wM-CJ-3Yg" secondAttribute="top" id="5f0-g2-YgV"/>
+                                    <constraint firstAttribute="bottom" secondItem="cZ6-ck-Hl3" secondAttribute="bottom" id="8AA-dk-gtt"/>
+                                    <constraint firstAttribute="height" constant="100" id="byo-jn-luw"/>
+                                    <constraint firstAttribute="trailing" secondItem="cZ6-ck-Hl3" secondAttribute="trailing" id="cEz-As-KpM"/>
+                                    <constraint firstItem="cZ6-ck-Hl3" firstAttribute="leading" secondItem="6wM-CJ-3Yg" secondAttribute="leading" id="klh-WH-fbI"/>
                                 </constraints>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warm up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="flX-tU-WqY">
-                                <rect key="frame" x="167.33333333333334" y="147" width="80" height="30"/>
-                                <constraints>
-                                    <constraint firstAttribute="height" constant="30" id="vS4-xQ-1zy"/>
-                                </constraints>
+                                <rect key="frame" x="167" y="147" width="80" height="29.333333333333343"/>
                                 <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="23"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLo-iK-dZd">
-                                <rect key="frame" x="44" y="412" width="143" height="48"/>
-                                <color key="backgroundColor" red="0.97254901959999995" green="0.92941176469999998" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <constraints>
-                                    <constraint firstAttribute="width" constant="143" id="VZl-mt-Ron"/>
-                                    <constraint firstAttribute="height" constant="48" id="sCB-mS-dcv"/>
-                                </constraints>
-                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="28"/>
-                                <state key="normal" title="pause">
-                                    <color key="titleShadowColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="1" green="0.83143529920000003" blue="0.1861019347" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="pauseButtonPressed:" destination="FYY-ri-pE6" eventType="touchUpInside" id="Gfh-so-Nas"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xz-sF-J4m">
-                                <rect key="frame" x="196" y="412" width="173" height="48"/>
-                                <color key="backgroundColor" red="0.93333333330000001" green="0.20784313730000001" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="28"/>
-                                <state key="normal" title="skip">
-                                    <color key="titleShadowColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <state key="highlighted">
-                                    <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                    <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                </state>
-                                <connections>
-                                    <action selector="stopButtonPressed:" destination="FYY-ri-pE6" eventType="touchUpInside" id="zxz-mz-pyy"/>
-                                </connections>
-                            </button>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="nRi-JI-Jch">
-                                <rect key="frame" x="44" y="195" width="325" height="44"/>
+                                <rect key="frame" x="44" y="194.33333333333331" width="327" height="119.99999999999994"/>
                                 <subviews>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kK-kZ-vBb">
-                                        <rect key="frame" x="16" y="16" width="75.666666666666657" height="23"/>
-                                        <constraints>
-                                            <constraint firstAttribute="height" constant="23" id="sQ2-CP-Zh0"/>
-                                        </constraints>
-                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
-                                        <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                                        <nil key="highlightedColor"/>
-                                    </label>
-                                    <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="YVs-ao-GiP">
-                                        <rect key="frame" x="16" y="11" width="75.666666666666657" height="1"/>
-                                    </imageView>
-                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="0:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mb6-gd-J9F">
-                                        <rect key="frame" x="99.666666666666643" y="9" width="128.33333333333337" height="25"/>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="00:00" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="mb6-gd-J9F">
+                                        <rect key="frame" x="104" y="9" width="215" height="100.99999999999997"/>
                                         <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="70"/>
                                         <color key="textColor" red="0.4228415787" green="0.74658638239999997" blue="0.080824002620000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
+                                    <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" alignment="center" spacing="6" translatesAutoresizingMaskIntoConstraints="NO" id="9ZN-bX-T3y">
+                                        <rect key="frame" x="16" y="8" width="80" height="103.99999999999997"/>
+                                        <subviews>
+                                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="clock.png" translatesAutoresizingMaskIntoConstraints="NO" id="YVs-ao-GiP">
+                                                <rect key="frame" x="0.0" y="0.0" width="80" height="79.999999999999972"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="width" secondItem="YVs-ao-GiP" secondAttribute="height" multiplier="1:1" id="e4m-q0-6z2"/>
+                                                </constraints>
+                                            </imageView>
+                                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="time" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9kK-kZ-vBb">
+                                                <rect key="frame" x="23.666666666666671" y="85.999999999999972" width="32.666666666666657" height="18"/>
+                                                <constraints>
+                                                    <constraint firstAttribute="height" constant="18" id="082-tx-7V0"/>
+                                                </constraints>
+                                                <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="18"/>
+                                                <color key="textColor" red="0.66666666666666663" green="0.66666666666666663" blue="0.66666666666666663" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                                <nil key="highlightedColor"/>
+                                            </label>
+                                        </subviews>
+                                        <constraints>
+                                            <constraint firstAttribute="width" secondItem="YVs-ao-GiP" secondAttribute="width" id="HYR-pW-1wE"/>
+                                        </constraints>
+                                    </stackView>
                                 </subviews>
                                 <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <constraints>
-                                    <constraint firstItem="mb6-gd-J9F" firstAttribute="leading" secondItem="YVs-ao-GiP" secondAttribute="trailing" constant="8" symbolic="YES" id="fVh-YL-TlJ"/>
-                                    <constraint firstItem="9kK-kZ-vBb" firstAttribute="top" secondItem="YVs-ao-GiP" secondAttribute="bottom" constant="4" id="fti-94-vKy"/>
-                                    <constraint firstItem="mb6-gd-J9F" firstAttribute="top" secondItem="nRi-JI-Jch" secondAttribute="top" constant="9" id="gG1-SS-adk"/>
-                                    <constraint firstItem="mb6-gd-J9F" firstAttribute="leading" secondItem="9kK-kZ-vBb" secondAttribute="trailing" constant="8" symbolic="YES" id="l40-Hp-znM"/>
-                                    <constraint firstItem="YVs-ao-GiP" firstAttribute="top" secondItem="nRi-JI-Jch" secondAttribute="top" constant="11" id="mBj-1U-zt1"/>
-                                    <constraint firstItem="YVs-ao-GiP" firstAttribute="leading" secondItem="9kK-kZ-vBb" secondAttribute="leading" id="mCa-gN-ekJ"/>
-                                    <constraint firstAttribute="bottom" secondItem="9kK-kZ-vBb" secondAttribute="bottom" constant="5" id="rJ5-BX-b3c"/>
-                                    <constraint firstItem="YVs-ao-GiP" firstAttribute="leading" secondItem="nRi-JI-Jch" secondAttribute="leading" constant="16" id="sRo-pD-Dzy"/>
-                                    <constraint firstAttribute="trailing" secondItem="mb6-gd-J9F" secondAttribute="trailing" constant="97" id="ujZ-jB-ouI"/>
-                                    <constraint firstItem="mb6-gd-J9F" firstAttribute="centerY" secondItem="nRi-JI-Jch" secondAttribute="centerY" id="yha-YJ-279"/>
+                                    <constraint firstItem="9ZN-bX-T3y" firstAttribute="top" secondItem="nRi-JI-Jch" secondAttribute="top" constant="8" id="Bmp-vj-wFP"/>
+                                    <constraint firstAttribute="bottom" secondItem="mb6-gd-J9F" secondAttribute="bottom" constant="10" id="DIP-u9-LFT"/>
+                                    <constraint firstAttribute="trailing" secondItem="mb6-gd-J9F" secondAttribute="trailing" constant="8" id="FBl-by-LN3"/>
+                                    <constraint firstItem="mb6-gd-J9F" firstAttribute="top" secondItem="nRi-JI-Jch" secondAttribute="top" constant="9" id="K42-UV-J6m"/>
+                                    <constraint firstItem="9ZN-bX-T3y" firstAttribute="leading" secondItem="nRi-JI-Jch" secondAttribute="leading" constant="16" id="WLs-Y1-0Ix"/>
+                                    <constraint firstAttribute="bottom" secondItem="9ZN-bX-T3y" secondAttribute="bottom" constant="8" id="bad-6O-SGU"/>
+                                    <constraint firstItem="mb6-gd-J9F" firstAttribute="leading" secondItem="9ZN-bX-T3y" secondAttribute="trailing" constant="8" id="j9C-iY-j25"/>
+                                    <constraint firstAttribute="height" constant="120" id="jpN-1q-3zW"/>
                                 </constraints>
                             </view>
+                            <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" spacing="8" translatesAutoresizingMaskIntoConstraints="NO" id="br3-qb-HL5">
+                                <rect key="frame" x="44" y="431" width="326" height="50"/>
+                                <subviews>
+                                    <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" horizontalHuggingPriority="249" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bLo-iK-dZd">
+                                        <rect key="frame" x="0.0" y="0.0" width="159" height="50"/>
+                                        <color key="backgroundColor" red="0.97254901959999995" green="0.92941176469999998" blue="0.19215686269999999" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="28"/>
+                                        <state key="normal" title="pause">
+                                            <color key="titleShadowColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="0.83143529920000003" blue="0.1861019347" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="pauseButtonPressed:" destination="FYY-ri-pE6" eventType="touchUpInside" id="Gfh-so-Nas"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" alpha="0.85000002384185791" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="1Xz-sF-J4m">
+                                        <rect key="frame" x="167" y="0.0" width="159" height="50"/>
+                                        <color key="backgroundColor" red="0.93333333330000001" green="0.20784313730000001" blue="0.2666666667" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="28"/>
+                                        <state key="normal" title="skip">
+                                            <color key="titleShadowColor" red="0.33333333333333331" green="0.33333333333333331" blue="0.33333333333333331" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <state key="highlighted">
+                                            <color key="titleColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                            <color key="titleShadowColor" red="1" green="0.0" blue="0.0" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                        </state>
+                                        <connections>
+                                            <action selector="stopButtonPressed:" destination="FYY-ri-pE6" eventType="touchUpInside" id="zxz-mz-pyy"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="50" id="rJK-4G-2NS"/>
+                                </constraints>
+                            </stackView>
                         </subviews>
                         <color key="backgroundColor" red="0.54026693110000001" green="0.7563344836" blue="0.71580058339999997" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
-                            <constraint firstItem="6wM-CJ-3Yg" firstAttribute="leading" secondItem="bLo-iK-dZd" secondAttribute="leading" id="4w5-4D-USE"/>
-                            <constraint firstItem="6wM-CJ-3Yg" firstAttribute="top" secondItem="nRi-JI-Jch" secondAttribute="bottom" constant="8" symbolic="YES" id="5FX-3z-g8a"/>
-                            <constraint firstItem="6wM-CJ-3Yg" firstAttribute="trailing" secondItem="nRi-JI-Jch" secondAttribute="trailing" id="98m-HO-Ph2"/>
-                            <constraint firstItem="nRi-JI-Jch" firstAttribute="leading" secondItem="6wM-CJ-3Yg" secondAttribute="leading" id="AYZ-yn-dv7"/>
-                            <constraint firstItem="1Xz-sF-J4m" firstAttribute="baseline" secondItem="bLo-iK-dZd" secondAttribute="baseline" id="J8i-vk-u08"/>
-                            <constraint firstItem="6wM-CJ-3Yg" firstAttribute="top" secondItem="qYh-7i-5m7" secondAttribute="top" constant="247" id="JFO-48-d2f"/>
-                            <constraint firstItem="Yfj-It-gaA" firstAttribute="top" secondItem="bLo-iK-dZd" secondAttribute="bottom" constant="227" id="K2w-JZ-lcu"/>
-                            <constraint firstItem="nRi-JI-Jch" firstAttribute="top" secondItem="flX-tU-WqY" secondAttribute="bottom" constant="18" id="V6f-wN-1ZZ"/>
-                            <constraint firstItem="1Xz-sF-J4m" firstAttribute="leading" secondItem="bLo-iK-dZd" secondAttribute="trailing" constant="9" id="VNr-Sw-Lte"/>
-                            <constraint firstItem="bLo-iK-dZd" firstAttribute="top" secondItem="6wM-CJ-3Yg" secondAttribute="bottom" constant="8" symbolic="YES" id="cDY-PV-KP1"/>
-                            <constraint firstItem="flX-tU-WqY" firstAttribute="top" secondItem="all-zW-EHV" secondAttribute="bottom" constant="83" id="d4Q-fA-Qee"/>
-                            <constraint firstItem="nRi-JI-Jch" firstAttribute="centerX" secondItem="flX-tU-WqY" secondAttribute="centerX" id="gz9-N3-xtv"/>
-                            <constraint firstItem="flX-tU-WqY" firstAttribute="centerX" secondItem="qYh-7i-5m7" secondAttribute="centerX" id="nMD-gB-5NE"/>
-                            <constraint firstItem="nRi-JI-Jch" firstAttribute="leading" secondItem="qYh-7i-5m7" secondAttribute="leadingMargin" constant="24" id="ofU-dP-5ql"/>
-                            <constraint firstItem="6wM-CJ-3Yg" firstAttribute="trailing" secondItem="1Xz-sF-J4m" secondAttribute="trailing" id="tQi-qL-zfi"/>
+                            <constraint firstItem="br3-qb-HL5" firstAttribute="top" secondItem="6wM-CJ-3Yg" secondAttribute="bottom" constant="8" id="0ko-Rw-lbl"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="br3-qb-HL5" secondAttribute="trailing" constant="24" id="8m9-br-Fz8"/>
+                            <constraint firstItem="flX-tU-WqY" firstAttribute="top" secondItem="all-zW-EHV" secondAttribute="bottom" constant="83" id="9fy-OK-bE6"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="nRi-JI-Jch" secondAttribute="trailing" constant="23" id="CYB-rj-piU"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="6wM-CJ-3Yg" secondAttribute="trailing" constant="23" id="OG8-r6-Fev"/>
+                            <constraint firstItem="br3-qb-HL5" firstAttribute="leading" secondItem="qYh-7i-5m7" secondAttribute="leadingMargin" constant="24" id="Ss9-CL-jzm"/>
+                            <constraint firstItem="nRi-JI-Jch" firstAttribute="top" secondItem="flX-tU-WqY" secondAttribute="bottom" constant="18" id="THm-Kr-tTm"/>
+                            <constraint firstItem="flX-tU-WqY" firstAttribute="centerX" secondItem="qYh-7i-5m7" secondAttribute="centerX" id="aYe-Mf-DtV"/>
+                            <constraint firstItem="nRi-JI-Jch" firstAttribute="leading" secondItem="qYh-7i-5m7" secondAttribute="leadingMargin" constant="24" id="c77-05-49i"/>
+                            <constraint firstItem="6wM-CJ-3Yg" firstAttribute="top" secondItem="nRi-JI-Jch" secondAttribute="bottom" constant="8" id="dsc-Tz-fT7"/>
+                            <constraint firstItem="6wM-CJ-3Yg" firstAttribute="leading" secondItem="qYh-7i-5m7" secondAttribute="leadingMargin" constant="24" id="iju-3E-UCl"/>
                         </constraints>
                     </view>
                     <tabBarItem key="tabBarItem" title="start" image="TabBarIconStart" id="mas-e0-zze"/>
@@ -2990,7 +3009,7 @@ write it down to stay inspired!               </string>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="XOS-WX-Td7" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="3658.5" y="395.5"/>
+            <point key="canvasLocation" x="4871.0144927536239" y="498.91304347826093"/>
         </scene>
         <!--WarmUP Interval-->
         <scene sceneID="7DW-7u-mDJ">
@@ -3122,7 +3141,7 @@ write it down to stay inspired!               </string>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Warm up" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="TUY-0e-O2d">
-                                <rect key="frame" x="168.33333333333334" y="452" width="80" height="30"/>
+                                <rect key="frame" x="168" y="452" width="80" height="30"/>
                                 <constraints>
                                     <constraint firstAttribute="height" constant="30" id="NF6-Eg-NPQ"/>
                                 </constraints>
@@ -3437,7 +3456,7 @@ write it down to stay inspired!               </string>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Way to go! You are doing good today!" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="IO6-bH-ZUO">
-                                <rect key="frame" x="34" y="48" width="346" height="105"/>
+                                <rect key="frame" x="34" y="28" width="346" height="125"/>
                                 <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="21"/>
                                 <color key="textColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                 <nil key="highlightedColor"/>
@@ -3868,7 +3887,7 @@ write it down to stay inspired!               </string>
                                         <rect key="frame" x="0.0" y="0.0" width="375" height="2500"/>
                                         <subviews>
                                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Target power zones" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="LCJ-2u-U2v">
-                                                <rect key="frame" x="107" y="0.0" width="163" height="27"/>
+                                                <rect key="frame" x="107" y="0.33333333333333393" width="162.33333333333331" height="26.666666666666664"/>
                                                 <fontDescription key="fontDescription" name="Dosis-SemiBold" family="Dosis" pointSize="21"/>
                                                 <color key="textColor" red="0.93725490199999995" green="0.93725490199999995" blue="0.95686274510000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <nil key="highlightedColor"/>
@@ -4573,7 +4592,7 @@ write it down to stay inspired!               </string>
                                         <rect key="frame" x="0.0" y="161" width="324" height="460.66666666666663"/>
                                         <subviews>
                                             <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="hSf-WI-XkA">
-                                                <rect key="frame" x="0.0" y="0.0" width="324" height="45.333333333333343"/>
+                                                <rect key="frame" x="0.0" y="0.0" width="324" height="45.666666666666657"/>
                                                 <segments>
                                                     <segment title="Female"/>
                                                     <segment title="Male"/>
@@ -4581,7 +4600,7 @@ write it down to stay inspired!               </string>
                                                 <color key="tintColor" white="0.33333333333333331" alpha="1" colorSpace="calibratedWhite"/>
                                             </segmentedControl>
                                             <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" spacing="5" translatesAutoresizingMaskIntoConstraints="NO" id="SJk-aD-c03">
-                                                <rect key="frame" x="0.0" y="54.333333333333343" width="324" height="297"/>
+                                                <rect key="frame" x="0.0" y="54.666666666666657" width="324" height="296.33333333333337"/>
                                                 <subviews>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Weight (pounds)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="j1H-0z-gqy">
                                                         <rect key="frame" x="0.0" y="0.0" width="324" height="45.333333333333343"/>
@@ -4596,25 +4615,25 @@ write it down to stay inspired!               </string>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Age (years)" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="wqq-0C-8JM">
-                                                        <rect key="frame" x="0.0" y="100.66666666666666" width="324" height="45.333333333333314"/>
+                                                        <rect key="frame" x="0.0" y="100.66666666666666" width="324" height="45"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="numberPad"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Username" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="APw-9D-uai">
-                                                        <rect key="frame" x="0.0" y="150.99999999999997" width="324" height="45.333333333333371"/>
+                                                        <rect key="frame" x="0.0" y="150.66666666666666" width="324" height="45.333333333333371"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Email Address" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="bCf-Mb-Bem">
-                                                        <rect key="frame" x="0.0" y="201.33333333333334" width="324" height="45.333333333333314"/>
+                                                        <rect key="frame" x="0.0" y="201.00000000000003" width="324" height="45"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" keyboardType="emailAddress"/>
                                                     </textField>
                                                     <textField opaque="NO" clipsSubviews="YES" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="center" placeholder="   Password" minimumFontSize="17" translatesAutoresizingMaskIntoConstraints="NO" id="H3V-Vq-rVi">
-                                                        <rect key="frame" x="0.0" y="251.66666666666669" width="324" height="45.333333333333371"/>
+                                                        <rect key="frame" x="0.0" y="251.00000000000003" width="324" height="45.333333333333343"/>
                                                         <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="17"/>
                                                         <textInputTraits key="textInputTraits" secureTextEntry="YES"/>
@@ -4622,7 +4641,7 @@ write it down to stay inspired!               </string>
                                                 </subviews>
                                             </stackView>
                                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="AS2-eW-H3c">
-                                                <rect key="frame" x="0.0" y="361.33333333333337" width="324" height="45"/>
+                                                <rect key="frame" x="0.0" y="361" width="324" height="45"/>
                                                 <color key="backgroundColor" red="1" green="0.40000000000000002" blue="0.40000000000000002" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                 <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
                                                 <state key="normal" title="Sign Up">
@@ -4634,17 +4653,17 @@ write it down to stay inspired!               </string>
                                                 </connections>
                                             </button>
                                             <stackView opaque="NO" contentMode="scaleToFill" distribution="fillEqually" translatesAutoresizingMaskIntoConstraints="NO" id="HBj-HQ-YTD">
-                                                <rect key="frame" x="0.0" y="416.33333333333337" width="324" height="44.333333333333258"/>
+                                                <rect key="frame" x="0.0" y="416" width="324" height="44.666666666666629"/>
                                                 <subviews>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Have an account?" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="HZS-NZ-kpT">
-                                                        <rect key="frame" x="0.0" y="0.0" width="162" height="44.333333333333258"/>
+                                                        <rect key="frame" x="0.0" y="0.0" width="162" height="44.666666666666629"/>
                                                         <fontDescription key="fontDescription" name="Dosis-Regular" family="Dosis" pointSize="16"/>
                                                         <color key="textColor" red="0.96862745100000003" green="0.96862745100000003" blue="0.96862745100000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <nil key="highlightedColor"/>
                                                         <size key="shadowOffset" width="1" height="1"/>
                                                     </label>
                                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="Ujl-ZW-qEA">
-                                                        <rect key="frame" x="162" y="0.0" width="162" height="44.333333333333258"/>
+                                                        <rect key="frame" x="162" y="0.0" width="162" height="44.666666666666629"/>
                                                         <color key="backgroundColor" red="0.2156862745" green="0.3803921569" blue="0.94117647059999998" alpha="0.5" colorSpace="custom" customColorSpace="sRGB"/>
                                                         <fontDescription key="fontDescription" name="Dosis-Medium" family="Dosis" pointSize="18"/>
                                                         <state key="normal" title="Log In">
@@ -5269,10 +5288,11 @@ write it down to stay inspired!               </string>
         <image name="Cycleblast zone.png" width="619" height="196"/>
         <image name="Excy WarmUpLive_P3.png" width="190" height="58"/>
         <image name="ExcyLogoWhite" width="224" height="97"/>
+        <image name="Excy_Live_Button.png" width="618" height="102"/>
         <image name="More landing page know zones.png" width="617" height="102"/>
         <image name="More landing page tips.png" width="618" height="102"/>
-        <image name="More landing page watch workouts.png" width="618" height="102"/>
         <image name="More landing page.png" width="618" height="102"/>
+        <image name="MorePage_Videos.png" width="618" height="102"/>
         <image name="PlaceHolder_Inspire.png" width="167" height="106"/>
         <image name="SmilieIcons_happy.png" width="84" height="84"/>
         <image name="StepperButtonsMinus.png" width="279" height="254"/>
@@ -5326,9 +5346,9 @@ write it down to stay inspired!               </string>
         <segue reference="n1g-Df-bj3"/>
         <segue reference="CJu-xi-fd4"/>
         <segue reference="LdL-wb-UYF"/>
-        <segue reference="JGN-ZX-J4U"/>
+        <segue reference="NZb-KM-HME"/>
+        <segue reference="sug-YA-LBr"/>
         <segue reference="Uh7-pb-s7k"/>
-        <segue reference="bxg-jf-lAw"/>
-        <segue reference="pq6-N9-FPV"/>
+        <segue reference="WPM-9b-gdZ"/>
     </inferredMetricsTieBreakers>
 </document>

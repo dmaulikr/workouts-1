@@ -9,6 +9,8 @@
 import UIKit
 
 class MoreVC: UIViewController {
+    
+    var liveButtonString: String?
 
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -28,9 +30,15 @@ class MoreVC: UIViewController {
 	override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
 		if segue.identifier == "toWebView" {
 			if let detailVC: VideosAndTipsViewController = segue.destination as? VideosAndTipsViewController {
-				detailVC.tipURL = "http://excy.com"
+				detailVC.tipURL = liveButtonString ?? "http://excy.com"
 			}
 		}
 	}
+    @IBAction func liveButtonPressed(_ sender: UIButton) {
+        
+        UIApplication.shared.openURL(URL(string: "http://www.excy.live/")!)
+//        liveButtonString = "http://www.excy.live/"
+//        performSegue(withIdentifier: "toWebView", sender: self)
+    }
 
 }
